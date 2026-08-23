@@ -1,3 +1,3 @@
 # PflegeLern
 
-Initial repository setup for the PflegeLern v1.0.0 release candidate.
+P10 deployment trigger branch for the v1.0.0 release candidate.
