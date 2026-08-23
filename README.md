@@ -1,5 +1,5 @@
 # PflegeLern
 
-P10 deployment trigger branch for the final v1.0.0 release.
+P10 final v1.0.0 deployment validation branch.
 
-Final verified-payload deployment trigger.
+PR-triggered verified payload deployment.
