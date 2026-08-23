@@ -1,0 +1,102 @@
+name: Finalize PflegeLern P10
+
+on:
+  pull_request:
+    paths:
+      - 'README.md'
+      - '.github/workflows/finalize-p10.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pflegelern-p10-finalize
+  cancel-in-progress: true
+
+jobs:
+  finalize:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout transfer branch
+        uses: actions/checkout@v4
+
+      - name: Reconstruct verified release
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib
+
+          def blob_sha(data: bytes):
+              return hashlib.sha1(f'blob {len(data)}\0'.encode() + data).hexdigest()
+
+          expected = {
+            0:'4677c49191572ae84191be9dfb2b50767a77feb0',1:'7e8d15c863acefb887e6125564834d6fb8739c38',
+            2:'a8023767961fc9c2df00af0a5e08f3f9f7b45c4b',3:'6b8edbd7d4c3289c47e8e13ab4c0be7e88c41e5f',
+            4:'2949fd5c5a84a0c6e6f9526a8abd9aeea18d5070',5:'128d7e80ff37099717ea6755f5ceb9efc690a019',
+            6:'f068aeca4d7d06143956d7193460e7160d0c583a',7:'bac3acad0da1771e50b7c51e8eac977617342fc5',
+            8:'d572b56ff0973a9f0c23a62fde8328a29f2a6342',9:'2d90e1b92d17b694a7c9cea55d871409d6f2af35',
+            10:'204a8caed60f380a48008a1ad7bcecbc97a6277e',11:'ca05dbc661a7220bc12a455a3bdab13d8e9b4f18',
+            12:'0d589d88b8d21197ad7d730a8ee5aa369d0c6bd7',13:'54112a9c8e8759d1df3d6422842a0759a322701f',
+            14:'5fc93f71cfd2667b8a51ce6a9d0a7c1c47b337fd',15:'25659ca830f470f4abbc06ed53e807de1b4f2c88',
+            16:'69baadf1f297642a76726b0df9c0ccf1bf4e9c7f',17:'af07e33a9ff2f1b49cf8d38faeffa3c69e85ee8d',
+            18:'963b61d0a9f7057dbcc36cc98421268d522729f4',19:'6ec97e3244e427c882c26ce2ebce7e69d04bc936',
+            20:'cea3711c44eceb79110d71a0372c3082d7d45932'}
+
+          out=Path('/tmp/p10-parts'); out.mkdir(parents=True,exist_ok=True)
+          for i in range(21):
+              data=Path(f'release/v100.part{i:02d}').read_bytes()
+              if i==11 and blob_sha(data)!=expected[i]:
+                  assert len(data)==16000 and data[907:908]==b'u'
+                  data=data[:907]+b'e'+data[908:]
+              if i==17 and blob_sha(data)!=expected[i]:
+                  assert len(data)==16001
+                  data=data[:16000]
+              got=blob_sha(data)
+              assert got==expected[i], f'part {i:02d}: {got} != {expected[i]}'
+              (out/f'part{i:02d}').write_bytes(data)
+              print(f'part {i:02d} OK')
+          PY
+          cat /tmp/p10-parts/part* | base64 -d > /tmp/pflegelern-p10.tar.xz
+          xz -t /tmp/pflegelern-p10.tar.xz
+          mkdir -p /tmp/pflegelern-release
+          tar -xJf /tmp/pflegelern-p10.tar.xz -C /tmp/pflegelern-release
+          test -f /tmp/pflegelern-release/p10_work/index.html
+          test -f /tmp/pflegelern-release/p10_work/data/cards.json
+          test -f /tmp/pflegelern-release/p10_work/manifest.webmanifest
+          test -f /tmp/pflegelern-release/p10_work/service-worker.js
+
+      - name: Publish final source to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git checkout -B p10-release origin/main
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a /tmp/pflegelern-release/p10_work/. .
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Release PflegeLern v1.0.0'
+          git push origin HEAD:main
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
