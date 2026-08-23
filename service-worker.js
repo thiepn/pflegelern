@@ -1,4 +1,4 @@
-const CACHE = 'pflegelern-p10-v1.0.0-rc1';
+const CACHE = 'pflegelern-v1.0.0';
 const ASSETS = [
   './',
   './index.html',
