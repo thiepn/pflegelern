@@ -5,6 +5,9 @@ on:
     paths:
       - 'release/trigger-p10'
       - '.github/workflows/bootstrap-p10.yml'
+  pull_request:
+    paths:
+      - 'README.md'
 
 permissions:
   contents: write
