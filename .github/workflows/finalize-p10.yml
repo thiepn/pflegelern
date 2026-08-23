@@ -1,6 +1,10 @@
 name: Finalize PflegeLern P10
 
 on:
+  push:
+    paths:
+      - 'release/trigger-p10-final'
+      - '.github/workflows/finalize-p10.yml'
   pull_request:
     paths:
       - 'README.md'
