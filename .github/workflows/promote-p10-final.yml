@@ -1,0 +1,69 @@
+name: Promote PflegeLern v1.0.0
+
+on:
+  push:
+    paths:
+      - 'P10_PROMOTE'
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Promote release metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          sed -i "s/const APP_VERSION = '1.0.0-rc.1';/const APP_VERSION = '1.0.0';/" js/app.js
+          sed -i "s/p10-live-release-candidate/released/g" tests/validate.mjs
+          sed -i "s/pflegelern-p10-v1.0.0-rc1/pflegelern-v1.0.0/g" tests/validate.mjs
+          sed -i "s/Locked P10 release-candidate content counts/Locked P10 final content counts/" tests/validate.mjs
+          sed -i "s/service-worker cache version not P9/service-worker cache version not final P10/" tests/validate.mjs
+          sed -i "s/1.0.0-rc.1/1.0.0/g" README.md P10_RELEASE.md
+          sed -i "s/v1.0.0 Release Candidate/v1.0.0 Release/" README.md
+          sed -i "s/P10 live release candidate/P10 final release/" README.md
+          cat > P10_RELEASE.md <<'EOF'
+          # P10 — GitHub Pages Release & Live Validation
+
+          ## Final release
+
+          - Repository: `thiepn/pflegelern`
+          - App name: **PflegeLern**
+          - Version: **`v1.0.0`**
+          - Study bank: 66 chapters · 1,361 sections · 2,089 concepts · 2,094 flashcards · 85 questions · 18 cases
+
+          Static/content/engine release gates are complete. GitHub Pages deployment is configured through `.github/workflows/pages.yml`.
+
+          The original copyrighted textbook PDF is not included in the repository.
+          EOF
+          sed -i 's/^          //' P10_RELEASE.md
+          rm -f P10_PROMOTE
+          rm -f .github/workflows/promote-p10-final.yml
+          rm -f .github/workflows/bootstrap-p10.yml
+          rm -f .github/workflows/finalize-p10.yml
+      - name: Validate final source
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tests/validate.mjs
+          node --check js/app.js
+          node --check js/study-engine.js
+          node --check js/storage.js
+          node --check js/content.js
+          node --check js/fsrs.js
+          node --check js/util.js
+          node --check service-worker.js
+      - name: Commit v1.0.0 promotion
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Promote PflegeLern v1.0.0'
+          git push origin HEAD:main
