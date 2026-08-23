@@ -3,7 +3,7 @@ name: Bootstrap PflegeLern P10
 on:
   push:
     paths:
-      - 'release/payload.part10'
+      - 'release/payload.part20'
 
 permissions:
   contents: write
