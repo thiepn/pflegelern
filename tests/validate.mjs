@@ -59,12 +59,12 @@ for (const q of data.questions) {
 }
 for (const c of data.cases) for (const qid of c.questions || []) assert(questionIds.has(qid), `case ${c.id}: missing question ${qid}`);
 
-// Locked P10 release-candidate content counts.
+// Locked P10 final content counts.
 const repo = new ContentRepository(data);
 const expected = { chapters: 66, sections: 1361, concepts: 2089, cards: 2094, questions: 85, cases: 18 };
 for (const [key, value] of Object.entries(expected)) assert(repo[key].length === value, `expected ${value} ${key}, got ${repo[key].length}`);
 assert(data.manifest.phase === 'P10', `manifest phase is ${data.manifest.phase}`);
-assert(data.manifest.status === 'p10-live-release-candidate', `manifest status is ${data.manifest.status}`);
+assert(data.manifest.status === 'released', `manifest status is ${data.manifest.status}`);
 
 // Textbook hierarchy reconstruction.
 const sectionByNumber = new Map(data.sections.map((x) => [String(x.number), x]));
@@ -164,7 +164,7 @@ assert(appJs.includes('(session.activeMs || 0)'), 'active-time history calculati
 
 // PWA/static assets.
 const sw = text('service-worker.js');
-assert(sw.includes("pflegelern-p10-v1.0.0-rc1"), 'service-worker cache version not P9');
+assert(sw.includes("pflegelern-v1.0.0"), 'service-worker cache version not final P10');
 assert(sw.includes("event.request.mode === 'navigate'"), 'navigation fallback missing in service worker');
 const assetMatches = [...sw.matchAll(/'\.\/([^']+)'/g)].map((m) => m[1]).filter((x) => x && x !== '/');
 for (const asset of assetMatches) assert(fs.existsSync(path.join(root, asset)), `service worker asset missing: ${asset}`);

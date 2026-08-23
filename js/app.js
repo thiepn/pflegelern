@@ -7,7 +7,7 @@ import {
   normalizeText, percent, uid
 } from './util.js';
 
-const APP_VERSION = '1.0.0-rc.1';
+const APP_VERSION = '1.0.0';
 const main = document.getElementById('main');
 const shell = document.getElementById('app-shell');
 const offlineIndicator = document.getElementById('offline-indicator');

@@ -1,8 +1,8 @@
-# PflegeLern — v1.0.0 Release Candidate
+# PflegeLern — v1.0.0 Release
 
 **PflegeLern** is a mobile-first, offline-capable nursing study app built from the source-faithful study bank for the uploaded 2015 edition of *I care – Pflege*.
 
-This repository is the **P10 live release candidate (`1.0.0-rc.1`)**. The application is build-free and intended for GitHub Pages.
+This repository is the **P10 final release (`1.0.0`)**. The application is build-free and intended for GitHub Pages.
 
 ## What is included
 

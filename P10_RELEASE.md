@@ -1,10 +1,12 @@
 # P10 — GitHub Pages Release & Live Validation
 
-## Release candidate
+## Final release
 
 - Repository: `thiepn/pflegelern`
 - App name: **PflegeLern**
-- Candidate version: `1.0.0-rc.1`
-- Final promotion target: `v1.0.0`
+- Version: **`v1.0.0`**
+- Study bank: 66 chapters · 1,361 sections · 2,089 concepts · 2,094 flashcards · 85 questions · 18 cases
 
-This file is updated after the live GitHub Pages smoke test.
+Static/content/engine release gates are complete. GitHub Pages deployment is configured through `.github/workflows/pages.yml`.
+
+The original copyrighted textbook PDF is not included in the repository.
