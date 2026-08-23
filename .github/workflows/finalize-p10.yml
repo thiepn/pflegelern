@@ -83,8 +83,11 @@ jobs:
           set -euo pipefail
           git fetch origin main
           git checkout -B p10-release origin/main
+          cp -a .github /tmp/p10-github
           find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
           cp -a /tmp/pflegelern-release/p10_work/. .
+          rm -rf .github
+          cp -a /tmp/p10-github .github
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
