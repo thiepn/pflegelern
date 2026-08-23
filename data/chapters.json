@@ -1,0 +1,332 @@
+[
+  {
+    "id": "chapter-1",
+    "number": 1,
+    "title": "Professionelle Pflege"
+  },
+  {
+    "id": "chapter-2",
+    "number": 2,
+    "title": "Ausbildung konkret"
+  },
+  {
+    "id": "chapter-3",
+    "number": 3,
+    "title": "Beruf konkret"
+  },
+  {
+    "id": "chapter-4",
+    "number": 4,
+    "title": "Pflegewissenschaft"
+  },
+  {
+    "id": "chapter-5",
+    "number": 5,
+    "title": "Der Mensch"
+  },
+  {
+    "id": "chapter-6",
+    "number": 6,
+    "title": "Grundlagen und Anwendung professioneller Kommunikation"
+  },
+  {
+    "id": "chapter-7",
+    "number": 7,
+    "title": "Mit Menschen zusammenarbeiten – miteinander umgehen"
+  },
+  {
+    "id": "chapter-8",
+    "number": 8,
+    "title": "Selbstfürsorge und Stressmanagement"
+  },
+  {
+    "id": "chapter-9",
+    "number": 9,
+    "title": "Das deutsche Sozial- und Gesundheitssystem"
+  },
+  {
+    "id": "chapter-10",
+    "number": 10,
+    "title": "Pflegeprozess und Pflegeplanung"
+  },
+  {
+    "id": "chapter-11",
+    "number": 11,
+    "title": "Qualitäts- und Fehlermanagement"
+  },
+  {
+    "id": "chapter-12",
+    "number": 12,
+    "title": "Rechtliche Grundlagen der Pflege"
+  },
+  {
+    "id": "chapter-13",
+    "number": 13,
+    "title": "Grundlagen der Patientenbeobachtung"
+  },
+  {
+    "id": "chapter-14",
+    "number": 14,
+    "title": "Notfallsituationen"
+  },
+  {
+    "id": "chapter-15",
+    "number": 15,
+    "title": "Hygiene"
+  },
+  {
+    "id": "chapter-16",
+    "number": 16,
+    "title": "Vitalparameter und Körpertemperatur beobachten und kontrollieren"
+  },
+  {
+    "id": "chapter-17",
+    "number": 17,
+    "title": "Körperpflege und Bekleidung"
+  },
+  {
+    "id": "chapter-18",
+    "number": 18,
+    "title": "Lagern und Mobilisieren, Betten und guten Schlaf fördern"
+  },
+  {
+    "id": "chapter-19",
+    "number": 19,
+    "title": "Essen und Trinken anreichen, Körperlänge und -gewicht bestimmen, Flüssigkeitsbilanz erheben"
+  },
+  {
+    "id": "chapter-20",
+    "number": 20,
+    "title": "Bei den Ausscheidungen unterstützen"
+  },
+  {
+    "id": "chapter-21",
+    "number": 21,
+    "title": "Prophylaxen"
+  },
+  {
+    "id": "chapter-22",
+    "number": 22,
+    "title": "Umgang mit Blasenkathetern"
+  },
+  {
+    "id": "chapter-23",
+    "number": 23,
+    "title": "Injektionen und Blutentnahme"
+  },
+  {
+    "id": "chapter-24",
+    "number": 24,
+    "title": "Gefäßzugänge, Infusionen und Transfusionen"
+  },
+  {
+    "id": "chapter-25",
+    "number": 25,
+    "title": "Pflege von Patienten mit Sonden und Drainagen"
+  },
+  {
+    "id": "chapter-26",
+    "number": 26,
+    "title": "Pflege bei Punktionen und Biopsien"
+  },
+  {
+    "id": "chapter-27",
+    "number": 27,
+    "title": "Darmeinläufe und Stomapflege"
+  },
+  {
+    "id": "chapter-28",
+    "number": 28,
+    "title": "Pflegetechniken zur Unterstützung der Atmung"
+  },
+  {
+    "id": "chapter-29",
+    "number": 29,
+    "title": "Wundmanagement"
+  },
+  {
+    "id": "chapter-30",
+    "number": 30,
+    "title": "Verbandtechniken"
+  },
+  {
+    "id": "chapter-31",
+    "number": 31,
+    "title": "Pflege bei Schwangerschaft, Geburt und Wochenbett"
+  },
+  {
+    "id": "chapter-32",
+    "number": 32,
+    "title": "Das Kind im Krankenhaus"
+  },
+  {
+    "id": "chapter-33",
+    "number": 33,
+    "title": "Grundlagen der Pflege im Alter"
+  },
+  {
+    "id": "chapter-34",
+    "number": 34,
+    "title": "Grundlagen der Pflege von Menschen mit geistiger Behinderung"
+  },
+  {
+    "id": "chapter-35",
+    "number": 35,
+    "title": "Grundlagen der häuslichen Pflege"
+  },
+  {
+    "id": "chapter-36",
+    "number": 36,
+    "title": "Medikamentenmanagement"
+  },
+  {
+    "id": "chapter-37",
+    "number": 37,
+    "title": "Schmerzmanagement"
+  },
+  {
+    "id": "chapter-38",
+    "number": 38,
+    "title": "Ernährungsmanagement"
+  },
+  {
+    "id": "chapter-39",
+    "number": 39,
+    "title": "Pflege bei Antikoagulation und Thrombolyse"
+  },
+  {
+    "id": "chapter-40",
+    "number": 40,
+    "title": "Wickel und Auflagen"
+  },
+  {
+    "id": "chapter-41",
+    "number": 41,
+    "title": "Perioperative Pflege"
+  },
+  {
+    "id": "chapter-42",
+    "number": 42,
+    "title": "Pflege bei Fieber"
+  },
+  {
+    "id": "chapter-43",
+    "number": 43,
+    "title": "Pflege von chronisch kranken und multimorbiden Patienten"
+  },
+  {
+    "id": "chapter-44",
+    "number": 44,
+    "title": "Pflege von Patienten mit malignen Tumoren"
+  },
+  {
+    "id": "chapter-45",
+    "number": 45,
+    "title": "Grundlagen der Intensivpflege"
+  },
+  {
+    "id": "chapter-46",
+    "number": 46,
+    "title": "Pflege des sterbenden Menschen – Palliative Care"
+  },
+  {
+    "id": "chapter-47",
+    "number": 47,
+    "title": "Kultursensible Pflege"
+  },
+  {
+    "id": "chapter-48",
+    "number": 48,
+    "title": "Grundlagen einer Pflegeethik und ethische Grenzsituationen in der Pflege"
+  },
+  {
+    "id": "chapter-49",
+    "number": 49,
+    "title": "Informieren, Schulen, Beraten"
+  },
+  {
+    "id": "chapter-50",
+    "number": 50,
+    "title": "Grundlagen der Kinästhetik"
+  },
+  {
+    "id": "chapter-51",
+    "number": 51,
+    "title": "Grundlagen der Basalen Stimulation"
+  },
+  {
+    "id": "chapter-52",
+    "number": 52,
+    "title": "Grundlagen des Bobath-Konzepts"
+  },
+  {
+    "id": "chapter-53",
+    "number": 53,
+    "title": "Pflege bei Erkrankungen des Herzens"
+  },
+  {
+    "id": "chapter-54",
+    "number": 54,
+    "title": "Pflege bei Erkrankungen des Kreislauf- und Gefäßsystems"
+  },
+  {
+    "id": "chapter-55",
+    "number": 55,
+    "title": "Pflege bei Erkrankungen des Atemsystems"
+  },
+  {
+    "id": "chapter-56",
+    "number": 56,
+    "title": "Pflege bei Erkrankungen des Verdauungssystems"
+  },
+  {
+    "id": "chapter-57",
+    "number": 57,
+    "title": "Pflege bei Erkrankungen der Niere und der Harnwege, Störungen des Wasser-, Elektrolyt- und Säure-Basen-Haushalts"
+  },
+  {
+    "id": "chapter-58",
+    "number": 58,
+    "title": "Pflege bei Erkrankungen des Hormonsystems, Stoffwechselstörungen und ernährungsbedingten Erkrankungen"
+  },
+  {
+    "id": "chapter-59",
+    "number": 59,
+    "title": "Pflege bei Erkrankungen des Blut- und Immunsystems"
+  },
+  {
+    "id": "chapter-60",
+    "number": 60,
+    "title": "Pflege bei Erkrankungen des Bewegungssystems"
+  },
+  {
+    "id": "chapter-61",
+    "number": 61,
+    "title": "Pflege bei Erkrankungen des Nervensystems"
+  },
+  {
+    "id": "chapter-62",
+    "number": 62,
+    "title": "Pflege bei Erkrankungen der Sinnesorgane"
+  },
+  {
+    "id": "chapter-63",
+    "number": 63,
+    "title": "Pflege bei Erkrankungen der Haut"
+  },
+  {
+    "id": "chapter-64",
+    "number": 64,
+    "title": "Pflege bei Erkrankungen der Geschlechtsorgane"
+  },
+  {
+    "id": "chapter-65",
+    "number": 65,
+    "title": "Pflege bei Erkrankungen der Psyche"
+  },
+  {
+    "id": "chapter-66",
+    "number": 66,
+    "title": "Pflege bei organübergreifenden Infektionen"
+  }
+]

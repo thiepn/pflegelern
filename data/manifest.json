@@ -1,0 +1,25 @@
+{
+  "project": "PflegeLern",
+  "phase": "P10",
+  "version": "1.0.0-rc.1",
+  "schemaVersion": 1,
+  "source": {
+    "title": "I care – Pflege",
+    "publisher": "Georg Thieme Verlag",
+    "editionYear": 2015,
+    "basis": "Uploaded textbook only; no external clinical facts merged."
+  },
+  "status": "p10-live-release-candidate",
+  "notes": [
+    "P6 manually calibrated content preserved.",
+    "P7 source signals were re-routed by PDF section position where possible.",
+    "Mass cards were deterministically reconstructed from source evidence and subjected to global mechanical/content-shape QA.",
+    "Items failing P7B gates are excluded from production rather than silently shipped.",
+    "Current-guidance modernization is not part of this source-faithful bank.",
+    "P9 reconstructs textbook section titles from PDF heading typography to repair multi-line truncation.",
+    "False figure-caption sections 28.9 and 59.16 were removed and their concepts re-routed.",
+    "Seven omitted real parent sections were reconstructed.",
+    "The synthetic 36.3–36.4 pilot section was removed; its concepts now live in the real 36.3/36.4 hierarchy.",
+    "P10 branding finalized as PflegeLern for repository /pflegelern and live GitHub Pages release validation."
+  ]
+}

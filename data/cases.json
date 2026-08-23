@@ -1,0 +1,262 @@
+[
+  {
+    "id": "case-pulse-01",
+    "title": "Neue Tachykardie",
+    "scenario": "Ein Patient hat sich weder körperlich angestrengt noch psychisch aufgeregt. Sein Puls liegt plötzlich bei 120/min; frühere Messungen lagen deutlich niedriger. Die Atemfrequenz ist leicht erhöht.",
+    "conceptIds": [
+      "concept-16-1-tachykardie-definition",
+      "concept-16-1-arrhythmie-neu"
+    ],
+    "questionIds": [
+      "q-case-pulse-01"
+    ],
+    "provenance": "source_case_paraphrase",
+    "status": "approved",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "case-tvt-01",
+    "title": "Verdacht auf TVT",
+    "scenario": "Bei der täglichen Pflege fällt eine neue einseitige Schwellung eines Beins auf. Die Patientin berichtet außerdem über Schmerzen.",
+    "conceptIds": [
+      "concept-21-5-tvt-symptome",
+      "concept-21-5-pflege-verdacht"
+    ],
+    "questionIds": [
+      "q-case-tvt-01"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "case-med-asp-01",
+    "title": "Verschlucken bei Medikamentengabe",
+    "scenario": "Ein Patient mit Schluckbeschwerden erhält ein Medikament oral und verschluckt sich trotz angemessener Positionierung.",
+    "conceptIds": [
+      "concept-36-dysphagie-abbruch"
+    ],
+    "questionIds": [
+      "q-case-med-asp-01"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "case-med-confused-01",
+    "title": "Tablette in der Wangentasche",
+    "scenario": "Eine desorientierte Patientin erhält ihre Tabletten. Sie wirkt kooperativ, aber es ist unklar, ob sie sie tatsächlich geschluckt hat.",
+    "conceptIds": [
+      "concept-36-desorientiert-mundkontrolle"
+    ],
+    "questionIds": [
+      "q-case-med-confused-01"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "case-aphasia-01",
+    "title": "Gespräch nach Schlaganfall",
+    "scenario": "Ein Patient nach Schlaganfall hat eine Aphasie und benötigt Unterstützung beim Verstehen und Antworten.",
+    "conceptIds": [
+      "concept-61-4-kommunikation-kurz",
+      "concept-61-4-kommunikation-tempo",
+      "concept-61-4-ja-nein"
+    ],
+    "questionIds": [
+      "q-case-aphasia-01"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "case-dysarthria-01",
+    "title": "Undeutliche Sprache",
+    "scenario": "Nach einer neurologischen Schädigung ist die Aussprache eines Patienten deutlich verwaschen. Inhaltlich verwendet er passende Wörter und versteht die Pflegekraft.",
+    "conceptIds": [
+      "concept-61-4-dysarthrie-definition",
+      "concept-61-4-dysarthrie-merkmal"
+    ],
+    "questionIds": [
+      "q-case-dysarthria-01"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "case-ethics-01",
+    "title": "Positionswechsel trotz Ablehnung",
+    "scenario": "Eine schwer kranke, bettlägerige Patientin erlebt Positionswechsel als schmerzhaft und möchte sie nicht. Gleichzeitig besteht ein hohes Risiko für Lagerungsschäden.",
+    "conceptIds": [
+      "concept-48-4-autonomie",
+      "concept-48-4-fuersorge",
+      "concept-48-4-nichtschaden",
+      "concept-48-4-prinzipienkonflikt"
+    ],
+    "questionIds": [
+      "q-case-ethics-01"
+    ],
+    "provenance": "source_case_paraphrase",
+    "status": "approved",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "case-ethics-02",
+    "title": "Informationen vor der Entscheidung",
+    "scenario": "Ein Team muss eine ethisch schwierige Pflegesituation gemeinsam beurteilen und möchte vor der eigentlichen Abwägung die relevanten Informationen zusammentragen.",
+    "conceptIds": [
+      "concept-48-4-schritt2"
+    ],
+    "questionIds": [
+      "q-case-ethics-02"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "case-p7b-sc-injection",
+    "title": "Hygiene bei subkutaner Injektion",
+    "scenario": "Bei einer subkutanen Injektion wird nicht hygienisch gearbeitet. Welche Komplikation nennt das Lehrbuch als mögliche Folge?",
+    "conceptIds": [
+      "concept-23-461-24-achtung-1"
+    ],
+    "questionIds": [
+      "q-case-p7b-sc-injection"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "case-p7b-postop-bleeding",
+    "title": "Postoperative Nachblutung",
+    "scenario": "Nach einer Operation fällt eine übermäßige Nachblutung auf. Welche Maßnahme nennt das Lehrbuch?",
+    "conceptIds": [
+      "concept-41-751-74-achtung-1"
+    ],
+    "questionIds": [
+      "q-case-p7b-postop-bleeding"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "case-p7b-fever-rise",
+    "title": "Fieberanstieg",
+    "scenario": "Ein Patient befindet sich in der Phase des Fieberanstiegs. Welche Maßnahme ist laut Lehrbuch in dieser Phase kontraindiziert?",
+    "conceptIds": [
+      "concept-42-763-8-achtung-1"
+    ],
+    "questionIds": [
+      "q-case-p7b-fever-rise"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "case-p7b-retina",
+    "title": "Netzhautablösung",
+    "scenario": "Bei einem Patienten wird eine Netzhautablösung festgestellt. Wie ordnet das Lehrbuch diese Situation ein?",
+    "conceptIds": [
+      "concept-62-1289-7-achtung-1"
+    ],
+    "questionIds": [
+      "q-case-p7b-retina"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "case-p7b-pulmonary-edema",
+    "title": "Lungenödem bei Herzinsuffizienz",
+    "scenario": "Ein Patient mit Herzinsuffizienz entwickelt ein Lungenödem. Welche Dringlichkeit nennt das Lehrbuch?",
+    "conceptIds": [
+      "concept-53-900-23-achtung-1"
+    ],
+    "questionIds": [
+      "q-case-p7b-pulmonary-edema"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "case-p7b-skin-test",
+    "title": "Hauttest",
+    "scenario": "Bei einem Patienten wird ein Hauttest durchgeführt. Welche schwerwiegende Komplikation nennt das Lehrbuch?",
+    "conceptIds": [
+      "concept-63-1312-60-achtung-1"
+    ],
+    "questionIds": [
+      "q-case-p7b-skin-test"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "case-p7b-eating-position",
+    "title": "Nahrungsaufnahme im Bett",
+    "scenario": "Ein Patient soll im Bett Nahrung zu sich nehmen. Welche Lage schließt das Lehrbuch dafür ausdrücklich aus?",
+    "conceptIds": [
+      "concept-19-373-4-achtung-1"
+    ],
+    "questionIds": [
+      "q-case-p7b-eating-position"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "case-p7b-pregnancy-food",
+    "title": "Infektionsschutz in der Schwangerschaft",
+    "scenario": "Eine Schwangere wird zum Schutz vor Listeriose und Toxoplasmose beraten. Welche Lebensmittelgruppe soll sie laut Lehrbuch meiden?",
+    "conceptIds": [
+      "concept-31-603-86-achtung-1"
+    ],
+    "questionIds": [
+      "q-case-p7b-pregnancy-food"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "case-p7b-aneurysm",
+    "title": "Aneurysmaruptur",
+    "scenario": "Ein bislang unerkanntes Aneurysma rupturiert. Welche Gefahr hebt das Lehrbuch hervor?",
+    "conceptIds": [
+      "concept-54-930-71-achtung-1"
+    ],
+    "questionIds": [
+      "q-case-p7b-aneurysm"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "case-p7b-infusion-additive",
+    "title": "Medikamentenzusatz zur Infusion",
+    "scenario": "Während eine Infusion läuft, soll ein Medikament zugesetzt werden. Welchen Sicherheitshinweis gibt das Lehrbuch?",
+    "conceptIds": [
+      "concept-24-491-2-achtung-1"
+    ],
+    "questionIds": [
+      "q-case-p7b-infusion-additive"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  }
+]

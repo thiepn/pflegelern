@@ -1,0 +1,14 @@
+{
+  "naturalizedContextPrompts": 536,
+  "specificCardsRepaired": 32,
+  "removedCards": [
+    "card-103-74-wissen-1",
+    "card-453-29-wissen-1"
+  ],
+  "removedConcepts": [
+    "concept-22-453-29-wissen-1",
+    "concept-5-103-74-wissen-1"
+  ],
+  "finalCards": 2094,
+  "finalConcepts": 2089
+}

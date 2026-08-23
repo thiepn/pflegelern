@@ -1,0 +1,2674 @@
+[
+  {
+    "id": "q-16-1-01",
+    "conceptIds": [
+      "concept-16-1-bradykardie-definition"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Pulsfrequenz entspricht laut Lehrbuch einer Bradykardie beim Erwachsenen?",
+    "difficulty": 1,
+    "explanation": "Das Lehrbuch definiert Bradykardie als Herzfrequenz unter 60/min.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "45–59/min"
+      },
+      {
+        "id": "b",
+        "text": "Unter 60/min"
+      },
+      {
+        "id": "c",
+        "text": "Unter 80/min"
+      },
+      {
+        "id": "d",
+        "text": "Über 100/min"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-16-1-02",
+    "conceptIds": [
+      "concept-16-1-tachykardie-definition"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Herzfrequenz bezeichnet das Lehrbuch beim Erwachsenen als Tachykardie?",
+    "difficulty": 1,
+    "explanation": "Beim Erwachsenen spricht das Lehrbuch bei mehr als 100/min von Tachykardie.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Über 80/min"
+      },
+      {
+        "id": "b",
+        "text": "Über 90/min"
+      },
+      {
+        "id": "c",
+        "text": "Über 100/min"
+      },
+      {
+        "id": "d",
+        "text": "Über 130/min"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-16-1-03",
+    "conceptIds": [
+      "concept-16-1-tachykardie-physiologisch"
+    ],
+    "type": "multiple_choice",
+    "prompt": "Welche Faktoren nennt das Lehrbuch als physiologische Gründe für eine erhöhte Herzfrequenz?",
+    "difficulty": 2,
+    "explanation": "Hyperkaliämie wird im Abschnitt als Ursache einer Bradykardie genannt.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Körperliche Anstrengung"
+      },
+      {
+        "id": "b",
+        "text": "Schmerzen"
+      },
+      {
+        "id": "c",
+        "text": "Angst oder Schreck"
+      },
+      {
+        "id": "d",
+        "text": "Hyperkaliämie"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-16-1-04",
+    "conceptIds": [
+      "concept-16-1-tachykardie-alarmzeichen"
+    ],
+    "type": "multiple_choice",
+    "prompt": "Welche Begleitzeichen machen eine plötzlich und ohne erkennbare Ursache auftretende Tachykardie laut Lehrbuch besonders alarmierend?",
+    "difficulty": 2,
+    "explanation": "Das Lehrbuch nennt alle fünf als Alarmzeichen.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Schwindel"
+      },
+      {
+        "id": "b",
+        "text": "Luftnot"
+      },
+      {
+        "id": "c",
+        "text": "Brustschmerzen"
+      },
+      {
+        "id": "d",
+        "text": "Todesangst"
+      },
+      {
+        "id": "e",
+        "text": "Plötzliche Bewusstseinsbeeinträchtigung"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-16-1-05",
+    "conceptIds": [
+      "concept-16-1-arrhythmie-bekannt"
+    ],
+    "type": "single_choice",
+    "prompt": "Ein Patient hat einen unregelmäßigen Puls bei normaler Frequenz, ist beschwerdefrei und eine Herzrhythmusstörung ist bekannt. Was nennt das Lehrbuch als ausreichend?",
+    "difficulty": 2,
+    "explanation": "Bei bekannter Rhythmusstörung, normaler Frequenz und unauffälligem Patienten reicht laut Lehrbuch die Dokumentation.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sofort Reanimation beginnen"
+      },
+      {
+        "id": "b",
+        "text": "Befund dokumentieren"
+      },
+      {
+        "id": "c",
+        "text": "Immer Notarzt alarmieren"
+      },
+      {
+        "id": "d",
+        "text": "Patienten nüchtern lassen"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-21-5-01",
+    "conceptIds": [
+      "concept-21-5-virchow-trias"
+    ],
+    "type": "multiple_choice",
+    "prompt": "Welche drei Faktoren gehören zur Virchow-Trias?",
+    "difficulty": 1,
+    "explanation": "Die Virchow-Trias umfasst Blutfluss, Gefäßwand und Gerinnungsneigung.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verlangsamter Blutfluss"
+      },
+      {
+        "id": "b",
+        "text": "Gefäßwandschäden"
+      },
+      {
+        "id": "c",
+        "text": "Erhöhte Gerinnungsneigung"
+      },
+      {
+        "id": "d",
+        "text": "Erhöhter Blutzucker"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-21-5-02",
+    "conceptIds": [
+      "concept-21-5-thrombose-definition"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt eine Thrombose am besten?",
+    "difficulty": 1,
+    "explanation": "Das Lehrbuch beschreibt die Verengung oder den Verschluss eines Gefäßes durch einen Thrombus.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Gefäßverengung durch einen Thrombus"
+      },
+      {
+        "id": "b",
+        "text": "Entzündung einer Arterie ohne Gerinnsel"
+      },
+      {
+        "id": "c",
+        "text": "Luftansammlung im Pleuraspalt"
+      },
+      {
+        "id": "d",
+        "text": "Blutung in ein Gelenk"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-21-5-03",
+    "conceptIds": [
+      "concept-21-5-tvt-symptome"
+    ],
+    "type": "multiple_choice",
+    "prompt": "Welche Befunde nennt das Lehrbuch als typische Hinweise auf eine tiefe Venenthrombose?",
+    "difficulty": 2,
+    "explanation": "Die genannten Beinbefunde sind typische Hinweise im Lehrbuch.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Einseitige Beinschwellung"
+      },
+      {
+        "id": "b",
+        "text": "Schmerzen"
+      },
+      {
+        "id": "c",
+        "text": "Glänzende rötliche Verfärbung"
+      },
+      {
+        "id": "d",
+        "text": "Beidseitige Pupillenerweiterung"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-21-5-04",
+    "conceptIds": [
+      "concept-21-5-lungenembolie-komplikation"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche potenziell lebensbedrohliche Komplikation einer Venenthrombose wird hervorgehoben?",
+    "difficulty": 1,
+    "explanation": "Ablösendes thrombotisches Material kann in die Lungengefäße eingeschwemmt werden.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Lungenembolie"
+      },
+      {
+        "id": "b",
+        "text": "Pneumothorax"
+      },
+      {
+        "id": "c",
+        "text": "Appendizitis"
+      },
+      {
+        "id": "d",
+        "text": "Hypoglykämie"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-21-5-05",
+    "conceptIds": [
+      "concept-21-5-pflege-verdacht"
+    ],
+    "type": "single_choice",
+    "prompt": "Eine Pflegekraft bemerkt eine neue einseitige Beinschwellung mit Schmerzen. Welche Reaktion entspricht dem Lehrbuch?",
+    "difficulty": 2,
+    "explanation": "Das Lehrbuch betont das Erkennen von Thrombosehinweisen und die ärztliche Information.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Thrombose erwägen und Arzt informieren"
+      },
+      {
+        "id": "b",
+        "text": "Nur am nächsten Tag dokumentieren"
+      },
+      {
+        "id": "c",
+        "text": "Kräftig massieren"
+      },
+      {
+        "id": "d",
+        "text": "Sofort Kompressionsstrumpf ohne Abklärung anziehen"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-21-5-06",
+    "conceptIds": [
+      "concept-21-5-mobilisation"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage zur Mobilisation bei bestätigter TVT entspricht dem Lehrbuch?",
+    "difficulty": 3,
+    "explanation": "Das Lehrbuch grenzt sich ausdrücklich von der älteren Lehre der strikten Bettruhe ab.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Unter Antikoagulation und Kompression ist zwingend strikte Bettruhe nötig."
+      },
+      {
+        "id": "b",
+        "text": "Unter Antikoagulation und Kompression ist keine strikte Bettruhe mehr nötig."
+      },
+      {
+        "id": "c",
+        "text": "Mobilisation ist grundsätzlich verboten."
+      },
+      {
+        "id": "d",
+        "text": "Kompression schließt Mobilisation aus."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-36-01",
+    "conceptIds": [
+      "concept-36-6r"
+    ],
+    "type": "multiple_choice",
+    "prompt": "Welche Punkte gehören zur 6-R-Regel?",
+    "difficulty": 1,
+    "explanation": "Die 6-R-Regel umfasst genau diese sechs Prüfpunkte.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Richtiger Patient"
+      },
+      {
+        "id": "b",
+        "text": "Richtiges Medikament"
+      },
+      {
+        "id": "c",
+        "text": "Richtige Dosierung"
+      },
+      {
+        "id": "d",
+        "text": "Richtige Applikationsform"
+      },
+      {
+        "id": "e",
+        "text": "Richtiger Zeitpunkt"
+      },
+      {
+        "id": "f",
+        "text": "Richtige Dokumentation"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-36-02",
+    "conceptIds": [
+      "concept-36-fluessig-max1h"
+    ],
+    "type": "single_choice",
+    "prompt": "Wie früh dürfen flüssige Arzneimittel laut Lehrbuch höchstens vor der Verabreichung gerichtet werden?",
+    "difficulty": 1,
+    "explanation": "Das Lehrbuch nennt maximal eine Stunde und empfiehlt möglichst direkte Zubereitung.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "15 Minuten"
+      },
+      {
+        "id": "b",
+        "text": "30 Minuten"
+      },
+      {
+        "id": "c",
+        "text": "1 Stunde"
+      },
+      {
+        "id": "d",
+        "text": "24 Stunden"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-36-03",
+    "conceptIds": [
+      "concept-36-retard-nicht-moersern"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage zu Retardmedikamenten entspricht dem Lehrbuch?",
+    "difficulty": 1,
+    "explanation": "Durch Mörsern kann der vorgesehene Freisetzungsmechanismus zerstört werden.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie sollen grundsätzlich gemörsert werden."
+      },
+      {
+        "id": "b",
+        "text": "Sie dürfen nicht gemörsert werden."
+      },
+      {
+        "id": "c",
+        "text": "Sie werden immer mit Milch gegeben."
+      },
+      {
+        "id": "d",
+        "text": "Sie müssen immer geteilt werden."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-36-04",
+    "conceptIds": [
+      "concept-36-desorientiert-mundkontrolle"
+    ],
+    "type": "single_choice",
+    "prompt": "Warum empfiehlt das Lehrbuch nach Tablettengabe bei verwirrten oder desorientierten Patienten eine Mundkontrolle?",
+    "difficulty": 2,
+    "explanation": "Das Lehrbuch beschreibt das Zurückhalten und spätere Ausspucken von Tabletten.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Weil Tabletten in der Wangentasche gesammelt werden können."
+      },
+      {
+        "id": "b",
+        "text": "Zur Messung der Körpertemperatur."
+      },
+      {
+        "id": "c",
+        "text": "Um den Blutdruck zu beurteilen."
+      },
+      {
+        "id": "d",
+        "text": "Weil jedes Medikament die Mundschleimhaut färbt."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-36-05",
+    "conceptIds": [
+      "concept-36-fluessigkeit-100ml",
+      "concept-36-fluessigkeitsrestriktion-vorrang"
+    ],
+    "type": "single_choice",
+    "prompt": "Ein Patient soll Tabletten einnehmen, hat aber eine ärztlich festgelegte Flüssigkeitsrestriktion. Was hat laut Lehrbuch Vorrang?",
+    "difficulty": 2,
+    "explanation": "Die allgemeine Trinkempfehlung gilt nicht über einer bestehenden Flüssigkeitsrestriktion.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Die allgemeine Empfehlung von etwa 100 ml"
+      },
+      {
+        "id": "b",
+        "text": "Die Flüssigkeitsrestriktion"
+      },
+      {
+        "id": "c",
+        "text": "Immer 200 ml Wasser"
+      },
+      {
+        "id": "d",
+        "text": "Die Einnahme mit Milch"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-36-06",
+    "conceptIds": [
+      "concept-36-dysphagie-abbruch"
+    ],
+    "type": "single_choice",
+    "prompt": "Ein Patient verschluckt sich trotz angemessener Lagerung bei der oralen Medikamentengabe. Was fordert das Lehrbuch?",
+    "difficulty": 2,
+    "explanation": "Bei Verschlucken mit Aspirationsgefahr soll die orale Gabe abgebrochen und der Arzt informiert werden.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Gabe fortsetzen"
+      },
+      {
+        "id": "b",
+        "text": "Orale Gabe abbrechen und umgehend Arzt informieren"
+      },
+      {
+        "id": "c",
+        "text": "Patienten hinlegen und weitergeben"
+      },
+      {
+        "id": "d",
+        "text": "Medikament ohne Rückfrage mörsern"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-36-07",
+    "conceptIds": [
+      "concept-36-brausetablette"
+    ],
+    "type": "single_choice",
+    "prompt": "Wie wird eine Brausetablette laut Lehrbuch korrekt vorbereitet?",
+    "difficulty": 1,
+    "explanation": "Das Lehrbuch nennt etwa 200 ml kohlensäurefreies Wasser und vollständiges Auflösen.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Trocken schlucken"
+      },
+      {
+        "id": "b",
+        "text": "In etwa 200 ml kohlensäurefreiem Wasser vollständig auflösen"
+      },
+      {
+        "id": "c",
+        "text": "Mit Milch mischen"
+      },
+      {
+        "id": "d",
+        "text": "Nur kurz anfeuchten"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-36-08",
+    "conceptIds": [
+      "concept-36-dispenser-identifikation"
+    ],
+    "type": "multiple_choice",
+    "prompt": "Welche Angaben gehören laut Lehrbuch auf den Medikamentendispenser?",
+    "difficulty": 2,
+    "explanation": "Die Diagnose wird in dieser Liste nicht genannt.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Vor- und Nachname"
+      },
+      {
+        "id": "b",
+        "text": "Zimmernummer"
+      },
+      {
+        "id": "c",
+        "text": "Geburtsdatum"
+      },
+      {
+        "id": "d",
+        "text": "Diagnose"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-36-09",
+    "conceptIds": [
+      "concept-36-vier-augen"
+    ],
+    "type": "single_choice",
+    "prompt": "Wann fordert das Lehrbuch bei gerichteten Dispensern das Vier-Augen-Prinzip?",
+    "difficulty": 2,
+    "explanation": "Direkt ausgegebene Dispenser sollen von einer zweiten Pflegeperson geprüft werden.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Bei Dispensern, die direkt an den Patienten abgegeben werden"
+      },
+      {
+        "id": "b",
+        "text": "Nur bei leeren Dispensern"
+      },
+      {
+        "id": "c",
+        "text": "Ausschließlich nachts"
+      },
+      {
+        "id": "d",
+        "text": "Nur bei Brausetabletten"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-61-4-01",
+    "conceptIds": [
+      "concept-61-4-aphasie-definition",
+      "concept-61-4-dysarthrie-definition"
+    ],
+    "type": "single_choice",
+    "prompt": "Ein Patient spricht undeutlich und verwaschen, aber Wortwahl und Wortverständnis sind erhalten. Welche Störung passt laut Lehrbuch am besten?",
+    "difficulty": 2,
+    "explanation": "Dieses Muster beschreibt das Lehrbuch für Dysarthrie.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Aphasie"
+      },
+      {
+        "id": "b",
+        "text": "Dysarthrie"
+      },
+      {
+        "id": "c",
+        "text": "Agnosie"
+      },
+      {
+        "id": "d",
+        "text": "Apraxie"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-61-4-02",
+    "conceptIds": [
+      "concept-61-4-aphasie-intelligenz"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage über Aphasie ist laut Lehrbuch richtig?",
+    "difficulty": 1,
+    "explanation": "Das Lehrbuch betont ausdrücklich, dass Aphasiepatienten keine Intelligenzdefizite haben.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie bedeutet automatisch eine Intelligenzminderung."
+      },
+      {
+        "id": "b",
+        "text": "Sie ist eine erworbene Sprachstörung; die Intelligenz ist dadurch nicht vermindert."
+      },
+      {
+        "id": "c",
+        "text": "Sie betrifft nur das Hören."
+      },
+      {
+        "id": "d",
+        "text": "Sie ist ausschließlich eine Schluckstörung."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-61-4-03",
+    "conceptIds": [
+      "concept-61-4-kommunikation-tempo"
+    ],
+    "type": "single_choice",
+    "prompt": "Wie sollte eine Pflegekraft laut Lehrbuch mit einem Patienten mit Aphasie sprechen?",
+    "difficulty": 1,
+    "explanation": "Langsam, deutlich und normal laut ist die empfohlene Sprechweise.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sehr laut und schnell"
+      },
+      {
+        "id": "b",
+        "text": "Langsam, deutlich und in normaler Lautstärke"
+      },
+      {
+        "id": "c",
+        "text": "Nur schriftlich"
+      },
+      {
+        "id": "d",
+        "text": "Ausschließlich über Angehörige"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-61-4-04",
+    "conceptIds": [
+      "concept-61-4-alternativ-kommunizieren"
+    ],
+    "type": "multiple_choice",
+    "prompt": "Welche Hilfsmittel nennt das Lehrbuch, wenn verbale Kommunikation bei Aphasie nicht ausreicht?",
+    "difficulty": 1,
+    "explanation": "Das Lehrbuch nennt alle diese alternativen Kommunikationswege.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Gestik"
+      },
+      {
+        "id": "b",
+        "text": "Mimik"
+      },
+      {
+        "id": "c",
+        "text": "Bilder"
+      },
+      {
+        "id": "d",
+        "text": "Zeichnungen"
+      },
+      {
+        "id": "e",
+        "text": "Buchstabentafeln"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-61-4-05",
+    "conceptIds": [
+      "concept-61-4-nicht-verstaendnis-vortaeuschen"
+    ],
+    "type": "single_choice",
+    "prompt": "Was soll eine Pflegekraft tun, wenn sie einen Patienten mit Aphasie nicht versteht?",
+    "difficulty": 2,
+    "explanation": "Verständnis soll nicht vorgetäuscht werden.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verständnis vortäuschen"
+      },
+      {
+        "id": "b",
+        "text": "Neu ansetzen und gemeinsam einen anderen Kommunikationsweg versuchen"
+      },
+      {
+        "id": "c",
+        "text": "Das Gespräch sofort beenden"
+      },
+      {
+        "id": "d",
+        "text": "Den Patienten korrigieren"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-61-4-06",
+    "conceptIds": [
+      "concept-61-4-ja-nein"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Frageform kann die Kommunikation bei Aphasie erleichtern?",
+    "difficulty": 1,
+    "explanation": "Das Lehrbuch empfiehlt Fragen, die mit Ja oder Nein beantwortet werden können.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Lange offene Fragen"
+      },
+      {
+        "id": "b",
+        "text": "Ja/Nein-Fragen"
+      },
+      {
+        "id": "c",
+        "text": "Doppelte Verneinungen"
+      },
+      {
+        "id": "d",
+        "text": "Mehrteilige Prüfungsfragen"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-48-4-01",
+    "conceptIds": [
+      "concept-48-4-vier-prinzipien"
+    ],
+    "type": "multiple_choice",
+    "prompt": "Welche Prinzipien gehören zur im Lehrbuch dargestellten Prinzipienethik?",
+    "difficulty": 1,
+    "explanation": "Effizienz gehört nicht zu den vier dargestellten Prinzipien.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Autonomie"
+      },
+      {
+        "id": "b",
+        "text": "Fürsorge"
+      },
+      {
+        "id": "c",
+        "text": "Nichtschaden"
+      },
+      {
+        "id": "d",
+        "text": "Gerechtigkeit"
+      },
+      {
+        "id": "e",
+        "text": "Effizienz"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-48-4-02",
+    "conceptIds": [
+      "concept-48-4-autonomie"
+    ],
+    "type": "single_choice",
+    "prompt": "Welches Prinzip steht im Vordergrund, wenn das Recht eines Patienten auf informierte Ablehnung einer Maßnahme berücksichtigt wird?",
+    "difficulty": 2,
+    "explanation": "Informierte Zustimmung oder Ablehnung wird dem Prinzip der Autonomie zugeordnet.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Autonomie"
+      },
+      {
+        "id": "b",
+        "text": "Gerechtigkeit"
+      },
+      {
+        "id": "c",
+        "text": "Fürsorge"
+      },
+      {
+        "id": "d",
+        "text": "Nichtschaden"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-48-4-03",
+    "conceptIds": [
+      "concept-48-4-fuersorge"
+    ],
+    "type": "single_choice",
+    "prompt": "Welches Prinzip fordert, zum Wohl des Patienten zu handeln und ihn vor Schaden zu schützen?",
+    "difficulty": 1,
+    "explanation": "Das beschreibt das Prinzip der Fürsorge.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Autonomie"
+      },
+      {
+        "id": "b",
+        "text": "Fürsorge"
+      },
+      {
+        "id": "c",
+        "text": "Gerechtigkeit"
+      },
+      {
+        "id": "d",
+        "text": "Neutralität"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-48-4-04",
+    "conceptIds": [
+      "concept-48-4-gerechtigkeit"
+    ],
+    "type": "single_choice",
+    "prompt": "Welches Prinzip thematisiert Gleichbehandlung und die gerechte Verteilung von Ressourcen?",
+    "difficulty": 1,
+    "explanation": "Das Lehrbuch ordnet Gleichbehandlung und Ressourcenverteilung der Gerechtigkeit zu.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nichtschaden"
+      },
+      {
+        "id": "b",
+        "text": "Fürsorge"
+      },
+      {
+        "id": "c",
+        "text": "Gerechtigkeit"
+      },
+      {
+        "id": "d",
+        "text": "Autonomie"
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-48-4-05",
+    "conceptIds": [
+      "concept-48-4-sechs-schritte"
+    ],
+    "type": "ordering",
+    "prompt": "Bringe die Schritte der ethischen Entscheidungsfindung in die Reihenfolge des Lehrbuchs.",
+    "difficulty": 3,
+    "explanation": "Das ist die im Lehrbuch zusammengefasste sechsstufige Reihenfolge.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ethisches Problem identifizieren"
+      },
+      {
+        "id": "b",
+        "text": "Informationen sammeln"
+      },
+      {
+        "id": "c",
+        "text": "Mithilfe der Prinzipienethik analysieren"
+      },
+      {
+        "id": "d",
+        "text": "Handlungsmöglichkeiten entwickeln, analysieren, vergleichen und bewerten"
+      },
+      {
+        "id": "e",
+        "text": "Handlung auswählen und begründen"
+      },
+      {
+        "id": "f",
+        "text": "Kritisch reflektieren und überprüfen"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-48-4-06",
+    "conceptIds": [
+      "concept-48-4-schritt2"
+    ],
+    "type": "multiple_choice",
+    "prompt": "Welche Informationen sollen im zweiten Schritt der ethischen Entscheidungsfindung gesammelt werden?",
+    "difficulty": 2,
+    "explanation": "Das Lehrbuch nennt alle diese Informationsbereiche.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Pflegerische Fakten"
+      },
+      {
+        "id": "b",
+        "text": "Medizinische Fakten"
+      },
+      {
+        "id": "c",
+        "text": "Rechtliche Fakten"
+      },
+      {
+        "id": "d",
+        "text": "Soziale und organisatorische Fakten"
+      },
+      {
+        "id": "e",
+        "text": "Werte und Wille des Patienten"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-48-4-07",
+    "conceptIds": [
+      "concept-48-4-prinzipienkonflikt"
+    ],
+    "type": "single_choice",
+    "prompt": "Ein Patient lehnt eine Mobilisation ab, obwohl sie aus pflegerischer Sicht zur Schadensvermeidung sinnvoll wäre. Welcher Konflikt wird im Lehrbuch beispielhaft deutlich?",
+    "difficulty": 3,
+    "explanation": "Das Lehrbuch nutzt genau diesen Konflikt als Beispiel für die Abwägung ethischer Prinzipien.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Autonomie versus Fürsorge"
+      },
+      {
+        "id": "b",
+        "text": "Gerechtigkeit versus Hygiene"
+      },
+      {
+        "id": "c",
+        "text": "Dokumentation versus Autonomie"
+      },
+      {
+        "id": "d",
+        "text": "Kommunikation versus Datenschutz"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-48-4-08",
+    "conceptIds": [
+      "concept-48-4-modell-zweck"
+    ],
+    "type": "single_choice",
+    "prompt": "Wozu dienen ethische Entscheidungsfindungsmodelle laut Lehrbuch?",
+    "difficulty": 2,
+    "explanation": "Sie unterstützen eine systematische gemeinsame Entscheidungsfindung.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Als starre Vorschrift für jede Situation"
+      },
+      {
+        "id": "b",
+        "text": "Als systematische Orientierung und Leitfaden für Fallbesprechungen"
+      },
+      {
+        "id": "c",
+        "text": "Nur zur Abrechnung"
+      },
+      {
+        "id": "d",
+        "text": "Als Ersatz für Kommunikation"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-case-pulse-01",
+    "conceptIds": [
+      "concept-16-1-tachykardie-definition",
+      "concept-16-1-arrhythmie-neu"
+    ],
+    "type": "single_choice",
+    "prompt": "Ein Patient hat in Ruhe plötzlich einen regelmäßigen Puls von 120/min; frühere Werte lagen bei 70–80/min. Was entspricht dem Vorgehen im Lehrbuch?",
+    "difficulty": 3,
+    "explanation": "Das Lehrbuchbeispiel empfiehlt ärztliche Information, Beobachtung und erneute Vitalzeichenkontrolle.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Arzt informieren, Patienten möglichst nicht unbeobachtet lassen und Vitalparameter erneut kontrollieren"
+      },
+      {
+        "id": "b",
+        "text": "Nur dokumentieren und die nächste Schicht abwarten"
+      },
+      {
+        "id": "c",
+        "text": "Sofort den Patienten allein spazieren lassen"
+      },
+      {
+        "id": "d",
+        "text": "Keine weitere Beobachtung, da der Rhythmus regelmäßig ist"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "caseId": "case-pulse-01",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-case-tvt-01",
+    "conceptIds": [
+      "concept-21-5-tvt-symptome",
+      "concept-21-5-pflege-verdacht"
+    ],
+    "type": "single_choice",
+    "prompt": "Bei einer Patientin fällt eine neue einseitige Schwellung des Beins mit Schmerzen auf. Was ist laut Lehrbuch die wichtigste Reaktion?",
+    "difficulty": 2,
+    "explanation": "Das Lehrbuch betont die frühe Erkennung von Thrombosehinweisen und die ärztliche Information.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "An eine Thrombose denken und den Arzt informieren"
+      },
+      {
+        "id": "b",
+        "text": "Das Bein kräftig massieren"
+      },
+      {
+        "id": "c",
+        "text": "Nur Flüssigkeit anbieten"
+      },
+      {
+        "id": "d",
+        "text": "Die Schwellung ignorieren, solange kein Fieber besteht"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "caseId": "case-tvt-01",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-case-med-asp-01",
+    "conceptIds": [
+      "concept-36-dysphagie-abbruch"
+    ],
+    "type": "single_choice",
+    "prompt": "Ein Patient mit Schluckbeschwerden verschluckt sich trotz angemessener Lagerung bei der oralen Medikamentengabe. Was sieht das Lehrbuch vor?",
+    "difficulty": 2,
+    "explanation": "Bei Aspirationsgefahr soll die orale Gabe abgebrochen und ärztlich abgeklärt werden.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Orale Gabe abbrechen und umgehend den Arzt informieren"
+      },
+      {
+        "id": "b",
+        "text": "Die nächste Tablette sofort geben"
+      },
+      {
+        "id": "c",
+        "text": "Die Tablette ungeprüft mörsern"
+      },
+      {
+        "id": "d",
+        "text": "Den Patienten flach hinlegen und die Gabe fortsetzen"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "caseId": "case-med-asp-01",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-case-med-confused-01",
+    "conceptIds": [
+      "concept-36-desorientiert-mundkontrolle"
+    ],
+    "type": "single_choice",
+    "prompt": "Eine desorientierte Patientin wirkt nach der Tablettengabe so, als hätte sie geschluckt. Was sollte laut Lehrbuch zusätzlich kontrolliert werden?",
+    "difficulty": 1,
+    "explanation": "Desorientierte Patienten können Tabletten in der Wangentasche sammeln.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Die Mundhöhle"
+      },
+      {
+        "id": "b",
+        "text": "Nur die Körpergröße"
+      },
+      {
+        "id": "c",
+        "text": "Die Pupillenweite"
+      },
+      {
+        "id": "d",
+        "text": "Die Schuhgröße"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "caseId": "case-med-confused-01",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-case-aphasia-01",
+    "conceptIds": [
+      "concept-61-4-kommunikation-kurz",
+      "concept-61-4-kommunikation-tempo",
+      "concept-61-4-ja-nein"
+    ],
+    "type": "multiple_choice",
+    "prompt": "Welche Kommunikationsweisen passen laut Lehrbuch zu einem Patienten mit Aphasie?",
+    "difficulty": 2,
+    "explanation": "Das Lehrbuch empfiehlt kurze Sätze, ruhiges langsames Sprechen und Ja/Nein-Fragen; ständiges Verbessern soll vermieden werden.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kurze einfache Sätze"
+      },
+      {
+        "id": "b",
+        "text": "Langsam und deutlich sprechen"
+      },
+      {
+        "id": "c",
+        "text": "Ja/Nein-Fragen nutzen"
+      },
+      {
+        "id": "d",
+        "text": "Den Patienten ständig korrigieren"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "caseId": "case-aphasia-01",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-case-dysarthria-01",
+    "conceptIds": [
+      "concept-61-4-dysarthrie-definition",
+      "concept-61-4-dysarthrie-merkmal"
+    ],
+    "type": "single_choice",
+    "prompt": "Ein Patient spricht nach einer neurologischen Schädigung undeutlich und verwaschen, versteht Fragen aber gut und wählt passende Wörter. Welche Störung passt?",
+    "difficulty": 2,
+    "explanation": "Bei Dysarthrie ist die Sprachmotorik gestört, während Wortwahl und Wortverständnis erhalten bleiben.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Dysarthrie"
+      },
+      {
+        "id": "b",
+        "text": "Aphasie"
+      },
+      {
+        "id": "c",
+        "text": "Agnosie"
+      },
+      {
+        "id": "d",
+        "text": "Demenz"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "caseId": "case-dysarthria-01",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-case-ethics-01",
+    "conceptIds": [
+      "concept-48-4-autonomie",
+      "concept-48-4-fuersorge",
+      "concept-48-4-nichtschaden",
+      "concept-48-4-prinzipienkonflikt"
+    ],
+    "type": "multiple_choice",
+    "prompt": "Eine bettlägerige Patientin lehnt schmerzhafte Positionswechsel ab, obwohl dadurch Lagerungsschäden wahrscheinlicher werden. Welche Prinzipien stehen in diesem Konflikt besonders sichtbar gegenüber?",
+    "difficulty": 3,
+    "explanation": "Das Lehrbuch diskutiert diesen Fall als Konflikt zwischen dem Patientenwillen, dem Schutz vor Folgeschäden und dem möglichen Schaden durch schmerzhafte Maßnahmen.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Autonomie"
+      },
+      {
+        "id": "b",
+        "text": "Fürsorge"
+      },
+      {
+        "id": "c",
+        "text": "Nichtschaden"
+      },
+      {
+        "id": "d",
+        "text": "Recht auf maximale Geschwindigkeit"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "caseId": "case-ethics-01",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-case-ethics-02",
+    "conceptIds": [
+      "concept-48-4-schritt2"
+    ],
+    "type": "multiple_choice",
+    "prompt": "Welche Informationen sollten vor einer ethischen Entscheidung über eine belastende Pflegemaßnahme gesammelt werden?",
+    "difficulty": 2,
+    "explanation": "Der zweite Schritt sieht eine breite Informationssammlung einschließlich Patientenwillen vor.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Pflegerische und medizinische Fakten"
+      },
+      {
+        "id": "b",
+        "text": "Rechtliche Aspekte"
+      },
+      {
+        "id": "c",
+        "text": "Soziale und organisatorische Faktoren"
+      },
+      {
+        "id": "d",
+        "text": "Werte und Wille des Patienten"
+      },
+      {
+        "id": "e",
+        "text": "Nur die Meinung einer einzelnen Pflegekraft"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "caseId": "case-ethics-02",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-16-1-06",
+    "conceptIds": [
+      "concept-16-1-bradykardie-definition",
+      "concept-16-1-tachykardie-definition"
+    ],
+    "type": "matching",
+    "prompt": "Ordne die Begriffe den Grenzwerten beim Erwachsenen zu.",
+    "difficulty": 1,
+    "explanation": "Das Lehrbuch verwendet diese beiden Grenzwerte.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Bradykardie ↔ unter 60/min"
+      },
+      {
+        "id": "b",
+        "text": "Tachykardie ↔ über 100/min"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-36-10",
+    "conceptIds": [
+      "concept-36-6r"
+    ],
+    "type": "short_answer",
+    "prompt": "Nenne die sechs Prüfpunkte der 6-R-Regel.",
+    "difficulty": 2,
+    "explanation": "Richtiger Patient, richtiges Medikament, richtige Dosierung, richtige Applikationsform, richtiger Zeitpunkt, richtige Dokumentation.",
+    "status": "approved",
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-61-4-07",
+    "conceptIds": [
+      "concept-61-4-aphasie-definition",
+      "concept-61-4-dysarthrie-merkmal"
+    ],
+    "type": "matching",
+    "prompt": "Ordne die Störung der passenden Kurzbeschreibung zu.",
+    "difficulty": 2,
+    "explanation": "Das ist die zentrale Unterscheidung im Lehrbuch.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Aphasie ↔ erworbene Störung der Sprache"
+      },
+      {
+        "id": "b",
+        "text": "Dysarthrie ↔ Störung der Sprachmotorik bei erhaltener Wortwahl und erhaltenem Wortverständnis"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-48-4-09",
+    "conceptIds": [
+      "concept-48-4-autonomie",
+      "concept-48-4-fuersorge",
+      "concept-48-4-nichtschaden",
+      "concept-48-4-gerechtigkeit"
+    ],
+    "type": "matching",
+    "prompt": "Ordne die vier Prinzipien ihren Kerngedanken zu.",
+    "difficulty": 2,
+    "explanation": "Die Zuordnung folgt der im Lehrbuch dargestellten Prinzipienethik.",
+    "status": "approved",
+    "options": [
+      {
+        "id": "a",
+        "text": "Autonomie ↔ Selbstbestimmung und informierte Wahl"
+      },
+      {
+        "id": "b",
+        "text": "Fürsorge ↔ zum Wohl des Patienten handeln"
+      },
+      {
+        "id": "c",
+        "text": "Nichtschaden ↔ keinen Schaden zufügen"
+      },
+      {
+        "id": "d",
+        "text": "Gerechtigkeit ↔ Gleichbehandlung und gerechte Ressourcenverteilung"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "certification": "p6-pilot-reviewed"
+  },
+  {
+    "id": "q-p7b-chapter-3-definition-01",
+    "conceptIds": [
+      "concept-3-43-70-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Kammer“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Prävention ist die Reduzierung und Vermeidung von Gesundheitsrisiken, um eine drohende Krankheit zu verhindern."
+      },
+      {
+        "id": "b",
+        "text": "Das Berufsverständnis ist für alle Angehörige der Berufsgruppe gültig und verbindlich und soll Orientierung geben."
+      },
+      {
+        "id": "c",
+        "text": "Gesundheitsförderung ist die Stärkung der eigenen Kräfte und Ressourcen, um gesund zu bleiben oder sich besser zu fühlen."
+      },
+      {
+        "id": "d",
+        "text": "Kammern – auch berufsständische Körperschaften genannt – sind sog."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Kammern – auch berufsständische Körperschaften genannt – sind sog.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-4-definition-01",
+    "conceptIds": [
+      "concept-4-55-11-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Wissenschaft“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Das Ziel einer Wissenschaft ist Erkenntnisgewinn."
+      },
+      {
+        "id": "b",
+        "text": "Kurative Pflege umfasst alle pflegerischen Maßnahmen, die auf Heilung ausgerichtet sind."
+      },
+      {
+        "id": "c",
+        "text": "Als Stichprobe bezeichnet man die für eine Studie ausgewählte Gruppe von Teilnehmern (Probanden)."
+      },
+      {
+        "id": "d",
+        "text": "„Evidence-based“ (oder deutsch „Evidenzbasiert“) bedeutet übersetzt „wissenschaftlich begründet“."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Das Ziel einer Wissenschaft ist Erkenntnisgewinn.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-5-definition-01",
+    "conceptIds": [
+      "concept-5-96-69-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Erwachsenenalter“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Medizin ist definiert als die Wissenschaft vom gesunden und kranken Menschen."
+      },
+      {
+        "id": "b",
+        "text": "Das Erwachsenenalter reicht vom 18. Lebensjahr bis zum Tod."
+      },
+      {
+        "id": "c",
+        "text": "Darunter versteht man eine mitwirkende oder teilhabende Entscheidungsfindung."
+      },
+      {
+        "id": "d",
+        "text": "In der Fachsprache spricht man von intrinsischer und extrinsischer Motivation."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Das Erwachsenenalter reicht vom 18. Lebensjahr bis zum Tod.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-7-definition-01",
+    "conceptIds": [
+      "concept-7-139-40-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Kritik“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Reflexion bedeutet bildungssprachlich: Nachdenken; Überlegung, prüfende Betrachtung."
+      },
+      {
+        "id": "b",
+        "text": "Ein Team ist eine leistungsfähige Gruppe mit gemeinsamer Zielsetzung und der Verantwortung für einen geschlossenen Arbeitsprozess."
+      },
+      {
+        "id": "c",
+        "text": "Von einem Konflikt spricht man, wenn entgegengesetzte Interessen, Zielsetzungen oder Wertvorstellungen von Personen oder Gruppen aufeinanderprallen."
+      },
+      {
+        "id": "d",
+        "text": "Kritik ist die Kunst der Beurteilung."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Kritik ist die Kunst der Beurteilung.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-8-definition-01",
+    "conceptIds": [
+      "concept-8-157-90-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Ekel“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ekel ist ein Übelkeit erregendes Gefühl des Widerwillens und des Abscheus."
+      },
+      {
+        "id": "b",
+        "text": "Ressourcen sind individuelle Möglichkeiten/Fähigkeiten, um Stressoren zu bewältigen."
+      },
+      {
+        "id": "c",
+        "text": "Scham bezeichnet ein Gefühl des Bloßgestelltseins oder der Befürchtung, bloßgestellt zu werden."
+      },
+      {
+        "id": "d",
+        "text": "Gewalt ist der Einsatz physischer oder psychischer Mittel, um einer anderen Person gegen ihren Willen."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Ekel ist ein Übelkeit erregendes Gefühl des Widerwillens und des Abscheus.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-9-definition-01",
+    "conceptIds": [
+      "concept-9-176-17-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Sozialversicherungen“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Körperschaften des öffentlichen Rechts sind erstens Organisationen, die i. d."
+      },
+      {
+        "id": "b",
+        "text": "Die Sozialversicherungen sind ein Teil des Sozialsystems."
+      },
+      {
+        "id": "c",
+        "text": "Das Gesundheitssystem in Deutschland ist aufgebaut aus staatlichen und nichtstaatlichen Institutionen."
+      },
+      {
+        "id": "d",
+        "text": "Das Ziel des modernen deutschen Sozialsystems ist es, Menschen in Not zu helfen und Notlagen vorzubeugen."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Die Sozialversicherungen sind ein Teil des Sozialsystems.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-10-definition-01",
+    "conceptIds": [
+      "concept-10-229-40-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Pflegeübergabe“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Eine Klassifikation ist ein Ordnungssystem, das auf dem Prinzip der Klassenbildung beruht."
+      },
+      {
+        "id": "b",
+        "text": "Das Pflegeziel kann man als „IST-Zustand“ auffassen, den der Patient innerhalb einer vorgegebenen Zeit durch die Pflegemaßnahmen erreichen soll."
+      },
+      {
+        "id": "c",
+        "text": "Die Pflegeübergabe oder Dienstübergabe ist i. d."
+      },
+      {
+        "id": "d",
+        "text": "Pflegediagnosen stellen eine systematische klinische Beurteilung der Reaktionen eines Patienten auf aktuelle oder potenzielle Gesundheitsprobleme und/oder Lebensprozesse dar."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Die Pflegeübergabe oder Dienstübergabe ist i. d.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-15-definition-01",
+    "conceptIds": [
+      "concept-15-316-8-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Multiresistente Erreger“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Als Epidemie bezeichnet man ein stark gehäuftes Auftreten einer Krankheit innerhalb einer bestimmten Region oder Bevölkerung."
+      },
+      {
+        "id": "b",
+        "text": "Als Schlussdesinfektion bezeichnet man die Desinfektion des Zimmers und der darin befindlichen Gegenstände nach einer Infektionskrankheit."
+      },
+      {
+        "id": "c",
+        "text": "Die Inkubationszeit für eine bestimmte Infektionserkrankung entspricht der Zeit, die vom Eindringen des Krankheitserregers bis zum Auftreten der ersten Symptome vergeht."
+      },
+      {
+        "id": "d",
+        "text": "Multiresistente Erreger sind gegen mehrere Antibiotika resistent."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Multiresistente Erreger sind gegen mehrere Antibiotika resistent.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-16-definition-01",
+    "conceptIds": [
+      "concept-16-323-76-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Bradykardie“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Liegt die Herzfrequenz unter 60/min, spricht man von einer Bradykardie."
+      },
+      {
+        "id": "b",
+        "text": "Von einer Hypotonie spricht man, wenn der systolische Wert unter 100 mmHg liegt."
+      },
+      {
+        "id": "c",
+        "text": "Schlägt das Herz bei einem Erwachsenen schneller als 100/min, spricht man von einer Tachykardie."
+      },
+      {
+        "id": "d",
+        "text": "Der gemessene Blutdruck ist ein Maß für die Kraft, die das zirkulierende Blut auf die Gefäßwände ausübt."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Liegt die Herzfrequenz unter 60/min, spricht man von einer Bradykardie.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-20-definition-01",
+    "conceptIds": [
+      "concept-20-387-19-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Diarrhö“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Bei einer Diarrhö (Durchfall) wird mehr als 3-mal am Tag dünnflüssiger Stuhl ausgeschieden, meist verbunden mit Krämpfen."
+      },
+      {
+        "id": "b",
+        "text": "Unter Tenesmus ani oder alvi versteht man schmerzhaften Stuhldrang, unter Tenesmus vesicae den schmerzhaften Harndrang (z. B. bei Zystitis)."
+      },
+      {
+        "id": "c",
+        "text": "Unter Stuhlinkontinenz versteht man das Unvermögen, Stuhl z urückzuhalten. Die Stuhlinkontinenz kann verschiedene medizinische und psychische Ursachen haben."
+      },
+      {
+        "id": "d",
+        "text": "Als Erbrechen (Emesis, Vomitus) bezeichnet man das Ausstoßen des Mageninhalts (teils auch Inhalts des Dünndarms) über den Mund, also entgegen der physiologischen Peristaltik."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Bei einer Diarrhö (Durchfall) wird mehr als 3-mal am Tag dünnflüssiger Stuhl ausgeschieden, meist verbunden mit Krämpfen.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-21-definition-01",
+    "conceptIds": [
+      "concept-21-429-50-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Parotitis und Soor“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Innenraum eines Gefäßes ist durch ein Blutgerinnsel (Thrombus) verengt oder vollständig verschlossen."
+      },
+      {
+        "id": "b",
+        "text": "Parotitis ist die Entzündung der Ohrspeicheldrüse (lat."
+      },
+      {
+        "id": "c",
+        "text": "Als Aktivität bezeichnet man das Ausmaß, in dem sich ein Patient oder Bewohner von einem Ort zum anderen bewegt."
+      },
+      {
+        "id": "d",
+        "text": "Ein Sturz ist „ein Ereignis, bei dem eine Person unbeabsichtigt auf dem Boden oder auf einer tieferen Ebene aufkommt“ (DNQP 2013)."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Parotitis ist die Entzündung der Ohrspeicheldrüse (lat.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-24-definition-01",
+    "conceptIds": [
+      "concept-24-480-46-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Zentraler Venendruck“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der zentrale Venendruck (ZVD) ist der Druck in der oberen Hohlvene (V. cava superior), kurz vor dem Herzen."
+      },
+      {
+        "id": "b",
+        "text": "Das Entscheidende bei einer medizinischen Infusion ist, dass sie nach genauer Berechnung und kontrolliert einläuft."
+      },
+      {
+        "id": "c",
+        "text": "Von einem Paravasat spricht man, wenn bei Injektionen oder Infusionen die Injektions- oder Infusionsflüssigkeit nicht in das Gefäß gelangt, sondern in das umliegende Gewebe."
+      },
+      {
+        "id": "d",
+        "text": "„portus“ = Hafen) ist ein subkutan implantiertes Katethersystem mit einem kleinen Metallgehäuse (Kammer), einer Membran und einem Schlauchsystem, das in ein Gefäß (meist zentrale Vene) eingelegt wird."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Der zentrale Venendruck (ZVD) ist der Druck in der oberen Hohlvene (V. cava superior), kurz vor dem Herzen.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-25-definition-01",
+    "conceptIds": [
+      "concept-25-519-19-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Biopsie“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Die perkutane endoskopische Gastrostomie ist ein von außen durch die Bauchdecke mithilfe eines Endoskops gelegter künst licher Zugang zum Magen."
+      },
+      {
+        "id": "b",
+        "text": "Bei einer Biopsie wird Gewebe entnommen, um es histologisch zu untersuchen. Dabei kann es sich um Zellen oder Gewebestücke handeln."
+      },
+      {
+        "id": "c",
+        "text": "Eine Punktion ist das Einstechen einer Kanüle (Hohlnadel) in ein Blutgefäß, ein Organ oder einen vorgebildeten Hohlraum bzw. eine neu gebildete Höhle."
+      },
+      {
+        "id": "d",
+        "text": "Sonden sind flexible oder starre stab-, röhren- oder schlauchförmige Instrumente, die in Körperkanäle und Hohlräume eingeführt werden und diagnostischen oder therapeutischen Zwecken dienen."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Bei einer Biopsie wird Gewebe entnommen, um es histologisch zu untersuchen. Dabei kann es sich um Zellen oder Gewebestücke handeln.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-27-definition-01",
+    "conceptIds": [
+      "concept-27-537-74-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Urostoma“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Als Kolostoma bezeichnet man die Ausleitung des Kolons (Dickdarm) im linken Unterbauch."
+      },
+      {
+        "id": "b",
+        "text": "Als Ileostoma bezeichnet man die Ausleitung aus dem Ileum (Dünndarm) im rechten Unterbauch."
+      },
+      {
+        "id": "c",
+        "text": "Bei einem Darmeinlauf (Klistier, Klysma, griech.: Einlauf) wird Flüssigkeit mittels eines Darmrohrs (Kunststoffschlauch/Irrigatorsystem) über den After in tiefere Darmabschnitte eingebracht."
+      },
+      {
+        "id": "d",
+        "text": "„Urostoma“ bezeichnet einen künstlichen Blasenausgang."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "„Urostoma“ bezeichnet einen künstlichen Blasenausgang.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-30-definition-01",
+    "conceptIds": [
+      "concept-30-591-17-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Gipsverband“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ein Bindenverband ist ein mit elastischen Textilbinden gewickelter Verband."
+      },
+      {
+        "id": "b",
+        "text": "Schlauchmull ist ein nahtloses, nicht fransendes Mullgewebe in Schlauchform."
+      },
+      {
+        "id": "c",
+        "text": "Ein Gipsverband ist ein fester Stützverband."
+      },
+      {
+        "id": "d",
+        "text": "Der Netzschlauchverband wird aus einem speziellen weitmaschigen, extrem dehnbaren, laufmaschengesicherten Netzschlauch angelegt."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Ein Gipsverband ist ein fester Stützverband.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-31-definition-01",
+    "conceptIds": [
+      "concept-31-608-36-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Präeklampsie“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Eine Frühgeburt ist eine Lebendgeburt vor der vollendeten 37."
+      },
+      {
+        "id": "b",
+        "text": "Die Endometritis puerperalis ist eine Entzündung der Plazentahaftstelle und des Endometriums."
+      },
+      {
+        "id": "c",
+        "text": "Eine Mastitis puerperalis ist eine akute Entzündung der weiblichen Brustdrüse bei stillenden Frauen."
+      },
+      {
+        "id": "d",
+        "text": "Präeklampsie ist eine Schwangerschaftshypertonie nach der 20."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Präeklampsie ist eine Schwangerschaftshypertonie nach der 20.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-54-definition-01",
+    "conceptIds": [
+      "concept-54-924-27-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Arterielle Hypotonie“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Von einem Aneurysma wird gesprochen, wenn die Gefäßwand einer Arterie lokal erweitert ist."
+      },
+      {
+        "id": "b",
+        "text": "Bei einer Thrombophlebitis ist eine oberflächliche Vene entzündet und teilweise oder vollständig durch einen Thrombus verlegt."
+      },
+      {
+        "id": "c",
+        "text": "Eine Hypotonie liegt vor, wenn der systolische Blutdruck unter 100 mmHg abfällt."
+      },
+      {
+        "id": "d",
+        "text": "Von einer arteriellen Hypertonie (Bluthochdruck) spricht man, wenn die über einen längeren Zeitraum hinweg, wiederholt gemessenen arteriellen Blutdruckwerte konstant über 140/90 mmHg liegen."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Eine Hypotonie liegt vor, wenn der systolische Blutdruck unter 100 mmHg abfällt.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-55-definition-01",
+    "conceptIds": [
+      "concept-55-968-47-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Tracheitis“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Die Laryngitis ist eine Entzündung des Kehlkopfs."
+      },
+      {
+        "id": "b",
+        "text": "Als Pneumothorax bezeichnet man eine Ansammlung von Luft im Pleuraspalt."
+      },
+      {
+        "id": "c",
+        "text": "Sind die Schleimhäute der unteren Atemwege entzündet, bezeichnet man dies als Bronchitis."
+      },
+      {
+        "id": "d",
+        "text": "Bei der Tracheitis ist die Luftröhre entzündet."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Bei der Tracheitis ist die Luftröhre entzündet.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-56-definition-01",
+    "conceptIds": [
+      "concept-56-985-20-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „PTC“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie wird durchgeführt, wenn eine ERCP nicht möglich ist."
+      },
+      {
+        "id": "b",
+        "text": "Eine Entzündung der Gallenblase wird als Cholezystitis bezeichnet."
+      },
+      {
+        "id": "c",
+        "text": "Bei der Peritonitis handelt es sich um eine Entzündung des Bauchfells."
+      },
+      {
+        "id": "d",
+        "text": "Bei der Hepatitis handelt es sich um eine Entzündung der Leber (Hepar)."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Sie wird durchgeführt, wenn eine ERCP nicht möglich ist.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-57-definition-01",
+    "conceptIds": [
+      "concept-57-1040-68-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Nierenarterienstenose“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Bei einer Azidose liegt er unter 7,37, der Körper ist übersäuert."
+      },
+      {
+        "id": "b",
+        "text": "Bei der Nierenarterienstenose ist die Nierenarterie verengt."
+      },
+      {
+        "id": "c",
+        "text": "Die Dialyse ist ein Blutreinigungsverfahren, das bei Nierenversagen zum Einsatz kommt."
+      },
+      {
+        "id": "d",
+        "text": "Nierentumoren sind benigne (gutartige) oder maligne (bösartige) Neoplasien (Zellneubildungen) der Nieren."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Bei der Nierenarterienstenose ist die Nierenarterie verengt.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-58-definition-01",
+    "conceptIds": [
+      "concept-58-1094-61-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Harnsäure und Purine“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Übergewicht ist die Vorstufe von Adipositas."
+      },
+      {
+        "id": "b",
+        "text": "Ein Gastrinom ist ein gastrinproduzierender Tumor."
+      },
+      {
+        "id": "c",
+        "text": "Harnsäure ist ein Abbauprodukt von Purinen."
+      },
+      {
+        "id": "d",
+        "text": "Die Thyreoditis ist eine Entzündung der Schilddrüse."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Harnsäure ist ein Abbauprodukt von Purinen.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-59-definition-01",
+    "conceptIds": [
+      "concept-59-1139-59-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Immundefekte“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Eine Allergie ist eine erworbene Hypersensitivitätsreaktion (Überempfindlichkeitsreaktion) des Immunsystems auf Umweltstoffe."
+      },
+      {
+        "id": "b",
+        "text": "Eine Anämie liegt vor, wenn das Hämoglobin (Hb) und der Hämatokrit (Hkt) oder die Anzahl der Erythrozyten im Blut vermindert sind."
+      },
+      {
+        "id": "c",
+        "text": "Eine Leukämie („Blutkrebs“) entsteht durch die unkontrollierte Vermehrung einzelner Vorstufen der Leukozyten im Knochenmark. Dabei verdrängen diese Vorläuferzellen (sog."
+      },
+      {
+        "id": "d",
+        "text": "Als Immundefekte bezeichnet man Krankheiten, bei denen die Abwehrfunktion des Körpers geschwächt ist."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Als Immundefekte bezeichnet man Krankheiten, bei denen die Abwehrfunktion des Körpers geschwächt ist.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-60-definition-01",
+    "conceptIds": [
+      "concept-60-1184-54-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Osteomyelitis“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Osteomyelitis ist eine infektiöse Entzündung des Knochenmarks."
+      },
+      {
+        "id": "b",
+        "text": "Prothesen sind ein künstlicher Ersatz für den fehlenden Körperteil."
+      },
+      {
+        "id": "c",
+        "text": "Eine Amputation ist die Abtrennung einer Gliedmaße (oder von Teilen davon) im knöchernen Bereich."
+      },
+      {
+        "id": "d",
+        "text": "Bei der Gonarthrose ist das Kniegelenk vom degenerativen Verschleiß des Gelenkknorpels betroffen."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Osteomyelitis ist eine infektiöse Entzündung des Knochenmarks.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-61-definition-01",
+    "conceptIds": [
+      "concept-61-1228-20-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Dysphagien“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Eine durch Hirnschädigung erworbene Störung der Sprache."
+      },
+      {
+        "id": "b",
+        "text": "Dysphagien sind Schluckstörungen."
+      },
+      {
+        "id": "c",
+        "text": "Subluxation ist die unvollständige Ausrenkung eines Gelenks."
+      },
+      {
+        "id": "d",
+        "text": "Eine neurologisch bedingte erworbene Störung der Sprachmotorik."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Dysphagien sind Schluckstörungen.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-62-definition-01",
+    "conceptIds": [
+      "concept-62-1284-84-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Keratitis“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Die Konjunktivitis ist eine Entzündung der Bindehaut."
+      },
+      {
+        "id": "b",
+        "text": "Das Akustikusneurinom ist ein gutartiger Tumor des 8."
+      },
+      {
+        "id": "c",
+        "text": "Die Keratitis ist eine Entzündung der Hornhaut."
+      },
+      {
+        "id": "d",
+        "text": "Eine Hornhauterosion ist ein Defekt des Hornhautepithels."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Die Keratitis ist eine Entzündung der Hornhaut.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-63-definition-01",
+    "conceptIds": [
+      "concept-63-1322-45-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Parasitosen“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Eine Follikulitis ist eine oberflächliche Infektion des Haarbalgs mit Staphylococcus aureus."
+      },
+      {
+        "id": "b",
+        "text": "Ein Panaritium ist eine schmerzhafte eitrige Entzündung des Nagelwalls durch Staphylococcus aureus."
+      },
+      {
+        "id": "c",
+        "text": "Skabies wird durch Milben verursacht. Diese graben zur Eiablage Gänge durch die Hornschicht der Haut."
+      },
+      {
+        "id": "d",
+        "text": "Parasitosen sind infektiöse Erkrankungen, die durch Parasiten ausgelöst werden."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "explanation": "Parasitosen sind infektiöse Erkrankungen, die durch Parasiten ausgelöst werden.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-64-definition-01",
+    "conceptIds": [
+      "concept-64-1371-39-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Balanitis“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Die Balanitis ist eine Entzündung der Eichel."
+      },
+      {
+        "id": "b",
+        "text": "Die Prostatitis ist eine Entzündung der Prostata."
+      },
+      {
+        "id": "c",
+        "text": "Bei einer Kolpitis ist die Scheide (Vagina) entzündet."
+      },
+      {
+        "id": "d",
+        "text": "Das Mammakarzinom ist ein bösartiger Tumor der Brustdrüse."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanation": "Die Balanitis ist eine Entzündung der Eichel.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-65-definition-01",
+    "conceptIds": [
+      "concept-65-1403-4-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „ADHS“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Die Anorexie (Magersucht) ist ein absichtlich herbeigeführter Gewichtsverlust."
+      },
+      {
+        "id": "b",
+        "text": "Ein Kind mit ADHS ist stets unruhig, abgelenkt und unaufmerksam."
+      },
+      {
+        "id": "c",
+        "text": "Psychotrope Substanzen sind Stoffe, die das Bewusstsein oder die Psyche beeinflussen."
+      },
+      {
+        "id": "d",
+        "text": "Schizophrenie ist eine tiefgreifende psychische Störung, die Denken, Wahrnehmung und Gefühle betrifft."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanation": "Ein Kind mit ADHS ist stets unruhig, abgelenkt und unaufmerksam.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-p7b-chapter-66-definition-01",
+    "conceptIds": [
+      "concept-66-1419-28-definition-1"
+    ],
+    "type": "single_choice",
+    "prompt": "Welche Aussage beschreibt „Legionellose“ nach dem Lehrbuch am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Malaria ist eine in den (Sub-)Tropen erworbene, durch Plasmodien verursachte Infektion, die mit – u."
+      },
+      {
+        "id": "b",
+        "text": "Die Kryptokokkose ist eine durch den Hefepilz Cryptococcus neoformans hervorgerufene Infektion, die bei Immunsupprimierten (v. a."
+      },
+      {
+        "id": "c",
+        "text": "Die Legionellose ist eine Infektion mit Legionellen (v. a."
+      },
+      {
+        "id": "d",
+        "text": "Tetanus (Wundstarrkrampf) ist eine in Deutschland dank der hohen Impfrate seltene, mit Skelettmuskelkrämpfen einhergehende Infektion durch Clostridium tetani."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanation": "Die Legionellose ist eine Infektion mit Legionellen (v. a.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-definition-derived"
+  },
+  {
+    "id": "q-case-p7b-sc-injection",
+    "conceptIds": [
+      "concept-23-461-24-achtung-1"
+    ],
+    "type": "clinical_case",
+    "prompt": "Bei einer subkutanen Injektion wird nicht hygienisch gearbeitet. Welche Komplikation nennt das Lehrbuch als mögliche Folge?",
+    "correctText": "Spritzenabszess",
+    "explanation": "Spritzenabszess.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "q-case-p7b-postop-bleeding",
+    "conceptIds": [
+      "concept-41-751-74-achtung-1"
+    ],
+    "type": "clinical_case",
+    "prompt": "Nach einer Operation fällt eine übermäßige Nachblutung auf. Welche Maßnahme nennt das Lehrbuch?",
+    "correctText": "Behandelnden Arzt informieren",
+    "explanation": "Den behandelnden Arzt informieren, damit rasch reagiert werden kann.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "q-case-p7b-fever-rise",
+    "conceptIds": [
+      "concept-42-763-8-achtung-1"
+    ],
+    "type": "clinical_case",
+    "prompt": "Ein Patient befindet sich in der Phase des Fieberanstiegs. Welche Maßnahme ist laut Lehrbuch in dieser Phase kontraindiziert?",
+    "correctText": "Kühlende Maßnahmen",
+    "explanation": "Kühlende Maßnahmen.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "q-case-p7b-retina",
+    "conceptIds": [
+      "concept-62-1289-7-achtung-1"
+    ],
+    "type": "clinical_case",
+    "prompt": "Bei einem Patienten wird eine Netzhautablösung festgestellt. Wie ordnet das Lehrbuch diese Situation ein?",
+    "correctText": "Notfall",
+    "explanation": "Als Notfall.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "q-case-p7b-pulmonary-edema",
+    "conceptIds": [
+      "concept-53-900-23-achtung-1"
+    ],
+    "type": "clinical_case",
+    "prompt": "Ein Patient mit Herzinsuffizienz entwickelt ein Lungenödem. Welche Dringlichkeit nennt das Lehrbuch?",
+    "correctText": "Sofort intensivmedizinische Betreuung",
+    "explanation": "Akut lebensbedrohlich; sofort intensivmedizinisch betreuen.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "q-case-p7b-skin-test",
+    "conceptIds": [
+      "concept-63-1312-60-achtung-1"
+    ],
+    "type": "clinical_case",
+    "prompt": "Bei einem Patienten wird ein Hauttest durchgeführt. Welche schwerwiegende Komplikation nennt das Lehrbuch?",
+    "correctText": "Anaphylaktischer Schock",
+    "explanation": "Anaphylaktischer Schock.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "q-case-p7b-eating-position",
+    "conceptIds": [
+      "concept-19-373-4-achtung-1"
+    ],
+    "type": "clinical_case",
+    "prompt": "Ein Patient soll im Bett Nahrung zu sich nehmen. Welche Lage schließt das Lehrbuch dafür ausdrücklich aus?",
+    "correctText": "Rückenlage",
+    "explanation": "Rückenlage.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "q-case-p7b-pregnancy-food",
+    "conceptIds": [
+      "concept-31-603-86-achtung-1"
+    ],
+    "type": "clinical_case",
+    "prompt": "Eine Schwangere wird zum Schutz vor Listeriose und Toxoplasmose beraten. Welche Lebensmittelgruppe soll sie laut Lehrbuch meiden?",
+    "correctText": "Rohe tierische Lebensmittel",
+    "explanation": "Rohe tierische Lebensmittel.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "q-case-p7b-aneurysm",
+    "conceptIds": [
+      "concept-54-930-71-achtung-1"
+    ],
+    "type": "clinical_case",
+    "prompt": "Ein bislang unerkanntes Aneurysma rupturiert. Welche Gefahr hebt das Lehrbuch hervor?",
+    "correctText": "Verblutung",
+    "explanation": "Lebensbedrohliche bzw. tödliche Verblutung.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "q-case-p7b-infusion-additive",
+    "conceptIds": [
+      "concept-24-491-2-achtung-1"
+    ],
+    "type": "clinical_case",
+    "prompt": "Während eine Infusion läuft, soll ein Medikament zugesetzt werden. Welchen Sicherheitshinweis gibt das Lehrbuch?",
+    "correctText": "Vorsicht beim Medikamentenzusatz",
+    "explanation": "Beim Zusatz von Medikamenten in laufende Infusionslösungen besonders vorsichtig vorgehen.",
+    "difficulty": 2,
+    "status": "approved",
+    "certification": "p7b-manually-curated-from-certified-concept"
+  }
+]

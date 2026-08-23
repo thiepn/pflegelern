@@ -1,0 +1,31 @@
+{
+  "chapters": 66,
+  "sections": 1361,
+  "concepts": 2089,
+  "cards": 2094,
+  "questions": 85,
+  "cases": 18,
+  "recommendedPreview": {
+    "total": 14,
+    "reviews": 0,
+    "newCards": 11,
+    "questions": 3,
+    "minutes": 7
+  },
+  "freshCardImportance": [
+    "core",
+    "core",
+    "core",
+    "core",
+    "core",
+    "core",
+    "core",
+    "core",
+    "core",
+    "core",
+    "core"
+  ],
+  "nearbyConceptCollisions": 0,
+  "indexedDbVersion": 2,
+  "errors": 0
+}
