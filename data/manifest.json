@@ -1,7 +1,7 @@
 {
   "project": "PflegeLern",
   "phase": "P10",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0",
   "schemaVersion": 1,
   "source": {
     "title": "I care – Pflege",
@@ -9,7 +9,7 @@
     "editionYear": 2015,
     "basis": "Uploaded textbook only; no external clinical facts merged."
   },
-  "status": "p10-live-release-candidate",
+  "status": "released",
   "notes": [
     "P6 manually calibrated content preserved.",
     "P7 source signals were re-routed by PDF section position where possible.",
@@ -20,6 +20,6 @@
     "False figure-caption sections 28.9 and 59.16 were removed and their concepts re-routed.",
     "Seven omitted real parent sections were reconstructed.",
     "The synthetic 36.3–36.4 pilot section was removed; its concepts now live in the real 36.3/36.4 hierarchy.",
-    "P10 branding finalized as PflegeLern for repository /pflegelern and live GitHub Pages release validation."
+    "P10 branding finalized as PflegeLern for repository /pflegelern and GitHub Pages release."
   ]
 }
