@@ -1,0 +1,38 @@
+name: Validate PflegeLern P16
+
+on:
+  push:
+    branches: [p16-exam-horizon-planning]
+    paths:
+      - 'index.html'
+      - 'service-worker.js'
+      - 'data/manifest.json'
+      - 'js/p16-**'
+      - 'css/p16-**'
+      - 'tests/p16-**'
+      - '.github/workflows/validate-p16.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: |
+          node --check js/p16-exam-plan-core.js
+          node --check js/p16-exam-plan.js
+          node --check js/p16-bootstrap.js
+          node --check service-worker.js
+      - name: Learning-system tests
+        run: |
+          node tests/p14-calibration.test.mjs
+          node tests/p15-free-recall.test.mjs
+          node tests/p16-exam-plan.test.mjs
+          node tests/p16-integration.test.mjs
