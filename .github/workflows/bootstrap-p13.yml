@@ -1,0 +1,93 @@
+name: Build PflegeLern P13
+
+on:
+  push:
+    branches: [p13-clinical-case-expansion]
+    paths:
+      - 'tools/p13_bootstrap/**'
+      - '.github/workflows/bootstrap-p13.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pflegelern-p13-build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install generator dependencies
+        run: python -m pip install --disable-pip-version-check numpy scikit-learn
+
+      - name: Reconstruct generators
+        shell: bash
+        run: |
+          set -euo pipefail
+          gzip -dc tools/p13_bootstrap/generate_p12_questions.py.gz > /tmp/generate_p12_questions.py
+          gzip -dc tools/p13_bootstrap/generate_p13_cases.py.gz > /tmp/generate_p13_cases.py
+          python -m py_compile /tmp/generate_p12_questions.py /tmp/generate_p13_cases.py
+
+      - name: Generate P12 question bank
+        shell: bash
+        run: |
+          set -euo pipefail
+          PFLEGELERN_ROOT="$GITHUB_WORKSPACE" python /tmp/generate_p12_questions.py
+
+      - name: Generate P13 clinical case bank
+        shell: bash
+        run: |
+          set -euo pipefail
+          PFLEGELERN_ROOT="$GITHUB_WORKSPACE" python /tmp/generate_p13_cases.py
+
+      - name: Assert release gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('.')
+          p12 = json.loads((root/'P12_QUESTION_EXPANSION_REPORT.json').read_text())
+          p13 = json.loads((root/'P13_CASE_EXPANSION_REPORT.json').read_text())
+          qs = json.loads((root/'data/questions.json').read_text())
+          cases = json.loads((root/'data/cases.json').read_text())
+          manifest = json.loads((root/'data/manifest.json').read_text())
+          assert p12['status'] == 'PASS', p12
+          assert p13['status'] == 'PASS', p13
+          assert len(qs) == 954, len(qs)
+          assert len(cases) == 120, len(cases)
+          assert p13['expansion']['newCases'] == 102
+          assert p13['expansion']['newClinicalCaseQuestions'] == 204
+          assert p13['coverage']['chaptersRepresentedByNewCases'] >= 50
+          assert p13['coverage']['uniqueSafetyConceptsInNewCases'] >= 55
+          assert p13['coverage']['newCasesWithAppliedOrSafetyDemand'] >= 45
+          assert manifest['phase'] == 'P13'
+          assert manifest['version'] == '1.1.0-dev.13'
+          assert manifest['status'] == 'p13-case-expansion-certified'
+          print('P13 release gates PASS')
+          PY
+
+      - name: Commit generated development content
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/cards.json data/questions.json data/cases.json data/manifest.json P12_QUESTION_EXPANSION_REPORT.json P13_CASE_EXPANSION_REPORT.json
+          if git diff --cached --quiet; then
+            echo 'Generated P13 content already matches branch.'
+            exit 0
+          fi
+          git commit -m 'Build PflegeLern P13 case expansion'
+          git push origin HEAD:p13-clinical-case-expansion
