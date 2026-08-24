@@ -63,6 +63,11 @@ export function onFailure(raw, now = new Date()) {
   next.status = 'active';
   next.failureCount += 1;
   next.lastFailureAt = at;
+  // A new failure invalidates the previous repair proof. Historical counters remain
+  // elsewhere, but P19 requires fresh independent evidence after the latest miss.
+  next.independentEvidence = 0;
+  next.successDays = [];
+  next.lastIndependentSuccessAt = null;
   next.followupStage = 0;
   next.nextFollowupAt = nextFollowupAt(now, 0);
   next.resolvedAt = null;
