@@ -172,8 +172,8 @@ export function computeMasteryModel({
   if (spaced >= 0.68 && bestRetrieval >= 0.50) level = 'spaced_stability';
 
   const candidates = [exposure ? 0.12 : 0];
-  if (strength.cued > 0) candidates.push(0.18 + 0.40 * strength.cued);
-  if (strength.productive > 0) candidates.push(0.28 + 0.40 * strength.productive);
+  if (strength.cued > 0) candidates.push(0.20 + 0.44 * strength.cued);
+  if (strength.productive > 0) candidates.push(0.28 + 0.42 * strength.productive);
   if (independent > 0) candidates.push(0.36 + 0.44 * independent);
   if (strength.application > 0) candidates.push(0.42 + 0.46 * strength.application);
   let score = Math.max(...candidates) + (bestRetrieval > 0 ? spaced * 0.12 : 0);
