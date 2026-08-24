@@ -1,0 +1,74 @@
+.p15-free-recall {
+  margin: 20px 0 2px;
+  padding: 14px 16px;
+  border: 1px solid var(--border, currentColor);
+  border-radius: var(--radius-lg, 10px);
+  background: var(--surface-soft, transparent);
+}
+
+.p15-free-recall-label,
+.p15-recall-comparison h3 {
+  display: block;
+  margin: 0 0 8px;
+  font-size: .86rem;
+  font-weight: 650;
+  line-height: 1.3;
+  color: var(--text, inherit);
+}
+
+.p15-free-recall-input {
+  width: 100%;
+  min-height: 72px;
+  resize: vertical;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid var(--border-strong, currentColor);
+  border-radius: var(--radius-md, 8px);
+  background: var(--surface, transparent);
+  color: var(--text, inherit);
+  font: inherit;
+  line-height: 1.45;
+}
+
+.p15-free-recall-input:focus {
+  outline: 2px solid var(--focus, currentColor);
+  outline-offset: 1px;
+  border-color: var(--accent, currentColor);
+}
+
+.p15-free-recall-hint {
+  margin: 8px 0 0;
+  font-size: .74rem;
+  line-height: 1.4;
+  color: var(--text-muted, inherit);
+}
+
+.p15-recall-comparison {
+  margin: 18px 0 4px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent, currentColor);
+  background: var(--accent-soft, transparent);
+  border-radius: 0 var(--radius-md, 8px) var(--radius-md, 8px) 0;
+}
+
+.p15-recall-comparison h3 {
+  margin-bottom: 6px;
+}
+
+.p15-recall-comparison p {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--text-secondary, inherit);
+}
+
+@media (max-width: 430px) {
+  .p15-free-recall {
+    margin-top: 16px;
+    padding: 12px 14px;
+  }
+
+  .p15-free-recall-input {
+    min-height: 64px;
+  }
+}
