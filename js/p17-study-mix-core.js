@@ -152,14 +152,18 @@ export function interleaveAdaptive(items, {
     const recent = new Set(result.slice(-collisionWindow).flatMap((item) => itemConceptIds(item, cardConceptById, questionConceptsById)));
     let consecutiveQuestions = 0;
     for (let i = result.length - 1; i >= 0 && result[i]?.kind === 'question'; i -= 1) consecutiveQuestions += 1;
+    const questionsLeft = pending.filter((item) => item.kind === 'question').length;
+    const cardsLeft = pending.length - questionsLeft;
+    const mustTakeCard = consecutiveQuestions >= maxConsecutiveQuestions && cardsLeft > 0;
+    const mustTakeQuestion = !mustTakeCard && questionsLeft > maxConsecutiveQuestions * Math.max(1, cardsLeft);
+
+    const kindAllowed = (item) => mustTakeCard ? item.kind === 'card' : mustTakeQuestion ? item.kind === 'question' : true;
     let index = pending.findIndex((item) => {
-      const collision = itemConceptIds(item, cardConceptById, questionConceptsById).some((id) => recent.has(id));
-      const questionRun = item.kind === 'question' && consecutiveQuestions >= maxConsecutiveQuestions;
-      return !collision && !questionRun;
+      if (!kindAllowed(item)) return false;
+      return itemConceptIds(item, cardConceptById, questionConceptsById).every((id) => !recent.has(id));
     });
-    if (index < 0) {
-      index = pending.findIndex((item) => !(item.kind === 'question' && consecutiveQuestions >= maxConsecutiveQuestions));
-    }
+    if (index < 0) index = pending.findIndex(kindAllowed);
+    if (index < 0) index = pending.findIndex((item) => !(item.kind === 'question' && consecutiveQuestions >= maxConsecutiveQuestions && cardsLeft > 0));
     if (index < 0) index = 0;
     result.push(pending.splice(index, 1)[0]);
   }
