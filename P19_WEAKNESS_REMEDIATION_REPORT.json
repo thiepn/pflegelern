@@ -1,0 +1,104 @@
+{
+  "phase": "P19",
+  "status": "PASS",
+  "branch": "p19-weakness-remediation-engine",
+  "version": "1.1.0-dev.19",
+  "baseline": "P18 Mastery Model v2",
+  "goal": "Turn mistakes into bounded concept-level repair sequences with delayed transfer and spaced follow-up, without simply repeating the failed item or altering FSRS due dates.",
+  "remediationFlow": {
+    "onFailure": [
+      "record the failed content and affected concepts",
+      "invalidate prior P19 repair proof for that active weakness",
+      "schedule the first spaced follow-up for the next day"
+    ],
+    "immediateRepair": [
+      "support flashcard when a non-duplicate concept card is available",
+      "different objective transfer question when available",
+      "different application or short-answer question when available"
+    ],
+    "immediateOffsets": [3, 7, 11],
+    "sameFailureRepairCooldownHours": 6,
+    "maxImmediateInsertionsPerFailure": 3,
+    "exactFailedQuestionUsedAsTransfer": false,
+    "alreadyPresentSessionItemsDuplicated": false
+  },
+  "spacedFollowup": {
+    "firstFollowupDelayDays": 1,
+    "afterFirstIndependentSuccessDelayDays": 3,
+    "laterFollowupDelayDays": 7,
+    "maxFollowupsInjectedPerRecommendedSession": 2,
+    "sameDayRequeueSuppressed": true,
+    "prescribedSessionTargetIncreased": false,
+    "dueFsrsCardsProtectedFromReplacement": true,
+    "legacyUnresolvedMistakesMigrated": true
+  },
+  "resolutionContract": {
+    "sameAnchorSuccessWeight": 0.1,
+    "differentCardSuccessWeight": 0.45,
+    "objectivePracticeSuccessWeight": 1.0,
+    "applicationSuccessWeight": 1.2,
+    "examSuccessWeight": 1.25,
+    "minimumIndependentEvidence": 1.5,
+    "minimumDistinctSuccessDays": 2,
+    "newFailureResetsRepairProof": true,
+    "sameSessionRepetitionCanResolveWeakness": false,
+    "exactFailedItemAloneCanResolveWeakness": false
+  },
+  "examRemediation": {
+    "legacyCardsOnlyExamReviewReplaced": true,
+    "supportCardsIncluded": true,
+    "differentObjectiveTransferQuestionsIncludedWhenAvailable": true,
+    "applicationQuestionsIncludedWhenAvailable": true,
+    "exactFailedExamQuestionRepeated": false,
+    "maxReviewItems": 30,
+    "title": "Fehler gezielt lernen"
+  },
+  "integration": {
+    "p14CalibrationPreserved": true,
+    "p15SelectiveFreeRecallPreserved": true,
+    "p16ExamPlanningPreserved": true,
+    "p17AdaptiveStudyMixPreserved": true,
+    "p18MasteryModelPreserved": true,
+    "p18EvidenceReceivesNormalResultsBeforeP19RepairAccounting": true,
+    "primaryNavigationChanged": false,
+    "newLearnerSetting": false,
+    "gamificationAdded": false,
+    "contentBankMutated": false,
+    "fsrsSchedulingChanged": false,
+    "questionHistoryRewrittenByP19": false
+  },
+  "persistence": {
+    "store": "mistakes",
+    "field": "p19",
+    "indexedDbSchemaMigrationRequired": false,
+    "existingBackupAutomaticallyIncludesRemediationState": true,
+    "legacyProgressDiscarded": false
+  },
+  "content": {
+    "concepts": 2089,
+    "cards": 2094,
+    "questions": 954,
+    "cases": 120,
+    "newClinicalFactsGenerated": false
+  },
+  "offline": {
+    "cache": "pflegelern-p19-v1.1.0-dev19",
+    "p19CorePrecached": true,
+    "p19MigrationPrecached": true,
+    "p19RuntimePrecached": true
+  },
+  "validation": {
+    "syntaxChecks": "PASS",
+    "policyTests": 27,
+    "runtimeHarnessTests": 18,
+    "repositoryIntegrationAssertions": 36,
+    "totalAutomatedAssertions": 81,
+    "errors": 0,
+    "githubActionsWorkflow": ".github/workflows/validate-p19.yml",
+    "githubActionsRunId": 32788172051,
+    "githubActionsHeadSha": "42f6366ff162ffc3ce460b486a26503dd00d9153",
+    "githubActionsConclusion": "success",
+    "repositoryFilesVerifiedAfterWrite": true,
+    "browserE2E": "Not run in this phase"
+  }
+}
