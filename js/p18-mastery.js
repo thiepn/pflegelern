@@ -145,10 +145,22 @@ function currentCardId(root = document) {
 
 function bridgeCardIdentity(root = document) {
   const flashcard = root.querySelector?.('.flashcard');
-  if (!flashcard || flashcard.dataset.cardId) return false;
-  const cardId = root.querySelector?.('.study-topbar [data-card-id]')?.dataset.cardId || '';
+  if (!flashcard) return false;
+  const existing = flashcard.querySelector?.('[data-p18-card-identity]');
+  if (existing) {
+    flashcard.dataset.cardId ||= existing.dataset.cardId || '';
+    return false;
+  }
+  const cardId = flashcard.dataset.cardId || root.querySelector?.('.study-topbar [data-card-id]')?.dataset.cardId || '';
   if (!cardId) return false;
   flashcard.dataset.cardId = cardId;
+  // P15's established cardId resolver looks for a descendant [data-card-id].
+  // Keep that contract intact instead of coupling P15 to this phase.
+  const marker = document.createElement('span');
+  marker.hidden = true;
+  marker.dataset.cardId = cardId;
+  marker.dataset.p18CardIdentity = 'true';
+  flashcard.prepend(marker);
   return true;
 }
 
