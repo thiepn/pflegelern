@@ -1,0 +1,38 @@
+name: Validate PflegeLern P17
+
+on:
+  push:
+    branches: [p17-adaptive-study-mix-v2]
+    paths:
+      - 'js/p17-**'
+      - 'tests/p17-**'
+      - 'index.html'
+      - 'service-worker.js'
+      - 'data/manifest.json'
+      - '.github/workflows/validate-p17.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: |
+          node --check js/p17-study-mix-core.js
+          node --check js/p17-study-mix.js
+          node --check js/p17-bootstrap.js
+          node --check tests/p17-study-mix.test.mjs
+          node --check tests/p17-integration.test.mjs
+      - name: P17 policy tests
+        run: node tests/p17-study-mix.test.mjs
+      - name: P17 integration checks
+        run: node tests/p17-integration.test.mjs
