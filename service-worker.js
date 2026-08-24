@@ -1,4 +1,4 @@
-const CACHE = 'pflegelern-v1.0.0';
+const CACHE = 'pflegelern-p14-v1.1.0-dev14';
 const ASSETS = [
   './',
   './index.html',
@@ -12,12 +12,14 @@ const ASSETS = [
   './css/components.css',
   './css/study.css',
   './css/responsive.css',
+  './css/p14-calibration.css',
   './js/util.js',
   './js/storage.js',
   './js/content.js',
   './js/fsrs.js',
   './js/study-engine.js',
   './js/app.js',
+  './js/p14-calibration.js',
   './data/manifest.json',
   './data/chapters.json',
   './data/sections.json',
