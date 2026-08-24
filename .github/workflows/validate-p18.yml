@@ -1,0 +1,41 @@
+name: Validate PflegeLern P18
+
+on:
+  push:
+    branches: [p18-mastery-model-v2]
+    paths:
+      - 'js/p18-**'
+      - 'tests/p18-**'
+      - 'index.html'
+      - 'service-worker.js'
+      - 'data/manifest.json'
+      - '.github/workflows/validate-p18.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: |
+          node --check js/p18-mastery-core.js
+          node --check js/p18-mastery.js
+          node --check js/p18-bootstrap.js
+          node --check tests/p18-mastery.test.mjs
+          node --check tests/p18-runtime.test.mjs
+          node --check tests/p18-integration.test.mjs
+      - name: P18 mastery policy tests
+        run: node tests/p18-mastery.test.mjs
+      - name: P18 runtime harness
+        run: node tests/p18-runtime.test.mjs
+      - name: P18 repository integration checks
+        run: node tests/p18-integration.test.mjs
