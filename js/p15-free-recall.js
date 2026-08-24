@@ -1,12 +1,19 @@
+import { ContentRepository } from './content.js';
+import { StudyEngine } from './study-engine.js';
+
 const MAX_PROMPT_LENGTH = 220;
 const MAX_DRAFT_LENGTH = 320;
 const DRAFT_PREFIX = 'pflegelern:p15:recall:';
+const WEAK_THRESHOLD = 0.4;
 
-const EXCLUDED_PROMPTS = /\b(warum|erklär(?:e|en)|erläuter(?:e|n)|beschreib(?:e|en)|begründe|begründen|diskutier(?:e|en)|beurteil(?:e|en)|vergleich(?:e|en)|wie funktioniert|wie wirkt|wie verändert|wie entwickelt|was soll(?:en)? .* tun)\b/i;
-const DEFINITION_PROMPTS = /^(?:was (?:ist|sind|bedeutet|bezeichnet)|wie (?:heißt|heissen|heißt es|lautet)|wodurch ist .* definiert)\b/i;
+const LONG_FORM_PROMPTS = /\b(ausführlich|detailliert|diskutier(?:e|en)|beurteil(?:e|en)|nimm stellung|nehmen sie stellung|vergleich(?:e|en).*(?:begründ|erläuter))\b/i;
+const DEFINITION_PROMPTS = /^(?:was (?:ist|sind|bedeutet|bezeichnet)|wie (?:heißt|heissen|lautet)|wodurch ist .* definiert)\b/i;
 const THRESHOLD_PROMPTS = /^(?:ab welche(?:r|m|n)?|bei welche(?:r|m|n)?|welchen .*bereich|wie viele|wie hoch|wie niedrig)\b/i;
-const LOCATION_PROMPTS = /^(?:wo|woraus|wodurch|wofür)\b/i;
+const LOCATION_PROMPTS = /^(?:wo|woraus|wofür)\b/i;
 const ENUMERATION_PROMPTS = /^(?:welche(?:r|s|n|m)?|welchen|nenn(?:e|en))\b/i;
+const EXPLANATION_PROMPTS = /^(?:warum|weshalb|wieso|wodurch|wie (?:wirkt|funktioniert|verändert|entsteht))\b/i;
+
+let runtimeContextPromise = null;
 
 export function normalizeRecallPrompt(value) {
   return String(value || '').replace(/\s+/g, ' ').trim();
@@ -14,12 +21,61 @@ export function normalizeRecallPrompt(value) {
 
 export function classifyRecallPrompt(questionText) {
   const prompt = normalizeRecallPrompt(questionText);
-  if (!prompt || prompt.length > MAX_PROMPT_LENGTH || EXCLUDED_PROMPTS.test(prompt)) return null;
+  if (!prompt || prompt.length > MAX_PROMPT_LENGTH || LONG_FORM_PROMPTS.test(prompt)) return null;
   if (DEFINITION_PROMPTS.test(prompt)) return 'definition';
   if (THRESHOLD_PROMPTS.test(prompt)) return 'threshold';
   if (LOCATION_PROMPTS.test(prompt)) return 'location';
   if (ENUMERATION_PROMPTS.test(prompt)) return 'enumeration';
+  if (EXPLANATION_PROMPTS.test(prompt)) return 'explanation';
   return null;
+}
+
+export function hasOverconfidenceEvidence(conceptState = {}) {
+  const selfRatedSuccess = Number(conceptState.flashCorrect || 0);
+  const independentFailures = Number(conceptState.practiceWrong || 0) + Number(conceptState.examWrong || 0);
+  return selfRatedSuccess >= 2 && independentFailures > 0;
+}
+
+export function selectFreeRecallEligibility({
+  questionText = '',
+  card = null,
+  concept = null,
+  weaknessScore = 0,
+  conceptState = {}
+} = {}) {
+  const prompt = normalizeRecallPrompt(questionText);
+  const kind = classifyRecallPrompt(prompt);
+  if (!prompt || prompt.length > MAX_PROMPT_LENGTH || LONG_FORM_PROMPTS.test(prompt)) {
+    return { eligible: false, kind: null, reasons: [] };
+  }
+
+  const reasons = [];
+  const weak = Number(weaknessScore || 0) >= WEAK_THRESHOLD;
+  const overconfidence = hasOverconfidenceEvidence(conceptState);
+  const core = concept?.importance === 'core';
+  const definition = concept?.type === 'definition' || kind === 'definition';
+  const structured = ['sequence', 'procedure'].includes(concept?.type) || card?.type === 'enumeration' || kind === 'enumeration';
+  const exactFact = kind === 'threshold';
+  const explanation = kind === 'explanation';
+
+  if (core) reasons.push('core');
+  if (weak) reasons.push('weak');
+  if (definition) reasons.push('definition');
+  if (structured) reasons.push('structured');
+  if (overconfidence) reasons.push('overconfidence');
+  if (exactFact) reasons.push('exact-fact');
+
+  const eligible = Boolean(
+    weak ||
+    overconfidence ||
+    definition ||
+    structured ||
+    exactFact ||
+    (core && Boolean(kind)) ||
+    (explanation && (core || concept?.type === 'principle'))
+  );
+
+  return { eligible, kind: kind || (structured ? 'enumeration' : definition ? 'definition' : 'free'), reasons };
 }
 
 export function shouldOfferFreeRecall(questionText) {
@@ -29,6 +85,21 @@ export function shouldOfferFreeRecall(questionText) {
 export function recallDraftKey(cardId) {
   const id = String(cardId || '').trim();
   return id ? `${DRAFT_PREFIX}${id}` : '';
+}
+
+async function loadRuntimeContext() {
+  const content = await ContentRepository.load();
+  const engine = new StudyEngine(content);
+  await engine.init();
+  return { content, engine };
+}
+
+function getRuntimeContext() {
+  runtimeContextPromise ||= loadRuntimeContext().catch((error) => {
+    console.warn('P15-Kontext konnte nicht vollständig geladen werden:', error);
+    return null;
+  });
+  return runtimeContextPromise;
 }
 
 function cardIdFrom(card) {
@@ -70,9 +141,9 @@ function buildRecallComposer(cardId, kind, draft) {
   const textarea = document.createElement('textarea');
   textarea.id = 'p15-free-recall-input';
   textarea.className = 'p15-free-recall-input';
-  textarea.rows = 2;
+  textarea.rows = kind === 'explanation' ? 3 : 2;
   textarea.maxLength = MAX_DRAFT_LENGTH;
-  textarea.placeholder = kind === 'enumeration' ? 'Kernpunkte kurz notieren …' : 'Kurz aus dem Gedächtnis antworten …';
+  textarea.placeholder = kind === 'enumeration' ? 'Kernpunkte kurz notieren …' : kind === 'explanation' ? 'In eigenen Worten kurz erklären …' : 'Kurz aus dem Gedächtnis antworten …';
   textarea.value = draft;
   textarea.setAttribute('autocomplete', 'off');
   textarea.setAttribute('spellcheck', 'true');
@@ -80,7 +151,7 @@ function buildRecallComposer(cardId, kind, draft) {
 
   const hint = document.createElement('p');
   hint.className = 'p15-free-recall-hint';
-  hint.textContent = 'Keine automatische Bewertung. Du kannst die Lösung jederzeit direkt anzeigen.';
+  hint.textContent = 'Tippen ist freiwillig – du kannst auch nur im Kopf antworten. Keine automatische Bewertung.';
 
   section.append(label, textarea, hint);
   return section;
@@ -102,43 +173,72 @@ function buildRecallComparison(draft) {
   return section;
 }
 
-export function enhanceFreeRecall(root = document) {
-  const card = root.querySelector('.flashcard');
-  if (!card || card.dataset.p15RecallEnhanced === 'true') return false;
+export async function enhanceFreeRecall(root = document, runtime = undefined) {
+  const cardElement = root.querySelector('.flashcard');
+  if (!cardElement || cardElement.dataset.p15RecallEnhanced === 'true' || cardElement.dataset.p15RecallPending === 'true') return false;
+  cardElement.dataset.p15RecallPending = 'true';
 
-  const questionText = card.querySelector('.card-question')?.innerText || card.querySelector('.card-question')?.textContent || '';
-  const kind = classifyRecallPrompt(questionText);
-  if (!kind) {
-    card.dataset.p15RecallEnhanced = 'true';
+  const questionText = cardElement.querySelector('.card-question')?.innerText || cardElement.querySelector('.card-question')?.textContent || '';
+  const cardId = cardIdFrom(cardElement);
+  if (!cardId) {
+    delete cardElement.dataset.p15RecallPending;
     return false;
   }
 
-  const cardId = cardIdFrom(card);
-  if (!cardId) return false;
-  const revealed = Boolean(card.querySelector('.card-answer'));
+  const context = runtime === undefined ? await getRuntimeContext() : runtime;
+  if (!cardElement.isConnected && typeof document !== 'undefined') return false;
+
+  let selection;
+  if (context?.content && context?.engine) {
+    const card = context.content.cardById.get(cardId) || null;
+    const concept = card ? context.content.conceptById.get(card.conceptId) || null : null;
+    selection = selectFreeRecallEligibility({
+      questionText,
+      card,
+      concept,
+      weaknessScore: concept ? context.engine.weaknessScore(concept.id) : 0,
+      conceptState: concept ? context.engine.conceptState(concept.id) : {}
+    });
+  } else {
+    const kind = classifyRecallPrompt(questionText);
+    selection = { eligible: Boolean(kind), kind, reasons: kind ? ['prompt-fallback'] : [] };
+  }
+
+  if (!selection.eligible) {
+    cardElement.dataset.p15RecallEnhanced = 'true';
+    delete cardElement.dataset.p15RecallPending;
+    return false;
+  }
+
+  const revealed = Boolean(cardElement.querySelector('.card-answer'));
   const draft = readDraft(cardId);
 
   if (!revealed) {
-    const actions = card.querySelector('.card-actions');
-    if (!actions) return false;
-    actions.insertAdjacentElement('beforebegin', buildRecallComposer(cardId, kind, draft));
+    const actions = cardElement.querySelector('.card-actions');
+    if (!actions) {
+      delete cardElement.dataset.p15RecallPending;
+      return false;
+    }
+    actions.insertAdjacentElement('beforebegin', buildRecallComposer(cardId, selection.kind || 'free', draft));
   } else if (draft.trim()) {
-    const divider = card.querySelector('.card-divider');
-    const answer = card.querySelector('.card-answer');
+    const divider = cardElement.querySelector('.card-divider');
+    const answer = cardElement.querySelector('.card-answer');
     const comparison = buildRecallComparison(draft);
     if (divider) divider.insertAdjacentElement('beforebegin', comparison);
     else if (answer) answer.insertAdjacentElement('beforebegin', comparison);
   }
 
-  card.dataset.p15RecallEnhanced = 'true';
+  cardElement.dataset.p15RecallReasons = selection.reasons.join(',');
+  cardElement.dataset.p15RecallEnhanced = 'true';
+  delete cardElement.dataset.p15RecallPending;
   return true;
 }
 
 function initSelectiveFreeRecall() {
   const main = document.getElementById('main');
   if (!main) return;
-  enhanceFreeRecall(main);
-  const observer = new MutationObserver(() => enhanceFreeRecall(main));
+  void getRuntimeContext().then(() => enhanceFreeRecall(main));
+  const observer = new MutationObserver(() => { void enhanceFreeRecall(main); });
   observer.observe(main, { childList: true, subtree: true });
 
   document.addEventListener('click', (event) => {
@@ -146,6 +246,9 @@ function initSelectiveFreeRecall() {
     if (!ratingButton) return;
     const card = ratingButton.closest('.flashcard');
     clearDraft(cardIdFrom(card));
+    setTimeout(() => {
+      void getRuntimeContext().then((context) => context?.engine?.init()).catch(() => {});
+    }, 250);
   }, true);
 }
 
