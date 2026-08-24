@@ -1,0 +1,116 @@
+{
+  "phase": "P17",
+  "status": "PASS",
+  "branch": "p17-adaptive-study-mix-v2",
+  "version": "1.1.0-dev.17",
+  "baseline": "P16 exam-horizon planning",
+  "goal": "Use the expanded question and case bank dynamically inside recommended study while protecting due reviews, avoiding repetitive same-concept clustering, and keeping Heute as a one-click experience.",
+  "adaptiveSignals": [
+    "FSRS due backlog",
+    "concept weakness",
+    "concept exposure / seen ratio",
+    "CORE and IMPORTANT objective-coverage debt",
+    "application-coverage debt",
+    "question recency",
+    "concept recency",
+    "recent concept failure",
+    "concept importance",
+    "same-session preferred concepts",
+    "P16 exam phase and selected exam scope"
+  ],
+  "mixBehavior": {
+    "fixedPermanentPercentage": false,
+    "normalSessionTarget": 22,
+    "quickSessionTarget": 8,
+    "dueReviewsProtectedFromQuestionReplacement": true,
+    "questionCountBounded": true,
+    "applicationCountBounded": true,
+    "freshProfilesProtectedFromOvertesting": true,
+    "largeDueBacklogsReduceQuestionShare": true,
+    "establishedLearnersReceiveMoreIndependentRetrieval": true,
+    "finalExamDaysCanShiftStronglyTowardObjectiveAndApplicationRetrieval": true,
+    "targetArtificiallyIncreased": false,
+    "sameConceptCollisionWindow": 3,
+    "maxConsecutiveQuestionsNormal": 2,
+    "maxConsecutiveQuestionsQuick": 1
+  },
+  "representativePolicies": {
+    "freshProfile": {
+      "cards": 18,
+      "objectiveQuestions": 3,
+      "applicationQuestions": 1,
+      "note": "Representative policy-test state, not a fixed quota."
+    },
+    "establishedWithCoverageDebt": {
+      "cards": 12,
+      "objectiveQuestions": 7,
+      "applicationQuestions": 3,
+      "note": "Representative policy-test state, not a fixed quota."
+    },
+    "largeDueBacklog": {
+      "cards": 16,
+      "objectiveQuestions": 3,
+      "applicationQuestions": 3,
+      "note": "The runtime can preserve even more due cards when the selected base queue contains them."
+    },
+    "finalDaysLowBacklog": {
+      "cards": 10,
+      "objectiveQuestions": 6,
+      "applicationQuestions": 6,
+      "note": "Representative near-exam state; P16 still controls which new card importance tiers are allowed."
+    },
+    "quickRoundHighNeed": {
+      "cards": 5,
+      "objectiveQuestions": 2,
+      "applicationQuestions": 1
+    }
+  },
+  "questionSelection": {
+    "objectiveFormats": ["single_choice", "multiple_choice", "ordering", "matching"],
+    "applicationFormats": ["clinical_case", "short_answer"],
+    "recentQuestionPenalty": true,
+    "recentConceptPenaltyUnlessFailed": true,
+    "recentFailureBoost": true,
+    "weaknessBoost": true,
+    "uncoveredObjectiveConceptBoost": true,
+    "unattemptedApplicationBoost": true,
+    "examScopeBoost": true,
+    "lateExamApplicationBoost": true,
+    "finalWeekSelectedChapterHardPreferenceWhenBankIsLargeEnough": true
+  },
+  "integration": {
+    "p14CalibrationPreserved": true,
+    "p15SelectiveFreeRecallPreserved": true,
+    "p16ExamPlannerInstalledBeforeP17": true,
+    "p16FsrsDateInvariantsPreserved": true,
+    "recommendedPreviewReportsActualAdaptiveQuestionCount": true,
+    "primaryNavigationChanged": false,
+    "newLearnerSettingAdded": false,
+    "contentBankMutated": false,
+    "fsrsStateMutatedByP17": false
+  },
+  "content": {
+    "concepts": 2089,
+    "cards": 2094,
+    "questions": 954,
+    "cases": 120
+  },
+  "offline": {
+    "cache": "pflegelern-p17-v1.1.0-dev17",
+    "p17CorePrecached": true,
+    "p17RuntimePrecached": true,
+    "p17BootstrapPrecached": true
+  },
+  "validation": {
+    "localPolicyTests": 23,
+    "localRuntimeHarnessTests": 8,
+    "localErrors": 0,
+    "repositoryIntegrationAssertions": 31,
+    "githubActionsWorkflow": ".github/workflows/validate-p17.yml",
+    "githubActionsRunId": 32782630400,
+    "githubActionsHeadSha": "481695cfffe0fe23506b3d0e9d5e4b8f164b1456",
+    "githubActionsConclusion": "success",
+    "repositoryFilesVerifiedAfterWrite": true,
+    "browserE2E": "Not run in this phase"
+  }
+}
