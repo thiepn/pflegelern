@@ -65,6 +65,7 @@
   "validation": {
     "nodeSyntax": "PASS",
     "pureFreeRecallTests": 18,
+    "integrationTests": 31,
     "testErrors": 0,
     "repositoryBlobMatchChecked": true,
     "contentBankMutated": false,
