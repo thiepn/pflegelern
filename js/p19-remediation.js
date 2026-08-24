@@ -4,8 +4,7 @@ import { Rating, isDue } from './fsrs.js';
 import { stableShuffle } from './util.js';
 import {
   APPLICATION_TYPES, OBJECTIVE_TYPES, evidenceWeight, immediateOffsets, isFollowupDue,
-  localDayKey, normalizeRemediation, onFailure, onIndependentSuccess, questionRole,
-  remediationPriority
+  localDayKey, normalizeRemediation, onFailure, onIndependentSuccess, remediationPriority
 } from './p19-remediation-core.js';
 
 const PATCH_FLAG = Symbol.for('pflegelern.p19.weaknessRemediationPatched');
@@ -98,8 +97,8 @@ function chooseImmediateItems(engine, session, mistake, conceptIds, afterIndex) 
   const nearby = nearbyIds(session, afterIndex);
   const selected = [];
 
-  const support = candidateCards(engine, mistake, conceptIds, nearby.cards)
-    .find((card) => !seenInSession(session, 'card', card.id) || card.id !== mistake?.contentId);
+  const cards = candidateCards(engine, mistake, conceptIds, nearby.cards);
+  const support = cards.find((card) => !seenInSession(session, 'card', card.id));
   if (support) selected.push({ kind: 'card', id: support.id, remediation: { mistakeId: mistake.id, stage: 'support' } });
 
   const transfer = candidateQuestions(engine, mistake, conceptIds, 'objective', nearby.questions)
@@ -123,7 +122,8 @@ function chooseFollowupItem(engine, mistake, seed) {
     .find((q) => questionAgeDays(engine, q.id) >= 1);
   if (objective) return { ...engine.prepareQuestionItem(objective, `${seed}-${mistake.id}-obj`), remediation: { mistakeId: mistake.id, stage: 'spaced_followup' } };
 
-  const card = candidateCards(engine, mistake, conceptIds).find((c) => c.id !== mistake.contentId) || candidateCards(engine, mistake, conceptIds)[0];
+  const cards = candidateCards(engine, mistake, conceptIds);
+  const card = cards.find((c) => c.id !== mistake.contentId) || cards[0];
   return card ? { kind: 'card', id: card.id, remediation: { mistakeId: mistake.id, stage: 'spaced_followup' } } : null;
 }
 
@@ -172,7 +172,10 @@ function addDueFollowups(engine, baseItems, seed) {
 async function markQueuedFollowups(engine, session) {
   if (!session) return;
   const today = localDayKey(new Date());
-  const ids = new Set((session.items || []).map((x) => x.remediation?.mistakeId).filter(Boolean));
+  const ids = new Set((session.items || [])
+    .filter((x) => x.remediation?.stage === 'spaced_followup')
+    .map((x) => x.remediation?.mistakeId)
+    .filter(Boolean));
   for (const id of ids) {
     const mistake = engine.mistakes.get(id);
     if (!mistake || mistake.resolved) continue;
