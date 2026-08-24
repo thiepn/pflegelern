@@ -1,0 +1,54 @@
+{
+  "project": "PflegeLern",
+  "phase": "P20",
+  "title": "Mock Exam System v2",
+  "status": "automated-certification-passed",
+  "branch": "p20-mock-exam-system-v2",
+  "implementationCommit": "33f346010371017214c011c38957e7117babe471",
+  "implementationTree": "1976e574460fdc559f5870bd4035a50a6c7ffb86",
+  "baseCommit": "e1230ba593504dac3739964b56ff743873399950",
+  "ci": {
+    "workflow": "Validate PflegeLern P20",
+    "runId": 32789308739,
+    "jobId": 97627551844,
+    "conclusion": "success",
+    "completedAt": "2026-08-24T23:26:05Z"
+  },
+  "automatedChecks": {
+    "p20Core": 42,
+    "p20Runtime": 12,
+    "p20Integration": 41,
+    "total": 95,
+    "errors": 0
+  },
+  "implemented": [
+    "Configurable 5–100 question mock exams",
+    "Quick 10, exam 30, and 60-question simulation presets",
+    "Optional 5–180 minute timer with automatic submission at expiry",
+    "Whole-bank, weakness-focused, and multi-chapter scopes",
+    "Preservation of active P16 chapter-scoped exam planning",
+    "Balanced objective question-type blueprints across single choice, multiple choice, ordering, and matching",
+    "Question freshness, topic spread, weakness weighting, and concept-reuse control",
+    "No correctness feedback before submission",
+    "Answered/unanswered overview with direct question navigation",
+    "Flag-for-review visibility",
+    "Correct unanswered detection for untouched ordering questions",
+    "End-of-exam percentage, training target, time, answer-state, question-type, and topic-tier breakdown",
+    "Direct 'Fehler gezielt lernen' handoff into the P19 remediation engine",
+    "Exam evidence continues through the P18/P19 finalize chain without creating FSRS reviews",
+    "Existing IndexedDB v2 examAttempts storage and backup compatibility preserved",
+    "PWA cache updated for all P20 assets",
+    "Existing 2015 source-faithfulness warning preserved; no new clinical facts introduced"
+  ],
+  "preservation": {
+    "productionMainModified": false,
+    "databaseVersionChanged": false,
+    "fsrsDueDatesModifiedByP20": false,
+    "contentBankModifiedByP20": false,
+    "p18MasteryExamEvidencePreserved": true,
+    "p19RemediationHandoffPreserved": true,
+    "legacyOpenExamFlowPreserved": true
+  },
+  "scopeNote": "P20's scored mock exams intentionally use only objectively gradable question types. Free-text short-answer and clinical-case items remain available in study/remediation flows rather than being given fabricated automatic scoring.",
+  "certificationNote": "The automated branch gate passed. This report does not claim a separate human visual/browser acceptance pass."
+}
