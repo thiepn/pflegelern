@@ -1,7 +1,7 @@
 {
   "project": "PflegeLern",
-  "phase": "P14",
-  "version": "1.1.0-dev.14",
+  "phase": "P15",
+  "version": "1.1.0-dev.15",
   "schemaVersion": 1,
   "source": {
     "title": "I care – Pflege",
@@ -9,7 +9,7 @@
     "editionYear": 2015,
     "basis": "Uploaded textbook only; no external clinical facts merged."
   },
-  "status": "p14-calibrated-self-assessment",
+  "status": "p15-selective-free-recall",
   "notes": [
     "P6 manually calibrated content preserved.",
     "P7 source signals were re-routed by PDF section position where possible.",
@@ -22,6 +22,7 @@
     "The synthetic 36.3–36.4 pilot section was removed; its concepts now live in the real 36.3/36.4 hierarchy.",
     "P10 branding finalized as PflegeLern for repository /pflegelern and GitHub Pages release.",
     "P13 expands the source-faithful application bank to 120 cases using conservative synthesized scenarios backed by certified 2015 textbook concepts.",
-    "P14 calibrates flashcard self-assessment without changing the three visible ratings or FSRS mapping. Structured source-backed answers can show a compact Kernpunkte checklist, and every revealed card receives concise rating criteria."
+    "P14 calibrates flashcard self-assessment without changing the three visible ratings or FSRS mapping. Structured source-backed answers can show a compact Kernpunkte checklist, and every revealed card receives concise rating criteria.",
+    "P15 selectively offers optional free recall on direct-retrieval flashcards. Typed recall is shown back to the learner after reveal for self-comparison, is never auto-graded, never changes FSRS directly, and is cleared after rating."
   ]
 }
