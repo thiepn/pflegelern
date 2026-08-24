@@ -1,4 +1,4 @@
-const CACHE = 'pflegelern-p15-v1.1.0-dev15';
+const CACHE = 'pflegelern-p16-v1.1.0-dev16';
 const ASSETS = [
   './',
   './index.html',
@@ -14,6 +14,7 @@ const ASSETS = [
   './css/responsive.css',
   './css/p14-calibration.css',
   './css/p15-free-recall.css',
+  './css/p16-exam-plan.css',
   './js/util.js',
   './js/storage.js',
   './js/content.js',
@@ -22,6 +23,9 @@ const ASSETS = [
   './js/app.js',
   './js/p14-calibration.js',
   './js/p15-free-recall.js',
+  './js/p16-exam-plan-core.js',
+  './js/p16-exam-plan.js',
+  './js/p16-bootstrap.js',
   './data/manifest.json',
   './data/chapters.json',
   './data/sections.json',
