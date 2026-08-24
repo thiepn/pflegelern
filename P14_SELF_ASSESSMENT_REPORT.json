@@ -1,0 +1,49 @@
+{
+  "phase": "P14",
+  "status": "PASS",
+  "baseline": "P13 development branch",
+  "version": "1.1.0-dev.14",
+  "goal": "Improve the reliability of flashcard self-ratings without adding decisions, mandatory typing, or extra grading steps.",
+  "behavior": {
+    "visibleRatings": [
+      "Nicht gewusst",
+      "Unsicher",
+      "Gewusst"
+    ],
+    "fsrsMappingChanged": false,
+    "extraTapRequired": false,
+    "typingRequired": false,
+    "ratingGuidanceShownAfterReveal": true,
+    "keyboardRatingsPreserved": true,
+    "keyPointRubric": {
+      "label": "Kernpunkte",
+      "source": "Existing revealed card answer only",
+      "newMedicalFactsGenerated": false,
+      "eligibility": "Only list-oriented questions with compact multi-line/list answers",
+      "maximumDisplayedPoints": 7,
+      "longOrProseAnswers": "No rubric; normal answer remains unchanged"
+    }
+  },
+  "ratingDefinitions": {
+    "Nicht gewusst": "Antwort falsch, nicht erinnert oder wesentliche Teile fehlten.",
+    "Unsicher": "Grundidee richtig, aber mindestens ein wichtiger Punkt fehlte oder war unsicher.",
+    "Gewusst": "Alle wesentlichen Punkte korrekt und ohne entscheidende Hilfe erinnert."
+  },
+  "accessibility": {
+    "ratingGroupDescribedByGuidance": true,
+    "ratingButtonsReceiveDescriptiveAriaLabels": true,
+    "ratingButtonsReceiveTooltips": true
+  },
+  "offline": {
+    "newCssPrecached": true,
+    "newJsPrecached": true,
+    "cache": "pflegelern-p14-v1.1.0-dev14"
+  },
+  "validation": {
+    "nodeSyntax": "PASS",
+    "pureCalibrationTests": 9,
+    "testErrors": 0,
+    "contentBankMutated": false,
+    "schedulerMutated": false
+  }
+}
