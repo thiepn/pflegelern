@@ -5,6 +5,7 @@ import { installRemediationMigrationPatch } from './p19-remediation-migration.js
 import { installWeaknessRemediationPatches } from './p19-remediation.js';
 import { installMockExamPatches } from './p20-exam.js';
 import { initMockExamUi } from './p20-exam-ui.js';
+import { initCareThemeUi } from './p21-care-ui.js';
 
 await installExamPlanPatches();
 installAdaptiveMixPatches();
@@ -16,3 +17,4 @@ initMasteryInteractionBridge();
 await import('./app.js');
 await initExamPlanUi();
 initMockExamUi();
+initCareThemeUi();

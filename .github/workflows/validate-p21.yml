@@ -1,0 +1,41 @@
+name: Validate PflegeLern P21
+
+on:
+  push:
+    branches: [p21-care-design-system]
+    paths:
+      - 'css/p21-care-theme.css'
+      - 'js/p21-care-ui.js'
+      - 'js/p18-bootstrap.js'
+      - 'tests/p21-**'
+      - 'service-worker.js'
+      - 'data/manifest.json'
+      - '.github/workflows/validate-p21.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: |
+          node --check js/p21-care-ui.js
+          node --check js/p18-bootstrap.js
+          node --check tests/p21-theme.test.mjs
+      - name: P21 design and contrast gate
+        run: node tests/p21-theme.test.mjs
+      - name: P20 exam core regression
+        run: node tests/p20-exam-core.test.mjs
+      - name: P20 runtime regression
+        run: node tests/p20-runtime.test.mjs
+      - name: P19 remediation policy regression
+        run: node tests/p19-remediation.test.mjs
