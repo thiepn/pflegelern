@@ -258,5 +258,2422 @@
     "provenance": "source_facts_synthesized",
     "status": "approved",
     "certification": "p7b-manually-curated-from-certified-concept"
+  },
+  {
+    "id": "case-p13-001",
+    "title": "Praxisanleiter – Rolle",
+    "scenario": "In Ausbildung und Berufsalltag wird „Praxisanleiter – Rolle“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-2-1-praxisanleiter",
+      "concept-2-1-lernorte"
+    ],
+    "questionIds": [
+      "q-p13-case-001-1",
+      "q-p13-case-001-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-2-1",
+      "chapterId": "chapter-2",
+      "printedPages": [
+        20,
+        22
+      ]
+    }
+  },
+  {
+    "id": "case-p13-002",
+    "title": "Prävention",
+    "scenario": "In Ausbildung und Berufsalltag wird „Prävention“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-3-32-42-definition-1",
+      "concept-3-32-49-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-002-1",
+      "q-p13-case-002-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-3-2-1",
+      "chapterId": "chapter-3",
+      "printedPages": [
+        32
+      ]
+    }
+  },
+  {
+    "id": "case-p13-003",
+    "title": "Wissenschaft",
+    "scenario": "In Ausbildung und Berufsalltag wird „Wissenschaft“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-4-55-11-definition-1",
+      "concept-4-55-20-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-003-1",
+      "q-p13-case-003-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-4-2",
+      "chapterId": "chapter-4",
+      "printedPages": [
+        55
+      ]
+    }
+  },
+  {
+    "id": "case-p13-004",
+    "title": "Medizin",
+    "scenario": "In Ausbildung und Berufsalltag wird „Medizin“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-5-83-74-definition-1",
+      "concept-5-84-79-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-004-1",
+      "q-p13-case-004-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-5-2-1",
+      "chapterId": "chapter-5",
+      "printedPages": [
+        83,
+        84
+      ]
+    }
+  },
+  {
+    "id": "case-p13-005",
+    "title": "Von der Gruppe zum Team",
+    "scenario": "Im beruflichen Alltag wird „Von der Gruppe zum Team“ praktisch relevant. Dabei muss die Pflegekraft das im Lehrbuch beschriebene sichere Vorgehen berücksichtigen.",
+    "conceptIds": [
+      "concept-7-139-62-achtung-1",
+      "concept-7-139-40-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-005-1",
+      "q-p13-case-005-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-7-2-4",
+      "chapterId": "chapter-7",
+      "printedPages": [
+        139
+      ]
+    }
+  },
+  {
+    "id": "case-p13-006",
+    "title": "Gewalt",
+    "scenario": "Im beruflichen Alltag wird „Gewalt“ praktisch relevant. Dabei muss die Pflegekraft das im Lehrbuch beschriebene sichere Vorgehen berücksichtigen.",
+    "conceptIds": [
+      "concept-8-162-90-achtung-1",
+      "concept-8-162-40-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-006-1",
+      "q-p13-case-006-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-8-4-2",
+      "chapterId": "chapter-8",
+      "printedPages": [
+        162
+      ]
+    }
+  },
+  {
+    "id": "case-p13-007",
+    "title": "Bereichspflege",
+    "scenario": "In Ausbildung und Berufsalltag wird „Bereichspflege“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-9-198-76-definition-1",
+      "concept-9-197-60-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-007-1",
+      "q-p13-case-007-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-9-4-1",
+      "chapterId": "chapter-9",
+      "printedPages": [
+        197,
+        198
+      ]
+    }
+  },
+  {
+    "id": "case-p13-008",
+    "title": "Zusammenarbeit",
+    "scenario": "In Ausbildung und Berufsalltag wird „Zusammenarbeit“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-10-217-48-merken-1",
+      "concept-10-216-79-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-008-1",
+      "q-p13-case-008-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-10-3-3",
+      "chapterId": "chapter-10",
+      "printedPages": [
+        216,
+        217
+      ]
+    }
+  },
+  {
+    "id": "case-p13-009",
+    "title": "Ergebnisqualität steigern",
+    "scenario": "In Ausbildung und Berufsalltag wird „Ergebnisqualität steigern“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-11-234-52-merken-1",
+      "concept-11-233-68-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-009-1",
+      "q-p13-case-009-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-11-2-1",
+      "chapterId": "chapter-11",
+      "printedPages": [
+        233,
+        234
+      ]
+    }
+  },
+  {
+    "id": "case-p13-010",
+    "title": "Übernahme",
+    "scenario": "In Ausbildung und Berufsalltag wird „Übernahme“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-12-253-40-merken-1",
+      "concept-12-254-20-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-010-1",
+      "q-p13-case-010-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-12-4-1",
+      "chapterId": "chapter-12",
+      "printedPages": [
+        253,
+        254
+      ]
+    }
+  },
+  {
+    "id": "case-p13-011",
+    "title": "Zentrale Bedeutung",
+    "scenario": "Bei der Pflege eines Patienten wird „Zentrale Bedeutung“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-13-267-67-merken-1",
+      "concept-13-267-54-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-011-1",
+      "q-p13-case-011-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-13-2-1",
+      "chapterId": "chapter-13",
+      "printedPages": [
+        267
+      ]
+    }
+  },
+  {
+    "id": "case-p13-012",
+    "title": "Schock",
+    "scenario": "Bei einem Patienten wird „Schock“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-14-279-80-achtung-1",
+      "concept-14-280-73-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-012-1",
+      "q-p13-case-012-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-14-2-8",
+      "chapterId": "chapter-14",
+      "printedPages": [
+        279,
+        280
+      ]
+    }
+  },
+  {
+    "id": "case-p13-013",
+    "title": "Keine feuchte Haut",
+    "scenario": "Bei der Pflege eines Patienten wird „Keine feuchte Haut“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-15-305-42-merken-1",
+      "concept-15-304-5-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-013-1",
+      "q-p13-case-013-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-15-2-1",
+      "chapterId": "chapter-15",
+      "printedPages": [
+        304,
+        305
+      ]
+    }
+  },
+  {
+    "id": "case-p13-014",
+    "title": "Neu auftretende Pulsarrhythmie",
+    "scenario": "Bei einem Patienten wird „Neu auftretende Pulsarrhythmie“ praktisch relevant. Die Pflegekraft muss das im Lehrbuch beschriebene Vorgehen korrekt anwenden.",
+    "conceptIds": [
+      "concept-16-1-arrhythmie-neu",
+      "concept-16-1-puls-normal-erwachsene"
+    ],
+    "questionIds": [
+      "q-p13-case-014-1",
+      "q-p13-case-014-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-16-1",
+      "chapterId": "chapter-16",
+      "printedPages": [
+        323,
+        324
+      ]
+    }
+  },
+  {
+    "id": "case-p13-015",
+    "title": "Unterstützen beim Waschen",
+    "scenario": "Bei einem Patienten wird „Unterstützen beim Waschen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-17-341-18-achtung-1",
+      "concept-17-340-92-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-015-1",
+      "q-p13-case-015-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-17-2-2",
+      "chapterId": "chapter-17",
+      "printedPages": [
+        340,
+        341
+      ]
+    }
+  },
+  {
+    "id": "case-p13-016",
+    "title": "Essen anreichen",
+    "scenario": "Bei einem Patienten wird „Essen anreichen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-19-374-35-achtung-1",
+      "concept-19-373-70-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-016-1",
+      "q-p13-case-016-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-19-1-6",
+      "chapterId": "chapter-19",
+      "printedPages": [
+        373,
+        374
+      ]
+    }
+  },
+  {
+    "id": "case-p13-017",
+    "title": "Stuhlentleerungsstörungen",
+    "scenario": "Bei einem Patienten wird „Stuhlentleerungsstörungen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-20-387-23-achtung-1",
+      "concept-20-387-57-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-017-1",
+      "q-p13-case-017-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-20-1-4",
+      "chapterId": "chapter-20",
+      "printedPages": [
+        387
+      ]
+    }
+  },
+  {
+    "id": "case-p13-018",
+    "title": "Pflegerische Reaktion bei Thrombosehinweisen",
+    "scenario": "Bei einem Patienten wird „Pflegerische Reaktion bei Thrombosehinweisen“ praktisch relevant. Die Pflegekraft muss das im Lehrbuch beschriebene Vorgehen korrekt anwenden.",
+    "conceptIds": [
+      "concept-21-5-pflege-verdacht",
+      "concept-21-5-tvt-symptome"
+    ],
+    "questionIds": [
+      "q-p13-case-018-1",
+      "q-p13-case-018-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-21-5",
+      "chapterId": "chapter-21",
+      "printedPages": [
+        419,
+        420,
+        931,
+        932
+      ]
+    }
+  },
+  {
+    "id": "case-p13-019",
+    "title": "Venöse Blutentnahme",
+    "scenario": "Bei einem Patienten wird „Venöse Blutentnahme“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-23-468-88-achtung-1",
+      "concept-23-467-62-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-019-1",
+      "q-p13-case-019-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-23-2-1",
+      "chapterId": "chapter-23",
+      "printedPages": [
+        467,
+        468
+      ]
+    }
+  },
+  {
+    "id": "case-p13-020",
+    "title": "Nicht implantierter",
+    "scenario": "Bei einem Patienten wird „Nicht implantierter“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-24-478-6-achtung-1",
+      "concept-24-481-72-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-020-1",
+      "q-p13-case-020-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-24-1-3",
+      "chapterId": "chapter-24",
+      "printedPages": [
+        478,
+        481
+      ]
+    }
+  },
+  {
+    "id": "case-p13-021",
+    "title": "Magensonde",
+    "scenario": "Bei einem Patienten wird „Magensonde“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-25-506-113-achtung-1",
+      "concept-25-505-91-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-021-1",
+      "q-p13-case-021-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-25-2-2",
+      "chapterId": "chapter-25",
+      "printedPages": [
+        505,
+        506
+      ]
+    }
+  },
+  {
+    "id": "case-p13-022",
+    "title": "Abführmaßnahmen bei Enterostomata",
+    "scenario": "Bei der Pflege eines Patienten wird „Abführmaßnahmen bei Enterostomata“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-27-535-15-merken-1",
+      "concept-27-534-56-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-022-1",
+      "q-p13-case-022-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-27-2-1",
+      "chapterId": "chapter-27",
+      "printedPages": [
+        534,
+        535
+      ]
+    }
+  },
+  {
+    "id": "case-p13-023",
+    "title": "Atemvertiefende Maßnahmen",
+    "scenario": "Bei einem Patienten wird „Atemvertiefende Maßnahmen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-28-545-44-achtung-1",
+      "concept-28-544-71-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-023-1",
+      "q-p13-case-023-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-28-1-2",
+      "chapterId": "chapter-28",
+      "printedPages": [
+        544,
+        545
+      ]
+    }
+  },
+  {
+    "id": "case-p13-024",
+    "title": "Wundreinigung",
+    "scenario": "Bei einem Patienten wird „Wundreinigung“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-29-569-32-achtung-1",
+      "concept-29-570-49-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-024-1",
+      "q-p13-case-024-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-29-2-1",
+      "chapterId": "chapter-29",
+      "printedPages": [
+        569,
+        570
+      ]
+    }
+  },
+  {
+    "id": "case-p13-025",
+    "title": "Schlauchmullverbände",
+    "scenario": "Bei einem Patienten wird „Schlauchmullverbände“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-30-593-128-achtung-1",
+      "concept-30-593-3-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-025-1",
+      "q-p13-case-025-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-30-4",
+      "chapterId": "chapter-30",
+      "printedPages": [
+        593
+      ]
+    }
+  },
+  {
+    "id": "case-p13-026",
+    "title": "Eklampsie und HELLP",
+    "scenario": "Bei der Pflege eines Patienten wird „Eklampsie und HELLP“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-31-608-65-merken-1",
+      "concept-31-608-36-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-026-1",
+      "q-p13-case-026-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-31-1-3",
+      "chapterId": "chapter-31",
+      "printedPages": [
+        608
+      ]
+    }
+  },
+  {
+    "id": "case-p13-027",
+    "title": "Pflegestufe II",
+    "scenario": "Bei der Pflege eines Patienten wird „Pflegestufe II“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-35-666-4-merken-1",
+      "concept-35-665-32-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-027-1",
+      "q-p13-case-027-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-35-2-1",
+      "chapterId": "chapter-35",
+      "printedPages": [
+        665,
+        666
+      ]
+    }
+  },
+  {
+    "id": "case-p13-028",
+    "title": "Hinweise zu verschiedenen",
+    "scenario": "Bei einem Patienten wird „Hinweise zu verschiedenen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-36-680-62-achtung-1",
+      "concept-36-dysphagie-abbruch"
+    ],
+    "questionIds": [
+      "q-p13-case-028-1",
+      "q-p13-case-028-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-36-4-2",
+      "chapterId": "chapter-36",
+      "printedPages": [
+        679,
+        680
+      ]
+    }
+  },
+  {
+    "id": "case-p13-029",
+    "title": "Medikamentöse Schmerz",
+    "scenario": "Bei einem Patienten wird „Medikamentöse Schmerz“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-37-701-10-achtung-1",
+      "concept-37-699-35-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-029-1",
+      "q-p13-case-029-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-37-4-1",
+      "chapterId": "chapter-37",
+      "printedPages": [
+        699,
+        701
+      ]
+    }
+  },
+  {
+    "id": "case-p13-030",
+    "title": "Parenterale Ernährung",
+    "scenario": "Bei einem Patienten wird „Parenterale Ernährung“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-38-727-76-achtung-1",
+      "concept-38-728-13-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-030-1",
+      "q-p13-case-030-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-38-5-3",
+      "chapterId": "chapter-38",
+      "printedPages": [
+        727,
+        728
+      ]
+    }
+  },
+  {
+    "id": "case-p13-031",
+    "title": "Postoperative Überwachung",
+    "scenario": "Bei einem Patienten wird „Postoperative Überwachung“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-41-751-74-achtung-1",
+      "concept-41-751-88-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-031-1",
+      "q-p13-case-031-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-41-2-2",
+      "chapterId": "chapter-41",
+      "printedPages": [
+        751
+      ]
+    }
+  },
+  {
+    "id": "case-p13-032",
+    "title": "Fieberabfall",
+    "scenario": "Bei einem Patienten wird „Fieberabfall“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-42-762-15-achtung-1",
+      "concept-42-762-30-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-032-1",
+      "q-p13-case-032-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-42-2-3",
+      "chapterId": "chapter-42",
+      "printedPages": [
+        762
+      ]
+    }
+  },
+  {
+    "id": "case-p13-033",
+    "title": "Ausreichend Zeit",
+    "scenario": "Bei der Pflege eines Patienten wird „Ausreichend Zeit“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-43-775-2-merken-1",
+      "concept-43-773-36-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-033-1",
+      "q-p13-case-033-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-43-2-2",
+      "chapterId": "chapter-43",
+      "printedPages": [
+        773,
+        775
+      ]
+    }
+  },
+  {
+    "id": "case-p13-034",
+    "title": "Hautreaktionen",
+    "scenario": "Bei einem Patienten wird „Hautreaktionen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-44-787-30-achtung-1",
+      "concept-44-786-20-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-034-1",
+      "q-p13-case-034-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-44-5-4",
+      "chapterId": "chapter-44",
+      "printedPages": [
+        786,
+        787
+      ]
+    }
+  },
+  {
+    "id": "case-p13-035",
+    "title": "Pflege vor und nach einer",
+    "scenario": "Bei einem Patienten wird „Pflege vor und nach einer“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-45-808-24-achtung-1",
+      "concept-45-809-33-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-035-1",
+      "q-p13-case-035-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-45-3-4",
+      "chapterId": "chapter-45",
+      "printedPages": [
+        808,
+        809
+      ]
+    }
+  },
+  {
+    "id": "case-p13-036",
+    "title": "Basale Stimulation",
+    "scenario": "Bei einem Patienten wird „Basale Stimulation“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-46-824-23-achtung-1",
+      "concept-46-824-40-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-036-1",
+      "q-p13-case-036-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-46-6-3",
+      "chapterId": "chapter-46",
+      "printedPages": [
+        824
+      ]
+    }
+  },
+  {
+    "id": "case-p13-037",
+    "title": "Schritt 3: Prinzipienethisch analysieren",
+    "scenario": "Bei einem Patienten wird „Schritt 3: Prinzipienethisch analysieren“ praktisch relevant. Die Pflegekraft muss das im Lehrbuch beschriebene Vorgehen korrekt anwenden.",
+    "conceptIds": [
+      "concept-48-4-schritt3",
+      "concept-48-4-sechs-schritte"
+    ],
+    "questionIds": [
+      "q-p13-case-037-1",
+      "q-p13-case-037-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-48-4",
+      "chapterId": "chapter-48",
+      "printedPages": [
+        841,
+        842
+      ]
+    }
+  },
+  {
+    "id": "case-p13-038",
+    "title": "Lernangebot Mobilisation",
+    "scenario": "Bei einem Patienten wird „Lernangebot Mobilisation“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-52-879-52-achtung-1",
+      "concept-52-881-2-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-038-1",
+      "q-p13-case-038-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-52-3-2",
+      "chapterId": "chapter-52",
+      "printedPages": [
+        879,
+        881
+      ]
+    }
+  },
+  {
+    "id": "case-p13-039",
+    "title": "Herzinsuffizienz",
+    "scenario": "Bei einem Patienten wird „Herzinsuffizienz“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-53-900-23-achtung-1",
+      "concept-53-900-12-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-039-1",
+      "q-p13-case-039-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-53-4-3",
+      "chapterId": "chapter-53",
+      "printedPages": [
+        900
+      ]
+    }
+  },
+  {
+    "id": "case-p13-040",
+    "title": "Tiefe Venenthrombose",
+    "scenario": "Bei einem Patienten wird „Tiefe Venenthrombose“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-54-931-104-achtung-1",
+      "concept-54-932-38-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-040-1",
+      "q-p13-case-040-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-54-4-7",
+      "chapterId": "chapter-54",
+      "printedPages": [
+        931,
+        932
+      ]
+    }
+  },
+  {
+    "id": "case-p13-041",
+    "title": "Asthma bronchiale",
+    "scenario": "Bei einem Patienten wird „Asthma bronchiale“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-55-950-39-achtung-1",
+      "concept-55-949-84-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-041-1",
+      "q-p13-case-041-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-55-4-1",
+      "chapterId": "chapter-55",
+      "printedPages": [
+        949,
+        950
+      ]
+    }
+  },
+  {
+    "id": "case-p13-042",
+    "title": "Stillstand der Stuhlsäule",
+    "scenario": "Bei einem Patienten wird „Stillstand der Stuhlsäule“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-56-999-15-achtung-1",
+      "concept-56-998-37-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-042-1",
+      "q-p13-case-042-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-56-6-2",
+      "chapterId": "chapter-56",
+      "printedPages": [
+        998,
+        999
+      ]
+    }
+  },
+  {
+    "id": "case-p13-043",
+    "title": "Nierenersatztherapie",
+    "scenario": "Bei einem Patienten wird „Nierenersatztherapie“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-57-1045-74-achtung-1",
+      "concept-57-1045-81-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-043-1",
+      "q-p13-case-043-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-57-4-7",
+      "chapterId": "chapter-57",
+      "printedPages": [
+        1045
+      ]
+    }
+  },
+  {
+    "id": "case-p13-044",
+    "title": "Hyperurikämie und Gicht",
+    "scenario": "Bei einem Patienten wird „Hyperurikämie und Gicht“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-58-1095-12-achtung-1",
+      "concept-58-1094-61-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-044-1",
+      "q-p13-case-044-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-58-5-2",
+      "chapterId": "chapter-58",
+      "printedPages": [
+        1094,
+        1095
+      ]
+    }
+  },
+  {
+    "id": "case-p13-045",
+    "title": "Gesteigerte Blutungsneigung",
+    "scenario": "Bei einem Patienten wird „Gesteigerte Blutungsneigung“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-59-1135-58-achtung-1",
+      "concept-59-1136-4-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-045-1",
+      "q-p13-case-045-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-59-8-1",
+      "chapterId": "chapter-59",
+      "printedPages": [
+        1135,
+        1136
+      ]
+    }
+  },
+  {
+    "id": "case-p13-046",
+    "title": "Fraktur",
+    "scenario": "Bei einem Patienten wird „Fraktur“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-60-1157-63-achtung-1",
+      "concept-60-1158-51-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-046-1",
+      "q-p13-case-046-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-60-4-3",
+      "chapterId": "chapter-60",
+      "printedPages": [
+        1157,
+        1158
+      ]
+    }
+  },
+  {
+    "id": "case-p13-047",
+    "title": "Hirnblutungen",
+    "scenario": "Bei einem Patienten wird „Hirnblutungen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-61-1218-85-achtung-1",
+      "concept-61-1219-12-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-047-1",
+      "q-p13-case-047-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-61-4-2",
+      "chapterId": "chapter-61",
+      "printedPages": [
+        1218,
+        1219
+      ]
+    }
+  },
+  {
+    "id": "case-p13-048",
+    "title": "Erkrankungen der Bindehaut",
+    "scenario": "Bei einem Patienten wird „Erkrankungen der Bindehaut“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-62-1284-34-achtung-1",
+      "concept-62-1285-48-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-048-1",
+      "q-p13-case-048-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-62-1-7",
+      "chapterId": "chapter-62",
+      "printedPages": [
+        1284,
+        1285
+      ]
+    }
+  },
+  {
+    "id": "case-p13-049",
+    "title": "Bakterielle Haut",
+    "scenario": "Bei einem Patienten wird „Bakterielle Haut“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-63-1320-29-achtung-1",
+      "concept-63-1320-72-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-049-1",
+      "q-p13-case-049-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-63-4-6",
+      "chapterId": "chapter-63",
+      "printedPages": [
+        1320
+      ]
+    }
+  },
+  {
+    "id": "case-p13-050",
+    "title": "Erkrankungen der Prostata",
+    "scenario": "Bei einem Patienten wird „Erkrankungen der Prostata“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-64-1362-51-achtung-1",
+      "concept-64-1359-26-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-050-1",
+      "q-p13-case-050-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-64-2-4",
+      "chapterId": "chapter-64",
+      "printedPages": [
+        1359,
+        1362
+      ]
+    }
+  },
+  {
+    "id": "case-p13-051",
+    "title": "Herausfordernde Situationen",
+    "scenario": "Bei einem Patienten wird „Herausfordernde Situationen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-65-1381-48-achtung-1",
+      "concept-65-1380-21-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-051-1",
+      "q-p13-case-051-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-65-3-4",
+      "chapterId": "chapter-65",
+      "printedPages": [
+        1380,
+        1381
+      ]
+    }
+  },
+  {
+    "id": "case-p13-052",
+    "title": "Gasbrand",
+    "scenario": "Bei der Pflege eines Patienten wird „Gasbrand“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-66-1418-66-definition-1",
+      "concept-66-1418-92-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-052-1",
+      "q-p13-case-052-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-66-5-1",
+      "chapterId": "chapter-66",
+      "printedPages": [
+        1418
+      ]
+    }
+  },
+  {
+    "id": "case-p13-053",
+    "title": "Kennzeichnung des Dispensers",
+    "scenario": "Bei einem Patienten wird „Kennzeichnung des Dispensers“ praktisch relevant. Die Pflegekraft muss das im Lehrbuch beschriebene Vorgehen korrekt anwenden.",
+    "conceptIds": [
+      "concept-36-dispenser-identifikation",
+      "concept-36-6r"
+    ],
+    "questionIds": [
+      "q-p13-case-053-1",
+      "q-p13-case-053-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-36-3",
+      "chapterId": "chapter-36",
+      "printedPages": [
+        679,
+        680
+      ]
+    }
+  },
+  {
+    "id": "case-p13-054",
+    "title": "Amputationen",
+    "scenario": "Bei einem Patienten wird „Amputationen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-60-1178-59-achtung-1",
+      "concept-60-1178-69-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-054-1",
+      "q-p13-case-054-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-60-4-8",
+      "chapterId": "chapter-60",
+      "printedPages": [
+        1178
+      ]
+    }
+  },
+  {
+    "id": "case-p13-055",
+    "title": "Pflegerische Beobachtung",
+    "scenario": "Bei einem Patienten wird „Pflegerische Beobachtung“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-65-1376-13-achtung-1",
+      "concept-65-1376-30-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-055-1",
+      "q-p13-case-055-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-65-2-1",
+      "chapterId": "chapter-65",
+      "printedPages": [
+        1376
+      ]
+    }
+  },
+  {
+    "id": "case-p13-056",
+    "title": "Funktionsprüfungen",
+    "scenario": "Bei einem Patienten wird „Funktionsprüfungen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-54-916-55-achtung-1",
+      "concept-54-917-69-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-056-1",
+      "q-p13-case-056-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-54-3-1",
+      "chapterId": "chapter-54",
+      "printedPages": [
+        916,
+        917
+      ]
+    }
+  },
+  {
+    "id": "case-p13-057",
+    "title": "Langsam, deutlich und normal laut sprechen",
+    "scenario": "Bei der Betreuung eines Patienten wird „Langsam, deutlich und normal laut sprechen“ relevant. Die Pflegekraft muss Kommunikation und pflegerisches Vorgehen passend gestalten.",
+    "conceptIds": [
+      "concept-61-4-kommunikation-tempo",
+      "concept-61-4-aphasie-verstehen"
+    ],
+    "questionIds": [
+      "q-p13-case-057-1",
+      "q-p13-case-057-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-61-4-sprach",
+      "chapterId": "chapter-61",
+      "printedPages": [
+        1230,
+        1231
+      ]
+    }
+  },
+  {
+    "id": "case-p13-058",
+    "title": "Erkrankungen der Adnexe",
+    "scenario": "Bei einem Patienten wird „Erkrankungen der Adnexe“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-64-1354-22-achtung-1",
+      "concept-64-1353-76-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-058-1",
+      "q-p13-case-058-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-64-1-9",
+      "chapterId": "chapter-64",
+      "printedPages": [
+        1353,
+        1354
+      ]
+    }
+  },
+  {
+    "id": "case-p13-059",
+    "title": "Erkrankungen der Netzhaut",
+    "scenario": "Bei einem Patienten wird „Erkrankungen der Netzhaut“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-62-1289-7-achtung-1",
+      "concept-62-1288-44-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-059-1",
+      "q-p13-case-059-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-62-1-11",
+      "chapterId": "chapter-62",
+      "printedPages": [
+        1288,
+        1289
+      ]
+    }
+  },
+  {
+    "id": "case-p13-060",
+    "title": "Erkrankungen des Penis",
+    "scenario": "Bei einem Patienten wird „Erkrankungen des Penis“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-64-1371-2-achtung-1",
+      "concept-64-1371-39-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-060-1",
+      "q-p13-case-060-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-64-2-7",
+      "chapterId": "chapter-64",
+      "printedPages": [
+        1371
+      ]
+    }
+  },
+  {
+    "id": "case-p13-061",
+    "title": "Parasitosen",
+    "scenario": "Bei einem Patienten wird „Parasitosen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-63-1322-88-achtung-1",
+      "concept-63-1322-53-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-061-1",
+      "q-p13-case-061-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-63-4-9",
+      "chapterId": "chapter-63",
+      "printedPages": [
+        1322
+      ]
+    }
+  },
+  {
+    "id": "case-p13-062",
+    "title": "Retardmedikamente nicht mörsern",
+    "scenario": "Bei der Betreuung eines Patienten wird „Retardmedikamente nicht mörsern“ relevant. Die Pflegekraft muss Kommunikation und pflegerisches Vorgehen passend gestalten.",
+    "conceptIds": [
+      "concept-36-retard-nicht-moersern",
+      "concept-36-selbststaendige-einnahme"
+    ],
+    "questionIds": [
+      "q-p13-case-062-1",
+      "q-p13-case-062-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-36-4-1",
+      "chapterId": "chapter-36",
+      "printedPages": [
+        679,
+        680
+      ]
+    }
+  },
+  {
+    "id": "case-p13-063",
+    "title": "Symptomorientierte Pflege",
+    "scenario": "Bei einem Patienten wird „Symptomorientierte Pflege“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-61-1226-57-achtung-1",
+      "concept-61-1231-9-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-063-1",
+      "q-p13-case-063-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-61-4-5",
+      "chapterId": "chapter-61",
+      "printedPages": [
+        1226,
+        1231
+      ]
+    }
+  },
+  {
+    "id": "case-p13-064",
+    "title": "Verfahren mit Kontrast",
+    "scenario": "Bei einem Patienten wird „Verfahren mit Kontrast“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-56-984-82-achtung-1",
+      "concept-56-985-9-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-064-1",
+      "q-p13-case-064-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-56-3-1",
+      "chapterId": "chapter-56",
+      "printedPages": [
+        984,
+        985
+      ]
+    }
+  },
+  {
+    "id": "case-p13-065",
+    "title": "Osteoporose",
+    "scenario": "Bei einem Patienten wird „Osteoporose“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-60-1182-77-achtung-1",
+      "concept-60-1181-56-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-065-1",
+      "q-p13-case-065-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-60-5-2",
+      "chapterId": "chapter-60",
+      "printedPages": [
+        1181,
+        1182
+      ]
+    }
+  },
+  {
+    "id": "case-p13-066",
+    "title": "Depression",
+    "scenario": "Bei einem Patienten wird „Depression“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-65-1386-48-achtung-1",
+      "concept-65-1388-43-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-066-1",
+      "q-p13-case-066-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-65-5-1",
+      "chapterId": "chapter-65",
+      "printedPages": [
+        1386,
+        1388
+      ]
+    }
+  },
+  {
+    "id": "case-p13-067",
+    "title": "Appendizitis",
+    "scenario": "Bei einem Patienten wird „Appendizitis“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-56-1000-93-achtung-1",
+      "concept-56-1000-85-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-067-1",
+      "q-p13-case-067-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-56-6-3",
+      "chapterId": "chapter-56",
+      "printedPages": [
+        1000
+      ]
+    }
+  },
+  {
+    "id": "case-p13-068",
+    "title": "Angina tonsillaris",
+    "scenario": "Bei einem Patienten wird „Angina tonsillaris“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-55-967-40-achtung-1",
+      "concept-55-966-44-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-068-1",
+      "q-p13-case-068-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-55-5-7",
+      "chapterId": "chapter-55",
+      "printedPages": [
+        966,
+        967
+      ]
+    }
+  },
+  {
+    "id": "case-p13-069",
+    "title": "Leukämien",
+    "scenario": "Bei einem Patienten wird „Leukämien“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-59-1130-29-achtung-1",
+      "concept-59-1128-59-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-069-1",
+      "q-p13-case-069-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-59-5-1",
+      "chapterId": "chapter-59",
+      "printedPages": [
+        1128,
+        1130
+      ]
+    }
+  },
+  {
+    "id": "case-p13-070",
+    "title": "Nebennierenrinden",
+    "scenario": "Bei einem Patienten wird „Nebennierenrinden“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-58-1113-27-achtung-1",
+      "concept-58-1112-72-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-070-1",
+      "q-p13-case-070-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-58-9-3",
+      "chapterId": "chapter-58",
+      "printedPages": [
+        1112,
+        1113
+      ]
+    }
+  },
+  {
+    "id": "case-p13-071",
+    "title": "Blasentumoren",
+    "scenario": "Bei einem Patienten wird „Blasentumoren“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-57-1058-11-achtung-1",
+      "concept-57-1057-26-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-071-1",
+      "q-p13-case-071-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-57-4-13",
+      "chapterId": "chapter-57",
+      "printedPages": [
+        1057,
+        1058
+      ]
+    }
+  },
+  {
+    "id": "case-p13-072",
+    "title": "Knochenmarkdepression",
+    "scenario": "Bei einem Patienten wird „Knochenmarkdepression“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-44-785-71-achtung-1",
+      "concept-44-784-43-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-072-1",
+      "q-p13-case-072-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-44-5-3",
+      "chapterId": "chapter-44",
+      "printedPages": [
+        784,
+        785
+      ]
+    }
+  },
+  {
+    "id": "case-p13-073",
+    "title": "Akute Epiglottitis",
+    "scenario": "Bei einem Patienten wird „Akute Epiglottitis“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-55-967-90-achtung-1",
+      "concept-55-967-84-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-073-1",
+      "q-p13-case-073-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-55-5-10",
+      "chapterId": "chapter-55",
+      "printedPages": [
+        967
+      ]
+    }
+  },
+  {
+    "id": "case-p13-074",
+    "title": "Beurteilen des Blutdrucks",
+    "scenario": "Bei einem Patienten wird „Beurteilen des Blutdrucks“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-16-328-33-achtung-1",
+      "concept-16-327-57-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-074-1",
+      "q-p13-case-074-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-16-2-4",
+      "chapterId": "chapter-16",
+      "printedPages": [
+        327,
+        328
+      ]
+    }
+  },
+  {
+    "id": "case-p13-075",
+    "title": "Beim Abführen unterstützen",
+    "scenario": "Bei einem Patienten wird „Beim Abführen unterstützen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-20-395-2-achtung-1",
+      "concept-20-395-16-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-075-1",
+      "q-p13-case-075-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-20-2-6",
+      "chapterId": "chapter-20",
+      "printedPages": [
+        395
+      ]
+    }
+  },
+  {
+    "id": "case-p13-076",
+    "title": "Akuter Arterienverschluss",
+    "scenario": "Bei einem Patienten wird „Akuter Arterienverschluss“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-54-928-69-achtung-1",
+      "concept-54-929-83-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-076-1",
+      "q-p13-case-076-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-54-4-4",
+      "chapterId": "chapter-54",
+      "printedPages": [
+        928,
+        929
+      ]
+    }
+  },
+  {
+    "id": "case-p13-077",
+    "title": "Kontraindikationen für Drainagelagerungen mit Kopftieflage",
+    "scenario": "Bei einem Patienten wird „Kontraindikationen für Drainagelagerungen mit Kopftieflage“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-28-549-75-achtung-1",
+      "concept-28-549-41-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-077-1",
+      "q-p13-case-077-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-28-1-3",
+      "chapterId": "chapter-28",
+      "printedPages": [
+        549
+      ]
+    }
+  },
+  {
+    "id": "case-p13-078",
+    "title": "Risikofaktoren",
+    "scenario": "Bei einem Patienten wird „Risikofaktoren“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-21-420-54-achtung-1",
+      "concept-21-420-23-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-078-1",
+      "q-p13-case-078-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-21-5-1",
+      "chapterId": "chapter-21",
+      "printedPages": [
+        420
+      ]
+    }
+  },
+  {
+    "id": "case-p13-079",
+    "title": "Pflegerische Aufgaben",
+    "scenario": "Bei einem Patienten wird „Pflegerische Aufgaben“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-45-805-2-achtung-1",
+      "concept-45-804-6-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-079-1",
+      "q-p13-case-079-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-45-2-2",
+      "chapterId": "chapter-45",
+      "printedPages": [
+        804,
+        805
+      ]
+    }
+  },
+  {
+    "id": "case-p13-080",
+    "title": "Salicylsäure bei Säuglingen und Kleinkindern",
+    "scenario": "Bei einem Patienten wird „Salicylsäure bei Säuglingen und Kleinkindern“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-63-1325-42-achtung-1",
+      "concept-63-1328-113-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-080-1",
+      "q-p13-case-080-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-63-2",
+      "chapterId": "chapter-63",
+      "printedPages": [
+        1325,
+        1328
+      ]
+    }
+  },
+  {
+    "id": "case-p13-081",
+    "title": "Spezielle Pflegemaßnahmen",
+    "scenario": "Bei einem Patienten wird „Spezielle Pflegemaßnahmen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-62-1279-40-achtung-1",
+      "concept-62-1281-66-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-081-1",
+      "q-p13-case-081-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-62-1-5",
+      "chapterId": "chapter-62",
+      "printedPages": [
+        1279,
+        1281
+      ]
+    }
+  },
+  {
+    "id": "case-p13-082",
+    "title": "Mitwirken bei der Therapie",
+    "scenario": "Bei einem Patienten wird „Mitwirken bei der Therapie“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-58-1081-12-achtung-1",
+      "concept-58-1077-101-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-082-1",
+      "q-p13-case-082-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-58-4-3",
+      "chapterId": "chapter-58",
+      "printedPages": [
+        1077,
+        1081
+      ]
+    }
+  },
+  {
+    "id": "case-p13-083",
+    "title": "Symptomkontrolle",
+    "scenario": "Bei einem Patienten wird „Symptomkontrolle“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-46-821-2-achtung-1",
+      "concept-46-820-108-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-083-1",
+      "q-p13-case-083-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-46-6-2",
+      "chapterId": "chapter-46",
+      "printedPages": [
+        820,
+        821
+      ]
+    }
+  },
+  {
+    "id": "case-p13-084",
+    "title": "Fiebersenkende Maßnahmen",
+    "scenario": "Bei einem Patienten wird „Fiebersenkende Maßnahmen“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-42-763-8-achtung-1",
+      "concept-42-763-82-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-084-1",
+      "q-p13-case-084-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-42-2-4",
+      "chapterId": "chapter-42",
+      "printedPages": [
+        763
+      ]
+    }
+  },
+  {
+    "id": "case-p13-085",
+    "title": "Elektrokardiogramm",
+    "scenario": "Bei einem Patienten wird „Elektrokardiogramm“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-53-889-30-achtung-1",
+      "concept-53-886-89-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-085-1",
+      "q-p13-case-085-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-53-3-1",
+      "chapterId": "chapter-53",
+      "printedPages": [
+        886,
+        889
+      ]
+    }
+  },
+  {
+    "id": "case-p13-086",
+    "title": "Notfallmedikamente Herzinfarkt",
+    "scenario": "Bei der Pflege eines Patienten wird „Notfallmedikamente Herzinfarkt“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-53-898-32-merken-1",
+      "concept-53-897-28-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-086-1",
+      "q-p13-case-086-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-53-4-2",
+      "chapterId": "chapter-53",
+      "printedPages": [
+        897,
+        898
+      ]
+    }
+  },
+  {
+    "id": "case-p13-087",
+    "title": "Schmerzassessment",
+    "scenario": "Bei einem Patienten wird „Schmerzassessment“ relevant. Dabei müssen die sicherheitsrelevanten Hinweise des Lehrbuchs beachtet werden.",
+    "conceptIds": [
+      "concept-37-695-80-achtung-1",
+      "concept-37-693-30-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-087-1",
+      "q-p13-case-087-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-37-3-1",
+      "chapterId": "chapter-37",
+      "printedPages": [
+        693,
+        695
+      ]
+    }
+  },
+  {
+    "id": "case-p13-088",
+    "title": "Bradykardie",
+    "scenario": "Bei der Pflege eines Patienten wird „Bradykardie“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-16-323-76-definition-1",
+      "concept-16-323-102-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-088-1",
+      "q-p13-case-088-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-16-1-4",
+      "chapterId": "chapter-16",
+      "printedPages": [
+        323
+      ]
+    }
+  },
+  {
+    "id": "case-p13-089",
+    "title": "Biopsie",
+    "scenario": "Bei der Pflege eines Patienten wird „Biopsie“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-25-519-19-definition-1",
+      "concept-25-516-59-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-089-1",
+      "q-p13-case-089-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-25-3-9",
+      "chapterId": "chapter-25",
+      "printedPages": [
+        516,
+        519
+      ]
+    }
+  },
+  {
+    "id": "case-p13-090",
+    "title": "Sonden",
+    "scenario": "Bei der Pflege eines Patienten wird „Sonden“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-25-504-57-definition-1",
+      "concept-25-505-49-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-090-1",
+      "q-p13-case-090-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-25-2",
+      "chapterId": "chapter-25",
+      "printedPages": [
+        504,
+        505
+      ]
+    }
+  },
+  {
+    "id": "case-p13-091",
+    "title": "Unmittelbare Transfusion",
+    "scenario": "Bei der Pflege eines Patienten wird „Unmittelbare Transfusion“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-24-499-18-merken-1",
+      "concept-24-499-43-merken-1"
+    ],
+    "questionIds": [
+      "q-p13-case-091-1",
+      "q-p13-case-091-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-24-3-4",
+      "chapterId": "chapter-24",
+      "printedPages": [
+        499
+      ]
+    }
+  },
+  {
+    "id": "case-p13-092",
+    "title": "Echinokokkose",
+    "scenario": "Bei der Pflege eines Patienten wird „Echinokokkose“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-66-1423-48-definition-1",
+      "concept-66-1423-5-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-092-1",
+      "q-p13-case-092-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-66-7-2",
+      "chapterId": "chapter-66",
+      "printedPages": [
+        1423
+      ]
+    }
+  },
+  {
+    "id": "case-p13-093",
+    "title": "Thromboserisiko",
+    "scenario": "Bei der Pflege eines Patienten wird „Thromboserisiko“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-31-625-29-merken-1",
+      "concept-31-625-17-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-093-1",
+      "q-p13-case-093-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-31-3-2",
+      "chapterId": "chapter-31",
+      "printedPages": [
+        625
+      ]
+    }
+  },
+  {
+    "id": "case-p13-094",
+    "title": "Partizipative Entscheidungsfindung",
+    "scenario": "In Ausbildung und Berufsalltag wird „Partizipative Entscheidungsfindung“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-5-111-4-definition-1",
+      "concept-5-110-54-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-094-1",
+      "q-p13-case-094-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-5-5-4",
+      "chapterId": "chapter-5",
+      "printedPages": [
+        110,
+        111
+      ]
+    }
+  },
+  {
+    "id": "case-p13-095",
+    "title": "Persönlichkeit",
+    "scenario": "In Ausbildung und Berufsalltag wird „Persönlichkeit“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-5-98-10-definition-1",
+      "concept-5-98-17-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-095-1",
+      "q-p13-case-095-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-5-3-2",
+      "chapterId": "chapter-5",
+      "printedPages": [
+        98
+      ]
+    }
+  },
+  {
+    "id": "case-p13-096",
+    "title": "Sozialversicherungen",
+    "scenario": "In Ausbildung und Berufsalltag wird „Sozialversicherungen“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-9-176-17-definition-1",
+      "concept-9-178-5-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-096-1",
+      "q-p13-case-096-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-9-2-2",
+      "chapterId": "chapter-9",
+      "printedPages": [
+        176,
+        178
+      ]
+    }
+  },
+  {
+    "id": "case-p13-097",
+    "title": "Altenheim",
+    "scenario": "In Ausbildung und Berufsalltag wird „Altenheim“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-9-193-29-definition-1",
+      "concept-9-193-24-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-097-1",
+      "q-p13-case-097-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-9-3-4",
+      "chapterId": "chapter-9",
+      "printedPages": [
+        193
+      ]
+    }
+  },
+  {
+    "id": "case-p13-098",
+    "title": "Darüber reden",
+    "scenario": "In Ausbildung und Berufsalltag wird „Darüber reden“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-8-159-73-merken-1",
+      "concept-8-157-90-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-098-1",
+      "q-p13-case-098-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-8-4-1",
+      "chapterId": "chapter-8",
+      "printedPages": [
+        157,
+        159
+      ]
+    }
+  },
+  {
+    "id": "case-p13-099",
+    "title": "Reflexion und Selbstreflexion",
+    "scenario": "In Ausbildung und Berufsalltag wird „Reflexion und Selbstreflexion“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-7-143-19-definition-1",
+      "concept-7-145-37-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-099-1",
+      "q-p13-case-099-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-7-4-2",
+      "chapterId": "chapter-7",
+      "printedPages": [
+        143,
+        145
+      ]
+    }
+  },
+  {
+    "id": "case-p13-100",
+    "title": "Nierentumoren",
+    "scenario": "Bei der Pflege eines Patienten wird „Nierentumoren“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-57-1052-56-definition-1",
+      "concept-57-1052-33-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-100-1",
+      "q-p13-case-100-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-57-4-9",
+      "chapterId": "chapter-57",
+      "printedPages": [
+        1052
+      ]
+    }
+  },
+  {
+    "id": "case-p13-101",
+    "title": "Berufsverband",
+    "scenario": "In Ausbildung und Berufsalltag wird „Berufsverband“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden.",
+    "conceptIds": [
+      "concept-3-43-44-definition-1",
+      "concept-3-43-58-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-101-1",
+      "q-p13-case-101-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-3-5-5",
+      "chapterId": "chapter-3",
+      "printedPages": [
+        43
+      ]
+    }
+  },
+  {
+    "id": "case-p13-102",
+    "title": "Erythropoetin",
+    "scenario": "Bei der Pflege eines Patienten wird „Erythropoetin“ relevant. Die Lehrbuchinhalte müssen auf die Situation übertragen werden.",
+    "conceptIds": [
+      "concept-59-1124-26-merken-1",
+      "concept-59-1123-40-definition-1"
+    ],
+    "questionIds": [
+      "q-p13-case-102-1",
+      "q-p13-case-102-2"
+    ],
+    "provenance": "source_facts_synthesized",
+    "status": "approved",
+    "certification": "p13-source-card-derived+automated-qa",
+    "source": {
+      "sectionId": "sec-59-4-1",
+      "chapterId": "chapter-59",
+      "printedPages": [
+        1123,
+        1124
+      ]
+    }
   }
 ]

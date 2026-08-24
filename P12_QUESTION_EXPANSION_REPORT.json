@@ -1,0 +1,106 @@
+{
+  "phase": "P12",
+  "status": "PASS",
+  "branch": "p12-practice-question-expansion",
+  "baselineQuestions": 85,
+  "newQuestions": 665,
+  "totalQuestions": 750,
+  "questionTypes": {
+    "clinical_case": 10,
+    "matching": 15,
+    "multiple_choice": 24,
+    "ordering": 1,
+    "short_answer": 1,
+    "single_choice": 699
+  },
+  "newQuestionTypes": {
+    "matching": 12,
+    "multiple_choice": 12,
+    "single_choice": 641
+  },
+  "coverage": {
+    "core": {
+      "covered": 606,
+      "total": 606,
+      "ratio": 1.0
+    },
+    "safetySensitive": {
+      "covered": 313,
+      "total": 313,
+      "ratio": 1.0
+    },
+    "procedureOrSequence": {
+      "covered": 12,
+      "total": 12,
+      "ratio": 1.0
+    },
+    "eligibleUnion": {
+      "covered": 728,
+      "total": 728,
+      "ratio": 1.0
+    },
+    "allConceptsWithAnyQuestion": 732,
+    "allConcepts": 2089
+  },
+  "chapters": {
+    "total": 66,
+    "withQuestions": 63,
+    "eligibleChaptersWithoutQuestions": []
+  },
+  "sourceLineage": {
+    "method": "Every generated correct answer is derived from the approved source-backed card for its target concept; distractors are drawn from other approved source-backed cards. Matching pairs use the same approved card bank.",
+    "generatedCertification": {
+      "p12-source-card-derived+automated-qa": 665
+    },
+    "sourceCheckedCardRepairs": 35,
+    "repairedCardIds": [
+      "card-290-6-wissen-1",
+      "card-293-30-achtung-1",
+      "card-474-6-wissen-4",
+      "card-474-6-wissen-5",
+      "card-525-29-definition-1",
+      "card-609-59-definition-1",
+      "card-677-45-wissen-1",
+      "card-821-2-achtung-1",
+      "card-868-48-definition-1",
+      "card-930-78-wissen-3",
+      "card-948-22-achtung-1",
+      "card-985-80-wissen-1",
+      "card-1200-39-definition-1",
+      "card-1308-27-definition-1",
+      "card-1370-58-definition-1",
+      "card-164-11-definition-1",
+      "card-197-48-definition-1",
+      "card-323-37-achtung-1",
+      "card-41-79-definition-1",
+      "card-845-22-definition-1",
+      "card-1302-19-definition-1",
+      "card-1417-51-definition-1",
+      "card-178-21-definition-1",
+      "card-260-75-achtung-1",
+      "card-375-35-merken-1",
+      "card-387-38-definition-1",
+      "card-806-7-definition-1",
+      "card-1038-45-achtung-1",
+      "card-1227-75-definition-1",
+      "card-1230-49-definition-1",
+      "card-1324-9-definition-1",
+      "card-1421-52-definition-1",
+      "card-930-78-wissen-2",
+      "card-1170-4-wissen-1",
+      "card-1170-4-wissen-5"
+    ]
+  },
+  "qualityGates": {
+    "uniqueQuestionIds": true,
+    "uniqueGeneratedNonMatchingPrompts": true,
+    "validConceptReferences": true,
+    "cleanGeneratedText": true,
+    "allCoreCovered": true,
+    "allSafetySensitiveCovered": true,
+    "allProcedureSequenceCovered": true,
+    "eligibleChapterCoverage": true,
+    "baseline85Preserved": true,
+    "errors": []
+  }
+}

@@ -1013,13 +1013,15 @@
     "conceptId": "concept-3-41-79-definition-1",
     "type": "basic",
     "front": "Wie wird „Beruf“ im Lehrbuch definiert?",
-    "back": "Im Gegensatz zu dem allgemeinen Begriff Arbeit, der von HeckenSchneiden, Staubsaugen, Restaurieren alter Möbel, Betreuung und Erziehung von Kindern, alles umfassen kann, ist der Beruf definiert als eine dauerhaft angelegte, i. d.",
+    "back": "Ein Beruf ist eine dauerhaft angelegte Arbeit, die in der Regel eine Ausbildung voraussetzt und meist gegen Bezahlung ausgeübt wird.",
     "sourceRecordIds": [
       "src-41-79-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-43-44-definition-1",
@@ -3015,13 +3017,15 @@
     "conceptId": "concept-8-164-11-definition-1",
     "type": "basic",
     "front": "Wie wird „Supervision“ im Lehrbuch definiert?",
-    "back": "Supervision ist ein wissenschaftlich fundiertes, praxisorientiertes und ethisch gebundenes Konzept für personen- und organisa tionsbezogene Beratung in der Arbeitswelt.",
+    "back": "Supervision ist ein wissenschaftlich fundiertes, praxisorientiertes und ethisch gebundenes Konzept für personen- und organisationsbezogene Beratung in der Arbeitswelt.",
     "sourceRecordIds": [
       "src-164-11-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-165-8-merken-1",
@@ -3184,13 +3188,15 @@
     "conceptId": "concept-9-178-21-definition-1",
     "type": "basic",
     "front": "Wie wird „Körperschaft des öffentlichen Rechts“ im Lehrbuch definiert?",
-    "back": "Körperschaften des öffentlichen Rechts sind erstens Organisationen, die i. d.",
+    "back": "Körperschaften des öffentlichen Rechts werden in der Regel durch oder aufgrund eines Gesetzes gegründet, nehmen öffentliche Aufgaben wahr, haben Mitglieder mit Mitwirkungsmöglichkeiten und sind rechtsfähig.",
     "sourceRecordIds": [
       "src-178-21-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-184-50-wissen-1",
@@ -3366,13 +3372,15 @@
     "conceptId": "concept-9-197-48-definition-1",
     "type": "basic",
     "front": "Wie wird „Pflegeorganisationssysteme“ im Lehrbuch definiert?",
-    "back": "Pflegeorganisationssysteme beschreiben, wie die zu leistende Pflegearbeit und die Pflegeabläufe im Team organisiert werden. Pflege lässt sich hauptsächlich auf 3 Arten organisieren: 1. ablauforientierte Funktionspflege 2.",
+    "back": "Pflegeorganisationssysteme beschreiben, wie Pflegearbeit und Pflegeabläufe im Team organisiert werden. Das Lehrbuch unterscheidet hauptsächlich Funktionspflege, Bereichspflege und patientenorientierte Bezugspflege.",
     "sourceRecordIds": [
       "src-197-48-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-197-60-definition-1",
@@ -4315,13 +4323,15 @@
     "conceptId": "concept-12-260-75-achtung-1",
     "type": "safety",
     "front": "Was ist bei „Arzneimittelgesetz“ laut Lehrbuch besonders zu beachten?",
-    "back": "Pflegende sollten Rücksprache mit einem Arzt, wenn Sie der Meinung sind, dass die Verschreibung eines Arzneimittels fehlerhaft ist.",
+    "back": "Halten Sie Rücksprache mit einem Arzt, wenn Sie der Meinung sind, dass die Verschreibung eines Arzneimittels fehlerhaft ist.",
     "sourceRecordIds": [
       "src-260-75-achtung"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-261-39-wissen-1",
@@ -4861,13 +4871,15 @@
     "conceptId": "concept-14-290-6-wissen-1",
     "type": "enumeration",
     "front": "Welche Punkte nennt das Lehrbuch zu „Kardiopulmonale Reanimation/CPR“ (Teil 1/2)?",
-    "back": "CPR beginnen, während andere Reanimationsteam rufen und Reanimationsausrüstung holen. Einzelhelfer verlassen den Patienten kurzfristig.; ggf.",
+    "back": "CPR beginnen, während andere das Reanimationsteam rufen und die Reanimationsausrüstung holen; Einzelhelfer verlassen den Patienten dafür kurz. Gegebenenfalls ein Reanimationsbrett unterlegen; 30 Thoraxkompressionen mit 2 Atemspenden abwechseln; Atemwege z. B. mit einem Guedel-Tubus freihalten.",
     "sourceRecordIds": [
       "src-290-6-wissen"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-290-6-wissen-2",
@@ -4900,13 +4912,15 @@
     "conceptId": "concept-14-293-30-achtung-1",
     "type": "safety",
     "front": "Was ist bei „Die traumatologische“ laut Lehrbuch besonders zu beachten?",
-    "back": "Frakturen großer Röhrenknochen wie Humerus und Femur können einen erheblichen Blutverlust zur Folge haben; hier steht die Überwachung der Vitalzeichen mit im Vordergrund. 5.",
+    "back": "Frakturen großer Röhrenknochen wie Humerus und Femur können einen erheblichen Blutverlust verursachen; deshalb steht die Überwachung der Vitalzeichen mit im Vordergrund.",
     "sourceRecordIds": [
       "src-293-30-achtung"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-294-62-wissen-4",
@@ -5498,13 +5512,15 @@
     "conceptId": "concept-16-323-37-achtung-1",
     "type": "safety",
     "front": "Was ist bei „Beurteilen des Pulses“ laut Lehrbuch besonders zu beachten?",
-    "back": "Liegt eine Pulsfrequenz unter 45/min, benachrichtigen Sie immer sofort einen Arzt, da hier selbst in Ruhe die Sauerstoffversorgung i. d.",
+    "back": "Liegt die Pulsfrequenz unter 45/min, sofort einen Arzt informieren; selbst in Ruhe ist die Sauerstoffversorgung dann in der Regel nicht mehr gewährleistet und häufig liegt eine gefährliche Herzrhythmusstörung vor.",
     "sourceRecordIds": [
       "src-323-37-achtung"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-323-64-wissen-1",
@@ -6408,13 +6424,15 @@
     "conceptId": "concept-19-375-35-merken-1",
     "type": "basic",
     "front": "Welche wichtige Aussage hebt das Lehrbuch zu „Schnabelbecher bleiben im Schrank!“ hervor?",
-    "back": "Verzichten Sie auf den Schnabelbecher. Es sei denn, der P atient verlangt ihn, weil er an ihn gewöhnt ist.",
+    "back": "Auf den Schnabelbecher verzichten, außer der Patient verlangt ihn, weil er daran gewöhnt ist.",
     "sourceRecordIds": [
       "src-375-35-merken"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-377-156-wissen-1",
@@ -6551,13 +6569,15 @@
     "conceptId": "concept-20-387-38-definition-1",
     "type": "basic",
     "front": "Wie wird „Stuhlinkontinenz“ im Lehrbuch definiert?",
-    "back": "Unter Stuhlinkontinenz versteht man das Unvermögen, Stuhl z urückzuhalten. Die Stuhlinkontinenz kann verschiedene medizinische und psychische Ursachen haben.",
+    "back": "Unter Stuhlinkontinenz versteht man das Unvermögen, Stuhl zurückzuhalten. Die Stuhlinkontinenz kann verschiedene medizinische und psychische Ursachen haben.",
     "sourceRecordIds": [
       "src-387-38-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-387-57-merken-1",
@@ -8033,26 +8053,30 @@
     "conceptId": "concept-24-474-6-wissen-4",
     "type": "enumeration",
     "front": "Welche Punkte nennt das Lehrbuch zu „Grundlagen periphervenöse Gefäßzugänge“ (Teil 1/2)?",
-    "back": "Materialien für Punktion und Schutzverband vorbereiten.; Infusion mit Angabe von Patientennamen, Zeitpunkt, Inhalt und Laufzeit richten.; Patienten lagern und Spritzschutz unter den Arm legen.; Ggf. die Punktionsstelle rasieren.; Ggf. für 15 min einen feuchtwarmen Wickel anlegen, damit die Venen hervortreten.",
+    "back": "Materialien für Punktion und Schutzverband vorbereiten; benötigte Infusionen aseptisch richten und mit Patientennamen, Zeitpunkt, Inhalt und Laufzeit beschriften; den Patienten lagern und einen Spritzschutz unter den Arm legen; je nach Hausstandard ggf. die Punktionsstelle rasieren; bei schlecht darstellbaren Venen kann vor der Punktion ein feuchtwarmer Wickel angelegt werden.",
     "sourceRecordIds": [
       "src-474-6-wissen"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-474-6-wissen-5",
     "conceptId": "concept-24-474-6-wissen-5",
     "type": "enumeration",
     "front": "Welche Punkte nennt das Lehrbuch zu „Grundlagen periphervenöse Gefäßzugänge“ (Teil 2/2)?",
-    "back": "Beim Legen dem Arzt assistieren und die Materialien anreichen.; Nach der Anlage einen Schutzverband anlegen, z. B. einen Fertigverband mit Foliensichtfenster.; Angeordnete Infusionen anhängen oder die Kanüle mittels Mandrin verschließen.",
+    "back": "Beim Legen der Venenverweilkanüle assistieren und Material anreichen; anschließend einen Schutzverband anlegen; angeordnete Infusionen anhängen oder die Kanüle mittels Mandrin verschließen und schützend fixieren.",
     "sourceRecordIds": [
       "src-474-6-wissen"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-475-38-definition-1",
@@ -9086,13 +9110,15 @@
     "conceptId": "concept-26-525-29-definition-1",
     "type": "basic",
     "front": "Wie wird „Lumbalpunktion“ im Lehrbuch definiert?",
-    "back": "Bei einer Lumbalpunktion wird der Duralsack, der das Rückenmark umgibt, im Bereich der Lendenwirbel punktiert, um Liquor zu entnehmen. Dabei wird eine Hohlnadel in den Lumbalkanal zwischen den Dornfortsätzen des 2.–5.",
+    "back": "Bei einer Lumbalpunktion wird im Bereich der Lendenwirbel der Duralsack punktiert, um Liquor zu entnehmen. Die Hohlnadel wird dabei zwischen den Dornfortsätzen des 2.–5. Lendenwirbels in den Lumbalkanal eingeführt.",
     "sourceRecordIds": [
       "src-525-29-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-525-78-wissen-1",
@@ -10399,13 +10425,15 @@
     "conceptId": "concept-31-609-59-definition-1",
     "type": "basic",
     "front": "Wie wird „Frühgeburt“ im Lehrbuch definiert?",
-    "back": "Eine Frühgeburt ist eine Lebendgeburt vor der vollendeten 37.",
+    "back": "Eine Frühgeburt ist eine Lebendgeburt vor der vollendeten 37. Schwangerschaftswoche.",
     "sourceRecordIds": [
       "src-609-59-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-610-7-definition-1",
@@ -11478,13 +11506,15 @@
     "conceptId": "concept-36-677-45-wissen-1",
     "type": "enumeration",
     "front": "Welche Punkte nennt das Lehrbuch zu „Medikamente bestellen und lagern“?",
-    "back": "Medikamente in verschließbaren Schränken oder Kühlschränken aufbewahren; Lagerung nach dem First-in-First-out-Prinzip; Arzneimittel nur in ihrer Originalverpackung aufbewah.",
+    "back": "Medikamente in verschließbaren Schränken oder Kühlschränken aufbewahren; nach dem First-in-First-out-Prinzip lagern; Arzneimittel nur in ihrer Originalverpackung aufbewahren.",
     "sourceRecordIds": [
       "src-677-45-wissen"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-677-89-achtung-1",
@@ -13337,13 +13367,15 @@
     "conceptId": "concept-45-806-7-definition-1",
     "type": "basic",
     "front": "Wie wird „Transplantation“ im Lehrbuch definiert?",
-    "back": "Eine Transplantation ist eine operative Übertragung eines O rgans, eines Organteils oder von Gewebe an eine andere Stelle des Körpers oder auf ein anderes Lebewesen.",
+    "back": "Eine Transplantation ist eine operative Übertragung eines Organs, eines Organteils oder von Gewebe an eine andere Stelle des Körpers oder auf ein anderes Lebewesen.",
     "sourceRecordIds": [
       "src-806-7-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-807-66-wissen-1",
@@ -13623,13 +13655,15 @@
     "conceptId": "concept-46-821-2-achtung-1",
     "type": "safety",
     "front": "Was ist bei „Symptomkontrolle“ laut Lehrbuch besonders zu beachten?",
-    "back": "Pflegende sollten immer unverzüglich einen Arzt, wenn ein Sterbender subjektiv unter Luftnot leidet.",
+    "back": "Immer unverzüglich einen Arzt informieren, wenn ein Sterbender subjektiv unter Luftnot leidet; häufig ist eine symptomatische Linderung möglich.",
     "sourceRecordIds": [
       "src-821-2-achtung"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-821-71-merken-1",
@@ -14039,13 +14073,15 @@
     "conceptId": "concept-48-845-22-definition-1",
     "type": "basic",
     "front": "Wie wird „Hirntod“ im Lehrbuch definiert?",
-    "back": "Ein Mensch gilt laut Bundesärztekammer als tot, wenn alle s eine Hirnfunktionen irreversibel ausgefallen sind (sog. dissoziierter Hirntod).",
+    "back": "Ein Mensch gilt laut Bundesärztekammer als tot, wenn alle seine Hirnfunktionen irreversibel ausgefallen sind (dissoziierter Hirntod).",
     "sourceRecordIds": [
       "src-845-22-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-846-10-wissen-1",
@@ -14364,13 +14400,15 @@
     "conceptId": "concept-51-868-48-definition-1",
     "type": "basic",
     "front": "Wie wird „Nesteln“ im Lehrbuch definiert?",
-    "back": "Nesteln (sich mit den Fingern an etwas zu schaffen machen) ist wie „Flockenlesen“ (Zupf- und Greifbewegungen der Hand) ein Zeichen motorische Unruhe und tritt oft in Verbindung mit sensorischer Deprivation auf.",
+    "back": "Nesteln – ähnlich wie „Flockenlesen“ – ist ein Zeichen motorischer Unruhe und tritt häufig im Zusammenhang mit sensorischer Deprivation auf.",
     "sourceRecordIds": [
       "src-868-48-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-869-2-wissen-1",
@@ -15508,26 +15546,30 @@
     "conceptId": "concept-54-930-78-wissen-2",
     "type": "basic",
     "front": "Was ist bei falsche Aneurysma im Zusammenhang mit Aneurysma wichtig?",
-    "back": "Hämatom, z. B durch Punktion; häufig nach Koronarangiografie → auf plötzliche Schwellung im Leistenbereich achten.",
+    "back": "Falsches Aneurysma: Hämatom, z. B. durch Punktion; häufig nach Koronarangiografie; auf eine plötzlich auftretende Schwellung im Leistenbereich achten.",
     "sourceRecordIds": [
       "src-930-78-wissen"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-930-78-wissen-3",
     "conceptId": "concept-54-930-78-wissen-3",
     "type": "basic",
     "front": "Was ist bei Aneurysma dissecans im Zusammenhang mit Aneurysma wichtig?",
-    "back": "Gefäßwand ist gespalten; meist thorakale Aorta:; Symptom: starker Schmerz vom Brustkorb in den Rücken; Diagnose: Kontrastmittel-CT; Therapie: rasche Operation im Gefäßzentrum; Pflege: i.v-Zugang vorbereiten, Monitor anschließen, Transport koordinieren.",
+    "back": "Beim Aneurysma dissecans ist die Gefäßwand gespalten; häufig ist die thorakale Aorta betroffen. Ein typisches Symptom ist ein starker Schmerz vom Brustkorb in den Rücken. Die Diagnostik erfolgt per Kontrastmittel-CT; die Therapie erfordert eine rasche Operation im Gefäßzentrum. Pflegerisch werden u. a. i.v.-Zugang, Monitoring und Transport vorbereitet.",
     "sourceRecordIds": [
       "src-930-78-wissen"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-931-104-achtung-1",
@@ -15846,13 +15888,15 @@
     "conceptId": "concept-55-948-22-achtung-1",
     "type": "safety",
     "front": "Was ist bei „Endoskopische Verfahren“ laut Lehrbuch besonders zu beachten?",
-    "back": "Pflegende sollten einen Arzt, wenn eines oder mehrere dieser Symptome auftreten, und kontrollieren Sie die Vitalwerte des Patienten.",
+    "back": "Einen Arzt informieren, wenn nach der Bronchoskopie eines oder mehrere Warnsymptome auftreten, und die Vitalwerte des Patienten kontrollieren.",
     "sourceRecordIds": [
       "src-948-22-achtung"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-948-28-wissen-1",
@@ -17328,13 +17372,15 @@
     "conceptId": "concept-56-985-80-wissen-1",
     "type": "summary",
     "front": "Was fasst das Lehrbuch zu „Darstellung von Gallen- und Pankreasgängen – ERCP“ zusammen?",
-    "back": "PRC Gallen- und Pankreasgänge werden mit Kontrastmittel sichtbar gemacht. Hierzu geht der Arzt mit dem Endoskop bis in das Duodenum.",
+    "back": "Bei der ERCP werden Gallen- und/oder Pankreasgänge nach Kontrastmittelgabe im Röntgenbild dargestellt; der Katheter wird über die Papilla Vateri im Duodenum eingeführt.",
     "sourceRecordIds": [
       "src-985-80-wissen"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-986-26-merken-1",
@@ -18524,13 +18570,15 @@
     "conceptId": "concept-57-1038-45-achtung-1",
     "type": "safety",
     "front": "Was ist bei „Nierenbiopsie“ laut Lehrbuch besonders zu beachten?",
-    "back": "Pflegende sollten bei Verdacht auf eine Nachblutung sofort den Arzt.",
+    "back": "Bei Verdacht auf eine Nachblutung sofort den Arzt informieren.",
     "sourceRecordIds": [
       "src-1038-45-achtung"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-1038-52-wissen-3",
@@ -21370,27 +21418,31 @@
     "id": "card-1170-4-wissen-1",
     "conceptId": "concept-60-1170-4-wissen-1",
     "type": "basic",
-    "front": "Welche Symptome nennt das Lehrbuch bei „Knieverletzungen“?",
-    "back": "Knie kann nicht mehr gestreckt werden, Schmerzen, Schwellungen, Hämatome, ggf. Kniegelenk erguss.",
+    "front": "Welche Symptome nennt das Lehrbuch bei einer Patellafraktur?",
+    "back": "Bei einer Patellafraktur kann das Knie nicht mehr gestreckt werden; weitere Symptome sind Schmerzen, Schwellung, Hämatome und ggf. ein Kniegelenkerguss.",
     "sourceRecordIds": [
       "src-1170-4-wissen"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-1170-4-wissen-5",
     "conceptId": "concept-60-1170-4-wissen-5",
     "type": "basic",
-    "front": "Welche Therapie nennt das Lehrbuch bei „Knieverletzungen“?",
-    "back": "Ruhigstellung in Kniegelenkorthese, Physiotherapie Tibiakopffraktur Grundlagen Häufige Ursachen einer Tibiakopffraktur (Schienbeinkopfbruch) sind Stürze aus großer Höhe, Skiunfälle oder wenn ein Fußgänger von einem Auto angefahren wird.",
+    "front": "Welche Therapie nennt das Lehrbuch bei einer Kreuzbandruptur?",
+    "back": "Bei einer Kreuzbandruptur erfolgt laut Lehrbuch meist die Ruhigstellung in einer Kniegelenkorthese mit anschließender intensiver Physiotherapie zum Muskelaufbau.",
     "sourceRecordIds": [
       "src-1170-4-wissen"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-1170-72-wissen-1",
@@ -22125,13 +22177,15 @@
     "conceptId": "concept-60-1200-39-definition-1",
     "type": "basic",
     "front": "Wie wird „Rheumatische Erkrankungen“ im Lehrbuch definiert?",
-    "back": "Unter den Erkrankungen des rheumatischen Formenkreises werden zahlreiche, sehr unterschiedliche entzündliche und degenerative Erkrankungen im Bereich der Gelenke, Sehnen, Knochen, Muskeln und des Bindegewebes zusammengefasst. Die rheumatischen Erkrankungen können in 4 Hauptgruppen eingeteilt werden: 1.",
+    "back": "Rheumatische Erkrankungen umfassen zahlreiche entzündliche und degenerative Erkrankungen von Gelenken, Sehnen, Knochen, Muskeln und Bindegewebe. Das Lehrbuch teilt sie in vier Hauptgruppen ein: entzündlich-rheumatische Erkrankungen, degenerative Gelenk- und Wirbelsäulenerkrankungen, Weichteilrheumatismus sowie Stoffwechselerkrankungen mit rheumatischen Beschwerden.",
     "sourceRecordIds": [
       "src-1200-39-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-1201-29-wissen-1",
@@ -22619,13 +22673,15 @@
     "conceptId": "concept-61-1227-75-definition-1",
     "type": "basic",
     "front": "Wie wird „Zentrale Fazialisparese“ im Lehrbuch definiert?",
-    "back": "Nach einem Schlaganfall kommt es zu einer zentralen Fazialisparese, einer Lähmung der Gesichtsmuskulatur. Die Lähmung betrifft hauptsächlich die Gesichtsseite gegenüber der geschädigten Hirnhemisphäre, v. a.",
+    "back": "Nach einem Schlaganfall kann eine zentrale Fazialisparese auftreten. Dabei ist die Gesichtsmuskulatur gelähmt; hauptsächlich betroffen ist die Gesichtsseite gegenüber der geschädigten Hirnhemisphäre, besonders Mund- und Wangenmuskulatur.",
     "sourceRecordIds": [
       "src-1227-75-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-1228-7-wissen-1",
@@ -22723,13 +22779,15 @@
     "conceptId": "concept-61-1230-49-definition-1",
     "type": "basic",
     "front": "Wie wird „Aphasie“ im Lehrbuch definiert?",
-    "back": "Aphasien sind durch Hirnschäden erworbene Störungen der S prache.",
+    "back": "Aphasien sind durch Hirnschäden erworbene Störungen der Sprache.",
     "sourceRecordIds": [
       "src-1230-49-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-1231-9-merken-1",
@@ -24244,13 +24302,15 @@
     "conceptId": "concept-62-1302-19-definition-1",
     "type": "basic",
     "front": "Wie wird „Tinnitus“ im Lehrbuch definiert?",
-    "back": "Tinnitus (Ohrgeräusch) ist ein Pfeifen, Piepsen oder Rauschen im Ohr, das i. d.",
+    "back": "Tinnitus ist ein Pfeifen, Piepsen oder Rauschen im Ohr, das in der Regel nur der Betroffene hört; es kann ein- oder beidseitig auftreten.",
     "sourceRecordIds": [
       "src-1302-19-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-1302-58-definition-1",
@@ -24361,13 +24421,15 @@
     "conceptId": "concept-62-1308-27-definition-1",
     "type": "basic",
     "front": "Wie wird „Akustikusneurinom“ im Lehrbuch definiert?",
-    "back": "Das Akustikusneurinom ist ein gutartiger Tumor des 8.",
+    "back": "Das Akustikusneurinom ist ein gutartiger Tumor des 8. Hirnnervs (Nervus vestibulocochlearis).",
     "sourceRecordIds": [
       "src-1308-27-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-1312-60-achtung-1",
@@ -24686,13 +24748,15 @@
     "conceptId": "concept-63-1324-9-definition-1",
     "type": "basic",
     "front": "Wie wird „Hirsutismus“ im Lehrbuch definiert?",
-    "back": "Beim Hirsutismus findet sich bei Frauen und Kindern eine verstärkte Körperbehaarung, die dem männlichen Behaarungstyp entspricht. a.",
+    "back": "Beim Hirsutismus findet sich bei Frauen und Kindern eine verstärkte Körperbehaarung, die dem männlichen Behaarungstyp entspricht.",
     "sourceRecordIds": [
       "src-1324-9-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-1325-42-achtung-1",
@@ -25622,13 +25686,15 @@
     "conceptId": "concept-64-1370-58-definition-1",
     "type": "basic",
     "front": "Wie wird „Phimose“ im Lehrbuch definiert?",
-    "back": "Von einer Phimose (Vorhautverengung) spricht man, wenn sich die Vorhaut nach dem 3.",
+    "back": "Von einer Phimose spricht man, wenn sich die Vorhaut nach dem 3. Lebensjahr nicht oder nur unter Schmerzen hinter die Eichel zurückstreifen lässt.",
     "sourceRecordIds": [
       "src-1370-58-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-1370-63-definition-1",
@@ -26727,13 +26793,15 @@
     "conceptId": "concept-66-1417-51-definition-1",
     "type": "basic",
     "front": "Wie wird „Tollwut“ im Lehrbuch definiert?",
-    "back": "Tollwut ist eine durch das Rabies-Virus (= Lyssa-Virus) hervorgerufene, in Deutschland sehr seltene, meist importierte Entzündung des Gehirns (Enzephalitis) oder Rückenmarks (Myelitis), die i. d.",
+    "back": "Tollwut ist eine durch das Rabies-/Lyssa-Virus verursachte, in Deutschland sehr seltene und meist importierte Entzündung von Gehirn oder Rückenmark, die in der Regel tödlich verläuft; sie ist meldepflichtig.",
     "sourceRecordIds": [
       "src-1417-51-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-1418-22-definition-1",
@@ -26883,13 +26951,15 @@
     "conceptId": "concept-66-1421-52-definition-1",
     "type": "basic",
     "front": "Wie wird „Malaria“ im Lehrbuch definiert?",
-    "back": "Malaria ist eine in den (Sub-)Tropen erworbene, durch Plasmodien verursachte Infektion, die mit – u.",
+    "back": "Malaria ist eine in den (Sub-)Tropen erworbene, durch Plasmodien verursachte Infektion, die mit teils wiederkehrendem Fieber einhergeht und durch Anämie sowie Organdurchblutungsstörungen lebensbedrohlich werden kann. Übertragen wird sie durch die Anopheles-Mücke; es besteht Meldepflicht.",
     "sourceRecordIds": [
       "src-1421-52-definition"
     ],
     "status": "approved",
-    "qaFlags": [],
-    "certification": "deterministic-source-reconstruction+p7b-global-qa"
+    "qaFlags": [
+      "p12-source-repair"
+    ],
+    "certification": "p12-source-repaired+source-checked"
   },
   {
     "id": "card-1422-38-wissen-1",
