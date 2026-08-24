@@ -1,0 +1,75 @@
+{
+  "phase": "P16",
+  "status": "PASS",
+  "branch": "p16-exam-horizon-planning",
+  "version": "1.1.0-dev.16",
+  "baseline": "P15 selective free recall",
+  "goal": "Adapt study priority to an optional exam date and scope without replacing FSRS, fabricating due dates, or creating an end-of-plan workload spike.",
+  "inputs": {
+    "examDate": "required when plan is enabled",
+    "scope": ["entire book", "selected chapters"],
+    "additionalRequiredConfiguration": false
+  },
+  "horizons": {
+    "long": ">28 days: coverage + spaced maintenance",
+    "medium": "8-28 days: consolidation + mixed retrieval",
+    "final_week": "4-7 days: weaknesses + exam questions",
+    "final_days": "2-3 days: core material + application",
+    "final_day": "0-1 day: light targeted review; no new material forced"
+  },
+  "selectionBehavior": {
+    "fsrsDueDatesChanged": false,
+    "dueCardsOutsideExamScopeStillEligible": true,
+    "inScopePriorityBoosted": true,
+    "weaknessStillUsed": true,
+    "questionScopeBoosted": true,
+    "recentQuestionPenaltyUsed": true,
+    "applicationQuestionsReceiveLatePhaseBoost": true,
+    "selectedChapterQuickAndFullExamsRespectPlanScope": true,
+    "newDetailSuppressedInFinalWeek": true,
+    "newImportantSuppressedInFinalDays": true,
+    "allNewMaterialSuppressedOnFinalDay": true,
+    "dailyTargetArtificiallyIncreased": false
+  },
+  "persistence": {
+    "store": "IndexedDB settings",
+    "key": "examPlan",
+    "includedInExistingBackup": true,
+    "indexedDbSchemaVersionChanged": false
+  },
+  "ux": {
+    "primaryNavigationChanged": false,
+    "todayOneTapStartPreserved": true,
+    "planOptional": true,
+    "todayShowsCompactExamHorizon": true,
+    "examPageCanCreateEditDeletePlan": true,
+    "typingRequired": false,
+    "gamificationAdded": false
+  },
+  "content": {
+    "cards": 2094,
+    "concepts": 2089,
+    "questions": 954,
+    "cases": 120,
+    "contentBankMutatedByP16": false,
+    "newClinicalFactsGenerated": false
+  },
+  "offline": {
+    "cache": "pflegelern-p16-v1.1.0-dev16",
+    "p16CssPrecached": true,
+    "p16CorePrecached": true,
+    "p16RuntimePrecached": true,
+    "p16BootstrapPrecached": true
+  },
+  "validation": {
+    "nodeSyntax": "PASS",
+    "purePolicyTests": 24,
+    "runtimePatchHarnessTests": 4,
+    "localTestErrors": 0,
+    "integrationAssertionsAuthored": 31,
+    "repositoryFilesVerifiedAfterWrite": true,
+    "ciWorkflowAdded": ".github/workflows/validate-p16.yml",
+    "ciRunObserved": false,
+    "browserE2E": "Not run in this phase"
+  }
+}
