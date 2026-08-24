@@ -18,7 +18,7 @@ const content = {
   conceptById: new Map([[concept.id, concept]]),
   questionById: new Map([[objective.id, objective], [application.id, application]]),
   cardsByConcept: new Map([[concept.id, [card]]]),
-  questionsByConcept: new Map([[concept.id, [objective, application]]),
+  questionsByConcept: new Map([[concept.id, [objective, application]]]),
   chapterById: new Map(),
   sectionById: new Map()
 };
