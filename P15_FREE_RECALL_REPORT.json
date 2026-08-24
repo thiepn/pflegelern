@@ -1,0 +1,67 @@
+{
+  "phase": "P15",
+  "status": "PASS",
+  "baseline": "P14 calibrated self-assessment branch",
+  "version": "1.1.0-dev.15",
+  "goal": "Add optional, selective free-recall practice where typing is useful without turning every flashcard into a text-entry task or introducing unreliable automatic grading.",
+  "behavior": {
+    "selective": true,
+    "selectionBasis": "Conservative prompt-shape classifier for direct retrieval questions",
+    "eligiblePromptClasses": [
+      "definition or term naming",
+      "threshold or quantity",
+      "location or source",
+      "direct enumeration"
+    ],
+    "excludedPromptClasses": [
+      "why/explanation prompts",
+      "describe/elaborate prompts",
+      "reasoning/comparison prompts",
+      "open-ended action prompts",
+      "very long prompts"
+    ],
+    "typingRequired": false,
+    "extraTapRequired": false,
+    "answerRevealAlwaysAvailable": true,
+    "autoGradeTypedRecall": false,
+    "typedRecallChangesFsrs": false,
+    "typedRecallShownAfterReveal": true,
+    "threeP14RatingsPreserved": true,
+    "p14CalibrationPreserved": true
+  },
+  "draftLifecycle": {
+    "storage": "sessionStorage only",
+    "maximumCharacters": 320,
+    "survivesCardReveal": true,
+    "clearedAfterRating": true,
+    "includedInBackup": false,
+    "clinicalOrProgressRecord": false
+  },
+  "safety": {
+    "semanticSimilarityScoring": false,
+    "newMedicalFactsGenerated": false,
+    "modelBasedAnswerJudgment": false,
+    "learnerRetainsFinalSelfAssessment": true
+  },
+  "ux": {
+    "autoFocus": false,
+    "mobileKeyboardForcedOpen": false,
+    "optionalLabelExplicit": true,
+    "noNewSettingRequired": true,
+    "directRevealPathPreserved": true
+  },
+  "offline": {
+    "newCssPrecached": true,
+    "newJsPrecached": true,
+    "cache": "pflegelern-p15-v1.1.0-dev15"
+  },
+  "validation": {
+    "nodeSyntax": "PASS",
+    "pureFreeRecallTests": 11,
+    "testErrors": 0,
+    "contentBankMutated": false,
+    "schedulerMutated": false,
+    "fsrsMutated": false,
+    "browserE2E": "Not run in this phase"
+  }
+}
