@@ -1,0 +1,91 @@
+{
+  "phase": "P18",
+  "status": "PASS",
+  "branch": "p18-mastery-model-v2",
+  "version": "1.1.0-dev.18",
+  "baseline": "P17 adaptive study mix v2",
+  "goal": "Replace the former blended mastery percentage with a conservative evidence hierarchy that distinguishes what kind of retrieval the learner has actually demonstrated while keeping the visible experience simple.",
+  "evidenceHierarchy": [
+    "unseen",
+    "exposed",
+    "cued_recall",
+    "productive_recall",
+    "objective_retrieval",
+    "application",
+    "spaced_stability"
+  ],
+  "trackedChannels": {
+    "cued": "Flashcard recall and three-button self-rating",
+    "productive": "Typed selective free recall and short-answer retrieval",
+    "objective": "Automatically graded practice questions",
+    "exam": "Delayed-feedback exam evidence",
+    "application": "Clinical-case application evidence",
+    "spaced": "Successful scheduled retrieval across distinct study days"
+  },
+  "antiInflation": {
+    "sameSessionRepetitionCanCreateHighMastery": false,
+    "distinctStudyDaysTracked": true,
+    "storedEvidenceDaysPerChannelBoundedTo": 12,
+    "earlyUnlimitedPracticeCountsAsSpacedSuccess": false,
+    "recentFailureTemporarilyBlocksSafeClassification": true,
+    "independentAssessmentRequiredWhenAvailable": true,
+    "legacyCountersWithoutDayHistoryAreConfidenceCapped": true
+  },
+  "learnerFacing": {
+    "labels": ["Neu", "Noch üben", "Sicher"],
+    "sevenInternalLevelsExposedAsConfiguration": false,
+    "newPrimaryNavigation": false,
+    "newLearnerSetting": false,
+    "gamificationAdded": false
+  },
+  "integration": {
+    "conceptMasteryNowUsesV2Score": true,
+    "chapterMasteryAndWeakChapterRankingUseV2Automatically": true,
+    "p14CalibrationPreserved": true,
+    "p15SelectiveFreeRecallPreserved": true,
+    "p15TypedRecallRecordedAsProductiveEvidence": true,
+    "p15CardIdentityBridgeAdded": true,
+    "p16ExamPlanningPreserved": true,
+    "p17AdaptiveMixPreserved": true,
+    "fsrsSchedulingChanged": false,
+    "examEvidenceCreatesFakeFsrsReviews": false
+  },
+  "persistence": {
+    "store": "conceptState",
+    "field": "p18Evidence",
+    "masteryModelVersionField": 2,
+    "indexedDbVersion": 2,
+    "indexedDbSchemaMigrationRequired": false,
+    "existingBackupAutomaticallyIncludesEvidence": true,
+    "legacyProgressDiscarded": false,
+    "legacyProgressReadConservatively": true
+  },
+  "content": {
+    "concepts": 2089,
+    "cards": 2094,
+    "questions": 954,
+    "cases": 120,
+    "contentBankMutatedByP18": false,
+    "newClinicalFactsGenerated": false
+  },
+  "offline": {
+    "cache": "pflegelern-p18-v1.1.0-dev18",
+    "p18CorePrecached": true,
+    "p18RuntimePrecached": true,
+    "p18BootstrapPrecached": true
+  },
+  "validation": {
+    "syntaxChecks": "PASS",
+    "policyTests": 24,
+    "runtimeHarnessTests": 12,
+    "repositoryIntegrationAssertions": 39,
+    "totalAutomatedAssertions": 75,
+    "errors": 0,
+    "githubActionsWorkflow": ".github/workflows/validate-p18.yml",
+    "githubActionsRunId": 32787371795,
+    "githubActionsHeadSha": "8f5ec3df841311a342e9db1dc998ffc81b946945",
+    "githubActionsConclusion": "success",
+    "repositoryFilesVerifiedAfterWrite": true,
+    "browserE2E": "Not run in this phase"
+  }
+}
