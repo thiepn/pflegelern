@@ -3,24 +3,29 @@
   "status": "PASS",
   "baseline": "P14 calibrated self-assessment branch",
   "version": "1.1.0-dev.15",
-  "goal": "Add optional, selective free-recall practice where typing is useful without turning every flashcard into a text-entry task or introducing unreliable automatic grading.",
+  "goal": "Add optional, selective productive recall where it is pedagogically useful without turning every flashcard into a text-entry task or introducing unreliable automatic grading.",
   "behavior": {
     "selective": true,
-    "selectionBasis": "Conservative prompt-shape classifier for direct retrieval questions",
-    "eligiblePromptClasses": [
+    "selectionBasis": "P11 priority model using concept importance/type, accumulated weakness evidence, self-rating overconfidence evidence, card/list structure and conservative prompt shape.",
+    "prioritySignals": [
+      "CORE concept with a suitable recall prompt",
+      "weak concept (weakness score >= 0.40)",
+      "definition or exact conceptual term",
+      "sequence/procedure/list structure",
+      "self-rating success contradicted by objective practice/exam failures",
+      "exact threshold or quantity prompt"
+    ],
+    "supportedPromptClasses": [
       "definition or term naming",
       "threshold or quantity",
       "location or source",
-      "direct enumeration"
+      "direct enumeration",
+      "concise explanation for CORE/principle material"
     ],
-    "excludedPromptClasses": [
-      "why/explanation prompts",
-      "describe/elaborate prompts",
-      "reasoning/comparison prompts",
-      "open-ended action prompts",
-      "very long prompts"
-    ],
+    "longFormExclusion": true,
+    "examPlanPriority": "Deferred until P16 supplies exam-plan state; no fake exam-plan signal is invented in P15.",
     "typingRequired": false,
+    "mentalAnswerAllowed": true,
     "extraTapRequired": false,
     "answerRevealAlwaysAvailable": true,
     "autoGradeTypedRecall": false,
@@ -41,14 +46,16 @@
     "semanticSimilarityScoring": false,
     "newMedicalFactsGenerated": false,
     "modelBasedAnswerJudgment": false,
-    "learnerRetainsFinalSelfAssessment": true
+    "learnerRetainsFinalSelfAssessment": true,
+    "productiveRecallDoesNotYetCreateMasteryV2Evidence": "Intentional; P18 owns the richer evidence model."
   },
   "ux": {
     "autoFocus": false,
     "mobileKeyboardForcedOpen": false,
     "optionalLabelExplicit": true,
     "noNewSettingRequired": true,
-    "directRevealPathPreserved": true
+    "directRevealPathPreserved": true,
+    "typedDraftDisplayedBeforeReferenceAnswerAfterReveal": true
   },
   "offline": {
     "newCssPrecached": true,
@@ -57,8 +64,9 @@
   },
   "validation": {
     "nodeSyntax": "PASS",
-    "pureFreeRecallTests": 11,
+    "pureFreeRecallTests": 18,
     "testErrors": 0,
+    "repositoryBlobMatchChecked": true,
     "contentBankMutated": false,
     "schedulerMutated": false,
     "fsrsMutated": false,
