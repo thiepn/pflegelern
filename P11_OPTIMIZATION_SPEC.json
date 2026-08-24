@@ -1,0 +1,112 @@
+{
+  "phase": "P11",
+  "status": "pass",
+  "baselineAppVersion": "1.0.0",
+  "nextPhase": "P12",
+  "productionCounts": {
+    "chapters": 66,
+    "sections": 1361,
+    "concepts": 2089,
+    "flashcards": 2094,
+    "questions": 85,
+    "cases": 18
+  },
+  "priorityFindings": [
+    {
+      "id": "D1",
+      "priority": "P0",
+      "name": "assessment-bank-imbalance",
+      "responsePhase": "P12-P13"
+    },
+    {
+      "id": "D2",
+      "priority": "P0",
+      "name": "flashcard-self-rating-calibration",
+      "responsePhase": "P14"
+    },
+    {
+      "id": "D3",
+      "priority": "P1",
+      "name": "limited-productive-recall",
+      "responsePhase": "P15"
+    },
+    {
+      "id": "D4",
+      "priority": "P1",
+      "name": "no-exam-horizon-adaptation",
+      "responsePhase": "P16"
+    },
+    {
+      "id": "D5",
+      "priority": "P1",
+      "name": "recommended-mix-needs-expanded-assessment-bank",
+      "responsePhase": "P17"
+    },
+    {
+      "id": "D6",
+      "priority": "P1",
+      "name": "mastery-evidence-strength-conflation",
+      "responsePhase": "P18"
+    },
+    {
+      "id": "D7",
+      "priority": "P1",
+      "name": "weakness-remediation-selection-not-diagnosis",
+      "responsePhase": "P19"
+    },
+    {
+      "id": "D8",
+      "priority": "P2",
+      "name": "mock-exam-depth",
+      "responsePhase": "P20"
+    }
+  ],
+  "protectedInvariants": {
+    "todayOneTapStart": true,
+    "primaryNavigation": ["Heute", "Lernen", "Prüfung", "Fortschritt"],
+    "recommendedBounded": true,
+    "voluntaryStudyUncapped": true,
+    "visibleFlashcardRatings": ["Nicht gewusst", "Unsicher", "Gewusst"],
+    "mandatoryTyping": false,
+    "examFeedbackBeforeSubmission": false,
+    "examEvidenceCreatesFsrsReviews": false,
+    "gamificationPressure": false,
+    "sourceEditionYear": 2015
+  },
+  "learningDemands": [
+    "factual_recall",
+    "discrimination",
+    "sequence_procedure",
+    "safety",
+    "applied_judgment",
+    "conceptual_explanation"
+  ],
+  "evidenceHierarchy": [
+    "unseen",
+    "exposed",
+    "cued_recall",
+    "productive_recall",
+    "objective_retrieval",
+    "application",
+    "spaced_stability"
+  ],
+  "p12CoverageGates": [
+    "All assessment-eligible CORE concepts receive a retrieval path beyond the basic flashcard unless documented unsuitable.",
+    "All safety-critical assessment-eligible concepts receive independent assessment coverage.",
+    "Procedure/sequence concepts receive ordering or application coverage where source-supported.",
+    "Useful confusable concept sets receive discrimination tasks.",
+    "No substantive CORE chapter is left without meaningful question coverage.",
+    "Global duplicate, ambiguity and source-support audits pass."
+  ],
+  "p12ExpectedScale": {
+    "questionsMinApprox": 500,
+    "questionsMaxApprox": 800,
+    "quotaIsReleaseGate": false
+  },
+  "p13ExpectedScale": {
+    "casesMinApprox": 80,
+    "casesMaxApprox": 150,
+    "quotaIsReleaseGate": false
+  },
+  "p11RuntimeChanges": false
+}
