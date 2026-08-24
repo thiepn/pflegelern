@@ -1,0 +1,42 @@
+name: Validate PflegeLern P19
+
+on:
+  push:
+    branches: [p19-weakness-remediation-engine]
+    paths:
+      - 'js/p19-**'
+      - 'js/p18-bootstrap.js'
+      - 'tests/p19-**'
+      - 'service-worker.js'
+      - 'data/manifest.json'
+      - '.github/workflows/validate-p19.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: |
+          node --check js/p19-remediation-core.js
+          node --check js/p19-remediation-migration.js
+          node --check js/p19-remediation.js
+          node --check js/p18-bootstrap.js
+          node --check tests/p19-remediation.test.mjs
+          node --check tests/p19-runtime.test.mjs
+          node --check tests/p19-integration.test.mjs
+      - name: P19 remediation policy tests
+        run: node tests/p19-remediation.test.mjs
+      - name: P19 runtime harness
+        run: node tests/p19-runtime.test.mjs
+      - name: P19 repository integration checks
+        run: node tests/p19-integration.test.mjs
