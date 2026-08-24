@@ -1,7 +1,7 @@
 {
   "project": "PflegeLern",
-  "phase": "P19",
-  "version": "1.1.0-dev.19",
+  "phase": "P20",
+  "version": "1.1.0-dev.20",
   "schemaVersion": 1,
   "source": {
     "title": "I care – Pflege",
@@ -9,7 +9,7 @@
     "editionYear": 2015,
     "basis": "Uploaded textbook only; no external clinical facts merged."
   },
-  "status": "p19-weakness-remediation-engine",
+  "status": "p20-mock-exam-system-v2",
   "notes": [
     "P6 manually calibrated content preserved.",
     "P7 source signals were re-routed by PDF section position where possible.",
@@ -27,6 +27,7 @@
     "P16 adds optional exam-horizon planning using only an exam date and scope. The planner changes selection priority and exam scope without changing FSRS due dates, forcing extra daily workload, or introducing new clinical facts.",
     "P17 replaces the formerly small fixed question component of recommended study with a bounded adaptive mix driven by due backlog, weakness, exposure, objective-coverage debt, application debt, question/concept recency and P16 exam proximity. Due reviews remain protected and no FSRS state is rewritten by the mix layer.",
     "P18 introduces Mastery Model v2. It separates cued recall, productive recall, objective practice, exam evidence, application evidence and spaced stability; uses distinct study days to resist same-session inflation; reads legacy v1.0/v1.1 evidence conservatively; and keeps the learner-facing result simple as Neu, Noch üben or Sicher.",
-    "P19 converts mistakes into bounded concept-level repair sequences. Immediate repair uses support cards plus distinct transfer/application questions when available, exact failed items are not used as independent evidence, unresolved weaknesses receive spaced follow-up without modifying FSRS due dates, and repeated same-day remediation is capped."
+    "P19 converts mistakes into bounded concept-level repair sequences. Immediate repair uses support cards plus distinct transfer/application questions when available, exact failed items are not used as independent evidence, unresolved weaknesses receive spaced follow-up without modifying FSRS due dates, and repeated same-day remediation is capped.",
+    "P20 upgrades the existing Prüfung flow into Mock Exam System v2 with configurable 5–100 question exams, optional 5–180 minute timers, whole-bank/weakness/multi-chapter scope, balanced objective question-type blueprints, unanswered and flagged overview, deterministic end-only grading, detailed type/topic breakdown, and direct handoff to P19 targeted remediation. P20 reuses the existing examAttempts store, preserves P16 scope planning, feeds results through the P18/P19 exam evidence chain, and never fabricates FSRS reviews or new clinical facts."
   ]
 }

@@ -1,0 +1,42 @@
+name: Validate PflegeLern P20
+
+on:
+  push:
+    branches: [p20-mock-exam-system-v2]
+    paths:
+      - 'js/p20-**'
+      - 'js/p18-bootstrap.js'
+      - 'css/p20-exam.css'
+      - 'tests/p20-**'
+      - 'service-worker.js'
+      - 'data/manifest.json'
+      - '.github/workflows/validate-p20.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: |
+          node --check js/p20-exam-core.js
+          node --check js/p20-exam.js
+          node --check js/p20-exam-ui.js
+          node --check tests/p20-exam-core.test.mjs
+          node --check tests/p20-runtime.test.mjs
+          node --check tests/p20-integration.test.mjs
+      - name: P20 exam policy tests
+        run: node tests/p20-exam-core.test.mjs
+      - name: P20 runtime harness
+        run: node tests/p20-runtime.test.mjs
+      - name: P20 repository integration checks
+        run: node tests/p20-integration.test.mjs
