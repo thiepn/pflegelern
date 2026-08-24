@@ -1,7 +1,7 @@
 {
   "project": "PflegeLern",
-  "phase": "P17",
-  "version": "1.1.0-dev.17",
+  "phase": "P18",
+  "version": "1.1.0-dev.18",
   "schemaVersion": 1,
   "source": {
     "title": "I care – Pflege",
@@ -9,7 +9,7 @@
     "editionYear": 2015,
     "basis": "Uploaded textbook only; no external clinical facts merged."
   },
-  "status": "p17-adaptive-study-mix-v2",
+  "status": "p18-mastery-model-v2",
   "notes": [
     "P6 manually calibrated content preserved.",
     "P7 source signals were re-routed by PDF section position where possible.",
@@ -25,6 +25,7 @@
     "P14 calibrates flashcard self-assessment without changing the three visible ratings or FSRS mapping. Structured source-backed answers can show a compact Kernpunkte checklist, and every revealed card receives concise rating criteria.",
     "P15 selectively offers optional free recall on direct-retrieval flashcards. Typed recall is shown back to the learner after reveal for self-comparison, is never auto-graded, never changes FSRS directly, and is cleared after rating.",
     "P16 adds optional exam-horizon planning using only an exam date and scope. The planner changes selection priority and exam scope without changing FSRS due dates, forcing extra daily workload, or introducing new clinical facts.",
-    "P17 replaces the formerly small fixed question component of recommended study with a bounded adaptive mix driven by due backlog, weakness, exposure, objective-coverage debt, application debt, question/concept recency and P16 exam proximity. Due reviews remain protected and no FSRS state is rewritten by the mix layer."
+    "P17 replaces the formerly small fixed question component of recommended study with a bounded adaptive mix driven by due backlog, weakness, exposure, objective-coverage debt, application debt, question/concept recency and P16 exam proximity. Due reviews remain protected and no FSRS state is rewritten by the mix layer.",
+    "P18 introduces Mastery Model v2. It separates cued recall, productive recall, objective practice, exam evidence, application evidence and spaced stability; uses distinct study days to resist same-session inflation; reads legacy v1.0/v1.1 evidence conservatively; and keeps the learner-facing result simple as Neu, Noch üben or Sicher."
   ]
 }
