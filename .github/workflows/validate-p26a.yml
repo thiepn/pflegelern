@@ -7,6 +7,7 @@ on:
       - 'tools/p26a_semantic_audit.py'
       - 'tools/p26a_semantic_refinement.py'
       - 'tests/p26a-semantic-audit.test.py'
+      - 'tests/p25d-integration.test.mjs'
       - 'data/questions.json'
       - 'data/concepts.json'
       - 'data/cards.json'
