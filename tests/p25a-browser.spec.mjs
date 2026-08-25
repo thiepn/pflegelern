@@ -94,10 +94,10 @@ test('generated Short Answer can be typed, persisted and self-graded through the
   await expect(textarea).toHaveValue('Meine eigene Testantwort');
   await page.waitForTimeout(250);
 
-  await page.getByRole('button', { name: 'Antwort anzeigen' }).click();
-  await expect(page.getByRole('heading', { name: 'Musterantwort' })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Nicht richtig' })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Richtig' })).toBeVisible();
+  await page.getByRole('button', { name: 'Antwort anzeigen', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Musterantwort', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Nicht richtig', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Richtig', exact: true })).toBeVisible();
   expect(errors).toEqual([]);
 });
 
@@ -118,8 +118,8 @@ test('generated Matching can be completed and graded through all real select con
     await select.selectOption({ label: pairs[index].right });
   }
 
-  await page.getByRole('button', { name: 'Antwort prüfen' }).click();
-  await expect(page.getByRole('heading', { name: 'Richtig.' })).toBeVisible();
+  await page.getByRole('button', { name: 'Antwort prüfen', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Richtig.', exact: true })).toBeVisible();
   expect(errors).toEqual([]);
 });
 
