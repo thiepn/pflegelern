@@ -58,7 +58,8 @@ function restoreVisibleDraft(root = document) {
 
   const renderedIndex = renderedSessionIndex();
   if (renderedIndex !== null) textarea.dataset.p25cSessionIndex = String(renderedIndex);
-  const fallbackIndex = renderedIndex ?? Number(textarea.dataset.p25cSessionIndex) || 0;
+  const datasetIndex = Number(textarea.dataset.p25cSessionIndex);
+  const fallbackIndex = renderedIndex ?? (Number.isFinite(datasetIndex) ? datasetIndex : 0);
   const draft = readDraft(sessionId, fallbackIndex);
   if (!draft || draft.index !== fallbackIndex) return false;
 
