@@ -43,6 +43,13 @@ async function savedStudyResponse(page, sessionId) {
   }, sessionId);
 }
 
+async function initialStudyOrder(page, sessionId) {
+  return page.evaluate(async (id) => {
+    const session = await globalThis.__PFLEGE_P20_ENGINE__.getSession(id);
+    return [...(session?.items?.[0]?.variant?.order || [])];
+  }, sessionId);
+}
+
 async function exerciseStudyType(page, type) {
   const { sessionId } = await createQuestionSession(page, type);
   await openStudySession(page, sessionId);
@@ -58,13 +65,15 @@ async function exerciseStudyType(page, type) {
     await input.check();
     expect((await savedStudyResponse(page, sessionId))?.selected?.length).toBeGreaterThanOrEqual(1);
   } else if (type === 'ordering') {
-    const before = await page.locator('.ordering-item').allTextContents();
+    const before = await initialStudyOrder(page, sessionId);
+    expect(before.length).toBeGreaterThan(1);
     const down = page.locator('[data-action="move-order"][data-direction="1"]:not([disabled])').first();
     await expect(down).toBeVisible();
     await down.click();
-    const after = await page.locator('.ordering-item').allTextContents();
-    expect(after).not.toEqual(before);
-    expect((await savedStudyResponse(page, sessionId))?.order?.length).toBeGreaterThan(1);
+    await expect.poll(async () => ((await savedStudyResponse(page, sessionId))?.order || []).join('|'))
+      .not.toBe(before.join('|'));
+    const saved = await savedStudyResponse(page, sessionId);
+    expect(saved?.order?.length).toBe(before.length);
   } else if (type === 'matching') {
     const selects = page.locator('[data-study-match]');
     const count = await selects.count();
@@ -141,7 +150,8 @@ async function exerciseExamType(page, type) {
     const down = page.locator('[data-action="move-exam-order"][data-direction="1"]:not([disabled])').first();
     await expect(down).toBeVisible();
     await down.click();
-    expect((await savedExamAnswer(page, examId, questionId))?.order?.length).toBeGreaterThan(1);
+    await expect.poll(async () => ((await savedExamAnswer(page, examId, questionId))?.order || []).length)
+      .toBeGreaterThan(1);
   } else if (type === 'matching') {
     const selects = page.locator('[data-exam-match]');
     const count = await selects.count();
