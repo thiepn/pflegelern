@@ -6,6 +6,7 @@ on:
     paths:
       - 'tools/p26b_semantic_repair.py'
       - 'tools/p26b_semantic_repair_refinement.py'
+      - 'tools/p26b_compact_bank.py'
       - 'tests/p26b-semantic-correction.test.py'
       - 'tools/p26a_semantic_audit.py'
       - 'tools/p26a_semantic_refinement.py'
@@ -43,13 +44,14 @@ jobs:
           python3 -m py_compile tools/p26a_semantic_refinement.py
           python3 -m py_compile tools/p26b_semantic_repair.py
           python3 -m py_compile tools/p26b_semantic_repair_refinement.py
+          python3 -m py_compile tools/p26b_compact_bank.py
           python3 -m py_compile tests/p26b-semantic-correction.test.py
 
-      - name: Freeze pre-repair question-bank checksum
-        run: sha256sum data/questions.json | tee /tmp/questions-before.sha256
+      - name: Restore compact question-bank serialization
+        run: python3 tools/p26b_compact_bank.py
 
-      - name: Materialize the seven certified semantic repairs
-        run: python3 tools/p26b_semantic_repair_refinement.py --write
+      - name: Verify the seven repairs are already materialized
+        run: python3 tools/p26b_semantic_repair_refinement.py
 
       - name: P26B semantic correction certification
         run: python3 tests/p26b-semantic-correction.test.py
@@ -104,14 +106,14 @@ jobs:
             reports/P26B_SEMANTIC_CORRECTION_REPORT.json
             reports/P26B_SEMANTIC_CORRECTION_REPORT.md
 
-      - name: Commit materialized P26B question repairs and reports
+      - name: Commit compact serialization if needed
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/questions.json reports/P26B_SEMANTIC_CORRECTION_REPORT.json reports/P26B_SEMANTIC_CORRECTION_REPORT.md
+          git add data/questions.json reports/P26B_SEMANTIC_CORRECTION_REPORT.json
           if git diff --cached --quiet; then
-            echo 'P26B semantic repairs already materialized.'
+            echo 'P26B corrected bank is already compact and current.'
           else
-            git commit -m 'P26B: materialize seven semantic corrections [skip ci]'
+            git commit -m 'P26B: restore compact question-bank serialization [skip ci]'
             git push origin HEAD:p26b-semantic-defect-correction
           fi
