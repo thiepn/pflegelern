@@ -8,6 +8,7 @@ on:
       - 'tools/p26b_semantic_repair_refinement.py'
       - 'tools/p26b_compact_bank.py'
       - 'tests/p26b-semantic-correction.test.py'
+      - 'tests/p26b-report-evidence.test.py'
       - 'tools/p26a_semantic_audit.py'
       - 'tools/p26a_semantic_refinement.py'
       - 'tests/p26a-semantic-audit.test.py'
@@ -47,6 +48,7 @@ jobs:
           python3 -m py_compile tools/p26b_compact_bank.py
           python3 -m py_compile tests/p26a-semantic-audit.test.py
           python3 -m py_compile tests/p26b-semantic-correction.test.py
+          python3 -m py_compile tests/p26b-report-evidence.test.py
 
       - name: Restore compact question-bank serialization
         run: python3 tools/p26b_compact_bank.py
@@ -56,6 +58,9 @@ jobs:
 
       - name: P26B semantic correction certification
         run: python3 tests/p26b-semantic-correction.test.py
+
+      - name: P26B evidence-reference integrity
+        run: python3 tests/p26b-report-evidence.test.py
 
       - name: P26A detector phase-forward regression
         run: python3 tests/p26a-semantic-audit.test.py
