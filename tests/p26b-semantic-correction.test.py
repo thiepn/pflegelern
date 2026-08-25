@@ -50,7 +50,7 @@ assert "pflegelern-p26b-v1.1.0-dev26b" in service_worker
 by_id = {q["id"]: q for q in questions}
 
 assert by_id["q-16-1-01"]["options"] == [
-    {"id": "a", "text": "60–100/min"},
+    {"id": "a", "text": "60 bis 100/min"},
     {"id": "b", "text": "Unter 60/min"},
     {"id": "c", "text": "Über 100/min"},
     {"id": "d", "text": "Genau 60/min"},
@@ -59,7 +59,7 @@ assert by_id["q-16-1-01"]["correct"] == ["b"]
 
 assert by_id["q-16-1-02"]["options"] == [
     {"id": "a", "text": "Unter 60/min"},
-    {"id": "b", "text": "60–100/min"},
+    {"id": "b", "text": "60 bis 100/min"},
     {"id": "c", "text": "Über 100/min"},
     {"id": "d", "text": "Genau 100/min"},
 ]
