@@ -26,6 +26,18 @@ function signalFor(engine, questionId, exposure = engine.p25bSessionExposure) {
   });
 }
 
+function questionChapterIds(engine, question) {
+  return new Set((question?.conceptIds || []).map((id) => engine.content.conceptChapter(id)?.id).filter(Boolean));
+}
+
+function sharesChapter(engine, question, chapterIds) {
+  if (!chapterIds.size) return true;
+  return (question?.conceptIds || []).some((id) => {
+    const chapter = engine.content.conceptChapter(id);
+    return chapter && chapterIds.has(chapter.id);
+  });
+}
+
 function alternativeScore(engine, question, originalConcepts, signal) {
   const ids = question.conceptIds || [];
   const overlap = ids.some((id) => originalConcepts.has(id)) ? 1 : 0;
@@ -36,10 +48,12 @@ function alternativeScore(engine, question, originalConcepts, signal) {
 
 export function applyQuestionRepetitionGuard(engine, items = [], {
   seed = Date.now(),
-  exposure = engine.p25bSessionExposure
+  exposure = engine.p25bSessionExposure,
+  candidateQuestions = null
 } = {}) {
   const result = [...items];
   const used = new Set(result.filter((item) => item?.kind === 'question').map((item) => item.id));
+  const sourcePool = Array.isArray(candidateQuestions) ? candidateQuestions : engine.content.questions;
 
   for (let index = 0; index < result.length; index += 1) {
     const item = result[index];
@@ -50,8 +64,13 @@ export function applyQuestionRepetitionGuard(engine, items = [], {
     if (!isHardRepeat(signal)) continue;
 
     const originalConcepts = new Set(original.conceptIds || []);
+    const originalChapters = questionChapterIds(engine, original);
     const candidates = stableShuffle(
-      engine.content.questions.filter((candidate) => candidate.type === original.type && !used.has(candidate.id)),
+      sourcePool.filter((candidate) =>
+        candidate.type === original.type &&
+        !used.has(candidate.id) &&
+        sharesChapter(engine, candidate, originalChapters)
+      ),
       `${seed}-p25b-${index}-${original.type}`
     )
       .map((candidate) => ({
@@ -107,9 +126,12 @@ export function installQuestionRepetitionPatches() {
     const before = copyExposure(this.p25bSessionExposure);
     const session = await previousCreateScopedSession.call(this, options);
     if (!session || !session.items?.some((item) => item.kind === 'question')) return session;
+    const scope = { chapterId: options.chapterId || null, sectionId: options.sectionId || null };
+    const scopedQuestions = this.content.questionsForScope(scope);
     session.items = applyQuestionRepetitionGuard(this, session.items, {
       seed: `${session.id}-p25b-scoped`,
-      exposure: before
+      exposure: before,
+      candidateQuestions: scopedQuestions
     });
     await this.saveSession(session);
     this.p25bSessionExposure = mergeSessionExposure(before, session);
