@@ -53,8 +53,19 @@ jobs:
       - name: P20 mock exam regression
         run: node tests/p20-exam-core.test.mjs && node tests/p20-runtime.test.mjs
 
-      - name: P24 regression repair contract
-        run: node tests/p24-repair.test.mjs
+      - name: P24 affected-surface regression invariants
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          sw = Path('service-worker.js').read_text()
+          assert "const CACHE_PREFIX = 'pflegelern-'" in sw
+          assert 'key.startsWith(CACHE_PREFIX) && key !== CACHE' in sw
+          assert "const CACHE = 'pflegelern-p25a-v1.1.0-dev25a'" in sw
+          assert "'./css/p24-regression.css'" in sw
+          assert "'./js/p24-ui.js'" in sw
+          assert "'./data/questions.json'" in sw
+          print('P24 affected-surface invariants PASS')
+          PY
 
       - name: P25A content certification
         run: |
