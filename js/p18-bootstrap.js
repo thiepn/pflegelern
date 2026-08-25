@@ -9,6 +9,7 @@ import { initCareThemeUi } from './p21-care-ui.js';
 import { initClinicalAccessibilityTokens } from './p22-accessibility.js';
 import { initP24RegressionUi } from './p24-ui.js';
 import { installQuestionRepetitionPatches } from './p25b-repetition.js';
+import { initAnswerInputReliability } from './p25c-input-reliability.js';
 
 try {
   const savedTheme = localStorage.getItem('pflege-theme');
@@ -28,6 +29,7 @@ installMasteryModelPatches();
 installRemediationMigrationPatch();
 installWeaknessRemediationPatches();
 installMockExamPatches();
+initAnswerInputReliability();
 initMasteryInteractionBridge();
 await import('./app.js');
 await initExamPlanUi();
