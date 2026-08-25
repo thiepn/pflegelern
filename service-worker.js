@@ -1,4 +1,5 @@
-const CACHE = 'pflegelern-p23-v1.1.0-dev23';
+const CACHE_PREFIX = 'pflegelern-';
+const CACHE = 'pflegelern-p24-v1.1.0-dev24';
 const ASSETS = [
   './',
   './index.html',
@@ -18,6 +19,7 @@ const ASSETS = [
   './css/p20-exam.css',
   './css/p21-care-theme.css',
   './css/p22-accessibility.css',
+  './css/p24-regression.css',
   './js/util.js',
   './js/storage.js',
   './js/content.js',
@@ -40,6 +42,7 @@ const ASSETS = [
   './js/p20-exam-ui.js',
   './js/p21-care-ui.js',
   './js/p22-accessibility.js',
+  './js/p24-ui.js',
   './js/p18-bootstrap.js',
   './data/manifest.json',
   './data/chapters.json',
@@ -55,7 +58,15 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-  event.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key)))).then(() => self.clients.claim()));
+  event.waitUntil(
+    caches.keys()
+      .then((keys) => Promise.all(
+        keys
+          .filter((key) => key.startsWith(CACHE_PREFIX) && key !== CACHE)
+          .map((key) => caches.delete(key))
+      ))
+      .then(() => self.clients.claim())
+  );
 });
 
 self.addEventListener('fetch', (event) => {

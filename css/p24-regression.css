@@ -1,0 +1,52 @@
+/* PflegeLern P24 — regression repairs only. Loaded after P23/P22. */
+:root {
+  --border: #a7b3b9;
+  --border-strong: #74838b;
+}
+
+:root[data-theme="dark"] {
+  --border: #4c585f;
+  --border-strong: #6d7a81;
+}
+
+/* Keep all responsive navigation behavior on one breakpoint. */
+@media (max-width: 959px) {
+  .main-content {
+    margin-left: 0;
+    padding: 28px 22px calc(var(--bottom-nav-height) + 34px + env(safe-area-inset-bottom));
+  }
+
+  .mobile-header {
+    background: var(--surface-raised);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .bottom-nav {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .bottom-nav-link {
+    position: relative;
+    min-width: 0;
+  }
+
+  .bottom-nav-link span {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 350px) {
+  .bottom-nav-link { font-size: .64rem; }
+}

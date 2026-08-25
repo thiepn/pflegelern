@@ -1,0 +1,84 @@
+name: Validate PflegeLern P24
+
+on:
+  push:
+    branches: [p24-full-regression-repair-browser-qa]
+    paths:
+      - 'css/p24-regression.css'
+      - 'js/p24-ui.js'
+      - 'js/p18-bootstrap.js'
+      - 'js/storage.js'
+      - 'service-worker.js'
+      - 'manifest.webmanifest'
+      - 'icons/icon.svg'
+      - 'icons/icon-192.png'
+      - 'icons/icon-512.png'
+      - 'data/manifest.json'
+      - 'tests/p24-repair.test.mjs'
+      - 'tests/p24-browser.spec.mjs'
+      - '.github/workflows/validate-p24.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: |
+          node --check js/p24-ui.js
+          node --check js/p18-bootstrap.js
+          node --check js/storage.js
+          node --check service-worker.js
+          node --check tests/p24-repair.test.mjs
+          node --check tests/p24-browser.spec.mjs
+      - name: P24 repair contract
+        run: node tests/p24-repair.test.mjs
+      - name: P20 exam regression
+        run: node tests/p20-exam-core.test.mjs && node tests/p20-runtime.test.mjs
+      - name: P19 remediation regression
+        run: node tests/p19-remediation.test.mjs
+      - name: P18 mastery regression
+        run: node tests/p18-mastery.test.mjs
+
+  browser-qa:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start local app server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/pflegelern-http.log 2>&1 &
+          echo $! > /tmp/pflegelern-http.pid
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/pflegelern-http.log
+          exit 1
+      - name: Chromium browser regression QA
+        run: npx playwright test tests/p24-browser.spec.mjs --reporter=line --workers=1
+      - name: Upload browser QA artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p24-browser-qa-artifacts
+          path: test-results
+          if-no-files-found: ignore

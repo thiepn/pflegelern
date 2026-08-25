@@ -7,9 +7,8 @@ import { installMockExamPatches } from './p20-exam.js';
 import { initMockExamUi } from './p20-exam-ui.js';
 import { initCareThemeUi } from './p21-care-ui.js';
 import { initClinicalAccessibilityTokens } from './p22-accessibility.js';
+import { initP24RegressionUi } from './p24-ui.js';
 
-// P22 visual migration: preserve explicit dark mode, otherwise move legacy/system
-// preferences to the light-first Clinical Clean default.
 try {
   const savedTheme = localStorage.getItem('pflege-theme');
   const resolvedTheme = savedTheme === 'dark' ? 'dark' : 'light';
@@ -20,6 +19,7 @@ try {
 }
 
 initClinicalAccessibilityTokens();
+initP24RegressionUi();
 await installExamPlanPatches();
 installAdaptiveMixPatches();
 installMasteryModelPatches();

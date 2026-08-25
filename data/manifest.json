@@ -1,7 +1,7 @@
 {
   "project": "PflegeLern",
-  "phase": "P23",
-  "version": "1.1.0-dev.23",
+  "phase": "P24",
+  "version": "1.1.0-dev.24",
   "schemaVersion": 1,
   "source": {
     "title": "I care – Pflege",
@@ -9,27 +9,19 @@
     "editionYear": 2015,
     "basis": "Uploaded textbook only; no external clinical facts merged."
   },
-  "status": "p23-editorial-clinical-ui",
+  "status": "p24-regression-repair-browser-qa",
   "notes": [
     "P6 manually calibrated content preserved.",
     "P7 source signals were re-routed by PDF section position where possible.",
     "Mass cards were deterministically reconstructed from source evidence and subjected to global mechanical/content-shape QA.",
     "Items failing P7B gates are excluded from production rather than silently shipped.",
     "Current-guidance modernization is not part of this source-faithful bank.",
-    "P9 reconstructs textbook section titles from PDF heading typography to repair multi-line truncation.",
-    "False figure-caption sections 28.9 and 59.16 were removed and their concepts re-routed.",
-    "Seven omitted real parent sections were reconstructed.",
-    "The synthetic 36.3–36.4 pilot section was removed; its concepts now live in the real 36.3/36.4 hierarchy.",
+    "P9 repairs textbook section hierarchy and false-caption routing.",
     "P10 branding finalized as PflegeLern for repository /pflegelern and GitHub Pages release.",
-    "P13 expands the source-faithful application bank to 120 cases using conservative synthesized scenarios backed by certified 2015 textbook concepts.",
-    "P14 calibrates flashcard self-assessment without changing the three visible ratings or FSRS mapping.",
-    "P15 selectively offers optional free recall on direct-retrieval flashcards without automatic grading or direct FSRS changes.",
-    "P16 adds optional exam-horizon planning using only an exam date and scope without changing FSRS due dates.",
-    "P17 adds a bounded adaptive study mix while protecting due reviews and FSRS state.",
-    "P18 introduces Mastery Model v2 with separate evidence channels and conservative legacy migration.",
-    "P19 converts mistakes into bounded concept-level repair sequences with delayed transfer and spaced follow-up.",
-    "P20 upgrades Prüfung into Mock Exam System v2 with configurable scope, timer, balanced objective question selection, question overview and detailed results while preserving P16–P19 contracts.",
-    "P21 introduced the first Care Design System and P22 moved it to a light-first Clinical Clean presentation.",
-    "P23 replaces the generic AI-style visual language with an Editorial Clinical UI: neutral gray paper/ink surfaces, visible structural borders, restrained clinical blue, compact rectangular controls, low-radius geometry, near-zero decorative shadow, no gradients or glow, explicit neutral graphite dark mode, a clearer dashboard grid, and simpler settings/data rows. Learning logic, content, storage schema, mastery, remediation and exam behavior remain unchanged."
+    "P13 expands the source-faithful application bank to 120 cases.",
+    "P14-P19 preserve calibrated flashcard assessment, free recall, exam planning, adaptive mix, Mastery Model v2 and bounded remediation.",
+    "P20 provides Mock Exam System v2 while preserving P16-P19 contracts.",
+    "P23 replaces the generic AI-style visual language with the restrained Editorial Clinical UI.",
+    "P24 repairs responsive navigation and breakpoint regressions, removes effective mobile header blur, strengthens light/dark control borders, isolates PflegeLern service-worker cache cleanup, makes backup restore replace all learning stores even for older backups, synchronizes PWA colors/icons and visible version metadata, and adds real Chromium browser QA at 320, 375, 768, 912, 959, 1024 and 1440 px. Learning content, FSRS scheduling, mastery, remediation and exam scoring remain unchanged."
   ]
 }

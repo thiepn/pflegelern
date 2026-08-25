@@ -14,6 +14,11 @@ const STORE_DEFS = {
   metadata: { keyPath: 'key' }
 };
 
+const LEARNING_STORES = [
+  'cardState', 'conceptState', 'sessions', 'examAttempts', 'mistakes',
+  'bookmarks', 'reports', 'history', 'questionHistory'
+];
+
 let dbPromise;
 
 export function openDatabase() {
@@ -126,13 +131,22 @@ function validateBackup(backup) {
 export async function importBackup(backup) {
   const accepted = validateBackup(backup);
   const db = await openDatabase();
-  const storeNames = Object.keys(accepted);
+
+  // A restore replaces the complete learning state, even when an older backup
+  // predates a newer learning store. Settings/metadata are replaced only when
+  // the backup explicitly contains them.
+  const transactionStores = [...new Set([
+    ...LEARNING_STORES,
+    ...Object.keys(accepted).filter((name) => !LEARNING_STORES.includes(name))
+  ])];
+
   await new Promise((resolve, reject) => {
-    const tx = db.transaction(storeNames, 'readwrite');
-    for (const name of storeNames) {
+    const tx = db.transaction(transactionStores, 'readwrite');
+    for (const name of LEARNING_STORES) tx.objectStore(name).clear();
+    for (const name of Object.keys(accepted).filter((name) => !LEARNING_STORES.includes(name))) tx.objectStore(name).clear();
+    for (const [name, items] of Object.entries(accepted)) {
       const store = tx.objectStore(name);
-      store.clear();
-      for (const item of accepted[name]) store.put(item);
+      for (const item of items) store.put(item);
     }
     tx.oncomplete = resolve;
     tx.onerror = () => reject(tx.error);
@@ -141,14 +155,13 @@ export async function importBackup(backup) {
 }
 
 export async function resetLearningData() {
-  const stores = ['cardState', 'conceptState', 'sessions', 'examAttempts', 'mistakes', 'bookmarks', 'reports', 'history', 'questionHistory'];
   const db = await openDatabase();
   await new Promise((resolve, reject) => {
-    const tx = db.transaction(stores, 'readwrite');
-    for (const name of stores) tx.objectStore(name).clear();
+    const tx = db.transaction(LEARNING_STORES, 'readwrite');
+    for (const name of LEARNING_STORES) tx.objectStore(name).clear();
     tx.oncomplete = resolve;
     tx.onerror = () => reject(tx.error);
   });
 }
 
-export { STORE_DEFS, DB_NAME, DB_VERSION, validateBackup };
+export { STORE_DEFS, LEARNING_STORES, DB_NAME, DB_VERSION, validateBackup };
