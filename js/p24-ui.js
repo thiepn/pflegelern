@@ -19,7 +19,11 @@ function decorateVersion(main) {
   if (currentView() !== 'settings') return;
   const rows = [...main.querySelectorAll('.info-table tr')];
   const appRow = rows.find((row) => row.cells?.[0]?.textContent?.trim() === 'App');
-  if (appRow?.cells?.[1]) appRow.cells[1].textContent = `PflegeLern ${APP_VERSION}`;
+  const cell = appRow?.cells?.[1];
+  const desired = `PflegeLern ${APP_VERSION}`;
+  // Idempotent: avoid a MutationObserver microtask loop caused by assigning
+  // textContent to an already-correct value on every observed DOM mutation.
+  if (cell && cell.textContent !== desired) cell.textContent = desired;
 }
 
 function decorate() {
