@@ -14,6 +14,12 @@ function currentStudySessionId() {
   return params.get('view') === 'study' ? params.get('session') || '' : '';
 }
 
+function renderedSessionIndex() {
+  const text = document.querySelector('.study-counter')?.textContent || '';
+  const match = text.match(/^\s*(\d+)\s*\/\s*\d+/);
+  return match ? Math.max(0, Number(match[1]) - 1) : null;
+}
+
 function readDraft(sessionId, fallbackIndex = 0) {
   const key = studyDraftStorageKey(sessionId);
   if (!key) return null;
@@ -44,35 +50,20 @@ function clearDraft(sessionId) {
   try { sessionStorage.removeItem(key); } catch {}
 }
 
-function resolveDraftIndex(textarea) {
-  const shell = textarea?.closest?.('.study-page');
-  const sessionId = currentStudySessionId();
-  const engine = globalThis.__PFLEGE_P20_ENGINE__;
-  if (!shell || !sessionId || !engine) return 0;
-  // The active StudyEngine session object is private to app.js. The rendered page
-  // always represents the persisted session's currentIndex, so use a cached index
-  // placed on the textarea when available and otherwise resolve it during save.
-  const value = Number(textarea.dataset.p25cSessionIndex);
-  return Number.isFinite(value) ? Math.max(0, Math.floor(value)) : 0;
-}
-
 function restoreVisibleDraft(root = document) {
   const textarea = root.querySelector?.('[data-study-text]');
   if (!textarea) return false;
   const sessionId = currentStudySessionId();
   if (!sessionId) return false;
-  const engine = globalThis.__PFLEGE_P20_ENGINE__;
-  const sessionIndex = Number(textarea.dataset.p25cSessionIndex);
-  const fallbackIndex = Number.isFinite(sessionIndex) ? sessionIndex : 0;
+
+  const renderedIndex = renderedSessionIndex();
+  if (renderedIndex !== null) textarea.dataset.p25cSessionIndex = String(renderedIndex);
+  const fallbackIndex = renderedIndex ?? Number(textarea.dataset.p25cSessionIndex) || 0;
   const draft = readDraft(sessionId, fallbackIndex);
-  if (!draft) return false;
+  if (!draft || draft.index !== fallbackIndex) return false;
+
   if (!textarea.value && draft.text) textarea.value = draft.text;
   textarea.dataset.p25cDraftProtected = 'true';
-  if (engine && !Number.isFinite(sessionIndex)) {
-    void engine.getSession(sessionId).then((session) => {
-      if (session && textarea.isConnected) textarea.dataset.p25cSessionIndex = String(session.currentIndex || 0);
-    }).catch(() => {});
-  }
   return true;
 }
 
@@ -87,8 +78,8 @@ function installEnginePatches() {
     const draft = readDraft(id, session.currentIndex || 0);
     if (draft) {
       mergeStudyTextDraft(session, draft);
-      // Keep the recovered draft durable even if the learner refreshed before the
-      // legacy debounced writer had a chance to run.
+      // A refresh/navigation can happen before app.js's legacy 180 ms debounce.
+      // Persist the recovered draft immediately when the session is next loaded.
       await this.saveSession(session);
     }
     return session;
@@ -113,31 +104,24 @@ function captureStudyText(event) {
   if (!textarea) return;
   const sessionId = currentStudySessionId();
   if (!sessionId) return;
-  const engine = globalThis.__PFLEGE_P20_ENGINE__;
-  const knownIndex = Number(textarea.dataset.p25cSessionIndex);
-  if (Number.isFinite(knownIndex)) {
-    writeDraft(sessionId, knownIndex, textarea.value);
-    return;
-  }
-  // Resolve once, then every subsequent keystroke is synchronous. This path is
-  // only needed on the first keystroke of a freshly rendered free-response item.
-  if (engine) {
-    const value = textarea.value;
-    void engine.getSession(sessionId).then((session) => {
-      if (!session) return;
-      const index = session.currentIndex || 0;
-      if (textarea.isConnected) textarea.dataset.p25cSessionIndex = String(index);
-      writeDraft(sessionId, index, value);
-    }).catch(() => {});
-  } else {
-    writeDraft(sessionId, resolveDraftIndex(textarea), textarea.value);
-  }
+
+  const cached = Number(textarea.dataset.p25cSessionIndex);
+  const index = Number.isFinite(cached) ? cached : (renderedSessionIndex() ?? 0);
+  textarea.dataset.p25cSessionIndex = String(index);
+
+  // This is intentionally synchronous. It closes the exact race where a learner
+  // types and immediately checks, exits, navigates or reloads before the existing
+  // debounced IndexedDB save gets to run.
+  writeDraft(sessionId, index, textarea.value);
 }
 
 function labelInteractiveSurfaces(root = document) {
   root.querySelectorAll?.('[data-study-option], [data-exam-option], [data-study-match], [data-exam-match], [data-study-text]').forEach((control) => {
     control.dataset.p25cInput = 'ready';
   });
+  const textarea = root.querySelector?.('[data-study-text]');
+  const index = renderedSessionIndex();
+  if (textarea && index !== null) textarea.dataset.p25cSessionIndex = String(index);
   restoreVisibleDraft(root);
 }
 
@@ -154,4 +138,4 @@ export function initAnswerInputReliability() {
   }
 }
 
-export { installEnginePatches, readDraft, writeDraft, clearDraft, restoreVisibleDraft };
+export { installEnginePatches, readDraft, writeDraft, clearDraft, restoreVisibleDraft, renderedSessionIndex };
