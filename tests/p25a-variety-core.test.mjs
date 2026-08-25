@@ -18,7 +18,7 @@ const fullAvailability = {
   const plan = buildQuestionTypePlan({ objectiveTarget: 4, applicationTarget: 0, availableByType: fullAvailability, seed: 'four' });
   const counts = summarizeTypePlan(plan);
   equal(plan.length, 4, 'four objective slots are filled');
-  equal(Object.keys(counts).length, 4, 'four objective slots use four distinct interaction types when available');
+  equal(Object.keys(counts).length, 4, 'four objective slots use four distinct interaction types when healthy pools exist');
   for (const type of ['single_choice', 'multiple_choice', 'matching', 'ordering']) equal(counts[type], 1, `${type} appears once in a four-slot objective mix`);
 }
 
@@ -26,7 +26,7 @@ const fullAvailability = {
   const plan = buildQuestionTypePlan({ objectiveTarget: 5, availableByType: fullAvailability, seed: 'five' });
   const counts = summarizeTypePlan(plan);
   equal(plan.length, 5, 'five objective slots are filled');
-  check((counts.single_choice || 0) <= 2, 'Single Choice is capped to at most two of five when alternatives are available');
+  check((counts.single_choice || 0) <= 2, 'Single Choice is capped to at most two of five when alternatives are healthy');
   check(Object.keys(counts).length >= 4, 'five objective slots keep at least four interaction types');
 }
 
@@ -45,11 +45,18 @@ const fullAvailability = {
 }
 
 {
-  const plan = buildQuestionTypePlan({ objectiveTarget: 4, availableByType: { single_choice: 20, matching: 1 }, seed: 'capacity' });
+  const plan = buildQuestionTypePlan({ objectiveTarget: 4, availableByType: { single_choice: 20, matching: 1 }, seed: 'scarce' });
   const counts = summarizeTypePlan(plan);
-  equal(plan.length, 4, 'capacity-constrained plan still fills target');
-  equal(counts.matching, 1, 'matching capacity is respected');
-  equal(counts.single_choice, 3, 'remaining slots fall back to available Single Choice items');
+  equal(plan.length, 4, 'scarce-subtype plan still fills target');
+  equal(counts.matching || 0, 0, 'a one-question subtype pool is not forced into every mixed session');
+  equal(counts.single_choice, 4, 'healthy fallback fills the remaining narrow-scope slots');
+}
+
+{
+  const plan = buildQuestionTypePlan({ objectiveTarget: 4, availableByType: { single_choice: 20, matching: 4 }, seed: 'healthy-threshold' });
+  const counts = summarizeTypePlan(plan);
+  equal(plan.length, 4, 'minimum healthy subtype pool can participate');
+  check((counts.matching || 0) >= 1, 'a four-question matching pool is eligible for deliberate diversity');
 }
 
 {
@@ -70,10 +77,10 @@ const fullAvailability = {
 }
 
 {
-  const available = { single_choice: 2, multiple_choice: 1, matching: 2, ordering: 0, clinical_case: 1, short_answer: 3 };
+  const available = { single_choice: 6, multiple_choice: 4, matching: 4, ordering: 0, clinical_case: 4, short_answer: 4 };
   const plan = buildQuestionTypePlan({ objectiveTarget: 5, applicationTarget: 4, availableByType: available, seed: 'finite' });
   const counts = summarizeTypePlan(plan);
-  equal(plan.length, 9, 'all requested slots fill when total capacity is sufficient');
+  equal(plan.length, 9, 'all requested slots fill when healthy capacity is sufficient');
   for (const [type, count] of Object.entries(counts)) check(count <= available[type], `${type} never exceeds available capacity`);
 }
 
