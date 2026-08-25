@@ -8,6 +8,7 @@ import { initMockExamUi } from './p20-exam-ui.js';
 import { initCareThemeUi } from './p21-care-ui.js';
 import { initClinicalAccessibilityTokens } from './p22-accessibility.js';
 import { initP24RegressionUi } from './p24-ui.js';
+import { installQuestionRepetitionPatches } from './p25b-repetition.js';
 
 try {
   const savedTheme = localStorage.getItem('pflege-theme');
@@ -22,6 +23,7 @@ initClinicalAccessibilityTokens();
 initP24RegressionUi();
 await installExamPlanPatches();
 installAdaptiveMixPatches();
+installQuestionRepetitionPatches();
 installMasteryModelPatches();
 installRemediationMigrationPatch();
 installWeaknessRemediationPatches();
