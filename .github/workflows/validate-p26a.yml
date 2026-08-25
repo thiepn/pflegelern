@@ -1,0 +1,97 @@
+name: Validate PflegeLern P26A
+
+on:
+  push:
+    branches: [p26a-semantic-defect-detection]
+    paths:
+      - 'tools/p26a_semantic_audit.py'
+      - 'tests/p26a-semantic-audit.test.py'
+      - 'data/questions.json'
+      - 'data/concepts.json'
+      - 'data/cards.json'
+      - 'data/manifest.json'
+      - 'service-worker.js'
+      - '.github/workflows/validate-p26a.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  semantic-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Python syntax
+        run: python3 -m py_compile tools/p26a_semantic_audit.py tests/p26a-semantic-audit.test.py
+
+      - name: Freeze question-bank checksum
+        run: sha256sum data/questions.json | tee /tmp/questions-before.sha256
+
+      - name: P26A semantic detector certification
+        run: python3 tests/p26a-semantic-audit.test.py
+
+      - name: Materialize semantic defect registry
+        run: |
+          python3 tools/p26a_semantic_audit.py --write
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          q = Path('data/questions.json').read_bytes()
+          digest = hashlib.sha256(q).hexdigest()
+          path = Path('reports/P26A_SEMANTIC_DEFECT_REGISTRY.json')
+          report = json.loads(path.read_text(encoding='utf-8'))
+          report['generatedAt'] = f'question-bank-sha256:{digest}'
+          path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print('normalized registry to question-bank digest', digest)
+          PY
+
+      - name: Verify audit did not mutate question bank
+        run: |
+          sha256sum data/questions.json > /tmp/questions-after.sha256
+          diff /tmp/questions-before.sha256 /tmp/questions-after.sha256
+
+      - name: P25D question-quality regression
+        run: node tests/p25d-question-quality.test.mjs && node tests/p25d-integration.test.mjs
+
+      - name: P25C input regression
+        run: node tests/p25c-input-core.test.mjs
+
+      - name: P25B repetition regression
+        run: node tests/p25b-repetition-core.test.mjs
+
+      - name: P18-P20 core regressions
+        run: |
+          node tests/p18-mastery.test.mjs
+          node tests/p19-remediation.test.mjs
+          node tests/p20-exam-core.test.mjs
+          node tests/p20-runtime.test.mjs
+
+      - name: Upload semantic audit artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: p26a-semantic-defect-registry
+          path: |
+            reports/P26A_SEMANTIC_DEFECT_REGISTRY.json
+            reports/P26A_SEMANTIC_DEFECT_REPORT.md
+
+      - name: Commit deterministic audit reports
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/P26A_SEMANTIC_DEFECT_REGISTRY.json reports/P26A_SEMANTIC_DEFECT_REPORT.md
+          if git diff --cached --quiet; then
+            echo 'Semantic audit reports already current.'
+          else
+            git commit -m 'P26A: materialize semantic defect registry [skip ci]'
+            git push origin HEAD:p26a-semantic-defect-detection
+          fi
