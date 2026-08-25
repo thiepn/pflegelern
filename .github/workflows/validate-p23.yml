@@ -1,0 +1,41 @@
+name: Validate PflegeLern P23
+
+on:
+  push:
+    branches: [p23-editorial-clinical-ui]
+    paths:
+      - 'css/p21-care-theme.css'
+      - 'css/p22-accessibility.css'
+      - 'js/p21-care-ui.js'
+      - 'index.html'
+      - 'service-worker.js'
+      - 'data/manifest.json'
+      - 'tests/p23-editorial-clinical.test.mjs'
+      - '.github/workflows/validate-p23.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: |
+          node --check js/p21-care-ui.js
+          node --check tests/p23-editorial-clinical.test.mjs
+      - name: P23 editorial clinical gate
+        run: node tests/p23-editorial-clinical.test.mjs
+      - name: P20 exam regression
+        run: node tests/p20-exam-core.test.mjs && node tests/p20-runtime.test.mjs
+      - name: P19 remediation regression
+        run: node tests/p19-remediation.test.mjs
+      - name: P18 mastery regression
+        run: node tests/p18-mastery.test.mjs

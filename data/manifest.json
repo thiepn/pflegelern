@@ -1,7 +1,7 @@
 {
   "project": "PflegeLern",
-  "phase": "P22",
-  "version": "1.1.0-dev.22",
+  "phase": "P23",
+  "version": "1.1.0-dev.23",
   "schemaVersion": 1,
   "source": {
     "title": "I care – Pflege",
@@ -9,7 +9,7 @@
     "editionYear": 2015,
     "basis": "Uploaded textbook only; no external clinical facts merged."
   },
-  "status": "p22-clinical-clean-redesign",
+  "status": "p23-editorial-clinical-ui",
   "notes": [
     "P6 manually calibrated content preserved.",
     "P7 source signals were re-routed by PDF section position where possible.",
@@ -29,7 +29,7 @@
     "P18 introduces Mastery Model v2 with separate evidence channels and conservative legacy migration.",
     "P19 converts mistakes into bounded concept-level repair sequences with delayed transfer and spaced follow-up.",
     "P20 upgrades Prüfung into Mock Exam System v2 with configurable scope, timer, balanced objective question selection, question overview and detailed results while preserving P16–P19 contracts.",
-    "P21 introduced the Care Design System and dedicated settings/data presentation.",
-    "P22 replaces P21's dark green visual direction with Clinical Clean: light-first white/soft-gray surfaces, restrained medical teal, a quiet light sidebar, stronger typography and spacing, a two-column dashboard, cleaner study/exam cards, explicit-only dark mode, static theme loading to prevent visual flashes, and clearer local backup/restore actions. Learning logic, content, storage schema, mastery, remediation and exam behavior remain unchanged."
+    "P21 introduced the first Care Design System and P22 moved it to a light-first Clinical Clean presentation.",
+    "P23 replaces the generic AI-style visual language with an Editorial Clinical UI: neutral gray paper/ink surfaces, visible structural borders, restrained clinical blue, compact rectangular controls, low-radius geometry, near-zero decorative shadow, no gradients or glow, explicit neutral graphite dark mode, a clearer dashboard grid, and simpler settings/data rows. Learning logic, content, storage schema, mastery, remediation and exam behavior remain unchanged."
   ]
 }

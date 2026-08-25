@@ -1,14 +1,19 @@
-/* P22 final accessibility token lock — loaded after the Clinical Clean theme. */
+/* P23 accessibility lock. Loaded after the editorial clinical theme. */
 :root {
-  --accent: #0d7f78;
-  --accent-hover: #0a6d67;
-  --accent-strong: #075c57;
-  --text-muted: #68777e;
-  --button-primary: #0d7f78;
-  --button-primary-hover: #0a6d67;
+  --accent: #28658f;
+  --accent-hover: #1f5276;
+  --accent-strong: #174564;
+  --text-muted: #647179;
+  --button-primary: #28658f;
+  --button-primary-hover: #1f5276;
 }
 
 :root[data-theme="dark"] {
-  --button-primary: #117b75;
-  --button-primary-hover: #0f8b83;
+  --accent: #74a9cf;
+  --accent-hover: #91bddb;
+  --accent-strong: #a7cce5;
+  --text-muted: #929da4;
+  --button-primary: #5f91b4;
+  --button-primary-hover: #74a9cf;
+  --button-primary-text: #10171b;
 }
