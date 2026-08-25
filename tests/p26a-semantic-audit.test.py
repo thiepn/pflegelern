@@ -5,10 +5,16 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location("p26a_semantic_audit", ROOT / "tools" / "p26a_semantic_audit.py")
-audit = importlib.util.module_from_spec(spec)
-sys.modules[spec.name] = audit
-spec.loader.exec_module(audit)
+
+def load_module(name, path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+audit = load_module("p26a_semantic_audit", ROOT / "tools" / "p26a_semantic_audit.py")
+refine = load_module("p26a_semantic_refinement", ROOT / "tools" / "p26a_semantic_refinement.py")
 
 questions = json.loads((ROOT / "data" / "questions.json").read_text(encoding="utf-8"))
 concepts = json.loads((ROOT / "data" / "concepts.json").read_text(encoding="utf-8"))
@@ -24,26 +30,36 @@ assert Counter(q["type"] for q in questions) == Counter({
     "ordering": 2,
 })
 
-report = audit.semantic_audit(questions, concepts, cards)
+report = refine.recompute(audit.semantic_audit(questions, concepts, cards))
 assert report["phase"] == "P26A"
 assert report["scope"]["questionCount"] == 1299
 assert report["scope"]["questionBankMutated"] is False
+assert report["refinement"]["version"] == 1
 assert report["summary"]["flaggedQuestions"] > 0
 assert report["summary"]["confirmedDefects"] > 0
 
 by_id = {entry["questionId"]: entry for entry in report["registry"]}
 
 def codes(qid):
-    assert qid in by_id, f"expected {qid} in semantic registry"
-    return {issue["code"] for issue in by_id[qid]["issues"]}
+    return {issue["code"] for issue in by_id.get(qid, {}).get("issues", [])}
 
-# Known high-confidence semantic defects from the manually reviewed P6 pilot items.
+# Known high-confidence semantic defects from manually reviewed pilot items.
 assert "NUMERIC_ANSWER_OVERLAP" in codes("q-16-1-01")
 assert "NUMERIC_ANSWER_OVERLAP" in codes("q-16-1-02")
 assert "MULTIPLE_CHOICE_ALL_OPTIONS_CORRECT" in codes("q-16-1-04")
 assert "MULTIPLE_CHOICE_ALL_OPTIONS_CORRECT" in codes("q-36-01")
 
-# The detector must distinguish confirmed defects from editorial/manual-review candidates.
+# Precision controls: different units/quantities and numeric-only labels must not become confirmed semantic defects.
+assert "NEAR_EQUIVALENT_ANSWER_OPTIONS" not in codes("q-36-02")
+assert "NUMERIC_ANSWER_OVERLAP" not in codes("q-p12-0047")  # pulse vs mg/dl
+assert "NUMERIC_ANSWER_OVERLAP" not in codes("q-p12-0053")  # mmHg vs /min
+assert "NUMERIC_ANSWER_OVERLAP" not in codes("q-p12-0218")  # °C vs g/day
+assert "NUMERIC_ANSWER_OVERLAP" not in codes("q-p12-0447")  # coincident 4–6 weeks in unrelated domains
+assert "NUMERIC_ANSWER_OVERLAP" not in codes("q-p7b-chapter-16-definition-01")
+
+# A genuinely near-identical definition distractor must remain detectable.
+assert "NEAR_EQUIVALENT_ANSWER_OPTIONS" in codes("q-p12-0040")
+
 confirmed = [entry for entry in report["registry"] if entry["disposition"] == "confirmed-defect"]
 review = [entry for entry in report["registry"] if entry["disposition"] == "manual-review"]
 assert confirmed
@@ -63,4 +79,4 @@ print(json.dumps({
     "issueCodeCounts": report["summary"]["issueCodeCounts"],
     "confirmedDefectIds": report["confirmedDefectIds"],
 }, ensure_ascii=False, indent=2))
-print("P26A semantic audit tests passed.")
+print("P26A refined semantic audit tests passed.")
