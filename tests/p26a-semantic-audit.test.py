@@ -1,11 +1,13 @@
 import importlib.util
 import json
+import sys
 from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("p26a_semantic_audit", ROOT / "tools" / "p26a_semantic_audit.py")
 audit = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = audit
 spec.loader.exec_module(audit)
 
 questions = json.loads((ROOT / "data" / "questions.json").read_text(encoding="utf-8"))
