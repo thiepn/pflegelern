@@ -1,5 +1,6 @@
 const OBJECTIVE_TYPES = Object.freeze(['single_choice', 'multiple_choice', 'matching', 'ordering']);
 const APPLICATION_TYPES = Object.freeze(['clinical_case', 'short_answer']);
+const DIVERSITY_MIN_POOL = 4;
 
 function hashText(value) {
   let hash = 2166136261;
@@ -39,29 +40,31 @@ function objectivePlan(target, availableByType, seed) {
 
   const plan = [];
   const used = new Map();
-  const alternatives = rotate(OBJECTIVE_TYPES.filter((type) => type !== 'single_choice'), `${seed}:objective-alternatives`)
-    .filter((type) => available.includes(type));
+  const healthyAlternatives = rotate(OBJECTIVE_TYPES.filter((type) => type !== 'single_choice'), `${seed}:objective-alternatives`)
+    .filter((type) => capacityOf(availableByType, type) >= DIVERSITY_MIN_POOL);
 
-  // Anchor mixed objective sets with one conventional item, then deliberately add
-  // distinct interaction types before allowing repetitions.
+  // Anchor mixed objective sets with one conventional item, then add distinct
+  // interaction types only when their pools are large enough not to cause the
+  // same scarce question to be forced into every session.
   if (available.includes('single_choice')) pushIfAvailable(plan, used, 'single_choice', availableByType, safeTarget);
-  for (const type of alternatives) pushIfAvailable(plan, used, type, availableByType, safeTarget);
+  for (const type of healthyAlternatives) pushIfAvailable(plan, used, type, availableByType, safeTarget);
   if (!plan.length) pushIfAvailable(plan, used, available[0], availableByType, safeTarget);
 
-  // Weighted fallback after the diversity pass. This caps Single Choice near 40%
-  // when the alternative pools have enough capacity, without starving small scopes.
+  const healthy = new Set(['single_choice', ...healthyAlternatives]);
   const cycle = ['single_choice', 'multiple_choice', 'single_choice', 'matching', 'ordering'];
   let guard = 0;
   while (plan.length < safeTarget && guard < safeTarget * 20 + 20) {
     const type = cycle[guard % cycle.length];
-    pushIfAvailable(plan, used, type, availableByType, safeTarget);
+    if (healthy.has(type)) pushIfAvailable(plan, used, type, availableByType, safeTarget);
     guard += 1;
     if (guard % cycle.length === 0) {
-      const remaining = available.some((candidate) => (used.get(candidate) || 0) < capacityOf(availableByType, candidate));
+      const remaining = [...healthy].some((candidate) => (used.get(candidate) || 0) < capacityOf(availableByType, candidate));
       if (!remaining) break;
     }
   }
 
+  // If a narrow topic genuinely has no healthy mixed pool, fill from whatever is
+  // available rather than dropping questions from the session.
   for (const type of available) {
     while (plan.length < safeTarget && pushIfAvailable(plan, used, type, availableByType, safeTarget)) {}
   }
@@ -74,7 +77,8 @@ function applicationPlan(target, availableByType, seed) {
   const available = APPLICATION_TYPES.filter((type) => capacityOf(availableByType, type) > 0);
   if (!available.length) return [];
 
-  const order = rotate(available, `${seed}:application`);
+  const healthy = available.filter((type) => capacityOf(availableByType, type) >= DIVERSITY_MIN_POOL);
+  const order = rotate(healthy.length ? healthy : available, `${seed}:application`);
   const plan = [];
   const used = new Map();
   let guard = 0;
@@ -86,6 +90,9 @@ function applicationPlan(target, availableByType, seed) {
       const remaining = order.some((candidate) => (used.get(candidate) || 0) < capacityOf(availableByType, candidate));
       if (!remaining) break;
     }
+  }
+  for (const type of available) {
+    while (plan.length < safeTarget && pushIfAvailable(plan, used, type, availableByType, safeTarget)) {}
   }
   return plan;
 }
@@ -108,4 +115,4 @@ export function summarizeTypePlan(plan = []) {
   return counts;
 }
 
-export { OBJECTIVE_TYPES, APPLICATION_TYPES };
+export { OBJECTIVE_TYPES, APPLICATION_TYPES, DIVERSITY_MIN_POOL };
