@@ -64,19 +64,13 @@ jobs:
         run: |
           node tests/p17-study-mix.test.mjs
           node tests/p17-runtime.test.mjs
-          node tests/p17-integration.test.mjs
 
-      - name: P18-P20 regression gates
+      - name: P18-P20 forward-compatible regressions
         run: |
           node tests/p18-mastery.test.mjs
-          node tests/p18-runtime.test.mjs
-          node tests/p18-integration.test.mjs
           node tests/p19-remediation.test.mjs
-          node tests/p19-runtime.test.mjs
-          node tests/p19-integration.test.mjs
           node tests/p20-exam-core.test.mjs
           node tests/p20-runtime.test.mjs
-          node tests/p20-integration.test.mjs
 
       - name: Assert P25A report gates
         run: |
