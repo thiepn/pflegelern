@@ -9,17 +9,17 @@
     "questionBankMutated": false
   },
   "summary": {
-    "flaggedQuestions": 122,
-    "confirmedDefects": 14,
+    "flaggedQuestions": 115,
+    "confirmedDefects": 7,
     "manualReviewCandidates": 108,
     "highestSeverityCounts": {
       "critical": 4,
-      "high": 10,
+      "high": 3,
       "medium": 16,
       "review": 92
     },
     "dispositionCounts": {
-      "confirmed-defect": 14,
+      "confirmed-defect": 7,
       "manual-review": 108
     },
     "flaggedTypeCounts": {
@@ -27,18 +27,18 @@
       "matching": 12,
       "multiple_choice": 4,
       "short_answer": 80,
-      "single_choice": 24
+      "single_choice": 17
     },
     "issueCodeCounts": {
       "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT": 54,
       "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT": 29,
       "EXACT_PROMPT_DUPLICATE": 12,
       "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER": 12,
-      "NUMERIC_ANSWER_OVERLAP": 8,
       "MULTIPLE_CHOICE_ALL_OPTIONS_CORRECT": 4,
-      "NEAR_EQUIVALENT_ANSWER_OPTIONS": 2,
+      "NUMERIC_ANSWER_OVERLAP": 2,
       "CLINICAL_CASE_WITHOUT_CASE_CONTEXT": 2,
-      "ANSWER_OPTION_SUBSUMPTION": 2
+      "ANSWER_OPTION_SUBSUMPTION": 2,
+      "NEAR_EQUIVALENT_ANSWER_OPTIONS": 1
     }
   },
   "confirmedDefectIds": [
@@ -48,14 +48,7 @@
     "q-61-4-04",
     "q-16-1-01",
     "q-16-1-02",
-    "q-36-02",
-    "q-p12-0040",
-    "q-p12-0047",
-    "q-p12-0053",
-    "q-p12-0166",
-    "q-p12-0218",
-    "q-p12-0447",
-    "q-p7b-chapter-16-definition-01"
+    "q-p12-0040"
   ],
   "registry": [
     {
@@ -252,36 +245,6 @@
       "disposition": "confirmed-defect"
     },
     {
-      "questionId": "q-36-02",
-      "type": "single_choice",
-      "difficulty": 1,
-      "conceptIds": [
-        "concept-36-fluessig-max1h"
-      ],
-      "prompt": "Wie früh dürfen flüssige Arzneimittel laut Lehrbuch höchstens vor der Verabreichung gerichtet werden?",
-      "correctTexts": [
-        "1 Stunde"
-      ],
-      "explanation": "Das Lehrbuch nennt maximal eine Stunde und empfiehlt möglichst direkte Zubereitung.",
-      "issues": [
-        {
-          "code": "NEAR_EQUIVALENT_ANSWER_OPTIONS",
-          "severity": "high",
-          "confidence": "high",
-          "rationale": "Keyed answer and distractor are semantically near-equivalent by lexical content.",
-          "evidence": {
-            "correct": "1 Stunde",
-            "distractor": "24 Stunden",
-            "jaccard": 1.0
-          },
-          "relatedQuestionIds": []
-        }
-      ],
-      "highestSeverity": "high",
-      "highestConfidence": "high",
-      "disposition": "confirmed-defect"
-    },
-    {
       "questionId": "q-p12-0040",
       "type": "single_choice",
       "difficulty": 1,
@@ -303,186 +266,6 @@
             "correct": "Nosokomiale Infektionen sind Infektionen, die im Krankenhaus, Pflegeheim oder ambulant durch ärztliche oder pflegerische Maßnahmen erworben wurden und vorher nicht bestanden.",
             "distractor": "Dies sind Infektionen, die im Krankenhaus, im Pflegeheim oder ambulant durch ärztliche oder pflegerische Maßnahmen erworben wurden und vorher nicht bestanden.",
             "jaccard": 0.917
-          },
-          "relatedQuestionIds": []
-        }
-      ],
-      "highestSeverity": "high",
-      "highestConfidence": "high",
-      "disposition": "confirmed-defect"
-    },
-    {
-      "questionId": "q-p12-0047",
-      "type": "single_choice",
-      "difficulty": 1,
-      "conceptIds": [
-        "concept-16-1-puls-normal-erwachsene"
-      ],
-      "prompt": "Welche Angabe passt laut Lehrbuch zu „Physiologischer Pulsbereich bei Erwachsenen“?",
-      "correctTexts": [
-        "Ca. 60–100 Schläge pro Minute."
-      ],
-      "explanation": "Richtig ist: Ca. 60–100 Schläge pro Minute.",
-      "issues": [
-        {
-          "code": "NUMERIC_ANSWER_OVERLAP",
-          "severity": "high",
-          "confidence": "high",
-          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
-          "evidence": {
-            "correct": "Ca. 60–100 Schläge pro Minute.",
-            "distractor": "60–100 mg/dl (3,3–5,6 mmol/l).",
-            "distractorId": "b"
-          },
-          "relatedQuestionIds": []
-        }
-      ],
-      "highestSeverity": "high",
-      "highestConfidence": "high",
-      "disposition": "confirmed-defect"
-    },
-    {
-      "questionId": "q-p12-0053",
-      "type": "single_choice",
-      "difficulty": 1,
-      "conceptIds": [
-        "concept-16-327-57-definition-1"
-      ],
-      "prompt": "Welche Beschreibung passt laut Lehrbuch am besten zu „Hypotonie“?",
-      "correctTexts": [
-        "Von einer Hypotonie spricht man, wenn der systolische Wert unter 100 mmHg liegt."
-      ],
-      "explanation": "Richtig ist: Von einer Hypotonie spricht man, wenn der systolische Wert unter 100 mmHg liegt.",
-      "issues": [
-        {
-          "code": "NUMERIC_ANSWER_OVERLAP",
-          "severity": "high",
-          "confidence": "high",
-          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
-          "evidence": {
-            "correct": "Von einer Hypotonie spricht man, wenn der systolische Wert unter 100 mmHg liegt.",
-            "distractor": "Liegt die Herzfrequenz unter 60/min, spricht man von einer Bradykardie.",
-            "distractorId": "b"
-          },
-          "relatedQuestionIds": []
-        }
-      ],
-      "highestSeverity": "high",
-      "highestConfidence": "high",
-      "disposition": "confirmed-defect"
-    },
-    {
-      "questionId": "q-p12-0166",
-      "type": "single_choice",
-      "difficulty": 1,
-      "conceptIds": [
-        "concept-31-608-31-definition-1"
-      ],
-      "prompt": "Welche Beschreibung passt laut Lehrbuch am besten zu „Gestationshypertonie“?",
-      "correctTexts": [
-        "Bei einer schwangerschaftsinduzierten Hypertonie, auch Gestationshypertonie oder Schwangerschaftshypertonie, steigt der Blutdruck auf Werte über 140/ 90 mmHG. Die Symptome einer schwangerschaftsinduzierten Hypertonie entsprechen denen einer Hypertonie."
-      ],
-      "explanation": "Richtig ist: Bei einer schwangerschaftsinduzierten Hypertonie, auch Gestationshypertonie oder Schwangerschaftshypertonie, steigt der Blutdruck auf Werte über 140/ 90 mmHG. Die Symptome einer schwangerschaftsinduzierten Hypertonie entsprechen denen einer Hypertonie.",
-      "issues": [
-        {
-          "code": "NUMERIC_ANSWER_OVERLAP",
-          "severity": "high",
-          "confidence": "high",
-          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
-          "evidence": {
-            "correct": "Bei einer schwangerschaftsinduzierten Hypertonie, auch Gestationshypertonie oder Schwangerschaftshypertonie, steigt der Blutdruck auf Werte über 140/ 90 mmHG. Die Symptome einer schwangerschaftsinduzierten Hypertonie entsprechen denen einer Hypertonie.",
-            "distractor": "Von einer arteriellen Hypertonie (Bluthochdruck) spricht man, wenn die über einen längeren Zeitraum hinweg, wiederholt gemessenen arteriellen Blutdruckwerte konstant über 140/90 mmHg liegen.",
-            "distractorId": "a"
-          },
-          "relatedQuestionIds": []
-        }
-      ],
-      "highestSeverity": "high",
-      "highestConfidence": "high",
-      "disposition": "confirmed-defect"
-    },
-    {
-      "questionId": "q-p12-0218",
-      "type": "single_choice",
-      "difficulty": 2,
-      "conceptIds": [
-        "concept-42-758-35-wissen-1"
-      ],
-      "prompt": "Welche Aussage passt laut Lehrbuch zu „Grundlagen Fieber“ im Abschnitt „Grundlagen“?",
-      "correctTexts": [
-        "Normalerweise reguliert das Wärmeregulationszentrum im Hypothalamus die Körperkerntemperatur auf einen Sollwert von ca. 37 °C. Bei Fieber ist der Sollwert auf über 38 °C erhöht."
-      ],
-      "explanation": "Richtig ist: Normalerweise reguliert das Wärmeregulationszentrum im Hypothalamus die Körperkerntemperatur auf einen Sollwert von ca. 37 °C. Bei Fieber ist der Sollwert auf über 38 °C erhöht.",
-      "issues": [
-        {
-          "code": "NUMERIC_ANSWER_OVERLAP",
-          "severity": "high",
-          "confidence": "high",
-          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
-          "evidence": {
-            "correct": "Normalerweise reguliert das Wärmeregulationszentrum im Hypothalamus die Körperkerntemperatur auf einen Sollwert von ca. 37 °C. Bei Fieber ist der Sollwert auf über 38 °C erhöht.",
-            "distractor": "Stuhl ist normalerweise geformt und weich, die Farbe ist abhängig von der Nahrung. Die Stuhlmenge beim Erwachsenen beträgt ca. 120 – 300 g/Tag.",
-            "distractorId": "a"
-          },
-          "relatedQuestionIds": []
-        }
-      ],
-      "highestSeverity": "high",
-      "highestConfidence": "high",
-      "disposition": "confirmed-defect"
-    },
-    {
-      "questionId": "q-p12-0447",
-      "type": "single_choice",
-      "difficulty": 2,
-      "conceptIds": [
-        "concept-60-1166-33-wissen-2"
-      ],
-      "prompt": "Welche Therapie nennt das Lehrbuch bei einer distalen Radiusfraktur?",
-      "correctTexts": [
-        "Ruhigstellung im Unterarmgips für 4 – 6 Wochen. Bei dislozierten Brüchen zunächst Reposition „durch Aushängen“."
-      ],
-      "explanation": "Richtig ist: Ruhigstellung im Unterarmgips für 4 – 6 Wochen. Bei dislozierten Brüchen zunächst Reposition „durch Aushängen“.",
-      "issues": [
-        {
-          "code": "NUMERIC_ANSWER_OVERLAP",
-          "severity": "high",
-          "confidence": "high",
-          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
-          "evidence": {
-            "correct": "Ruhigstellung im Unterarmgips für 4 – 6 Wochen. Bei dislozierten Brüchen zunächst Reposition „durch Aushängen“.",
-            "distractor": "Nach einer Geburt fließt etwa für 4–6 Wochen Wundsekret aus der Gebärmutter. Versiegt dieser sog.",
-            "distractorId": "b"
-          },
-          "relatedQuestionIds": []
-        }
-      ],
-      "highestSeverity": "high",
-      "highestConfidence": "high",
-      "disposition": "confirmed-defect"
-    },
-    {
-      "questionId": "q-p7b-chapter-16-definition-01",
-      "type": "single_choice",
-      "difficulty": 2,
-      "conceptIds": [
-        "concept-16-323-76-definition-1"
-      ],
-      "prompt": "Welche Aussage beschreibt „Bradykardie“ nach dem Lehrbuch am besten?",
-      "correctTexts": [
-        "Liegt die Herzfrequenz unter 60/min, spricht man von einer Bradykardie."
-      ],
-      "explanation": "Liegt die Herzfrequenz unter 60/min, spricht man von einer Bradykardie.",
-      "issues": [
-        {
-          "code": "NUMERIC_ANSWER_OVERLAP",
-          "severity": "high",
-          "confidence": "high",
-          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
-          "evidence": {
-            "correct": "Liegt die Herzfrequenz unter 60/min, spricht man von einer Bradykardie.",
-            "distractor": "Von einer Hypotonie spricht man, wenn der systolische Wert unter 100 mmHg liegt.",
-            "distractorId": "b"
           },
           "relatedQuestionIds": []
         }
@@ -3643,5 +3426,9 @@
       "highestConfidence": "medium",
       "disposition": "manual-review"
     }
-  ]
+  ],
+  "refinement": {
+    "version": 1,
+    "policy": "unit-aware numeric overlap + number-aware lexical equivalence"
+  }
 }
