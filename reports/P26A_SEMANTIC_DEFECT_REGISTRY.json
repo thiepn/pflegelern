@@ -1,0 +1,3647 @@
+{
+  "schemaVersion": 1,
+  "phase": "P26A",
+  "generatedAt": "question-bank-sha256:171b7bd8b640b9ecde74282f4f12d6c51f1b2a1b96998807c1f1405011207b1e",
+  "scope": {
+    "questionCount": 1299,
+    "conceptCount": 2089,
+    "cardCount": 2094,
+    "questionBankMutated": false
+  },
+  "summary": {
+    "flaggedQuestions": 122,
+    "confirmedDefects": 14,
+    "manualReviewCandidates": 108,
+    "highestSeverityCounts": {
+      "critical": 4,
+      "high": 10,
+      "medium": 16,
+      "review": 92
+    },
+    "dispositionCounts": {
+      "confirmed-defect": 14,
+      "manual-review": 108
+    },
+    "flaggedTypeCounts": {
+      "clinical_case": 2,
+      "matching": 12,
+      "multiple_choice": 4,
+      "short_answer": 80,
+      "single_choice": 24
+    },
+    "issueCodeCounts": {
+      "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT": 54,
+      "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT": 29,
+      "EXACT_PROMPT_DUPLICATE": 12,
+      "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER": 12,
+      "NUMERIC_ANSWER_OVERLAP": 8,
+      "MULTIPLE_CHOICE_ALL_OPTIONS_CORRECT": 4,
+      "NEAR_EQUIVALENT_ANSWER_OPTIONS": 2,
+      "CLINICAL_CASE_WITHOUT_CASE_CONTEXT": 2,
+      "ANSWER_OPTION_SUBSUMPTION": 2
+    }
+  },
+  "confirmedDefectIds": [
+    "q-16-1-04",
+    "q-36-01",
+    "q-48-4-06",
+    "q-61-4-04",
+    "q-16-1-01",
+    "q-16-1-02",
+    "q-36-02",
+    "q-p12-0040",
+    "q-p12-0047",
+    "q-p12-0053",
+    "q-p12-0166",
+    "q-p12-0218",
+    "q-p12-0447",
+    "q-p7b-chapter-16-definition-01"
+  ],
+  "registry": [
+    {
+      "questionId": "q-16-1-04",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-16-1-tachykardie-alarmzeichen"
+      ],
+      "prompt": "Welche Begleitzeichen machen eine plötzlich und ohne erkennbare Ursache auftretende Tachykardie laut Lehrbuch besonders alarmierend?",
+      "correctTexts": [
+        "Schwindel",
+        "Luftnot",
+        "Brustschmerzen",
+        "Todesangst",
+        "Plötzliche Bewusstseinsbeeinträchtigung"
+      ],
+      "explanation": "Das Lehrbuch nennt alle fünf als Alarmzeichen.",
+      "issues": [
+        {
+          "code": "MULTIPLE_CHOICE_ALL_OPTIONS_CORRECT",
+          "severity": "critical",
+          "confidence": "high",
+          "rationale": "Every displayed option is keyed correct, so the item contains no distractor and does not discriminate knowledge.",
+          "evidence": {
+            "optionCount": 5,
+            "correctCount": 5
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "critical",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-36-01",
+      "type": "multiple_choice",
+      "difficulty": 1,
+      "conceptIds": [
+        "concept-36-6r"
+      ],
+      "prompt": "Welche Punkte gehören zur 6-R-Regel?",
+      "correctTexts": [
+        "Richtiger Patient",
+        "Richtiges Medikament",
+        "Richtige Dosierung",
+        "Richtige Applikationsform",
+        "Richtiger Zeitpunkt",
+        "Richtige Dokumentation"
+      ],
+      "explanation": "Die 6-R-Regel umfasst genau diese sechs Prüfpunkte.",
+      "issues": [
+        {
+          "code": "MULTIPLE_CHOICE_ALL_OPTIONS_CORRECT",
+          "severity": "critical",
+          "confidence": "high",
+          "rationale": "Every displayed option is keyed correct, so the item contains no distractor and does not discriminate knowledge.",
+          "evidence": {
+            "optionCount": 6,
+            "correctCount": 6
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "critical",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-48-4-06",
+      "type": "multiple_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-48-4-schritt2"
+      ],
+      "prompt": "Welche Informationen sollen im zweiten Schritt der ethischen Entscheidungsfindung gesammelt werden?",
+      "correctTexts": [
+        "Pflegerische Fakten",
+        "Medizinische Fakten",
+        "Rechtliche Fakten",
+        "Soziale und organisatorische Fakten",
+        "Werte und Wille des Patienten"
+      ],
+      "explanation": "Das Lehrbuch nennt alle diese Informationsbereiche.",
+      "issues": [
+        {
+          "code": "MULTIPLE_CHOICE_ALL_OPTIONS_CORRECT",
+          "severity": "critical",
+          "confidence": "high",
+          "rationale": "Every displayed option is keyed correct, so the item contains no distractor and does not discriminate knowledge.",
+          "evidence": {
+            "optionCount": 5,
+            "correctCount": 5
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "critical",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-61-4-04",
+      "type": "multiple_choice",
+      "difficulty": 1,
+      "conceptIds": [
+        "concept-61-4-alternativ-kommunizieren"
+      ],
+      "prompt": "Welche Hilfsmittel nennt das Lehrbuch, wenn verbale Kommunikation bei Aphasie nicht ausreicht?",
+      "correctTexts": [
+        "Gestik",
+        "Mimik",
+        "Bilder",
+        "Zeichnungen",
+        "Buchstabentafeln"
+      ],
+      "explanation": "Das Lehrbuch nennt alle diese alternativen Kommunikationswege.",
+      "issues": [
+        {
+          "code": "MULTIPLE_CHOICE_ALL_OPTIONS_CORRECT",
+          "severity": "critical",
+          "confidence": "high",
+          "rationale": "Every displayed option is keyed correct, so the item contains no distractor and does not discriminate knowledge.",
+          "evidence": {
+            "optionCount": 5,
+            "correctCount": 5
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "critical",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-16-1-01",
+      "type": "single_choice",
+      "difficulty": 1,
+      "conceptIds": [
+        "concept-16-1-bradykardie-definition"
+      ],
+      "prompt": "Welche Pulsfrequenz entspricht laut Lehrbuch einer Bradykardie beim Erwachsenen?",
+      "correctTexts": [
+        "Unter 60/min"
+      ],
+      "explanation": "Das Lehrbuch definiert Bradykardie als Herzfrequenz unter 60/min.",
+      "issues": [
+        {
+          "code": "NUMERIC_ANSWER_OVERLAP",
+          "severity": "high",
+          "confidence": "high",
+          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
+          "evidence": {
+            "correct": "Unter 60/min",
+            "distractor": "45–59/min",
+            "distractorId": "a"
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "high",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-16-1-02",
+      "type": "single_choice",
+      "difficulty": 1,
+      "conceptIds": [
+        "concept-16-1-tachykardie-definition"
+      ],
+      "prompt": "Welche Herzfrequenz bezeichnet das Lehrbuch beim Erwachsenen als Tachykardie?",
+      "correctTexts": [
+        "Über 100/min"
+      ],
+      "explanation": "Beim Erwachsenen spricht das Lehrbuch bei mehr als 100/min von Tachykardie.",
+      "issues": [
+        {
+          "code": "NUMERIC_ANSWER_OVERLAP",
+          "severity": "high",
+          "confidence": "high",
+          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
+          "evidence": {
+            "correct": "Über 100/min",
+            "distractor": "Über 80/min",
+            "distractorId": "a"
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "high",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-36-02",
+      "type": "single_choice",
+      "difficulty": 1,
+      "conceptIds": [
+        "concept-36-fluessig-max1h"
+      ],
+      "prompt": "Wie früh dürfen flüssige Arzneimittel laut Lehrbuch höchstens vor der Verabreichung gerichtet werden?",
+      "correctTexts": [
+        "1 Stunde"
+      ],
+      "explanation": "Das Lehrbuch nennt maximal eine Stunde und empfiehlt möglichst direkte Zubereitung.",
+      "issues": [
+        {
+          "code": "NEAR_EQUIVALENT_ANSWER_OPTIONS",
+          "severity": "high",
+          "confidence": "high",
+          "rationale": "Keyed answer and distractor are semantically near-equivalent by lexical content.",
+          "evidence": {
+            "correct": "1 Stunde",
+            "distractor": "24 Stunden",
+            "jaccard": 1.0
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "high",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-p12-0040",
+      "type": "single_choice",
+      "difficulty": 1,
+      "conceptIds": [
+        "concept-15-301-34-definition-1"
+      ],
+      "prompt": "Welche Beschreibung passt laut Lehrbuch am besten zu „Nosokomiale Infektion“?",
+      "correctTexts": [
+        "Nosokomiale Infektionen sind Infektionen, die im Krankenhaus, Pflegeheim oder ambulant durch ärztliche oder pflegerische Maßnahmen erworben wurden und vorher nicht bestanden."
+      ],
+      "explanation": "Richtig ist: Nosokomiale Infektionen sind Infektionen, die im Krankenhaus, Pflegeheim oder ambulant durch ärztliche oder pflegerische Maßnahmen erworben wurden und vorher nicht bestanden.",
+      "issues": [
+        {
+          "code": "NEAR_EQUIVALENT_ANSWER_OPTIONS",
+          "severity": "high",
+          "confidence": "high",
+          "rationale": "Keyed answer and distractor are semantically near-equivalent by lexical content.",
+          "evidence": {
+            "correct": "Nosokomiale Infektionen sind Infektionen, die im Krankenhaus, Pflegeheim oder ambulant durch ärztliche oder pflegerische Maßnahmen erworben wurden und vorher nicht bestanden.",
+            "distractor": "Dies sind Infektionen, die im Krankenhaus, im Pflegeheim oder ambulant durch ärztliche oder pflegerische Maßnahmen erworben wurden und vorher nicht bestanden.",
+            "jaccard": 0.917
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "high",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-p12-0047",
+      "type": "single_choice",
+      "difficulty": 1,
+      "conceptIds": [
+        "concept-16-1-puls-normal-erwachsene"
+      ],
+      "prompt": "Welche Angabe passt laut Lehrbuch zu „Physiologischer Pulsbereich bei Erwachsenen“?",
+      "correctTexts": [
+        "Ca. 60–100 Schläge pro Minute."
+      ],
+      "explanation": "Richtig ist: Ca. 60–100 Schläge pro Minute.",
+      "issues": [
+        {
+          "code": "NUMERIC_ANSWER_OVERLAP",
+          "severity": "high",
+          "confidence": "high",
+          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
+          "evidence": {
+            "correct": "Ca. 60–100 Schläge pro Minute.",
+            "distractor": "60–100 mg/dl (3,3–5,6 mmol/l).",
+            "distractorId": "b"
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "high",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-p12-0053",
+      "type": "single_choice",
+      "difficulty": 1,
+      "conceptIds": [
+        "concept-16-327-57-definition-1"
+      ],
+      "prompt": "Welche Beschreibung passt laut Lehrbuch am besten zu „Hypotonie“?",
+      "correctTexts": [
+        "Von einer Hypotonie spricht man, wenn der systolische Wert unter 100 mmHg liegt."
+      ],
+      "explanation": "Richtig ist: Von einer Hypotonie spricht man, wenn der systolische Wert unter 100 mmHg liegt.",
+      "issues": [
+        {
+          "code": "NUMERIC_ANSWER_OVERLAP",
+          "severity": "high",
+          "confidence": "high",
+          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
+          "evidence": {
+            "correct": "Von einer Hypotonie spricht man, wenn der systolische Wert unter 100 mmHg liegt.",
+            "distractor": "Liegt die Herzfrequenz unter 60/min, spricht man von einer Bradykardie.",
+            "distractorId": "b"
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "high",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-p12-0166",
+      "type": "single_choice",
+      "difficulty": 1,
+      "conceptIds": [
+        "concept-31-608-31-definition-1"
+      ],
+      "prompt": "Welche Beschreibung passt laut Lehrbuch am besten zu „Gestationshypertonie“?",
+      "correctTexts": [
+        "Bei einer schwangerschaftsinduzierten Hypertonie, auch Gestationshypertonie oder Schwangerschaftshypertonie, steigt der Blutdruck auf Werte über 140/ 90 mmHG. Die Symptome einer schwangerschaftsinduzierten Hypertonie entsprechen denen einer Hypertonie."
+      ],
+      "explanation": "Richtig ist: Bei einer schwangerschaftsinduzierten Hypertonie, auch Gestationshypertonie oder Schwangerschaftshypertonie, steigt der Blutdruck auf Werte über 140/ 90 mmHG. Die Symptome einer schwangerschaftsinduzierten Hypertonie entsprechen denen einer Hypertonie.",
+      "issues": [
+        {
+          "code": "NUMERIC_ANSWER_OVERLAP",
+          "severity": "high",
+          "confidence": "high",
+          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
+          "evidence": {
+            "correct": "Bei einer schwangerschaftsinduzierten Hypertonie, auch Gestationshypertonie oder Schwangerschaftshypertonie, steigt der Blutdruck auf Werte über 140/ 90 mmHG. Die Symptome einer schwangerschaftsinduzierten Hypertonie entsprechen denen einer Hypertonie.",
+            "distractor": "Von einer arteriellen Hypertonie (Bluthochdruck) spricht man, wenn die über einen längeren Zeitraum hinweg, wiederholt gemessenen arteriellen Blutdruckwerte konstant über 140/90 mmHg liegen.",
+            "distractorId": "a"
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "high",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-p12-0218",
+      "type": "single_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-42-758-35-wissen-1"
+      ],
+      "prompt": "Welche Aussage passt laut Lehrbuch zu „Grundlagen Fieber“ im Abschnitt „Grundlagen“?",
+      "correctTexts": [
+        "Normalerweise reguliert das Wärmeregulationszentrum im Hypothalamus die Körperkerntemperatur auf einen Sollwert von ca. 37 °C. Bei Fieber ist der Sollwert auf über 38 °C erhöht."
+      ],
+      "explanation": "Richtig ist: Normalerweise reguliert das Wärmeregulationszentrum im Hypothalamus die Körperkerntemperatur auf einen Sollwert von ca. 37 °C. Bei Fieber ist der Sollwert auf über 38 °C erhöht.",
+      "issues": [
+        {
+          "code": "NUMERIC_ANSWER_OVERLAP",
+          "severity": "high",
+          "confidence": "high",
+          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
+          "evidence": {
+            "correct": "Normalerweise reguliert das Wärmeregulationszentrum im Hypothalamus die Körperkerntemperatur auf einen Sollwert von ca. 37 °C. Bei Fieber ist der Sollwert auf über 38 °C erhöht.",
+            "distractor": "Stuhl ist normalerweise geformt und weich, die Farbe ist abhängig von der Nahrung. Die Stuhlmenge beim Erwachsenen beträgt ca. 120 – 300 g/Tag.",
+            "distractorId": "a"
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "high",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-p12-0447",
+      "type": "single_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-60-1166-33-wissen-2"
+      ],
+      "prompt": "Welche Therapie nennt das Lehrbuch bei einer distalen Radiusfraktur?",
+      "correctTexts": [
+        "Ruhigstellung im Unterarmgips für 4 – 6 Wochen. Bei dislozierten Brüchen zunächst Reposition „durch Aushängen“."
+      ],
+      "explanation": "Richtig ist: Ruhigstellung im Unterarmgips für 4 – 6 Wochen. Bei dislozierten Brüchen zunächst Reposition „durch Aushängen“.",
+      "issues": [
+        {
+          "code": "NUMERIC_ANSWER_OVERLAP",
+          "severity": "high",
+          "confidence": "high",
+          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
+          "evidence": {
+            "correct": "Ruhigstellung im Unterarmgips für 4 – 6 Wochen. Bei dislozierten Brüchen zunächst Reposition „durch Aushängen“.",
+            "distractor": "Nach einer Geburt fließt etwa für 4–6 Wochen Wundsekret aus der Gebärmutter. Versiegt dieser sog.",
+            "distractorId": "b"
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "high",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-p7b-chapter-16-definition-01",
+      "type": "single_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-16-323-76-definition-1"
+      ],
+      "prompt": "Welche Aussage beschreibt „Bradykardie“ nach dem Lehrbuch am besten?",
+      "correctTexts": [
+        "Liegt die Herzfrequenz unter 60/min, spricht man von einer Bradykardie."
+      ],
+      "explanation": "Liegt die Herzfrequenz unter 60/min, spricht man von einer Bradykardie.",
+      "issues": [
+        {
+          "code": "NUMERIC_ANSWER_OVERLAP",
+          "severity": "high",
+          "confidence": "high",
+          "rationale": "A distractor numerically overlaps the keyed answer, so both choices can be true for some values.",
+          "evidence": {
+            "correct": "Liegt die Herzfrequenz unter 60/min, spricht man von einer Bradykardie.",
+            "distractor": "Von einer Hypotonie spricht man, wenn der systolische Wert unter 100 mmHg liegt.",
+            "distractorId": "b"
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "high",
+      "highestConfidence": "high",
+      "disposition": "confirmed-defect"
+    },
+    {
+      "questionId": "q-case-p7b-aneurysm",
+      "type": "clinical_case",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-54-930-71-achtung-1"
+      ],
+      "prompt": "Ein bislang unerkanntes Aneurysma rupturiert. Welche Gefahr hebt das Lehrbuch hervor?",
+      "correctTexts": [],
+      "explanation": "Lebensbedrohliche bzw. tödliche Verblutung.",
+      "issues": [
+        {
+          "code": "CLINICAL_CASE_WITHOUT_CASE_CONTEXT",
+          "severity": "medium",
+          "confidence": "medium",
+          "rationale": "Clinical-case item lacks clear patient/situation context and may function as ordinary recall rather than application.",
+          "evidence": {
+            "promptLength": 85
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-case-p7b-postop-bleeding",
+      "type": "clinical_case",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-41-751-74-achtung-1"
+      ],
+      "prompt": "Nach einer Operation fällt eine übermäßige Nachblutung auf. Welche Maßnahme nennt das Lehrbuch?",
+      "correctTexts": [],
+      "explanation": "Den behandelnden Arzt informieren, damit rasch reagiert werden kann.",
+      "issues": [
+        {
+          "code": "CLINICAL_CASE_WITHOUT_CASE_CONTEXT",
+          "severity": "medium",
+          "confidence": "medium",
+          "rationale": "Clinical-case item lacks clear patient/situation context and may function as ordinary recall rather than application.",
+          "evidence": {
+            "promptLength": 95
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-0272",
+      "type": "single_choice",
+      "difficulty": 1,
+      "conceptIds": [
+        "concept-52-872-10-definition-1"
+      ],
+      "prompt": "Welche Beschreibung passt laut Lehrbuch am besten zu „Bobath-Konzept“?",
+      "correctTexts": [
+        "Das Bobath-Konzept ist ein weltweit angewendetes bewegungstherapeutisches Behandlungskonzept."
+      ],
+      "explanation": "Richtig ist: Das Bobath-Konzept ist ein weltweit angewendetes bewegungstherapeutisches Behandlungskonzept.",
+      "issues": [
+        {
+          "code": "ANSWER_OPTION_SUBSUMPTION",
+          "severity": "medium",
+          "confidence": "medium",
+          "rationale": "One answer option largely subsumes another without a negation distinction, creating possible ambiguity.",
+          "evidence": {
+            "correct": "Das Bobath-Konzept ist ein weltweit angewendetes bewegungstherapeutisches Behandlungskonzept.",
+            "distractor": "bewegungstherapeutisches Behandlungskonzept zur Re.",
+            "containment": 1.0
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-0344",
+      "type": "single_choice",
+      "difficulty": 1,
+      "conceptIds": [
+        "concept-56-1005-13-definition-1"
+      ],
+      "prompt": "Welche Beschreibung passt laut Lehrbuch am besten zu „Hernie“?",
+      "correctTexts": [
+        "Unter einer Hernie versteht man eine Ausstülpung (= Bruchsack) des parietalen Peritoneums (Auskleidung der Innenseite der Bauchwand). Sie entsteht durch angeborene oder erworbene Lücken in der Bauchwand (= Bruchpforte)."
+      ],
+      "explanation": "Richtig ist: Unter einer Hernie versteht man eine Ausstülpung (= Bruchsack) des parietalen Peritoneums (Auskleidung der Innenseite der Bauchwand). Sie entsteht durch angeborene oder erworbene Lücken in der Bauchwand (= Bruchpforte).",
+      "issues": [
+        {
+          "code": "ANSWER_OPTION_SUBSUMPTION",
+          "severity": "medium",
+          "confidence": "medium",
+          "rationale": "One answer option largely subsumes another without a negation distinction, creating possible ambiguity.",
+          "evidence": {
+            "correct": "Unter einer Hernie versteht man eine Ausstülpung (= Bruchsack) des parietalen Peritoneums (Auskleidung der Innenseite der Bauchwand). Sie entsteht durch angeborene oder erworbene Lücken in der Bauchwand (= Bruchpforte).",
+            "distractor": "Eine Hernie ist eine Ausstülpung (= Bruchsack) des parietalen Peritoneums. Sie entsteht durch angeborene oder erworbene Lücken in der Bauchwand (= Bruchpforte).",
+            "containment": 1.0
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-match-01",
+      "type": "matching",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-61-1228-20-definition-1",
+        "concept-61-1228-54-definition-1",
+        "concept-61-1229-59-definition-1",
+        "concept-61-1230-49-definition-1"
+      ],
+      "prompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu.",
+      "correctTexts": [
+        "Dysphagien ↔ Dysphagien sind Schluckstörungen.",
+        "NOD-Stufenkonzept ↔ Das NOD-Stufenkonzept wird zur Diagnostik und Therapie von Schluckstörungen genutzt. NOD steht für „neurogene oropharyngeale“ Dysphagie.",
+        "Anosognosie ↔ Anosognosie ist das Nichterkennen von Krankheit durch Patienten mit Hirnschädigung.",
+        "Aphasie ↔ Aphasien sind durch Hirnschäden erworbene Störungen der Sprache."
+      ],
+      "explanation": "Die Zuordnung verbindet jeden Begriff mit seiner source-basierten Kurzbeschreibung.",
+      "issues": [
+        {
+          "code": "EXACT_PROMPT_DUPLICATE",
+          "severity": "medium",
+          "confidence": "high",
+          "rationale": "Another question has the exact same normalized prompt.",
+          "evidence": {},
+          "relatedQuestionIds": [
+            "q-p12-match-02",
+            "q-p12-match-03",
+            "q-p12-match-04",
+            "q-p12-match-05",
+            "q-p12-match-06",
+            "q-p12-match-07",
+            "q-p12-match-08",
+            "q-p12-match-09",
+            "q-p12-match-10",
+            "q-p12-match-11",
+            "q-p12-match-12"
+          ]
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "high",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-match-02",
+      "type": "matching",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-64-1368-21-definition-1",
+        "concept-64-1368-51-definition-1",
+        "concept-64-1368-77-definition-1",
+        "concept-64-1369-14-definition-1"
+      ],
+      "prompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu.",
+      "correctTexts": [
+        "Hodentorsion ↔ Die Hodentorsion ist eine Drehung des Hodens und des Samenstrangs um die Längsachse.",
+        "Hydrozele ↔ Die Hydrozele (Wasserbruch) ist eine Flüssigkeitsansammlung zwischen den beiden Schichten des Bauchfells, das der Hoden auf seinem Abstieg aus der Bauchhöhle mitgenommen hat.",
+        "Varikozele ↔ Die Varikozele ist eine Erweiterung des Venengeflechts im Hodensack, das das Blut des Hodens (und Nebenhodens) aufnimmt (Plexus pampiniformis).",
+        "Seminom ↔ Ein Seminom ist ein maligner Keimzelltumor des Hodengewebes."
+      ],
+      "explanation": "Die Zuordnung verbindet jeden Begriff mit seiner source-basierten Kurzbeschreibung.",
+      "issues": [
+        {
+          "code": "EXACT_PROMPT_DUPLICATE",
+          "severity": "medium",
+          "confidence": "high",
+          "rationale": "Another question has the exact same normalized prompt.",
+          "evidence": {},
+          "relatedQuestionIds": [
+            "q-p12-match-01",
+            "q-p12-match-03",
+            "q-p12-match-04",
+            "q-p12-match-05",
+            "q-p12-match-06",
+            "q-p12-match-07",
+            "q-p12-match-08",
+            "q-p12-match-09",
+            "q-p12-match-10",
+            "q-p12-match-11",
+            "q-p12-match-12"
+          ]
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "high",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-match-03",
+      "type": "matching",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-9-197-48-definition-1",
+        "concept-9-197-60-definition-1",
+        "concept-9-198-76-definition-1",
+        "concept-9-199-32-definition-1"
+      ],
+      "prompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu.",
+      "correctTexts": [
+        "Pflegeorganisationssysteme ↔ Pflegeorganisationssysteme beschreiben, wie Pflegearbeit und Pflegeabläufe im Team organisiert werden. Das Lehrbuch unterscheidet hauptsächlich Funktionspflege, Bereichspflege und patientenorientierte Bezugspflege.",
+        "Funktionspflege ↔ Funktionspflege oder funktionelles Pflegesystem/Stationspflege bezeichnet eine tätigkeitsorientierte Vorgehensweise bei der Arbeitsorganisation der Pflege.",
+        "Bereichspflege ↔ Die Bereichspflege bezeichnet die schichtbezogene Verantwortung der Pflegenden für die Pflegebedürftigen.",
+        "Bezugspflege ↔ Bezugspflege oder Zimmerpflege bezeichnet ein ganzheitlich ausgerichtetes Pflegesystem, bei dem eine Pflegekraft die gesamte Pflege für einen oder mehrere Pflegebedürftige oder Bewohner übernimmt."
+      ],
+      "explanation": "Die Zuordnung verbindet jeden Begriff mit seiner source-basierten Kurzbeschreibung.",
+      "issues": [
+        {
+          "code": "EXACT_PROMPT_DUPLICATE",
+          "severity": "medium",
+          "confidence": "high",
+          "rationale": "Another question has the exact same normalized prompt.",
+          "evidence": {},
+          "relatedQuestionIds": [
+            "q-p12-match-01",
+            "q-p12-match-02",
+            "q-p12-match-04",
+            "q-p12-match-05",
+            "q-p12-match-06",
+            "q-p12-match-07",
+            "q-p12-match-08",
+            "q-p12-match-09",
+            "q-p12-match-10",
+            "q-p12-match-11",
+            "q-p12-match-12"
+          ]
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "high",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-match-04",
+      "type": "matching",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-62-1283-17-definition-1",
+        "concept-62-1283-30-definition-1",
+        "concept-62-1283-47-definition-1",
+        "concept-62-1283-68-definition-1"
+      ],
+      "prompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu.",
+      "correctTexts": [
+        "Hagelkorn ↔ Das Hagelkorn (Chalazion) ist eine chronische Entzündung einer Talgdrüse des Lids.",
+        "Ptosis ↔ Als Ptosis bezeichnet man das Herunterhängen eines oder beider Oberlider.",
+        "Entropium ↔ Beim Entropium ist der Lidrand – meist der des Unterlids – nach innen gedreht.",
+        "Ektropium ↔ Beim Ektropium ist der Lidrand – meist der des Unterlids – nach außen gedreht."
+      ],
+      "explanation": "Die Zuordnung verbindet jeden Begriff mit seiner source-basierten Kurzbeschreibung.",
+      "issues": [
+        {
+          "code": "EXACT_PROMPT_DUPLICATE",
+          "severity": "medium",
+          "confidence": "high",
+          "rationale": "Another question has the exact same normalized prompt.",
+          "evidence": {},
+          "relatedQuestionIds": [
+            "q-p12-match-01",
+            "q-p12-match-02",
+            "q-p12-match-03",
+            "q-p12-match-05",
+            "q-p12-match-06",
+            "q-p12-match-07",
+            "q-p12-match-08",
+            "q-p12-match-09",
+            "q-p12-match-10",
+            "q-p12-match-11",
+            "q-p12-match-12"
+          ]
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "high",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-match-05",
+      "type": "matching",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-64-1345-51-definition-1",
+        "concept-64-1345-55-definition-1",
+        "concept-64-1346-50-definition-1",
+        "concept-64-1346-75-definition-1"
+      ],
+      "prompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu.",
+      "correctTexts": [
+        "Vulvitis ↔ Eine Vulvitis ist eine Entzündung des äußeren weiblichen Genitalbereichs (Vulva).",
+        "Kolpitis ↔ Bei einer Kolpitis ist die Scheide (Vagina) entzündet.",
+        "Bartholinitis ↔ Die Bartholinitis ist eine Entzündung des Ausführungsgangs einer Bartholin-Drüse.",
+        "Vulva-/Vaginalkarzinom ↔ Vaginalkarzinom ist eine maligne (bösartige) Neoplasie (Zellneubildung) der Vulva bzw. der Vagina."
+      ],
+      "explanation": "Die Zuordnung verbindet jeden Begriff mit seiner source-basierten Kurzbeschreibung.",
+      "issues": [
+        {
+          "code": "EXACT_PROMPT_DUPLICATE",
+          "severity": "medium",
+          "confidence": "high",
+          "rationale": "Another question has the exact same normalized prompt.",
+          "evidence": {},
+          "relatedQuestionIds": [
+            "q-p12-match-01",
+            "q-p12-match-02",
+            "q-p12-match-03",
+            "q-p12-match-04",
+            "q-p12-match-06",
+            "q-p12-match-07",
+            "q-p12-match-08",
+            "q-p12-match-09",
+            "q-p12-match-10",
+            "q-p12-match-11",
+            "q-p12-match-12"
+          ]
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "high",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-match-06",
+      "type": "matching",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-64-1347-50-definition-1",
+        "concept-64-1348-61-definition-1",
+        "concept-64-1349-79-definition-1",
+        "concept-64-1351-79-definition-1"
+      ],
+      "prompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu.",
+      "correctTexts": [
+        "Uterusmyom ↔ Das Uterusmyom ist ein benigner (gutartiger) Tumor des Muskelgewebes der Gebärmutter.",
+        "Endometriose ↔ Endometriose ist eine gutartige, chronisch verlaufende Krankheit.",
+        "Endometriumkarzinom ↔ Das Endometriumkarzinom ist ein maligner (bösartiger) Tumor, der von der Schleimhaut des Gebärmutterkörpers ausgeht.",
+        "Descensus und Prolaps uteri ↔ Als Descensus uteri bezeichnet man eine Senkung der Gebärmutter in die Scheide hinein."
+      ],
+      "explanation": "Die Zuordnung verbindet jeden Begriff mit seiner source-basierten Kurzbeschreibung.",
+      "issues": [
+        {
+          "code": "EXACT_PROMPT_DUPLICATE",
+          "severity": "medium",
+          "confidence": "high",
+          "rationale": "Another question has the exact same normalized prompt.",
+          "evidence": {},
+          "relatedQuestionIds": [
+            "q-p12-match-01",
+            "q-p12-match-02",
+            "q-p12-match-03",
+            "q-p12-match-04",
+            "q-p12-match-05",
+            "q-p12-match-07",
+            "q-p12-match-08",
+            "q-p12-match-09",
+            "q-p12-match-10",
+            "q-p12-match-11",
+            "q-p12-match-12"
+          ]
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "high",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-match-07",
+      "type": "matching",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-64-1352-57-definition-1",
+        "concept-64-1353-76-definition-1",
+        "concept-64-1353-92-definition-1",
+        "concept-64-1354-12-definition-1"
+      ],
+      "prompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu.",
+      "correctTexts": [
+        "Adnexitis ↔ Die Adnexitis ist eine Entzündung des Eileiters, des Eierstocks und des umgebenden Gewebes.",
+        "Zyste ↔ Eine Zyste ist ein flüssigkeitsgefüllter, dünnwandiger, mit Epithel ausgekleideter Hohlraum im Gewebe.",
+        "Gutartiger Adnextumor ↔ Eine gutartige Zellneubildung im Ovar oder in der Tuba uterina, die nicht metastasiert.",
+        "Ovarialkarzinom ↔ Das Ovarialkarzinom ist ein vom Oberflächenepithel des Eierstocks ausgehender maligner (bösartiger) Tumor."
+      ],
+      "explanation": "Die Zuordnung verbindet jeden Begriff mit seiner source-basierten Kurzbeschreibung.",
+      "issues": [
+        {
+          "code": "EXACT_PROMPT_DUPLICATE",
+          "severity": "medium",
+          "confidence": "high",
+          "rationale": "Another question has the exact same normalized prompt.",
+          "evidence": {},
+          "relatedQuestionIds": [
+            "q-p12-match-01",
+            "q-p12-match-02",
+            "q-p12-match-03",
+            "q-p12-match-04",
+            "q-p12-match-05",
+            "q-p12-match-06",
+            "q-p12-match-08",
+            "q-p12-match-09",
+            "q-p12-match-10",
+            "q-p12-match-11",
+            "q-p12-match-12"
+          ]
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "high",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-match-08",
+      "type": "matching",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-5-83-74-definition-1",
+        "concept-5-84-61-definition-1",
+        "concept-5-84-79-definition-1",
+        "concept-5-85-24-definition-1"
+      ],
+      "prompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu.",
+      "correctTexts": [
+        "Medizin ↔ Medizin ist definiert als die Wissenschaft vom gesunden und kranken Menschen.",
+        "Kultur ↔ Kultur hat somit eine eigene besondere Identität, die weit mehr umfasst als nur Kunst, Bildung und Literatur.",
+        "Philosophie ↔ Das Wort Philosophie stammt aus dem Griechischen und bedeutet „Liebe zur Weisheit“.",
+        "Religion und Spiritualität ↔ Als Religion bezeichnet man herkömmlicherweise den Glauben an eine übernatürliche Macht (meist in Form eines oder mehrerer Götter)."
+      ],
+      "explanation": "Die Zuordnung verbindet jeden Begriff mit seiner source-basierten Kurzbeschreibung.",
+      "issues": [
+        {
+          "code": "EXACT_PROMPT_DUPLICATE",
+          "severity": "medium",
+          "confidence": "high",
+          "rationale": "Another question has the exact same normalized prompt.",
+          "evidence": {},
+          "relatedQuestionIds": [
+            "q-p12-match-01",
+            "q-p12-match-02",
+            "q-p12-match-03",
+            "q-p12-match-04",
+            "q-p12-match-05",
+            "q-p12-match-06",
+            "q-p12-match-07",
+            "q-p12-match-09",
+            "q-p12-match-10",
+            "q-p12-match-11",
+            "q-p12-match-12"
+          ]
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "high",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-match-09",
+      "type": "matching",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-64-1359-26-definition-1",
+        "concept-64-1359-88-definition-1",
+        "concept-64-1363-32-definition-1",
+        "concept-64-1364-70-definition-1"
+      ],
+      "prompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu.",
+      "correctTexts": [
+        "Prostatitis ↔ Die Prostatitis ist eine Entzündung der Prostata.",
+        "Benigne Prostatahyperplasie ↔ Die benigne Prostatahyperplasie (BPH, Synonym: benignes Prostatasyndrom, Prostataadenom) ist eine durch Vermehrung von Drüsenzellen bedingte Vergrößerung der Prostata.",
+        "Adenomnukleation ↔ Bei der Adenomnukleation wird ein Adenom (gutartiger Tumor) der inneren Drüsenanteilen der Prostata über einen Unterbauchschnitt entfernt.",
+        "Prostatakarzinom ↔ Das Prostatakarzinom ist ein maligner (bösartiger), vom Drüsengewebe der Prostata ausgehender Tumor (Adenokarzinom)."
+      ],
+      "explanation": "Die Zuordnung verbindet jeden Begriff mit seiner source-basierten Kurzbeschreibung.",
+      "issues": [
+        {
+          "code": "EXACT_PROMPT_DUPLICATE",
+          "severity": "medium",
+          "confidence": "high",
+          "rationale": "Another question has the exact same normalized prompt.",
+          "evidence": {},
+          "relatedQuestionIds": [
+            "q-p12-match-01",
+            "q-p12-match-02",
+            "q-p12-match-03",
+            "q-p12-match-04",
+            "q-p12-match-05",
+            "q-p12-match-06",
+            "q-p12-match-07",
+            "q-p12-match-08",
+            "q-p12-match-10",
+            "q-p12-match-11",
+            "q-p12-match-12"
+          ]
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "high",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-match-10",
+      "type": "matching",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-5-108-24-definition-1",
+        "concept-5-110-54-definition-1",
+        "concept-5-110-62-definition-1",
+        "concept-5-111-4-definition-1"
+      ],
+      "prompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu.",
+      "correctTexts": [
+        "Gesundheitsverhalten ↔ Es umschreibt alle menschlichen Verhaltensweisen, die der persönlichen Gesundheit dienen oder schaden können. Doch auch das Wissen über das beste Gesundheitsverhalten überzeugt nicht jeden.",
+        "Compliance ↔ Compliance bezeichnet die Übereinstimmung des Patientenverhaltens mit medizinischen oder pflegerischen Empfehlungen.",
+        "Adhärenz ↔ Adhärenz beschreibt das Einhalten des gemeinsam vereinbarten Behandlungswegs. Adhärenz bezieht sich ebenso auf die Mitarbeit des Patien ten.",
+        "Partizipative Entscheidungsfindung ↔ Darunter versteht man eine mitwirkende oder teilhabende Entscheidungsfindung."
+      ],
+      "explanation": "Die Zuordnung verbindet jeden Begriff mit seiner source-basierten Kurzbeschreibung.",
+      "issues": [
+        {
+          "code": "EXACT_PROMPT_DUPLICATE",
+          "severity": "medium",
+          "confidence": "high",
+          "rationale": "Another question has the exact same normalized prompt.",
+          "evidence": {},
+          "relatedQuestionIds": [
+            "q-p12-match-01",
+            "q-p12-match-02",
+            "q-p12-match-03",
+            "q-p12-match-04",
+            "q-p12-match-05",
+            "q-p12-match-06",
+            "q-p12-match-07",
+            "q-p12-match-08",
+            "q-p12-match-09",
+            "q-p12-match-11",
+            "q-p12-match-12"
+          ]
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "high",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-match-11",
+      "type": "matching",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-63-1319-4-definition-1",
+        "concept-63-1319-68-definition-1",
+        "concept-63-1320-10-definition-1",
+        "concept-63-1320-72-definition-1"
+      ],
+      "prompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu.",
+      "correctTexts": [
+        "Arzneimittelexanthem ↔ Ein Arzneimittelexanthem ist eine unerwünschte Arzneimittelwirkung (UAW), die als allergische Hautreaktion nach Medikamenteneinnahme oder als Pseudoallergie (nichtallergische Intoleranzreaktion) auftritt.",
+        "Impetigo contagiosa ↔ Die Impetigo contagiosa ist eine sehr ansteckende Infektion der oberen Hautschichten durch Staphylokokken (Staphylococcus aureus) oder Streptokokken.",
+        "Follikulitis, Furunkel, Karbunkel ↔ Eine Follikulitis ist eine oberflächliche Infektion des Haarbalgs mit Staphylococcus aureus.",
+        "Panaritium ↔ Ein Panaritium ist eine schmerzhafte eitrige Entzündung des Nagelwalls durch Staphylococcus aureus."
+      ],
+      "explanation": "Die Zuordnung verbindet jeden Begriff mit seiner source-basierten Kurzbeschreibung.",
+      "issues": [
+        {
+          "code": "EXACT_PROMPT_DUPLICATE",
+          "severity": "medium",
+          "confidence": "high",
+          "rationale": "Another question has the exact same normalized prompt.",
+          "evidence": {},
+          "relatedQuestionIds": [
+            "q-p12-match-01",
+            "q-p12-match-02",
+            "q-p12-match-03",
+            "q-p12-match-04",
+            "q-p12-match-05",
+            "q-p12-match-06",
+            "q-p12-match-07",
+            "q-p12-match-08",
+            "q-p12-match-09",
+            "q-p12-match-10",
+            "q-p12-match-12"
+          ]
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "high",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-match-12",
+      "type": "matching",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-61-1217-37-definition-1",
+        "concept-61-1217-61-definition-1",
+        "concept-61-1217-67-definition-1",
+        "concept-61-1218-63-definition-1"
+      ],
+      "prompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu.",
+      "correctTexts": [
+        "Schlaganfall ↔ Die Bezeichnung Schlaganfall bezeichnet das plötzliche (schlagartige) Auftreten von Symptomen wie Hemiplegie (Halbseitenlähmung), Bewegungs-, Sprach- und Bewusstseinsstörungen.",
+        "Hirninfarkt ↔ Von einem Hirninfarkt spricht man, wenn Nervenzellen im Gehirn infolge von Sauerstoffmangel absterben.",
+        "Ischämie ↔ Eine zerebrale Ischämie ist die Verminderung oder Unterbrechung der Durchblutung und daher der Sauerstoffversorgung des Gehirns infolge mangelnder arterieller Blutzufuhr.",
+        "Sinusvenenthrombose ↔ Bei einer Sinusvenenthrombose (SVT) sind die großen venösen Blutgefäße des Gehirns durch einen Thrombus verengt oder verschlossen."
+      ],
+      "explanation": "Die Zuordnung verbindet jeden Begriff mit seiner source-basierten Kurzbeschreibung.",
+      "issues": [
+        {
+          "code": "EXACT_PROMPT_DUPLICATE",
+          "severity": "medium",
+          "confidence": "high",
+          "rationale": "Another question has the exact same normalized prompt.",
+          "evidence": {},
+          "relatedQuestionIds": [
+            "q-p12-match-01",
+            "q-p12-match-02",
+            "q-p12-match-03",
+            "q-p12-match-04",
+            "q-p12-match-05",
+            "q-p12-match-06",
+            "q-p12-match-07",
+            "q-p12-match-08",
+            "q-p12-match-09",
+            "q-p12-match-10",
+            "q-p12-match-11"
+          ]
+        }
+      ],
+      "highestSeverity": "medium",
+      "highestConfidence": "high",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-012b80c5ff507f",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-63-1322-53-definition-1"
+      ],
+      "prompt": "Wie wird „Skabies“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Skabies wird durch Milben verursacht. Diese graben zur Eiablage Gänge durch die Hornschicht der Haut.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 41
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-0202d351516369",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-38-722-46-merken-1"
+      ],
+      "prompt": "Welche wichtige Aussage hebt das Lehrbuch zu „Ziele“ hervor?",
+      "correctTexts": [],
+      "explanation": "Mit der künstlichen Ernährung sollen Nahrungsdefizite ausgeglichen, einer Mangelernährung vorgebeugt und ein ausreichender Ernährungsstatus sichergestellt werden. Es gibt klare Kriterien dafür, wann eine enterale oder parenterale Ernährung indiziert ist.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 60,
+            "referenceAnswerLength": 254
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-050b77e5eb1f81",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-20-387-19-definition-1"
+      ],
+      "prompt": "Wie wird „Diarrhö“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Bei einer Diarrhö (Durchfall) wird mehr als 3-mal am Tag dünnflüssiger Stuhl ausgeschieden, meist verbunden mit Krämpfen.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 41
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-0565cb57be37ee",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-24-475-38-definition-1"
+      ],
+      "prompt": "Wie wird „Paravasat“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Von einem Paravasat spricht man, wenn bei Injektionen oder Infusionen die Injektions- oder Infusionsflüssigkeit nicht in das Gefäß gelangt, sondern in das umliegende Gewebe.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 43
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-068663c21db3b9",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-64-1345-55-definition-1"
+      ],
+      "prompt": "Wie wird „Kolpitis“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Bei einer Kolpitis ist die Scheide (Vagina) entzündet.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-06adfa3d7a6777",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-52-874-86-definition-1"
+      ],
+      "prompt": "Wie wird „Handling“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Handling ist ein Begriff innerhalb des Bobath-Konzepts.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-0737809fff9c5c",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-66-1417-35-definition-1"
+      ],
+      "prompt": "Wie wird „Poliomyelitis“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Poliomyelitis ist eine durch das Poliovirus verursachte Entzündung der grauen Substanz des Rückenmarks, die zu schlaffen Lähmungen führen kann und in Deutschland und Europa dank konsequenter Impfung ausgerottet ist; selten werden Infektionen importiert.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 47,
+            "referenceAnswerLength": 253
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-0918c8a81d21fd",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-27-534-11-definition-1"
+      ],
+      "prompt": "Wie wird „Ileostoma“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Als Ileostoma bezeichnet man die Ausleitung aus dem Ileum (Dünndarm) im rechten Unterbauch.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 43
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-0a03b9572521e6",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-25-519-19-definition-1"
+      ],
+      "prompt": "Wie wird „Biopsie“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Bei einer Biopsie wird Gewebe entnommen, um es histologisch zu untersuchen. Dabei kann es sich um Zellen oder Gewebestücke handeln.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 41
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-0af98fe73cda11",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-15-312-8-definition-1"
+      ],
+      "prompt": "Wie wird „Epidemie“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Als Epidemie bezeichnet man ein stark gehäuftes Auftreten einer Krankheit innerhalb einer bestimmten Region oder Bevölkerung.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-0c150adde3ea4e",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-9-193-29-definition-1"
+      ],
+      "prompt": "Wie wird „Altenheim“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Die Bewohner eines Altenheims sind in geringem Maße pflegebedürftig, sie führen überwiegend ein selbstbestimmtes Leben.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 43
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-0d05d338d10554",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-58-1114-78-definition-1"
+      ],
+      "prompt": "Wie wird „Gastrinom“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Ein Gastrinom ist ein gastrinproduzierender Tumor.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 43
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-0d7dcb4d7032f5",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-46-813-18-merken-1"
+      ],
+      "prompt": "Was darf bei „Todeszeitpunkt“ laut Lehrbuch keinesfalls geschehen?",
+      "correctTexts": [],
+      "explanation": "Auf keinen Fall gibt dieses oder auch ein anders Modell einen Anhalt dafür, wann ein Mensch versterben wird. Der Tod kann sogar bereits in einem frühen Stadium auftreten oder sich noch um Wochen hinausziehen, wenn bereits alle Phasen durchlaufen wurden.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 66,
+            "referenceAnswerLength": 253
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-0e26417b99bfba",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-43-770-17-merken-1"
+      ],
+      "prompt": "Welche wichtige Aussage hebt das Lehrbuch zu „Flexibilität“ hervor?",
+      "correctTexts": [],
+      "explanation": "Um die Patienten in ihrer Selbstständigkeit auch während eines Klinikaufenthalts zu fördern, ist es ganz wichtig, dass Pflegende flexibel sind und sich den Bedürfnissen, Hilfsmitteln und Strategien des einzelnen Patienten auch innerhalb des Klinikalltages anpassen können.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 67,
+            "referenceAnswerLength": 272
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-11c5171cf14226",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-34-655-78-merken-1"
+      ],
+      "prompt": "Welche wichtige Aussage hebt das Lehrbuch zu „Teilhabe“ hervor?",
+      "correctTexts": [],
+      "explanation": "Ein wichtiges Wort dabei ist Teilhabe – an Gesellschaft und Umwelt. Ist ein Mensch warum auch immer in seiner Teilhabe am Leben eingeschränkt, steht die Rehabilitation im Fokus – und nicht „nur“ die Heilung eines bestimmten körperlichen oder geistigen Defizits.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 63,
+            "referenceAnswerLength": 261
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-12460b3ad94ce0",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-64-1345-51-definition-1"
+      ],
+      "prompt": "Wie wird „Vulvitis“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Eine Vulvitis ist eine Entzündung des äußeren weiblichen Genitalbereichs (Vulva).",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-12e2a089e9b4c7",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-27-537-74-definition-1"
+      ],
+      "prompt": "Wie wird „Urostoma“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "„Urostoma“ bezeichnet einen künstlichen Blasenausgang.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-12f73bc04acdae",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-55-965-26-definition-1"
+      ],
+      "prompt": "Wie wird „Influenza“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Die Influenza („echte“ Grippe) ist eine durch die Influenzaviren A und B ausgelöste hochfieberhafte Infektionserkrankung des Respirationstrakts.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 43
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-138cb7a359099b",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-64-1368-51-definition-1"
+      ],
+      "prompt": "Wie wird „Hydrozele“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Die Hydrozele (Wasserbruch) ist eine Flüssigkeitsansammlung zwischen den beiden Schichten des Bauchfells, das der Hoden auf seinem Abstieg aus der Bauchhöhle mitgenommen hat.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 43
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-1855b0c32e34c7",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-60-1192-93-definition-1"
+      ],
+      "prompt": "Wie wird „Morbus Dupuytren“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Aus unbekannter Ursache schrumpft bei Morbus Dupuytren die Hohlhandfaszie (Palmaraponeurose). Es bilden sich derbe Stränge und Knoten in der Handfläche und die betroffenen Finger werden in Beugestellung fixiert (Beugekontraktur).",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 50,
+            "referenceAnswerLength": 229
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-190e6706cd3a88",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-62-1283-17-definition-1"
+      ],
+      "prompt": "Wie wird „Hagelkorn“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Das Hagelkorn (Chalazion) ist eine chronische Entzündung einer Talgdrüse des Lids.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 43
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-1946405648d115",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-48-845-22-definition-1"
+      ],
+      "prompt": "Wie wird „Hirntod“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Ein Mensch gilt laut Bundesärztekammer als tot, wenn alle seine Hirnfunktionen irreversibel ausgefallen sind (dissoziierter Hirntod).",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 41
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-1b3267dcb44162",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-52-873-34-merken-1"
+      ],
+      "prompt": "Welche wichtige Aussage hebt das Lehrbuch zu „Hemiplegie“ hervor?",
+      "correctTexts": [],
+      "explanation": "Obwohl bei einer Hemiplegie die Lähmung nur eine Körperseite betrifft, ist auch die vermeintlich „gesunde“ Seite durch die Lähmung eingeschränkt. Daher wird nicht von der „gesunden“, sondern von der „weniger betroffenen“ Seite gesprochen.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 65,
+            "referenceAnswerLength": 238
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-1bb6fcab540312",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-47-830-42-wissen-1"
+      ],
+      "prompt": "Welche Punkte nennt das Lehrbuch zu „Christentum“?",
+      "correctTexts": [],
+      "explanation": "Christen begehen den Sonntag meist festlich.; Freitags verzichten sie auf Fleisch.; Ihre Fastenzeit liegt in den 40 Tagen vor Ostern.; Christen fragen oft nach der Krankensalbung – auch wenn sie nicht unmittelbar vom Sterben betroffen sind.; Ein schwerkrankes Neugeborenes sollte möglichst vor dem Tod getauft werden.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 50,
+            "referenceAnswerLength": 317
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-1c9610e9e78625",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-60-1155-72-definition-1"
+      ],
+      "prompt": "Wie wird „Trauma“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Ein Trauma (griech. trauma = Verletzung, Wunde) ist eine durch Gewalteinwirkung entstandene Verletzung des Körpers (oder der Psyche).",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 40
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-1d5f4c32ac15e9",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-20-388-13-definition-1"
+      ],
+      "prompt": "Wie wird „Tenesmus“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Unter Tenesmus ani oder alvi versteht man schmerzhaften Stuhldrang, unter Tenesmus vesicae den schmerzhaften Harndrang (z. B. bei Zystitis).",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-1dbfd9d60f98d7",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-51-869-2-wissen-3"
+      ],
+      "prompt": "Welche Punkte nennt das Lehrbuch zu „Basale Stimulation – Pflegemaßnahmen“ (Teil 2/4)?",
+      "correctTexts": [],
+      "explanation": "kleines Gerät verwenden, z. B. elektrische Zahnbürste; an Stellen ansetzen, die auch bei physiologischer Bewegung Vibrationen erfahren; gelenknahe Stellen wählen Taktile Erfahrungen; Hand- oder Fußbad dem Waschen mit dem Waschlappen vorziehen; Patienten Gegenstand in die Hand geben und ertasten lassen.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 86,
+            "referenceAnswerLength": 303
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-1f98daeff910b2",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-26-521-23-merken-1"
+      ],
+      "prompt": "Welche wichtige Aussage hebt das Lehrbuch zu „Komplikationen“ hervor?",
+      "correctTexts": [],
+      "explanation": "Punktionen in die Tiefe des Körpers können schwerere Komplikationen hervorrufen als hautoberflächennahe. Je nach Punktions-/Biopsieort muss eine Sonografie oder Röntgenkontrolle durchgeführt werden, um Blutungen rechtzeitig zu erkennen.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 69,
+            "referenceAnswerLength": 236
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-20c1fc163a1694",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-66-1418-66-definition-1"
+      ],
+      "prompt": "Wie wird „Gasbrand“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Gasbrand (Gasödem) ist eine in Deutschland seltene, mit Nekrosen einhergehende, lebensbedrohliche Weichteilinfektion, die v. a. durch das Bakterium Clostridium perfringens verursacht wird.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-21830dbbb7bd53",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-66-1416-87-definition-1"
+      ],
+      "prompt": "Wie wird „Zytomegalie“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Zytomegalie ist eine durch das Zytomegalievirus (CMV = humanes Herpesvirus 5) hervorgerufene Infektion, die bei Immunsupprimierten schwere Krankheitserscheinungen hervorrufen und bei Erstinfektion während der Schwangerschaft zum Tod oder zu schweren Schäden des Ungeborenen führen kann.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 45,
+            "referenceAnswerLength": 286
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-21d78d60c36a8c",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-6-128-30-wissen-2"
+      ],
+      "prompt": "Welche Punkte nennt das Lehrbuch zu „Aktives Zuhören“ (Teil 2/3)?",
+      "correctTexts": [],
+      "explanation": "Wahrnehmen wichtiger Botschaften auf inhaltlicher und Selbstoffenbarungsebene; Rückmeldung der wahrgenommenen Gefühle, Bedürfnisse oder Absichten Techniken der Gesprächsführung; Offene Fragen; Aufmerksamkeit und Verständnis signalisieren; Paraphrasieren und Verbalisieren.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 65,
+            "referenceAnswerLength": 272
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-21e04acceb247c",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-21-429-50-definition-1"
+      ],
+      "prompt": "Was bedeuten Parotitis und Soor?",
+      "correctTexts": [],
+      "explanation": "Parotitis ist eine Entzündung der Ohrspeicheldrüse (Parotis). Soor ist ein Befall der Schleimhäute mit Hefepilzen der Gattung Candida.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 32
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-221f2a793f5498",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-56-1010-78-definition-1"
+      ],
+      "prompt": "Wie wird „Hepatitis“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Bei der Hepatitis handelt es sich um eine Entzündung der Leber (Hepar).",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 43
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-230476d717aba9",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-18-362-51-merken-1"
+      ],
+      "prompt": "Welche wichtige Aussage hebt das Lehrbuch zu „Bettgitter“ hervor?",
+      "correctTexts": [],
+      "explanation": "Sie dürfen nur mit Einwilligung des Patienten angebracht werden, im Notfall (Eigen- oder Fremdgefährdung) oder auf richterlicher Anordnung. Sie gehören zu den freiheitsentziehenden Maßnahmen nach § 239 des Strafgesetzbuchs.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 65,
+            "referenceAnswerLength": 223
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-26c5fc174e43fc",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-18-356-74-merken-1"
+      ],
+      "prompt": "Welche wichtige Aussage hebt das Lehrbuch zu „Geschwächte Patienten“ hervor?",
+      "correctTexts": [],
+      "explanation": "Bei geschwächten Patienten, die kaum Körperspannung auf bauen können, ist es in jedem Fall sinnvoll, den Oberkörper von hinten durch eine Pflegekraft und die Beine von vorne durch eine zweite zu unterstützen bzw. zu halten.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 76,
+            "referenceAnswerLength": 223
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-26e3af252399e4",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-8-158-89-definition-1"
+      ],
+      "prompt": "Wie wird „Scham“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Scham bezeichnet ein Gefühl des Bloßgestelltseins oder der Befürchtung, bloßgestellt zu werden.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 39
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-2a165cbb786898",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-48-4-fuersorge"
+      ],
+      "prompt": "Was fordert das Prinzip der Fürsorge?",
+      "correctTexts": [],
+      "explanation": "Zum Wohl des Patienten zu handeln, ihn vor Schaden zu schützen und für seine Rechte einzutreten.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 37
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-2cb7da004ae039",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-51-868-48-definition-1"
+      ],
+      "prompt": "Wie wird „Nesteln“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Nesteln – ähnlich wie „Flockenlesen“ – ist ein Zeichen motorischer Unruhe und tritt häufig im Zusammenhang mit sensorischer Deprivation auf.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 41
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-2de89ca9ffd643",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-66-1417-51-definition-1"
+      ],
+      "prompt": "Wie wird „Tollwut“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Tollwut ist eine durch das Rabies-/Lyssa-Virus verursachte, in Deutschland sehr seltene und meist importierte Entzündung von Gehirn oder Rückenmark, die in der Regel tödlich verläuft; sie ist meldepflichtig.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 41
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-2e581ebf312c93",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-31-608-58-definition-1"
+      ],
+      "prompt": "Wie wird „Eklampsie“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Eklampsie ist das Auftreten von generalisierten tonisch-klonischen Krampfanfällen im Verlauf einer Präeklampsie.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 43
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-312f980e2f89a3",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-57-1045-81-definition-1"
+      ],
+      "prompt": "Wie wird „Dialyse“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Die Dialyse ist ein Blutreinigungsverfahren, das bei Nierenversagen zum Einsatz kommt.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 41
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-31c237bbfb576a",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-59-1145-4-definition-1"
+      ],
+      "prompt": "Wie wird „Allergie“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Eine Allergie ist eine erworbene Hypersensitivitätsreaktion (Überempfindlichkeitsreaktion) des Immunsystems auf Umweltstoffe.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-33bc90c88b2244",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-5-110-62-definition-1"
+      ],
+      "prompt": "Wie wird „Adhärenz“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Adhärenz beschreibt das Einhalten des gemeinsam vereinbarten Behandlungswegs. Adhärenz bezieht sich ebenso auf die Mitarbeit des Patien ten.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-34d7b57b989cdb",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-35-668-24-wissen-2"
+      ],
+      "prompt": "Was ist bei Pflegevisite im Zusammenhang mit Häusliche Pflege – Besonderheiten wichtig?",
+      "correctTexts": [],
+      "explanation": "Pflegedienstleitung oder Bezugspflegefachkraft besucht den Klienten regelmäßig, um:; Zufriedenheit und weiteren Unterstützungsbedarf zu klären; Zustand des Pflegebedürftigen zu kontrollieren; Dokumentation zu begutachten.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 87,
+            "referenceAnswerLength": 221
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-36b87bd5b4d705",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-21-428-107-achtung-1"
+      ],
+      "prompt": "Was ist bei „Maßnahmen zur Obstipa“ laut Lehrbuch besonders zu beachten?",
+      "correctTexts": [],
+      "explanation": "Probiotische Lebensmittel sind für ältere Menschen im Pflegeheim besonders wichtig, eignen sich jedoch nicht für Frühgeborene und immunsupprimierte Patienten, da es bei ihnen zu einer Bakteriämie (Einschwemmen von Bakterien in das Blut) durch die probiotischen Keime kommen kann.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 72,
+            "referenceAnswerLength": 279
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-37e0e380d6762b",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-33-652-7-wissen-2"
+      ],
+      "prompt": "Welche Punkte nennt das Lehrbuch zu „Menschen mit Demenz – Umgang“ (Teil 2/4)?",
+      "correctTexts": [],
+      "explanation": "Ausstrahlung von Wohlwollen und Akzeptanz Wichtige Grundprinzipien; Routinen und Rituale kennen und beachten; biografische Informationen einholen und Bezüge herstellen; ehrlich und verlässlich sein, keine falschen Versprechungen machen; Patienten mit Demenz zu Diagnostik und Behandlung begleiten.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 78,
+            "referenceAnswerLength": 297
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-3f91f4209548ce",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-26-522-120-definition-1"
+      ],
+      "prompt": "Wie wird „Aszites“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Aszites (Bauchwassersucht) ist eine pathologische Flüssigkeitsansammlung in der freien Bauchhöhle.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 41
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-49874ea0f56eda",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-11-241-110-definition-1"
+      ],
+      "prompt": "Was ist ein Audit im Qualitätsmanagement?",
+      "correctTexts": [],
+      "explanation": "Ein Audit dient der systematischen Einschätzung von Prozessen, Ergebnissen oder Leistungen und prüft, ob eingeleitete Qualitätsmaßnahmen bzw. ein Qualitätsmanagementsystem wirksam sind.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 41
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-4cff0f36ca75dc",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-3-43-70-definition-1"
+      ],
+      "prompt": "Wie wird „Kammer“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Kammern – auch berufsständische Körperschaften genannt – sind sog.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 40
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-4dff5acdb9ae90",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-49-852-26-wissen-1"
+      ],
+      "prompt": "Welche Punkte nennt das Lehrbuch zu „Informieren“ (Teil 1/2)?",
+      "correctTexts": [],
+      "explanation": "Vorwissen des Patienten ermitteln.; Informationen objektiv, sicher und kompetent vermitteln.; Komplexität und Umfang der Informationen sowie Kenntnisstand des Patienten beachten.; Schweigepflicht beachten.; Richtigen Zeitpunkt wählen, ausreichend Zeit einplanen.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 61,
+            "referenceAnswerLength": 262
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-4fa2794d29b84b",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-7-137-79-definition-1"
+      ],
+      "prompt": "Wie wird „Team“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Ein Team ist eine leistungsfähige Gruppe mit gemeinsamer Zielsetzung und der Verantwortung für einen geschlossenen Arbeitsprozess.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 38
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-54db5e9f3d1f4a",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-5-115-79-definition-1"
+      ],
+      "prompt": "Was umfasst Rehabilitation?",
+      "correctTexts": [],
+      "explanation": "Rehabilitation umfasst Maßnahmen, die Einschränkungen oder Benachteiligungen abschwächen und Menschen dabei unterstützen, soziale Integration sowie möglichst weitgehende Selbstständigkeit und Selbstbestimmung zu erreichen.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 27
+          },
+          "relatedQuestionIds": []
+        },
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 27,
+            "referenceAnswerLength": 222
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-54f9ca31098fc1",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-24-484-39-definition-1"
+      ],
+      "prompt": "Wie wird „Infusion“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Das Entscheidende bei einer medizinischen Infusion ist, dass sie nach genauer Berechnung und kontrolliert einläuft.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-5724b132e153b2",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-27-534-56-definition-1"
+      ],
+      "prompt": "Wie wird „Kolostoma“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Als Kolostoma bezeichnet man die Ausleitung des Kolons (Dickdarm) im linken Unterbauch.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 43
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-60233a878afb58",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-33-647-49-wissen-1"
+      ],
+      "prompt": "Was fasst das Lehrbuch zu „Menschen mit Demenz – Grundlagen“ zusammen?",
+      "correctTexts": [],
+      "explanation": "Demenzielle Störungen betreffen Gedächtnis, Orientierung, Denken, Handeln, Sprache und Persönlichkeit. Eine Zunahme der Zahl alter Menschen führt insgesamt auch zu einer größeren Anzahl an Demenz erkrankter alter Menschen im Krankenhaus.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 70,
+            "referenceAnswerLength": 237
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-63c5749f0ef234",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-54-938-28-definition-1"
+      ],
+      "prompt": "Wie wird „Erysipel“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Bei einem Erysipel (Wundrose) handelt es sich um eine örtlich begrenzte, bakterielle Entzündung von Haut und Unterhaut, die sich über die Lymphbahnen im Sinne einer flächigen Lymphangitis ausbreitet.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-6412a0d68faa66",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-33-646-6-wissen-1"
+      ],
+      "prompt": "Welche Punkte nennt das Lehrbuch zu „Alte Menschen im Krankenhaus“ (Teil 1/2)?",
+      "correctTexts": [],
+      "explanation": "Ängste und Befürchtungen des letzten Lebensabschnitts; Verlust der vertrauten Umgebung und Personen; viele Informationen in kurzer Zeit Beachtung der pflegerischen Grundprinzipien; Hilfe zur Selbsthilfe; Ressourcenorientierung vor Defizitorientierung.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 78,
+            "referenceAnswerLength": 251
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-6569cff64daf7a",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-11-233-68-definition-1"
+      ],
+      "prompt": "Was bedeutet Pflegequalität?",
+      "correctTexts": [],
+      "explanation": "Pflegequalität ist der Grad der Übereinstimmung zwischen den Zielen guter Pflege und der tatsächlich geleisteten Pflege.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 28
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-6662db0012e94f",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-43-773-36-merken-1"
+      ],
+      "prompt": "Welche wichtige Aussage hebt das Lehrbuch zu „Lebenssituation verbessern“ hervor?",
+      "correctTexts": [],
+      "explanation": "Die Betreuung eines multimorbiden Patienten sollte nicht zum Ziel haben, die Krankheiten des Patienten einzeln zu therapieren, sondern sie sollte versuchen, seine Lebenssituation in der Gesamtheit zu verbessern und weitere Folgeerkrankungen und Komplikationen zu vermeiden.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 81,
+            "referenceAnswerLength": 273
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-673404bc0b2bf1",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-11-233-42-definition-1"
+      ],
+      "prompt": "Wie wird „Qualität“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Gemäß einer gängigen Definition ist Qualität der „Grad, in dem ein Satz inhärenter Merkmale Anforderungen erfüllt“ (DIN EN ISO 9000:2005).",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-6933f927887506",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-7-139-69-definition-1"
+      ],
+      "prompt": "Wie wird „Konflikt“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Von einem Konflikt spricht man, wenn entgegengesetzte Interessen, Zielsetzungen oder Wertvorstellungen von Personen oder Gruppen aufeinanderprallen.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-6aaf375c60efe6",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-50-861-50-wissen-1"
+      ],
+      "prompt": "Was fasst das Lehrbuch zu „Grundlegende Konzepte der Kinästhetik – Menschliche“ zusammen?",
+      "correctTexts": [],
+      "explanation": "Funktion Es werden 7 Grundpositionen unterschieden: Stand, Einbeinstand, Einbein-Knie-Stand, HandKnie-Stand (Vierfüßlerstand), Schneidersitz, Bauchlage mit Ellbogenstütz und Rückenlage. Sie sind Ausgangspunkt jeder menschlichen (Fort-)Bewegung.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 89,
+            "referenceAnswerLength": 244
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-771925c900f79b",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-20-395-16-definition-1"
+      ],
+      "prompt": "Wie wird „Klistier“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Unter Klistier versteht man die Verabreichung kleinerer Mengen unterschiedlicher Lösungen zur Förderung des Stuhlabgangs (auch zur lokalen medikamentösen Behandlung des Darms). Ausführliche Informationen zu Klistieren und deren Anwen dung finden Sie in Kapitel 27 Darmeinläufe und Stomapflege.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        },
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 42,
+            "referenceAnswerLength": 293
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-7892e43a504729",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-10-211-67-definition-1"
+      ],
+      "prompt": "Wie wird „Pflegeprozess“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "In der professionellen Pflege wird der systematische und zielgerichtete Arbeitsablauf, mit dem Pflegende Probleme beim Patienten erkennen und adäquate pflegerische Maßnahmen planen, organisieren, durchführen und evaluieren, um diese Probleme zu beheben, Pflegeprozess genannt. Es handelt sich also um einen Problemlösungsprozess.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 47,
+            "referenceAnswerLength": 329
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-7a29b1610f8815",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-4-52-10-definition-1"
+      ],
+      "prompt": "Wie wird Wissen im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Wissen umfasst Kenntnisse und Fähigkeiten, die Menschen zur Lösung von Problemen einsetzen. Es basiert auf Daten und Informationen, ist aber an eine Person gebunden.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 38
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-7f64f10de24fe7",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-8-157-90-definition-1"
+      ],
+      "prompt": "Wie wird „Ekel“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Ekel ist ein Übelkeit erregendes Gefühl des Widerwillens und des Abscheus.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 38
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-9c4d0412048f54",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-45-800-13-definition-1"
+      ],
+      "prompt": "Wie wird „Weaning“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Das englische Wort „weaning“ bedeutet entwöhnen.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 41
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-a0f4cce7b7afbe",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-25-510-23-definition-1"
+      ],
+      "prompt": "Wie wird „PEG“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Die perkutane endoskopische Gastrostomie ist ein von außen durch die Bauchdecke mithilfe eines Endoskops gelegter künst licher Zugang zum Magen.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 37
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-a37e93b4ec88a6",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-10-227-14-definition-1"
+      ],
+      "prompt": "Wie wird „Dokumentation“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "In einer Patientendokumentation werden alle Informationen über den Patienten und dessen Behandlung umfassend und lückenlos schriftlich festgehalten. Sie enthält geplante und durchgeführte Maßnahmen, weitere Beobachtungen sowie Besonderheiten und Veränderungen.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 47,
+            "referenceAnswerLength": 260
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-b059de1da1f29d",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-4-33-51-definition-1"
+      ],
+      "prompt": "Wie wird „Kurativ“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Kurative Pflege umfasst alle pflegerischen Maßnahmen, die auf Heilung ausgerichtet sind.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 41
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-b376d7afc7ed57",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-4-73-57-definition-1"
+      ],
+      "prompt": "Wie beschreibt Orem Pflege?",
+      "correctTexts": [],
+      "explanation": "Pflege ist nach Orem eine praktische und didaktische Kunstfertigkeit: Pflegende tun etwas für Menschen, helfen ihnen, selbst etwas zu tun, oder helfen ihnen zu lernen, wie sie es selbst tun können.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 27
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-c62301c2572004",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-25-519-13-definition-1"
+      ],
+      "prompt": "Wie wird „Punktion“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Eine Punktion ist das Einstechen einer Kanüle (Hohlnadel) in ein Blutgefäß, ein Organ oder einen vorgebildeten Hohlraum bzw. eine neu gebildete Höhle.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-d5b993562d2169",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-25-511-72-definition-1"
+      ],
+      "prompt": "Wie wird „Drainage“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Eine Drainage (engl.: to drain = ableiten, trockenlegen) ist eine therapeutische Methode, Flüssigkeiten oder Gase aus dem Körper mithilfe eines Drains (künstliches flexibles oder starres Schlauchsystems) nach außen abzuleiten.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 42
+          },
+          "relatedQuestionIds": []
+        },
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 42,
+            "referenceAnswerLength": 226
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-d619008cd41175",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-42-758-9-definition-1"
+      ],
+      "prompt": "Wie wird „Fieber“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Fieber ist eine Erhöhung der Temperatur im Inneren des Körpers (Körperkerntemperatur) auf über 38 °C.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 40
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-e32e766592a573",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-29-568-74-definition-1"
+      ],
+      "prompt": "Wie wird „Débridement“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Unter Débridement versteht man die Abtragung von avitalem Gewebe, Nekrosen, und/oder Entfernung von Fremdkörpern bis an intakte anatomische Strukturen heran unter Erhalt von Granuationsgewebe (Deutsche Gesellschaft für Wundheilung und Wundbehandlung e. V. 2012).",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 45,
+            "referenceAnswerLength": 262
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-e8fc547cc47791",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-11-236-37-definition-1"
+      ],
+      "prompt": "Wie wird „Qualitätsmanagement“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Im Sinne der DIN EN ISO Norm 9000:2005 sind unter dem Qualitätsmanagement alle Tätigkeiten zum Leiten und Lenken eines Krankenhauses bzw. einer Pflegeeinrichtung zu verstehen, die dazu dienen, die Qualität der angebotenen Dienstleistungen zu verbessern.",
+      "issues": [
+        {
+          "code": "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+          "severity": "review",
+          "confidence": "low",
+          "rationale": "Reference answer is much broader than the prompt, suggesting possible under-specification.",
+          "evidence": {
+            "promptLength": 53,
+            "referenceAnswerLength": 253
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "low",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-f346193e0b2466",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-29-562-42-definition-1"
+      ],
+      "prompt": "Wie wird „Wunde“ im Lehrbuch definiert?",
+      "correctTexts": [],
+      "explanation": "Eine Wunde (griech.: trauma, lat.: vulnus) ist ein pathologischer Zustand, der durch eine Schädigung oder eine Zerstörung von Körpergewebe entsteht.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 39
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-fb13c7a8764431",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-23-454-10-definition-1"
+      ],
+      "prompt": "Was ist eine Injektion?",
+      "correctTexts": [],
+      "explanation": "Bei einer Injektion werden sterile Flüssigkeiten, meist Medikamente, mithilfe einer Spritze und einer dünnen Hohlnadel in Gewebe eingebracht.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 23
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "p25a-sa-fde29becc42c7c",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-43-771-37-definition-1"
+      ],
+      "prompt": "Was bedeutet Multimorbidität?",
+      "correctTexts": [],
+      "explanation": "Multimorbidität bedeutet, dass ein Patient gleichzeitig mehrere Krankheiten hat.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 29
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-21-5-06",
+      "type": "single_choice",
+      "difficulty": 3,
+      "conceptIds": [
+        "concept-21-5-mobilisation"
+      ],
+      "prompt": "Welche Aussage zur Mobilisation bei bestätigter TVT entspricht dem Lehrbuch?",
+      "correctTexts": [
+        "Unter Antikoagulation und Kompression ist keine strikte Bettruhe mehr nötig."
+      ],
+      "explanation": "Das Lehrbuch grenzt sich ausdrücklich von der älteren Lehre der strikten Bettruhe ab.",
+      "issues": [
+        {
+          "code": "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Most distractors use absolute wording, which may make them rejectable without domain knowledge.",
+          "evidence": {
+            "absoluteDistractors": [
+              "Unter Antikoagulation und Kompression ist zwingend strikte Bettruhe nötig.",
+              "Mobilisation ist grundsätzlich verboten."
+            ]
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-36-03",
+      "type": "single_choice",
+      "difficulty": 1,
+      "conceptIds": [
+        "concept-36-retard-nicht-moersern"
+      ],
+      "prompt": "Welche Aussage zu Retardmedikamenten entspricht dem Lehrbuch?",
+      "correctTexts": [
+        "Sie dürfen nicht gemörsert werden."
+      ],
+      "explanation": "Durch Mörsern kann der vorgesehene Freisetzungsmechanismus zerstört werden.",
+      "issues": [
+        {
+          "code": "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Most distractors use absolute wording, which may make them rejectable without domain knowledge.",
+          "evidence": {
+            "absoluteDistractors": [
+              "Sie sollen grundsätzlich gemörsert werden.",
+              "Sie werden immer mit Milch gegeben.",
+              "Sie müssen immer geteilt werden."
+            ]
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-36-10",
+      "type": "short_answer",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-36-6r"
+      ],
+      "prompt": "Nenne die sechs Prüfpunkte der 6-R-Regel.",
+      "correctTexts": [],
+      "explanation": "Richtiger Patient, richtiges Medikament, richtige Dosierung, richtige Applikationsform, richtiger Zeitpunkt, richtige Dokumentation.",
+      "issues": [
+        {
+          "code": "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Free-response prompt is very short/generic and may permit multiple reasonable interpretations.",
+          "evidence": {
+            "promptLength": 41
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-0043",
+      "type": "single_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-15-311-60-achtung-1"
+      ],
+      "prompt": "Welche Aussage ist bei „Umgang mit Klinikwäsche“ laut Lehrbuch besonders zu beachten?",
+      "correctTexts": [
+        "Fassen Sie niemals mit benutzen Handschuhen in den sauberen Wäscheschrank oder Wagen, um etwas zu entnehmen – Sie kontaminieren womöglich die Wäsche und bereiten so den Weg für eine Schmierinfektion."
+      ],
+      "explanation": "Richtig ist: Fassen Sie niemals mit benutzen Handschuhen in den sauberen Wäscheschrank oder Wagen, um etwas zu entnehmen – Sie kontaminieren womöglich die Wäsche und bereiten so den Weg für eine Schmierinfektion.",
+      "issues": [
+        {
+          "code": "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Most distractors use absolute wording, which may make them rejectable without domain knowledge.",
+          "evidence": {
+            "absoluteDistractors": [
+              "Berühren Sie niemals einen Menschen, der an einer Stromquelle „klebt“, Sie könnten dann ebenfalls einen Stromschlag erleiden.",
+              "Die Shuntpunktion erfolgt ausschließlich in die Vene, die mit arteriellem Blut versorgt wird, und nie in den Shunt (Anastomose = Verbindungsstelle von Arterie und Vene)."
+            ]
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-0163",
+      "type": "single_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-31-605-15-achtung-1"
+      ],
+      "prompt": "Welche Aussage ist laut Lehrbuch bei „Vaginale Blutungen in der Schwangerschaft“ im Abschnitt „Schwangerschaftsbeschwerden“ besonders zu beachten?",
+      "correctTexts": [
+        "Sie sind immer ein Alarmzeichen und sollten ärztlich abgeklärt werden."
+      ],
+      "explanation": "Richtig ist: Sie sind immer ein Alarmzeichen und sollten ärztlich abgeklärt werden.",
+      "issues": [
+        {
+          "code": "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Most distractors use absolute wording, which may make them rejectable without domain knowledge.",
+          "evidence": {
+            "absoluteDistractors": [
+              "Ein akuter Arterienverschluss ist immer ein Notfall.",
+              "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+            ]
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-0165",
+      "type": "single_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-31-607-29-merken-1"
+      ],
+      "prompt": "Welche Aussage passt laut Lehrbuch zu „Drohende Komplikation“ im Abschnitt „Schwangerschaftsbeschwerden“?",
+      "correctTexts": [
+        "Bei schweren anhaltenden Schmerzen während einer Schwangerschaft muss immer ein Arzt hinzugezogen werden. Sie können harmlos sein oder ein Warnsignal für drohende Komplikationen darstellen."
+      ],
+      "explanation": "Richtig ist: Bei schweren anhaltenden Schmerzen während einer Schwangerschaft muss immer ein Arzt hinzugezogen werden. Sie können harmlos sein oder ein Warnsignal für drohende Komplikationen darstellen.",
+      "issues": [
+        {
+          "code": "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Most distractors use absolute wording, which may make them rejectable without domain knowledge.",
+          "evidence": {
+            "absoluteDistractors": [
+              "Bei Knieschmerzen muss immer eine Erkrankung der Hüftgelenke ausgeschlossen werden, denn bei jedem 5. Patienten löst ein Hüftproblem die Knieschmerzen aus.",
+              "Freiheitsbeschränkende Maßnahmen sind grundsätzlich immer und nach Kräften zu vermeiden. Werden sie dennoch nötig, sollte(n)."
+            ]
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-0288",
+      "type": "single_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-53-903-10-merken-1"
+      ],
+      "prompt": "Welche Aussage passt laut Lehrbuch zu „Kontrolle“ im Abschnitt „Herzrhythmusstörungen“?",
+      "correctTexts": [
+        "Um kritische Frequenzen frühzeitig zu erkennen, sollten die eingestellten Alarmgrenzen am Monitor regelmäßig kontrolliert werden. Klagt der Patient über Herzstolpern oder treten kardiale Synkopen auf, informieren Sie den Arzt."
+      ],
+      "explanation": "Richtig ist: Um kritische Frequenzen frühzeitig zu erkennen, sollten die eingestellten Alarmgrenzen am Monitor regelmäßig kontrolliert werden. Klagt der Patient über Herzstolpern oder treten kardiale Synkopen auf, informieren Sie den Arzt.",
+      "issues": [
+        {
+          "code": "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Most distractors use absolute wording, which may make them rejectable without domain knowledge.",
+          "evidence": {
+            "absoluteDistractors": [
+              "Führen Sie das Darmrohr nie mit Gewalt ein. Lässt es sich nicht einschieben, brechen Sie den Vorgang sofort ab und informieren Sie den Arzt.",
+              "Patienten kommen nicht immer von sich aus auf Pflegende zu, um sich beraten zu lassen. Häufig müssen Sie den Beratungsbedarf selbst erkennen und die wahrgenommenen Problemlagen anschließend einfühlsam mit den Patienten erörtern."
+            ]
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-0295",
+      "type": "single_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-54-928-69-achtung-1"
+      ],
+      "prompt": "Welche Aussage ist bei „Akuter Arterienverschluss“ laut Lehrbuch besonders zu beachten?",
+      "correctTexts": [
+        "Ein akuter Arterienverschluss ist immer ein Notfall."
+      ],
+      "explanation": "Richtig ist: Ein akuter Arterienverschluss ist immer ein Notfall.",
+      "issues": [
+        {
+          "code": "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Most distractors use absolute wording, which may make them rejectable without domain knowledge.",
+          "evidence": {
+            "absoluteDistractors": [
+              "Ein Spannungspneumothorax ist immer ein absoluter Notfall.",
+              "Ein Asthma-Anfall ist immer eine lebensbedrohliche Situation."
+            ]
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-0310",
+      "type": "single_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-55-950-39-achtung-1"
+      ],
+      "prompt": "Welche Warnung gibt das Lehrbuch zum Asthma-Anfall?",
+      "correctTexts": [
+        "Ein Asthma-Anfall ist immer eine lebensbedrohliche Situation."
+      ],
+      "explanation": "Richtig ist: Ein Asthma-Anfall ist immer eine lebensbedrohliche Situation.",
+      "issues": [
+        {
+          "code": "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Most distractors use absolute wording, which may make them rejectable without domain knowledge.",
+          "evidence": {
+            "absoluteDistractors": [
+              "Ein akuter Arterienverschluss ist immer ein Notfall.",
+              "Sie sind immer ein Alarmzeichen und sollten ärztlich abgeklärt werden."
+            ]
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-0337",
+      "type": "single_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-55-978-46-achtung-1"
+      ],
+      "prompt": "Welche Aussage ist bei „Pneumothorax“ laut Lehrbuch besonders zu beachten?",
+      "correctTexts": [
+        "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+      ],
+      "explanation": "Richtig ist: Ein Spannungspneumothorax ist immer ein absoluter Notfall.",
+      "issues": [
+        {
+          "code": "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Most distractors use absolute wording, which may make them rejectable without domain knowledge.",
+          "evidence": {
+            "absoluteDistractors": [
+              "Ein akuter Arterienverschluss ist immer ein Notfall.",
+              "Sie sind immer ein Alarmzeichen und sollten ärztlich abgeklärt werden."
+            ]
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-0348",
+      "type": "single_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-56-1006-21-achtung-1"
+      ],
+      "prompt": "Welche Aussage ist bei „Hämorrhoiden“ laut Lehrbuch besonders zu beachten?",
+      "correctTexts": [
+        "Jede rektale Blutung kann ebenso ein Hinweis auf ein Kolonkarzinom sein."
+      ],
+      "explanation": "Richtig ist: Jede rektale Blutung kann ebenso ein Hinweis auf ein Kolonkarzinom sein.",
+      "issues": [
+        {
+          "code": "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Most distractors use absolute wording, which may make them rejectable without domain knowledge.",
+          "evidence": {
+            "absoluteDistractors": [
+              "Ein Spannungspneumothorax ist immer ein absoluter Notfall.",
+              "Ein akuter Arterienverschluss ist immer ein Notfall."
+            ]
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-0534",
+      "type": "single_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-62-1292-82-achtung-1"
+      ],
+      "prompt": "Welche Aussage ist bei „Verätzung“ laut Lehrbuch besonders zu beachten?",
+      "correctTexts": [
+        "Die Verätzung ist ein Notfall."
+      ],
+      "explanation": "Richtig ist: Die Verätzung ist ein Notfall.",
+      "issues": [
+        {
+          "code": "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Most distractors use absolute wording, which may make them rejectable without domain knowledge.",
+          "evidence": {
+            "absoluteDistractors": [
+              "Ein akuter Arterienverschluss ist immer ein Notfall.",
+              "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+            ]
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    },
+    {
+      "questionId": "q-p12-0634",
+      "type": "single_choice",
+      "difficulty": 2,
+      "conceptIds": [
+        "concept-8-162-90-achtung-1"
+      ],
+      "prompt": "Welche Aussage ist bei „Gewalt“ laut Lehrbuch besonders zu beachten?",
+      "correctTexts": [
+        "Ein klares „Nein“ zu Gewalt durch Pflegende."
+      ],
+      "explanation": "Richtig ist: Ein klares „Nein“ zu Gewalt durch Pflegende.",
+      "issues": [
+        {
+          "code": "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER",
+          "severity": "review",
+          "confidence": "medium",
+          "rationale": "Most distractors use absolute wording, which may make them rejectable without domain knowledge.",
+          "evidence": {
+            "absoluteDistractors": [
+              "Ein akuter Arterienverschluss ist immer ein Notfall.",
+              "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+            ]
+          },
+          "relatedQuestionIds": []
+        }
+      ],
+      "highestSeverity": "review",
+      "highestConfidence": "medium",
+      "disposition": "manual-review"
+    }
+  ]
+}
