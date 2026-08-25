@@ -5,6 +5,7 @@ on:
     branches: [p26a-semantic-defect-detection]
     paths:
       - 'tools/p26a_semantic_audit.py'
+      - 'tools/p26a_semantic_refinement.py'
       - 'tests/p26a-semantic-audit.test.py'
       - 'data/questions.json'
       - 'data/concepts.json'
@@ -32,7 +33,10 @@ jobs:
           node-version: '22'
 
       - name: Python syntax
-        run: python3 -m py_compile tools/p26a_semantic_audit.py tests/p26a-semantic-audit.test.py
+        run: |
+          python3 -m py_compile tools/p26a_semantic_audit.py
+          python3 -m py_compile tools/p26a_semantic_refinement.py
+          python3 -m py_compile tests/p26a-semantic-audit.test.py
 
       - name: Freeze question-bank checksum
         run: sha256sum data/questions.json | tee /tmp/questions-before.sha256
@@ -40,9 +44,10 @@ jobs:
       - name: P26A semantic detector certification
         run: python3 tests/p26a-semantic-audit.test.py
 
-      - name: Materialize semantic defect registry
+      - name: Materialize refined semantic defect registry
         run: |
           python3 tools/p26a_semantic_audit.py --write
+          python3 tools/p26a_semantic_refinement.py --write
           python3 - <<'PY'
           import hashlib, json
           from pathlib import Path
@@ -92,6 +97,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'Semantic audit reports already current.'
           else
-            git commit -m 'P26A: materialize semantic defect registry [skip ci]'
+            git commit -m 'P26A: materialize refined semantic defect registry [skip ci]'
             git push origin HEAD:p26a-semantic-defect-detection
           fi
