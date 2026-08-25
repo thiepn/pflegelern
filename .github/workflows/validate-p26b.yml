@@ -1,0 +1,115 @@
+name: Validate PflegeLern P26B
+
+on:
+  push:
+    branches: [p26b-semantic-defect-correction]
+    paths:
+      - 'tools/p26b_semantic_repair.py'
+      - 'tests/p26b-semantic-correction.test.py'
+      - 'tools/p26a_semantic_audit.py'
+      - 'tools/p26a_semantic_refinement.py'
+      - 'tests/p26a-semantic-audit.test.py'
+      - 'data/questions.json'
+      - 'data/concepts.json'
+      - 'data/cards.json'
+      - 'data/manifest.json'
+      - 'service-worker.js'
+      - 'tests/p25d-question-quality.test.mjs'
+      - 'tests/p25d-integration.test.mjs'
+      - '.github/workflows/validate-p26b.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  semantic-correction:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Python syntax
+        run: |
+          python3 -m py_compile tools/p26a_semantic_audit.py
+          python3 -m py_compile tools/p26a_semantic_refinement.py
+          python3 -m py_compile tools/p26b_semantic_repair.py
+          python3 -m py_compile tests/p26b-semantic-correction.test.py
+
+      - name: Freeze pre-repair question-bank checksum
+        run: sha256sum data/questions.json | tee /tmp/questions-before.sha256
+
+      - name: Materialize the seven certified semantic repairs
+        run: python3 tools/p26b_semantic_repair.py --write
+
+      - name: P26B semantic correction certification
+        run: python3 tests/p26b-semantic-correction.test.py
+
+      - name: Confirm P26A baseline audit remains immutable
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('reports/P26A_SEMANTIC_DEFECT_REGISTRY.json').read_text(encoding='utf-8'))
+          assert report['summary']['confirmedDefects'] == 7
+          assert report['summary']['manualReviewCandidates'] == 108
+          assert len(report['confirmedDefectIds']) == 7
+          print('P26A historical registry preserved.')
+          PY
+
+      - name: P25D question-quality regression
+        run: node tests/p25d-question-quality.test.mjs && node tests/p25d-integration.test.mjs
+
+      - name: P25C input regression
+        run: node tests/p25c-input-core.test.mjs
+
+      - name: P25B repetition regression
+        run: node tests/p25b-repetition-core.test.mjs
+
+      - name: P18-P20 core regressions
+        run: |
+          node tests/p18-mastery.test.mjs
+          node tests/p19-remediation.test.mjs
+          node tests/p20-exam-core.test.mjs
+          node tests/p20-runtime.test.mjs
+
+      - name: Validate P26B phase metadata
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          m = json.loads(Path('data/manifest.json').read_text(encoding='utf-8'))
+          sw = Path('service-worker.js').read_text(encoding='utf-8')
+          assert m['phase'] == 'P26B'
+          assert m['version'] == '1.1.0-dev.26b'
+          assert m['status'] == 'p26b-semantic-defect-correction'
+          assert 'pflegelern-p26b-v1.1.0-dev26b' in sw
+          print('P26B metadata/cache contract passed.')
+          PY
+
+      - name: Upload P26B correction artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: p26b-semantic-correction-report
+          path: |
+            reports/P26B_SEMANTIC_CORRECTION_REPORT.json
+            reports/P26B_SEMANTIC_CORRECTION_REPORT.md
+
+      - name: Commit materialized P26B question repairs and reports
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/questions.json reports/P26B_SEMANTIC_CORRECTION_REPORT.json reports/P26B_SEMANTIC_CORRECTION_REPORT.md
+          if git diff --cached --quiet; then
+            echo 'P26B semantic repairs already materialized.'
+          else
+            git commit -m 'P26B: materialize seven semantic corrections [skip ci]'
+            git push origin HEAD:p26b-semantic-defect-correction
+          fi
