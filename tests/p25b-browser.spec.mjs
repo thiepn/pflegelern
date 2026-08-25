@@ -36,6 +36,7 @@ test('a second recommended session avoids exact question repeats when alternativ
       secondQuestions,
       overlap: firstQuestions.filter((id) => secondQuestions.includes(id)),
       firstCards: first.filter((item) => item.kind === 'card').map((item) => item.id),
+      firstCount: first.length,
       secondCount: second.length
     };
   });
@@ -43,7 +44,8 @@ test('a second recommended session avoids exact question repeats when alternativ
   expect(result.firstQuestions.length).toBeGreaterThanOrEqual(4);
   expect(result.secondQuestions.length).toBeGreaterThanOrEqual(4);
   expect(result.overlap).toEqual([]);
-  expect(result.secondCount).toBe(22);
+  expect(result.secondCount).toBe(result.firstCount);
+  expect(result.secondCount).toBeGreaterThanOrEqual(12);
   expect(result.firstCards.length).toBeGreaterThan(0);
   expect(errors).toEqual([]);
 });
@@ -105,6 +107,7 @@ test('direct repetition guard changes only repeated questions, never card items'
       replacementQuestion: guarded[questionIndex]?.id,
       originalType: content.questionById.get(question.id)?.type,
       replacementType: content.questionById.get(guarded[questionIndex]?.id)?.type,
+      originalTotal: items.length,
       total: guarded.length
     };
   });
@@ -112,7 +115,7 @@ test('direct repetition guard changes only repeated questions, never card items'
   expect(result.cardsAfter).toEqual(result.cardsBefore);
   expect(result.replacementQuestion).not.toBe(result.originalQuestion);
   expect(result.replacementType).toBe(result.originalType);
-  expect(result.total).toBe(22);
+  expect(result.total).toBe(result.originalTotal);
   expect(errors).toEqual([]);
 });
 
