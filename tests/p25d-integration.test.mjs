@@ -46,12 +46,12 @@ assert.match(runtime, /p25dQuestionQualitySummary/);
 assert.match(bootstrap, /installQuestionQualityPatches/);
 assert.ok(bootstrap.indexOf('installMockExamPatches();') < bootstrap.indexOf('installQuestionQualityPatches();'), 'P25D must wrap the final P20 exam creator');
 assert.ok(bootstrap.indexOf('installQuestionRepetitionPatches();') < bootstrap.indexOf('installQuestionQualityPatches();'), 'P25D must run after P25B repetition control');
-assert.match(sw, /pflegelern-p25d-v1\.1\.0-dev25d/);
+
+// Phase-forward regression contract: later phases are expected to change the current
+// cache/manifest version, but the P25D runtime must remain installed and offline-cached.
 assert.match(sw, /\.\/js\/p25d-question-quality-core\.js/);
 assert.match(sw, /\.\/js\/p25d-question-quality\.js/);
-assert.equal(manifest.phase, 'P25D');
-assert.equal(manifest.version, '1.1.0-dev.25d');
-assert.equal(manifest.status, 'p25d-question-quality-balance');
+assert.ok(Array.isArray(manifest.notes) && manifest.notes.some((note) => String(note).startsWith('P25D adds a non-destructive question-quality gate')), 'manifest must preserve the P25D compatibility contract');
 assert.equal(questions.length, 1299);
 
 console.log('P25D integration contract passed.');
