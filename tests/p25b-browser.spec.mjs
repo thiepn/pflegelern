@@ -87,7 +87,8 @@ test('direct repetition guard changes only repeated questions, never card items'
     const engine = new StudyEngine(content);
     await engine.init();
     const items = engine.selectRecommended({ target: 22, seed: 'p25b-card-preserve' });
-    const question = items.find((item) => item.kind === 'question');
+    const questionIndex = items.findIndex((item) => item.kind === 'question');
+    const question = items[questionIndex];
     const cardsBefore = items.filter((item) => item.kind === 'card').map((item) => item.id);
     const exposure = new Map([[question.id, {
       questionId: question.id,
@@ -97,12 +98,20 @@ test('direct repetition guard changes only repeated questions, never card items'
     }]]);
     const guarded = applyQuestionRepetitionGuard(engine, items, { seed: 'p25b-direct', exposure });
     const cardsAfter = guarded.filter((item) => item.kind === 'card').map((item) => item.id);
-    const guardedQuestion = guarded.find((item) => item.kind === 'question' && item.id !== question.id);
-    return { cardsBefore, cardsAfter, originalQuestion: question.id, hasReplacement: Boolean(guardedQuestion), total: guarded.length };
+    return {
+      cardsBefore,
+      cardsAfter,
+      originalQuestion: question.id,
+      replacementQuestion: guarded[questionIndex]?.id,
+      originalType: content.questionById.get(question.id)?.type,
+      replacementType: content.questionById.get(guarded[questionIndex]?.id)?.type,
+      total: guarded.length
+    };
   });
 
   expect(result.cardsAfter).toEqual(result.cardsBefore);
-  expect(result.hasReplacement).toBe(true);
+  expect(result.replacementQuestion).not.toBe(result.originalQuestion);
+  expect(result.replacementType).toBe(result.originalType);
   expect(result.total).toBe(22);
   expect(errors).toEqual([]);
 });
