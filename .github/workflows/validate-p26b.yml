@@ -45,6 +45,7 @@ jobs:
           python3 -m py_compile tools/p26b_semantic_repair.py
           python3 -m py_compile tools/p26b_semantic_repair_refinement.py
           python3 -m py_compile tools/p26b_compact_bank.py
+          python3 -m py_compile tests/p26a-semantic-audit.test.py
           python3 -m py_compile tests/p26b-semantic-correction.test.py
 
       - name: Restore compact question-bank serialization
@@ -55,6 +56,9 @@ jobs:
 
       - name: P26B semantic correction certification
         run: python3 tests/p26b-semantic-correction.test.py
+
+      - name: P26A detector phase-forward regression
+        run: python3 tests/p26a-semantic-audit.test.py
 
       - name: Confirm P26A baseline audit remains immutable
         run: |
@@ -106,14 +110,6 @@ jobs:
             reports/P26B_SEMANTIC_CORRECTION_REPORT.json
             reports/P26B_SEMANTIC_CORRECTION_REPORT.md
 
-      - name: Commit compact serialization if needed
+      - name: Assert compact serialization is already committed
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/questions.json reports/P26B_SEMANTIC_CORRECTION_REPORT.json
-          if git diff --cached --quiet; then
-            echo 'P26B corrected bank is already compact and current.'
-          else
-            git commit -m 'P26B: restore compact question-bank serialization [skip ci]'
-            git push origin HEAD:p26b-semantic-defect-correction
-          fi
+          git diff --exit-code -- data/questions.json reports/P26B_SEMANTIC_CORRECTION_REPORT.json
