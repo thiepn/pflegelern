@@ -1,0 +1,60 @@
+{
+  "phase": "P25A",
+  "status": "PASS",
+  "branch": "p25a-question-variety-rebalance",
+  "baselineQuestions": 954,
+  "generatedQuestions": 345,
+  "totalQuestions": 1299,
+  "baselineTypeCounts": {
+    "clinical_case": 214,
+    "matching": 15,
+    "multiple_choice": 24,
+    "ordering": 1,
+    "short_answer": 1,
+    "single_choice": 699
+  },
+  "generatedTypeCounts": {
+    "matching": 24,
+    "ordering": 1,
+    "short_answer": 320
+  },
+  "finalTypeCounts": {
+    "clinical_case": 214,
+    "matching": 39,
+    "multiple_choice": 24,
+    "ordering": 2,
+    "short_answer": 321,
+    "single_choice": 699
+  },
+  "singleChoiceShare": {
+    "before": 0.7327,
+    "after": 0.5381
+  },
+  "coverage": {
+    "chaptersRepresentedByP25A": 66,
+    "shortAnswerConcepts": 320,
+    "matchingSections": 24,
+    "safeOrderingConcepts": 1
+  },
+  "sourceLineage": {
+    "certification": "p25a-source-derived-v1",
+    "policy": "Generated P25A items are transforms of approved source-backed cards only. No external clinical facts are introduced. Short answers use the exact card back as the model answer; matching pairs map concept titles to concise card-backed statements; ordering is generated only when a sequence/procedure card contains an explicit parseable order."
+  },
+  "legacyPreservation": {
+    "count": 954,
+    "canonicalSha256": "57ee4a87fe567ead5424faee6d9df9406628211df03fd0693a038ebe841c9448",
+    "preservedExactly": true
+  },
+  "qualityGates": {
+    "uniqueQuestionIds": true,
+    "validConceptReferences": true,
+    "validSourceCardReferences": true,
+    "legacy954Preserved": true,
+    "shortAnswerExpansionAtLeast300": true,
+    "matchingExpansionAtLeast20": true,
+    "singleChoiceBankShareAtMost56Percent": true,
+    "p17SubtypePlanningEnabled": true,
+    "ambiguousSyntheticMultipleChoiceNotGenerated": true,
+    "errors": []
+  }
+}

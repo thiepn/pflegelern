@@ -1,7 +1,7 @@
 {
   "project": "PflegeLern",
-  "phase": "P24",
-  "version": "1.1.0-dev.24",
+  "phase": "P25A",
+  "version": "1.1.0-dev.25a",
   "schemaVersion": 1,
   "source": {
     "title": "I care – Pflege",
@@ -9,7 +9,7 @@
     "editionYear": 2015,
     "basis": "Uploaded textbook only; no external clinical facts merged."
   },
-  "status": "p24-regression-repair-browser-qa",
+  "status": "p25a-question-variety-rebalance",
   "notes": [
     "P6 manually calibrated content preserved.",
     "P7 source signals were re-routed by PDF section position where possible.",
@@ -22,6 +22,7 @@
     "P14-P19 preserve calibrated flashcard assessment, free recall, exam planning, adaptive mix, Mastery Model v2 and bounded remediation.",
     "P20 provides Mock Exam System v2 while preserving P16-P19 contracts.",
     "P23 replaces the generic AI-style visual language with the restrained Editorial Clinical UI.",
-    "P24 repairs responsive navigation and breakpoint regressions, removes effective mobile header blur, strengthens light/dark control borders, isolates PflegeLern service-worker cache cleanup, makes backup restore replace all learning stores even for older backups, synchronizes PWA colors/icons and visible version metadata, and adds real Chromium browser QA at 320, 375, 768, 912, 959, 1024 and 1440 px. Learning content, FSRS scheduling, mastery, remediation and exam scoring remain unchanged."
+    "P24 repairs responsive navigation and breakpoint regressions, removes effective mobile header blur, strengthens light/dark control borders, isolates PflegeLern service-worker cache cleanup, makes backup restore replace all learning stores even for older backups, synchronizes PWA colors/icons and visible version metadata, and adds real Chromium browser QA at 320, 375, 768, 912, 959, 1024 and 1440 px. Learning content, FSRS scheduling, mastery, remediation and exam scoring remain unchanged.",
+    "P25A rebalances question variety without altering the 954 certified legacy questions: +320 source-card short-answer items, +24 source-card matching items and +1 strictly source-ordered sequence items. P17 now plans objective/application subtypes explicitly before score-based selection, while P20 remains objectively scored only."
   ]
 }

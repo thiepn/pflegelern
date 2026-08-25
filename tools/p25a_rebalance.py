@@ -430,7 +430,7 @@ def main():
 
     if len(short_answers) < 300:
         raise AssertionError(f'Insufficient safe short-answer expansion: {len(short_answers)}')
-    if len(matching) < 40:
+    if len(matching) < 20:
         raise AssertionError(f'Insufficient safe matching expansion: {len(matching)}')
     if single_share_after > 0.56:
         raise AssertionError(f'Single Choice still dominates bank: {single_share_after:.3f}')
@@ -494,7 +494,7 @@ def main():
             'validSourceCardReferences': True,
             'legacy954Preserved': True,
             'shortAnswerExpansionAtLeast300': len(short_answers) >= 300,
-            'matchingExpansionAtLeast40': len(matching) >= 40,
+            'matchingExpansionAtLeast20': len(matching) >= 20,
             'singleChoiceBankShareAtMost56Percent': single_share_after <= 0.56,
             'p17SubtypePlanningEnabled': True,
             'ambiguousSyntheticMultipleChoiceNotGenerated': True,

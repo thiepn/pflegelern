@@ -6,6 +6,7 @@ import { examPlanContext, normalizeExamPlan } from './p16-exam-plan-core.js';
 import {
   computeAdaptiveMix, interleaveAdaptive, questionKind, scoreQuestion
 } from './p17-study-mix-core.js';
+import { buildQuestionTypePlan } from './p25a-variety-core.js';
 
 const PATCH_FLAG = Symbol.for('pflegelern.p17.adaptiveMixPatched');
 const IMPORTANCE = { core: 1, important: 0.68, detail: 0.36 };
@@ -148,30 +149,35 @@ function selectQuestions(engine, mix, preferredConcepts, ctx, seed) {
     .map((q) => ({ q, score: questionScore(engine, q, ctx, preferred) }))
     .sort((a, b) => b.score - a.score);
 
+  const availableByType = {};
+  for (const row of candidates) availableByType[row.q.type] = (availableByType[row.q.type] || 0) + 1;
+  const typePlan = buildQuestionTypePlan({
+    objectiveTarget: mix.objectiveTarget,
+    applicationTarget: mix.applicationTarget,
+    availableByType,
+    seed: `${seed}-p25a-type-plan`
+  });
+
   const used = new Set();
   const chosen = [];
-  const takeKind = (kind, count) => {
-    for (const row of candidates) {
-      if (count <= 0) break;
-      if (used.has(row.q.id) || questionKind(row.q.type) !== kind) continue;
-      chosen.push(row.q);
-      used.add(row.q.id);
-      count -= 1;
-    }
-    return count;
+  const takeBestType = (type) => {
+    const row = candidates.find((candidate) => !used.has(candidate.q.id) && candidate.q.type === type);
+    if (!row) return false;
+    chosen.push(row.q);
+    used.add(row.q.id);
+    return true;
   };
 
-  let appMissing = takeKind('application', mix.applicationTarget);
-  let objMissing = takeKind('objective', mix.objectiveTarget);
-  let missing = appMissing + objMissing;
-  if (missing > 0) {
-    for (const row of candidates) {
-      if (missing <= 0) break;
-      if (used.has(row.q.id)) continue;
-      chosen.push(row.q);
-      used.add(row.q.id);
-      missing -= 1;
-    }
+  for (const type of typePlan) takeBestType(type);
+
+  // Small scopes may not contain every planned subtype. Fill any remaining slots
+  // by score so the adaptive system never loses its requested question count.
+  const target = Math.max(0, Number(mix.objectiveTarget || 0) + Number(mix.applicationTarget || 0));
+  for (const row of candidates) {
+    if (chosen.length >= target) break;
+    if (used.has(row.q.id)) continue;
+    chosen.push(row.q);
+    used.add(row.q.id);
   }
   return chosen;
 }
