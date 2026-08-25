@@ -1,0 +1,138 @@
+name: Validate PflegeLern P25C
+
+on:
+  push:
+    branches: [p25c-answer-input-reliability]
+    paths:
+      - 'data/manifest.json'
+      - 'js/p18-bootstrap.js'
+      - 'js/p25c-input-core.js'
+      - 'js/p25c-input-reliability.js'
+      - 'service-worker.js'
+      - 'tests/p25c-input-core.test.mjs'
+      - 'tests/p25c-browser.spec.mjs'
+      - '.github/workflows/validate-p25c.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax checks
+        run: |
+          node --check js/p25c-input-core.js
+          node --check js/p25c-input-reliability.js
+          node --check js/p18-bootstrap.js
+          node --check service-worker.js
+          node --check tests/p25c-input-core.test.mjs
+          node --check tests/p25c-browser.spec.mjs
+
+      - name: P25C exhaustive input contract
+        run: node tests/p25c-input-core.test.mjs
+
+      - name: P25B repetition regression
+        run: node tests/p25b-repetition-core.test.mjs
+
+      - name: P17 adaptive mix regression
+        run: node tests/p17-study-mix.test.mjs && node tests/p17-runtime.test.mjs
+
+      - name: P18 mastery regression
+        run: node tests/p18-mastery.test.mjs
+
+      - name: P19 remediation regression
+        run: node tests/p19-remediation.test.mjs
+
+      - name: P20 mock exam regression
+        run: node tests/p20-exam-core.test.mjs && node tests/p20-runtime.test.mjs
+
+      - name: P25A/P25B bank preservation
+        run: |
+          python3 - <<'PY'
+          import json
+          from collections import Counter
+          from pathlib import Path
+          questions = json.loads(Path('data/questions.json').read_text())
+          counts = Counter(q['type'] for q in questions)
+          assert len(questions) == 1299
+          assert counts == Counter({
+              'single_choice': 699,
+              'short_answer': 321,
+              'clinical_case': 214,
+              'matching': 39,
+              'multiple_choice': 24,
+              'ordering': 2,
+          }), counts
+          print('P25A/P25B bank preservation PASS')
+          PY
+
+      - name: P25C integration contract
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path('data/manifest.json').read_text())
+          bootstrap = Path('js/p18-bootstrap.js').read_text()
+          sw = Path('service-worker.js').read_text()
+          runtime = Path('js/p25c-input-reliability.js').read_text()
+          assert manifest['phase'] == 'P25C'
+          assert manifest['version'] == '1.1.0-dev.25c'
+          assert manifest['status'] == 'p25c-answer-input-reliability'
+          assert "initAnswerInputReliability" in bootstrap
+          assert "pflegelern-p25c-v1.1.0-dev25c" in sw
+          assert "'./js/p25c-input-core.js'" in sw
+          assert "'./js/p25c-input-reliability.js'" in sw
+          assert "document.addEventListener('input', captureStudyText, true)" in runtime
+          assert 'StudyEngine.prototype.saveSession' in runtime
+          assert 'StudyEngine.prototype.getSession' in runtime
+          print('P25C integration contract PASS')
+          PY
+
+  browser-qa:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start local app server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/pflegelern-http.log 2>&1 &
+          echo $! > /tmp/pflegelern-http.pid
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/pflegelern-http.log
+          exit 1
+
+      - name: Chromium P25C desktop/mobile answer QA
+        run: npx playwright test tests/p25c-browser.spec.mjs --reporter=line --workers=1
+
+      - name: Upload browser QA artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p25c-browser-qa-artifacts
+          path: test-results
+          if-no-files-found: ignore
