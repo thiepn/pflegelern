@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'pflegelern-';
-const CACHE = 'pflegelern-p25c-v1.1.0-dev25c';
+const CACHE = 'pflegelern-p25d-v1.1.0-dev25d';
 const ASSETS = [
   './',
   './index.html',
@@ -37,6 +37,8 @@ const ASSETS = [
   './js/p25b-repetition.js',
   './js/p25c-input-core.js',
   './js/p25c-input-reliability.js',
+  './js/p25d-question-quality-core.js',
+  './js/p25d-question-quality.js',
   './js/p18-mastery-core.js',
   './js/p18-mastery.js',
   './js/p19-remediation-core.js',
