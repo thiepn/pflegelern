@@ -18,7 +18,7 @@ function updateThemeColors() {
   const metas = [...document.querySelectorAll('meta[name="theme-color"]')];
   for (const meta of metas) {
     const media = meta.getAttribute('media') || '';
-    meta.content = media.includes('dark') ? '#073f45' : '#0a5f65';
+    meta.content = media.includes('dark') ? '#11161b' : '#f6f8f9';
   }
 }
 
@@ -60,10 +60,13 @@ function dataCard(button, kind) {
     <div class="care-data-card-copy">
       <strong>${backup ? 'Fortschritt sichern' : 'Fortschritt wiederherstellen'}</strong>
       <span>${backup
-        ? 'Erstellt eine Sicherungsdatei mit deinem aktuellen Lernstand.'
-        : 'Lädt einen zuvor gesicherten Lernstand aus einer Sicherungsdatei zurück.'}</span>
-      <small>Lokal · nur auf deinem Gerät</small>
+        ? 'Speichert deinen aktuellen Lernstand als lokale Sicherungsdatei.'
+        : 'Stellt deinen Lernstand aus einer zuvor gespeicherten Sicherungsdatei wieder her.'}</span>
+      <small>Lokal auf diesem Gerät</small>
     </div>`;
+  button.classList.remove('button-secondary');
+  if (!backup) button.classList.add('button-secondary');
+  button.textContent = backup ? 'Backup erstellen' : 'Datei auswählen';
   card.append(button);
   return card;
 }
@@ -75,14 +78,52 @@ function decorateDataActions(main) {
   const restore = actions.querySelector('[data-action="restore"]');
   if (!backup || !restore) return;
   actions.dataset.p21Decorated = 'true';
-  const backupCard = dataCard(backup, 'backup');
-  const restoreCard = dataCard(restore, 'restore');
-  actions.replaceChildren(backupCard, restoreCard);
+  actions.replaceChildren(dataCard(backup, 'backup'), dataCard(restore, 'restore'));
 }
 
 function decorateThemeControls(main) {
+  const system = main.querySelector('[data-action="set-theme"][data-theme="system"]');
+  system?.remove();
   for (const button of main.querySelectorAll('[data-action="set-theme"]')) {
     button.setAttribute('aria-pressed', button.classList.contains('active') ? 'true' : 'false');
+  }
+}
+
+function decorateToday(main) {
+  if (currentView() !== 'today') return;
+  const page = main.querySelector('.page');
+  if (!page || page.dataset.clinicalClean === 'true') return;
+  page.dataset.clinicalClean = 'true';
+  page.classList.add('care-dashboard');
+
+  const header = page.querySelector('.page-header');
+  if (header && !header.querySelector('.care-page-subtitle')) {
+    const subtitle = document.createElement('p');
+    subtitle.className = 'care-page-subtitle';
+    subtitle.textContent = 'Dein Lernstand und die nächste sinnvolle Aufgabe auf einen Blick.';
+    header.append(subtitle);
+  }
+
+  const sections = [...page.querySelectorAll(':scope > .section')];
+  if (sections.length >= 2) {
+    const grid = document.createElement('div');
+    grid.className = 'care-dashboard-grid';
+    page.insertBefore(grid, sections[0]);
+    for (const section of sections.slice(0, 2)) grid.append(section);
+  }
+}
+
+function decorateSettings(main) {
+  if (currentView() !== 'settings') return;
+  const page = main.querySelector('.page');
+  if (!page) return;
+  page.classList.add('care-settings');
+  const header = page.querySelector('.page-header');
+  if (header && !header.querySelector('.care-page-subtitle')) {
+    const subtitle = document.createElement('p');
+    subtitle.className = 'care-page-subtitle';
+    subtitle.textContent = 'Darstellung, lokale Sicherungen und App-Informationen.';
+    header.append(subtitle);
   }
 }
 
@@ -95,6 +136,8 @@ function decorateContent() {
   decorateNavigation();
   decorateDataActions(main);
   decorateThemeControls(main);
+  decorateToday(main);
+  decorateSettings(main);
 }
 
 function queueDecorate() {

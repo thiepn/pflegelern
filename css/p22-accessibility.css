@@ -1,0 +1,14 @@
+/* P22 final accessibility token lock — loaded after the Clinical Clean theme. */
+:root {
+  --accent: #0d7f78;
+  --accent-hover: #0a6d67;
+  --accent-strong: #075c57;
+  --text-muted: #68777e;
+  --button-primary: #0d7f78;
+  --button-primary-hover: #0a6d67;
+}
+
+:root[data-theme="dark"] {
+  --button-primary: #117b75;
+  --button-primary-hover: #0f8b83;
+}

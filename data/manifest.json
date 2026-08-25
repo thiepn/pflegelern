@@ -1,7 +1,7 @@
 {
   "project": "PflegeLern",
-  "phase": "P21",
-  "version": "1.1.0-dev.21",
+  "phase": "P22",
+  "version": "1.1.0-dev.22",
   "schemaVersion": 1,
   "source": {
     "title": "I care – Pflege",
@@ -9,7 +9,7 @@
     "editionYear": 2015,
     "basis": "Uploaded textbook only; no external clinical facts merged."
   },
-  "status": "p21-care-design-system",
+  "status": "p22-clinical-clean-redesign",
   "notes": [
     "P6 manually calibrated content preserved.",
     "P7 source signals were re-routed by PDF section position where possible.",
@@ -29,6 +29,7 @@
     "P18 introduces Mastery Model v2 with separate evidence channels and conservative legacy migration.",
     "P19 converts mistakes into bounded concept-level repair sequences with delayed transfer and spaced follow-up.",
     "P20 upgrades Prüfung into Mock Exam System v2 with configurable scope, timer, balanced objective question selection, question overview and detailed results while preserving P16–P19 contracts.",
-    "P21 replaces the legacy visual layer with the Care Design System: high-contrast teal/mint healthcare branding, accessible light/dark palettes, stronger typography and hierarchy, elevated cards and forms, redesigned study/exam surfaces, five-tab mobile navigation, responsive layouts, and dedicated local backup/restore cards. Learning logic, content, storage schema and exam/remediation behavior are unchanged."
+    "P21 introduced the Care Design System and dedicated settings/data presentation.",
+    "P22 replaces P21's dark green visual direction with Clinical Clean: light-first white/soft-gray surfaces, restrained medical teal, a quiet light sidebar, stronger typography and spacing, a two-column dashboard, cleaner study/exam cards, explicit-only dark mode, static theme loading to prevent visual flashes, and clearer local backup/restore actions. Learning logic, content, storage schema, mastery, remediation and exam behavior remain unchanged."
   ]
 }

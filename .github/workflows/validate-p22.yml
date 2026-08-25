@@ -1,0 +1,45 @@
+name: Validate PflegeLern P22
+
+on:
+  push:
+    branches: [p22-clinical-clean-redesign]
+    paths:
+      - 'css/p21-care-theme.css'
+      - 'css/p22-accessibility.css'
+      - 'js/p21-care-ui.js'
+      - 'js/p22-accessibility.js'
+      - 'js/p18-bootstrap.js'
+      - 'index.html'
+      - 'service-worker.js'
+      - 'data/manifest.json'
+      - 'tests/p22-clinical-clean.test.mjs'
+      - '.github/workflows/validate-p22.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: |
+          node --check js/p21-care-ui.js
+          node --check js/p22-accessibility.js
+          node --check js/p18-bootstrap.js
+          node --check tests/p22-clinical-clean.test.mjs
+      - name: P22 visual and contrast gate
+        run: node tests/p22-clinical-clean.test.mjs
+      - name: P20 exam regression
+        run: node tests/p20-exam-core.test.mjs && node tests/p20-runtime.test.mjs
+      - name: P19 remediation regression
+        run: node tests/p19-remediation.test.mjs
+      - name: P18 mastery regression
+        run: node tests/p18-mastery.test.mjs
