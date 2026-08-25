@@ -1,0 +1,100 @@
+name: Build PflegeLern P25A
+
+on:
+  push:
+    branches: [p25a-question-variety-rebalance]
+    paths:
+      - 'tools/p25a_rebalance.py'
+      - 'js/p25a-variety-core.js'
+      - 'tests/p25a-variety-core.test.mjs'
+      - '.github/workflows/generate-p25a.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pflegelern-p25a-build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generate source-backed variety expansion
+        run: PFLEGELERN_ROOT="$GITHUB_WORKSPACE" python tools/p25a_rebalance.py
+
+      - name: Syntax checks
+        run: |
+          node --check js/p25a-variety-core.js
+          node --check js/p17-study-mix.js
+          node --check service-worker.js
+          python -m py_compile tools/p25a_rebalance.py
+
+      - name: P25A variety planner tests
+        run: node tests/p25a-variety-core.test.mjs
+
+      - name: P17 adaptive mix regressions
+        run: |
+          node tests/p17-study-mix.test.mjs
+          node tests/p17-runtime.test.mjs
+          node tests/p17-integration.test.mjs
+
+      - name: P18-P20 regression gates
+        run: |
+          node tests/p18-mastery.test.mjs
+          node tests/p18-runtime.test.mjs
+          node tests/p18-integration.test.mjs
+          node tests/p19-remediation.test.mjs
+          node tests/p19-runtime.test.mjs
+          node tests/p19-integration.test.mjs
+          node tests/p20-exam-core.test.mjs
+          node tests/p20-runtime.test.mjs
+          node tests/p20-integration.test.mjs
+
+      - name: Assert P25A report gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('P25A_QUESTION_VARIETY_REPORT.json').read_text())
+          questions = json.loads(Path('data/questions.json').read_text())
+          manifest = json.loads(Path('data/manifest.json').read_text())
+          assert report['status'] == 'PASS', report
+          assert report['baselineQuestions'] == 954
+          assert report['generatedTypeCounts'].get('short_answer', 0) >= 300
+          assert report['generatedTypeCounts'].get('matching', 0) >= 40
+          assert report['singleChoiceShare']['after'] <= 0.56
+          assert report['legacyPreservation']['preservedExactly'] is True
+          assert len(questions) == report['totalQuestions']
+          assert manifest['phase'] == 'P25A'
+          assert manifest['version'] == '1.1.0-dev.25a'
+          assert manifest['status'] == 'p25a-question-variety-rebalance'
+          print('P25A content gates PASS')
+          PY
+
+      - name: Commit generated P25A content
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/questions.json data/manifest.json js/p17-study-mix.js service-worker.js P25A_QUESTION_VARIETY_REPORT.json
+          if git diff --cached --quiet; then
+            echo 'Generated P25A content already matches branch.'
+            exit 0
+          fi
+          git commit -m 'Build PflegeLern P25A question variety rebalance'
+          git push origin HEAD:p25a-question-variety-rebalance
