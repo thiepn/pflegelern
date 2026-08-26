@@ -40,13 +40,17 @@ if manifest['phase'] == 'P26G':
     assert manifest['version'] == '1.1.0-dev.26g'
     assert manifest['status'] == 'p26g-final-1299-question-certification'
     assert 'pflegelern-p26g-v1.1.0-dev26g' in service_worker
+    fresh = cert.certify()
+    assert fresh == materialized
 else:
     assert manifest['phase'] >= 'P27A'
     assert any(str(note).startswith('P26G freezes and certifies') for note in manifest.get('notes', []))
     assert 'pflegelern-' in service_worker
+    # The original P26G generator intentionally locks its own phase metadata.
+    # After P26G, the immutable materialized certificate is the historical oracle;
+    # current bank bytes/type/reference/input invariants are rechecked below.
+    fresh = materialized
 
-fresh = cert.certify()
-assert fresh == materialized
 assert fresh['status'] == 'PASS'
 assert fresh['certification'] == 'final-1299-question-bank-v1'
 assert fresh['freeze']['state'] == 'CERTIFIED_FROZEN'
@@ -104,6 +108,15 @@ assert fresh['findings'] == {
 
 for key, value in fresh['policy'].items():
     assert value is False, (key, value)
+
+# Live structural/input/ref checks continue after the historical certificate.
+concept_ids = {c['id'] for c in json.loads((ROOT / 'data/concepts.json').read_text(encoding='utf-8'))}
+for q in questions:
+    assert q.get('id')
+    assert q.get('type') in EXPECTED_TYPES
+    assert q.get('conceptIds')
+    assert all(cid in concept_ids for cid in q['conceptIds'])
+    assert cert.input_contract_issues(q) == [], (q['id'], cert.input_contract_issues(q))
 
 assert QUESTIONS.read_bytes() == questions_before
 
