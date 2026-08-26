@@ -1,0 +1,187 @@
+name: Validate PflegeLern P26G
+
+on:
+  push:
+    branches: [p26g-final-1299-question-certification]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax checks
+        run: |
+          python3 -m py_compile tools/p26g_final_certification.py
+          python3 -m py_compile tests/p26g-final-certification.test.py
+          python3 -m py_compile tests/p26f-source-alignment.test.py
+          python3 -m py_compile tests/p26e-semantic-closure.test.py
+          node --check tests/p26g-browser.spec.mjs
+          node --check js/p25a-variety-core.js
+          node --check js/p25b-repetition-core.js
+          node --check js/p25b-repetition.js
+          node --check js/p25c-input-core.js
+          node --check js/p25c-input-reliability.js
+          node --check js/p25d-question-quality-core.js
+          node --check js/p25d-question-quality.js
+          node --check service-worker.js
+
+      - name: Prove P26G did not edit the frozen question bank
+        run: |
+          git fetch origin main
+          git diff --exit-code origin/main -- data/questions.json
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          path=Path('data/questions.json')
+          sha=hashlib.sha256(path.read_bytes()).hexdigest()
+          questions=json.loads(path.read_text(encoding='utf-8'))
+          assert sha=='40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024', sha
+          assert len(questions)==1299
+          print('Frozen P26G question bank unchanged:', sha)
+          PY
+
+      - name: P26G final bank certification
+        run: python3 tests/p26g-final-certification.test.py
+
+      - name: Recompute deterministic P26G evidence
+        run: |
+          python3 tools/p26g_final_certification.py --write
+          git diff --exit-code -- reports/P26G_FINAL_QUESTION_CERTIFICATION.json reports/P26G_FINAL_QUESTION_CERTIFICATION.md
+
+      - name: P26F source-alignment regression
+        run: python3 tests/p26f-source-alignment.test.py
+
+      - name: P26E semantic-closure regression
+        run: python3 tests/p26e-semantic-closure.test.py
+
+      - name: P26A-P26D semantic repair-chain regressions
+        run: |
+          python3 tests/p26a-semantic-audit.test.py
+          python3 tests/p26b-semantic-correction.test.py
+          python3 tests/p26b-report-evidence.test.py
+          python3 tests/p26c-adjudication.test.py
+          python3 tests/p26d-confirmed-defect-repair.test.py
+
+      - name: P25A variety regression
+        run: node tests/p25a-variety-core.test.mjs
+
+      - name: P25B repetition regression
+        run: node tests/p25b-repetition-core.test.mjs
+
+      - name: P25C exhaustive input-contract regression
+        run: node tests/p25c-input-core.test.mjs
+
+      - name: P25D question-quality regressions
+        run: |
+          node tests/p25d-question-quality.test.mjs
+          node tests/p25d-integration.test.mjs
+
+      - name: Adaptive learning and exam regressions
+        run: |
+          node tests/p17-study-mix.test.mjs
+          node tests/p17-runtime.test.mjs
+          node tests/p18-mastery.test.mjs
+          node tests/p19-remediation.test.mjs
+          node tests/p20-exam-core.test.mjs
+          node tests/p20-runtime.test.mjs
+
+      - name: P26G manifest, cache and precache integrity
+        run: |
+          python3 - <<'PY'
+          import json,re
+          from pathlib import Path
+          m=json.loads(Path('data/manifest.json').read_text(encoding='utf-8'))
+          sw=Path('service-worker.js').read_text(encoding='utf-8')
+          assert m['phase']=='P26G'
+          assert m['version']=='1.1.0-dev.26g'
+          assert m['status']=='p26g-final-1299-question-certification'
+          assert "const CACHE = 'pflegelern-p26g-v1.1.0-dev26g';" in sw
+          assert "const CACHE_PREFIX = 'pflegelern-';" in sw
+          assert "key.startsWith(CACHE_PREFIX) && key !== CACHE" in sw
+          required=[
+            './data/questions.json','./data/concepts.json','./data/cards.json','./data/sections.json',
+            './js/p25a-variety-core.js','./js/p25b-repetition-core.js','./js/p25b-repetition.js',
+            './js/p25c-input-core.js','./js/p25c-input-reliability.js',
+            './js/p25d-question-quality-core.js','./js/p25d-question-quality.js',
+            './js/p20-exam-core.js','./js/p20-exam.js'
+          ]
+          for item in required: assert repr(item) in sw, item
+          assets=re.findall(r"'\./([^']+)'", sw)
+          missing=[a for a in assets if a and not Path(a).exists()]
+          assert not missing, missing
+          print('P26G manifest/cache/precache integrity PASS')
+          PY
+
+      - name: Assert final working tree clean
+        run: git diff --exit-code
+
+      - name: Upload certification evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: p26g-final-1299-question-certification
+          path: |
+            reports/P26G_FINAL_QUESTION_CERTIFICATION.json
+            reports/P26G_FINAL_QUESTION_CERTIFICATION.md
+            reports/P26F_SOURCE_ALIGNMENT_AUDIT.json
+            reports/P26E_SEMANTIC_CLOSURE.json
+
+  browser-qa:
+    needs: certify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start local app server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/pflegelern-http.log 2>&1 &
+          echo $! > /tmp/pflegelern-http.pid
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/pflegelern-http.log
+          exit 1
+
+      - name: P26G published-runtime browser certification
+        run: npx playwright test tests/p26g-browser.spec.mjs --reporter=line --workers=1
+
+      - name: P25C desktop/mobile answer-input browser regression
+        run: npx playwright test tests/p25c-browser.spec.mjs --reporter=line --workers=1
+
+      - name: P25D question-quality browser regression
+        run: npx playwright test tests/p25d-browser.spec.mjs --reporter=line --workers=1
+
+      - name: P25B repetition-control browser regression
+        run: npx playwright test tests/p25b-browser.spec.mjs --grep-invert "manifest and offline cache" --reporter=line --workers=1
+
+      - name: Upload browser QA artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p26g-browser-qa-artifacts
+          path: test-results
+          if-no-files-found: ignore
