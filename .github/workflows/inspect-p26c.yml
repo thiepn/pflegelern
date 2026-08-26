@@ -18,6 +18,22 @@ jobs:
         uses: actions/checkout@v4
       - name: P26C adjudication preview
         run: python3 tools/p26c_adjudication_refinement.py
+      - name: Inspect q-36-10 source contract
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          qs=json.loads(Path('data/questions.json').read_text())
+          cs=json.loads(Path('data/cards.json').read_text())
+          q=next(x for x in qs if x['id']=='q-36-10')
+          print(json.dumps(q, ensure_ascii=False, indent=2))
+          ids=set(q.get('conceptIds',[]))
+          for c in cs:
+            cids=set(c.get('conceptIds') or [])
+            if c.get('conceptId'): cids.add(c['conceptId'])
+            if ids & cids:
+              print(json.dumps(c, ensure_ascii=False, indent=2))
+          PY
       - name: Candidate summary
         run: python3 tools/p26c_review_packets.py --batch 0 --batch-size 0
       - name: Answer-option subsumption
