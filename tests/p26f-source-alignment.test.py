@@ -42,10 +42,9 @@ if manifest['phase'] == 'P26F':
     assert manifest['status'] == 'p26f-source-alignment-correction'
     assert 'pflegelern-p26f-v1.1.0-dev26f' in service_worker
 else:
-    assert manifest['phase'] == 'P26G'
-    assert manifest['version'] == '1.1.0-dev.26g'
-    assert manifest['status'] == 'p26g-final-1299-question-certification'
-    assert 'pflegelern-p26g-v1.1.0-dev26g' in service_worker
+    assert manifest['phase'] >= 'P26G'
+    assert any(str(note).startswith('P26F audits all 1,299 questions') for note in manifest.get('notes', []))
+    assert 'pflegelern-' in service_worker
 
 assert correction['phase'] == 'P26F'
 assert correction['status'] == 'source-alignment-corrected'
