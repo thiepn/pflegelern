@@ -1,0 +1,18 @@
+name: Inspect PflegeLern P26D repair candidates
+
+on:
+  push:
+    branches: [p26d-confirmed-defect-repair]
+    paths:
+      - 'tools/p26d_inspect.py'
+      - '.github/workflows/inspect-p26d.yml'
+  workflow_dispatch:
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Print bounded repair evidence
+        run: python3 tools/p26d_inspect.py
