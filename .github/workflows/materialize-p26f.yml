@@ -5,6 +5,7 @@ on:
     branches: [p26f-source-alignment-correction]
     paths:
       - '.github/workflows/materialize-p26f.yml'
+      - 'tools/p26f_source_alignment_refinement.py'
   workflow_dispatch:
 
 permissions:
@@ -56,7 +57,7 @@ jobs:
       - name: Prove question learning content unchanged
         run: |
           python3 - <<'PY'
-          import json,hashlib
+          import json
           from pathlib import Path
           qs=json.loads(Path('data/questions.json').read_text(encoding='utf-8'))
           fields=('id','conceptIds','type','prompt','difficulty','explanation','status','options','correct','correctText','certification')
