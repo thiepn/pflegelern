@@ -26,6 +26,7 @@ questions = json.loads((ROOT / "data" / "questions.json").read_text(encoding="ut
 concepts = json.loads((ROOT / "data" / "concepts.json").read_text(encoding="utf-8"))
 cards = json.loads((ROOT / "data" / "cards.json").read_text(encoding="utf-8"))
 baseline = json.loads((ROOT / "reports" / "P26A_SEMANTIC_DEFECT_REGISTRY.json").read_text(encoding="utf-8"))
+report = json.loads((ROOT / "reports" / "P26B_SEMANTIC_CORRECTION_REPORT.json").read_text(encoding="utf-8"))
 manifest = json.loads((ROOT / "data" / "manifest.json").read_text(encoding="utf-8"))
 service_worker = (ROOT / "service-worker.js").read_text(encoding="utf-8")
 
@@ -41,11 +42,18 @@ assert Counter(q["type"] for q in questions) == Counter({
 assert set(baseline["confirmedDefectIds"]) == TARGETS
 assert baseline["summary"]["confirmedDefects"] == 7
 assert baseline["summary"]["manualReviewCandidates"] == 108
+assert report["phase"] == "P26B"
+assert set(report["targetQuestionIds"]) == TARGETS
+assert report["scope"]["inputConfirmedDefects"] == 7
+assert report["scope"]["manualReviewCandidatesPreserved"] == 108
 
-assert manifest["phase"] == "P26B"
-assert manifest["version"] == "1.1.0-dev.26b"
-assert manifest["status"] == "p26b-semantic-defect-correction"
-assert "pflegelern-p26b-v1.1.0-dev26b" in service_worker
+if manifest["phase"] == "P26B":
+    assert manifest["version"] == "1.1.0-dev.26b"
+    assert manifest["status"] == "p26b-semantic-defect-correction"
+    assert "pflegelern-p26b-v1.1.0-dev26b" in service_worker
+else:
+    assert manifest["phase"] >= "P26C"
+    assert manifest["version"] != "1.1.0-dev.26b"
 
 by_id = {q["id"]: q for q in questions}
 
@@ -88,8 +96,9 @@ assert nosocomial["generation"]["distractorConceptIds"] == [
     "concept-15-300-87-definition-1",
 ]
 
-# Re-run the P26A semantic detector on the corrected bank. No confirmed defects
-# may remain, and the exact manual-review queue from P26A must be preserved.
+# Re-run the P26A semantic detector on the corrected bank. Later adjudication
+# phases may classify its 108 review signals, but the seven repaired defects may
+# never reappear as confirmed semantic defects.
 post = refine.recompute(audit.semantic_audit(questions, concepts, cards))
 assert post["summary"]["confirmedDefects"] == 0, post["confirmedDefectIds"]
 assert post["confirmedDefectIds"] == []
@@ -103,34 +112,23 @@ post_review_ids = {
     if entry.get("disposition") == "manual-review"
 }
 assert len(baseline_review_ids) == 108
-assert post_review_ids == baseline_review_ids, {
-    "added": sorted(post_review_ids - baseline_review_ids),
-    "removed": sorted(baseline_review_ids - post_review_ids),
-}
+assert post_review_ids == baseline_review_ids
 assert post["summary"]["manualReviewCandidates"] == 108
 assert post["summary"]["flaggedQuestions"] == 108
 
-# The original seven defect IDs may no longer be classified as confirmed defects.
-post_by_id = {entry["questionId"]: entry for entry in post["registry"]}
 for qid in TARGETS:
-    assert post_by_id.get(qid, {}).get("disposition") != "confirmed-defect"
+    assert qid not in post["confirmedDefectIds"]
 
-# P26B report must preserve the original audit trail and declare exactly seven targets.
-report = json.loads((ROOT / "reports" / "P26B_SEMANTIC_CORRECTION_REPORT.json").read_text(encoding="utf-8"))
-assert report["phase"] == "P26B"
-assert set(report["targetQuestionIds"]) == TARGETS
-assert report["scope"]["inputConfirmedDefects"] == 7
-assert report["scope"]["manualReviewCandidatesPreserved"] == 108
 assert set(report["preservedManualReviewQuestionIds"]) == baseline_review_ids
 assert report["policy"]["externalClinicalGuidanceAdded"] is False
 assert report["policy"]["manualReviewCandidatesEdited"] is False
 
 print(json.dumps({
-    "phase": "P26B",
+    "currentPhase": manifest["phase"],
+    "regression": "P26B",
     "questions": len(questions),
     "correctedConfirmedDefects": 7,
     "residualConfirmedDefects": post["summary"]["confirmedDefects"],
-    "manualReviewCandidatesPreserved": post["summary"]["manualReviewCandidates"],
-    "flaggedQuestionsAfterCorrection": post["summary"]["flaggedQuestions"],
+    "p26aReviewSignalsStillDetectable": post["summary"]["manualReviewCandidates"],
 }, ensure_ascii=False, indent=2))
-print("P26B semantic correction certification passed.")
+print("P26B semantic correction phase-forward regression passed.")
