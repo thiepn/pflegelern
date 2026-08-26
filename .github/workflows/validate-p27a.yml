@@ -1,0 +1,153 @@
+name: Validate PflegeLern P27A
+
+on:
+  push:
+    branches: [p27a-release-readiness-audit]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax checks
+        run: |
+          python3 -m py_compile tools/p27a_release_readiness_audit.py
+          python3 -m py_compile tests/p27a-release-readiness.test.py
+          python3 -m py_compile tests/p26g-final-certification.test.py
+          python3 -m py_compile tests/p26f-source-alignment.test.py
+          node --check tests/p27a-browser.spec.mjs
+          node --check service-worker.js
+
+      - name: Prove frozen question bank is byte-identical to P26G main baseline
+        run: |
+          git fetch origin main
+          git show origin/main:data/questions.json > /tmp/p26g-questions.json
+          cmp --silent /tmp/p26g-questions.json data/questions.json
+          python3 - <<'PY'
+          import hashlib
+          from pathlib import Path
+          data=Path('data/questions.json').read_bytes()
+          assert hashlib.sha256(data).hexdigest()=='40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024'
+          print('Frozen P26G question bank preserved exactly.')
+          PY
+
+      - name: P27A deterministic release-readiness audit
+        run: python3 tests/p27a-release-readiness.test.py
+
+      - name: Recompute P27A report deterministically
+        run: |
+          python3 tools/p27a_release_readiness_audit.py --write > /tmp/p27a-audit.json
+          git diff --exit-code -- reports/P27A_RELEASE_READINESS_AUDIT.json reports/P27A_RELEASE_READINESS_AUDIT.md
+
+      - name: P26G frozen-bank regression
+        run: python3 tests/p26g-final-certification.test.py
+
+      - name: P26F/P26E semantic-source closure regression
+        run: |
+          python3 tests/p26f-source-alignment.test.py
+          python3 tests/p26e-semantic-closure.test.py
+
+      - name: P25 question-system regressions
+        run: |
+          node tests/p25a-variety-core.test.mjs
+          node tests/p25b-repetition-core.test.mjs
+          node tests/p25c-input-core.test.mjs
+          node tests/p25d-question-quality.test.mjs
+          node tests/p25d-integration.test.mjs
+
+      - name: Adaptive learning and exam regressions
+        run: |
+          node tests/p17-study-mix.test.mjs
+          node tests/p18-mastery.test.mjs
+          node tests/p19-remediation.test.mjs
+          node tests/p20-exam-core.test.mjs
+          node tests/p20-runtime.test.mjs
+
+      - name: P27A phase/cache contract
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('data/manifest.json').read_text(encoding='utf-8'))
+          r=json.loads(Path('reports/P27A_RELEASE_READINESS_AUDIT.json').read_text(encoding='utf-8'))
+          sw=Path('service-worker.js').read_text(encoding='utf-8')
+          assert m['phase']=='P27A'
+          assert m['version']=='1.1.0-dev.27a'
+          assert m['status']=='p27a-release-readiness-audit'
+          assert 'pflegelern-p27a-v1.1.0-dev27a' in sw
+          assert r['summary']['staticRuntimeBlockers']==0
+          assert r['summary']['actionableFindings']==5
+          assert r['nextPhase']['phase']=='P27B'
+          print('P27A phase/cache/audit contract passed.')
+          PY
+
+      - name: Assert working tree clean
+        run: git diff --exit-code
+
+      - name: Upload P27A evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: p27a-release-readiness-audit
+          path: |
+            reports/P27A_RELEASE_READINESS_AUDIT.json
+            reports/P27A_RELEASE_READINESS_AUDIT.md
+
+  browser-qa:
+    needs: audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start local app server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/pflegelern-http.log 2>&1 &
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/pflegelern-http.log
+          exit 1
+
+      - name: P27A full-product browser readiness audit
+        run: npx playwright test tests/p27a-browser.spec.mjs --reporter=line --workers=1
+
+      - name: P25C desktop/mobile input regression
+        run: npx playwright test tests/p25c-browser.spec.mjs --reporter=line --workers=1
+
+      - name: P25D question-quality browser regression
+        run: npx playwright test tests/p25d-browser.spec.mjs --reporter=line --workers=1
+
+      - name: P25B repetition browser regression
+        run: npx playwright test tests/p25b-browser.spec.mjs --grep-invert "manifest and offline cache" --reporter=line --workers=1
+
+      - name: Upload browser artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p27a-browser-qa-artifacts
+          path: test-results
+          if-no-files-found: ignore
