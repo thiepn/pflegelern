@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "phase": "P26F",
+  "status": "source-alignment-corrected",
+  "sourceBasis": {
+    "title": "I care – Pflege",
+    "editionYear": 2015,
+    "recoveredSections": [
+      {
+        "number": "3.2.2",
+        "title": "Kurative Pflege",
+        "printedPage": 33
+      },
+      {
+        "number": "8.1.1",
+        "title": "Was ist Stress?",
+        "printedPage": 145
+      }
+    ]
+  },
+  "baseline": {
+    "questionBankSha256": "e385cc4ed8f7b19b2fd65ef6196253f9c061382cc1b41ca4d5f350e7dcf136ba",
+    "conceptBankSha256": "53a29ab5837f2cd55d7b1c6f1420117d7fab339a8c516990a51159220afc8c29",
+    "sectionBankSha256": "999784812711f1bddfe8b5c0c26869343e67b7fb8977d8fb5f994fa9e46f0fe8"
+  },
+  "after": {
+    "questionBankSha256": "40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024",
+    "conceptBankSha256": "a7638af7ef4a6dafe1b4bc1a6cc0439b9b8f8d9c832b5bc23c58f7ff03c3bb36",
+    "sectionBankSha256": "2c409b05be7e69fb945e4c349bd295a62092b707cffe3772c7528cd7d54b8f85"
+  },
+  "summary": {
+    "recoveredSections": 2,
+    "correctedConceptAnchors": 5,
+    "correctedQuestionSourceSnapshots": 2,
+    "questionLearningContentChanges": 0,
+    "externalClinicalGuidanceAdded": false
+  },
+  "recoveredSections": [
+    {
+      "id": "sec-3-2-2",
+      "number": "3.2.2",
+      "title": "Kurative Pflege",
+      "chapterId": "chapter-3",
+      "firstPdfPage": 33,
+      "p26fRecoveredSourceAlignment": true
+    },
+    {
+      "id": "sec-8-1-1",
+      "number": "8.1.1",
+      "title": "Was ist Stress?",
+      "chapterId": "chapter-8",
+      "firstPdfPage": 145,
+      "p26fRecoveredSourceAlignment": true
+    }
+  ],
+  "conceptCorrections": {
+    "concept-4-33-51-definition-1": {
+      "before": {
+        "sectionId": null,
+        "chapterId": "chapter-4"
+      },
+      "after": {
+        "sectionId": "sec-3-2-2",
+        "chapterId": "chapter-3"
+      }
+    },
+    "concept-8-146-51-definition-1": {
+      "before": {
+        "sectionId": null,
+        "chapterId": "chapter-8"
+      },
+      "after": {
+        "sectionId": "sec-8-1-1",
+        "chapterId": "chapter-8"
+      }
+    },
+    "concept-8-146-101-merken-1": {
+      "before": {
+        "sectionId": null,
+        "chapterId": "chapter-8"
+      },
+      "after": {
+        "sectionId": "sec-8-1-1",
+        "chapterId": "chapter-8"
+      }
+    },
+    "concept-8-148-17-merken-1": {
+      "before": {
+        "sectionId": null,
+        "chapterId": "chapter-8"
+      },
+      "after": {
+        "sectionId": "sec-8-1-1",
+        "chapterId": "chapter-8"
+      }
+    },
+    "concept-8-148-99-wissen-3": {
+      "before": {
+        "sectionId": null,
+        "chapterId": "chapter-8"
+      },
+      "after": {
+        "sectionId": "sec-8-1-1",
+        "chapterId": "chapter-8"
+      }
+    }
+  },
+  "questionSourceCorrections": {
+    "q-p12-0207": {
+      "before": {
+        "sectionId": null,
+        "chapterId": "chapter-4"
+      },
+      "after": {
+        "sectionId": "sec-3-2-2",
+        "chapterId": "chapter-3"
+      }
+    },
+    "q-p12-0630": {
+      "before": {
+        "sectionId": null,
+        "chapterId": "chapter-8"
+      },
+      "after": {
+        "sectionId": "sec-8-1-1",
+        "chapterId": "chapter-8"
+      }
+    }
+  },
+  "changedConceptIds": [
+    "concept-4-33-51-definition-1",
+    "concept-8-146-101-merken-1",
+    "concept-8-146-51-definition-1",
+    "concept-8-148-17-merken-1",
+    "concept-8-148-99-wissen-3"
+  ],
+  "changedQuestionSourceIds": [
+    "q-p12-0207",
+    "q-p12-0630"
+  ],
+  "policy": {
+    "questionIdsChanged": false,
+    "questionTypesChanged": false,
+    "questionPromptsChanged": false,
+    "questionOptionsChanged": false,
+    "answerKeysChanged": false,
+    "explanationsChanged": false,
+    "difficultyChanged": false,
+    "fsrsChanged": false,
+    "masteryChanged": false,
+    "remediationChanged": false,
+    "repetitionControlChanged": false,
+    "inputHandlingChanged": false,
+    "examLogicChanged": false,
+    "externalClinicalGuidanceAdded": false
+  }
+}

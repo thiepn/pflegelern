@@ -2235,8 +2235,8 @@
   },
   {
     "id": "concept-4-33-51-definition-1",
-    "sectionId": null,
-    "chapterId": "chapter-4",
+    "sectionId": "sec-3-2-2",
+    "chapterId": "chapter-3",
     "title": "Kurativ",
     "type": "definition",
     "importance": "core",
@@ -5217,7 +5217,7 @@
   },
   {
     "id": "concept-8-146-51-definition-1",
-    "sectionId": null,
+    "sectionId": "sec-8-1-1",
     "chapterId": "chapter-8",
     "title": "Ressourcen",
     "type": "definition",
@@ -5238,7 +5238,7 @@
   },
   {
     "id": "concept-8-146-101-merken-1",
-    "sectionId": null,
+    "sectionId": "sec-8-1-1",
     "chapterId": "chapter-8",
     "title": "Individualität",
     "type": "principle",
@@ -5259,7 +5259,7 @@
   },
   {
     "id": "concept-8-148-17-merken-1",
-    "sectionId": null,
+    "sectionId": "sec-8-1-1",
     "chapterId": "chapter-8",
     "title": "Stressniveau",
     "type": "principle",
@@ -5280,7 +5280,7 @@
   },
   {
     "id": "concept-8-148-99-wissen-3",
-    "sectionId": null,
+    "sectionId": "sec-8-1-1",
     "chapterId": "chapter-8",
     "title": "Stress",
     "type": "summary",

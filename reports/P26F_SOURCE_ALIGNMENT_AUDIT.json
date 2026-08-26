@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "phase": "P26F",
+  "status": "source-alignment-audited",
+  "baseline": {
+    "questionBankSha256": "40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024",
+    "conceptBankSha256": "a7638af7ef4a6dafe1b4bc1a6cc0439b9b8f8d9c832b5bc23c58f7ff03c3bb36",
+    "cardBankSha256": "f67dade2a334688fde20f37fa11ee58977fcfe07c759afdf261ca3830b6745b0",
+    "sectionBankSha256": "2c409b05be7e69fb945e4c349bd295a62092b707cffe3772c7528cd7d54b8f85"
+  },
+  "scope": {
+    "questionCount": 1299,
+    "conceptCount": 2089,
+    "cardCount": 2094,
+    "usedConceptCount": 881,
+    "questionBankMutatedByAudit": false,
+    "externalClinicalGuidanceAdded": false
+  },
+  "summary": {
+    "questionsWithFindings": 0,
+    "actionableQuestionCount": 0,
+    "reviewQuestionCount": 0,
+    "criticalFindings": 0,
+    "highFindings": 0,
+    "reviewFindings": 0,
+    "usedConceptsWithoutCards": 0,
+    "usedConceptsWithoutSourceEvidence": 0,
+    "codeCounts": {}
+  },
+  "actionableQuestionIds": [],
+  "reviewQuestionIds": [],
+  "usedConceptIdsWithoutCards": [],
+  "usedConceptIdsWithoutSourceEvidence": [],
+  "findings": [],
+  "policy": {
+    "manualAndDeterministicSourceSchemasSupported": true,
+    "structuralSourceMetadataRequired": true,
+    "conceptSectionChapterIntegrityRequired": true,
+    "approvedCardSupportAudited": true,
+    "explicitRepairEvidenceAudited": true,
+    "externalClinicalGuidanceAdded": false,
+    "questionContentEditedByAudit": false
+  },
+  "refinement": {
+    "version": 2,
+    "policy": [
+      "include all displayed answer options for multi-concept source alignment",
+      "include clinical-case correctText",
+      "normalize conservative German inflection and -ieren/-iert verb forms"
+    ]
+  }
+}

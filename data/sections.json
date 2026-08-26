@@ -162,6 +162,14 @@
     "firstPdfPage": 32
   },
   {
+    "id": "sec-3-2-2",
+    "number": "3.2.2",
+    "title": "Kurative Pflege",
+    "chapterId": "chapter-3",
+    "firstPdfPage": 33,
+    "p26fRecoveredSourceAlignment": true
+  },
+  {
     "id": "sec-3-2-3",
     "number": "3.2.3",
     "title": "Rehabilitative Pflege",
@@ -764,6 +772,14 @@
     "chapterId": "chapter-8",
     "firstPdfPage": 145,
     "p9RecoveredParent": true
+  },
+  {
+    "id": "sec-8-1-1",
+    "number": "8.1.1",
+    "title": "Was ist Stress?",
+    "chapterId": "chapter-8",
+    "firstPdfPage": 145,
+    "p26fRecoveredSourceAlignment": true
   },
   {
     "id": "sec-8-1-2",
