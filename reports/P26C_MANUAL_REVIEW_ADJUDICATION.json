@@ -1,0 +1,2777 @@
+{
+  "schemaVersion": 1,
+  "phase": "P26C",
+  "status": "manual-review-adjudicated",
+  "scope": {
+    "questionCount": 1299,
+    "conceptCount": 2089,
+    "cardCount": 2094,
+    "p26aManualReviewCandidates": 108,
+    "questionBankMutated": false,
+    "externalClinicalGuidanceAdded": false
+  },
+  "baseline": {
+    "p26aRegistrySha256": "32d629be89a05e6307a91ff659afba77ce228a40bd7c7c3748759d44fa433708",
+    "p26bCorrectionReportSha256": "d8b58c6d59c7e21a80b9f58c11f6cc607f3d1193b2adaefd3f005112ceaccaf8",
+    "liveQuestionBankSha256": "67b82cf4042b3e7f184804f6af7e0b1e6ac89f4b32c9b2513c6c1fed4df5e164"
+  },
+  "summary": {
+    "adjudicated": 108,
+    "confirmedForRepair": 14,
+    "cleared": 94,
+    "unresolved": 0,
+    "dispositionCounts": {
+      "cleared": 94,
+      "confirmed-design-defect": 12,
+      "confirmed-semantic-defect": 2
+    },
+    "categoryCounts": {
+      "answer-option-subsumption": 2,
+      "case-context-present": 2,
+      "distractor-absolute-wording-cluster": 12,
+      "intentional-matching-template": 12,
+      "source-card-contract": 80
+    },
+    "typeCounts": {
+      "clinical_case": 2,
+      "matching": 12,
+      "short_answer": 80,
+      "single_choice": 14
+    }
+  },
+  "confirmedForRepairIds": [
+    "q-21-5-06",
+    "q-36-03",
+    "q-p12-0043",
+    "q-p12-0163",
+    "q-p12-0165",
+    "q-p12-0272",
+    "q-p12-0288",
+    "q-p12-0295",
+    "q-p12-0310",
+    "q-p12-0337",
+    "q-p12-0344",
+    "q-p12-0348",
+    "q-p12-0534",
+    "q-p12-0634"
+  ],
+  "clearedIds": [
+    "p25a-sa-012b80c5ff507f",
+    "p25a-sa-0202d351516369",
+    "p25a-sa-050b77e5eb1f81",
+    "p25a-sa-0565cb57be37ee",
+    "p25a-sa-068663c21db3b9",
+    "p25a-sa-06adfa3d7a6777",
+    "p25a-sa-0737809fff9c5c",
+    "p25a-sa-0918c8a81d21fd",
+    "p25a-sa-0a03b9572521e6",
+    "p25a-sa-0af98fe73cda11",
+    "p25a-sa-0c150adde3ea4e",
+    "p25a-sa-0d05d338d10554",
+    "p25a-sa-0d7dcb4d7032f5",
+    "p25a-sa-0e26417b99bfba",
+    "p25a-sa-11c5171cf14226",
+    "p25a-sa-12460b3ad94ce0",
+    "p25a-sa-12e2a089e9b4c7",
+    "p25a-sa-12f73bc04acdae",
+    "p25a-sa-138cb7a359099b",
+    "p25a-sa-1855b0c32e34c7",
+    "p25a-sa-190e6706cd3a88",
+    "p25a-sa-1946405648d115",
+    "p25a-sa-1b3267dcb44162",
+    "p25a-sa-1bb6fcab540312",
+    "p25a-sa-1c9610e9e78625",
+    "p25a-sa-1d5f4c32ac15e9",
+    "p25a-sa-1dbfd9d60f98d7",
+    "p25a-sa-1f98daeff910b2",
+    "p25a-sa-20c1fc163a1694",
+    "p25a-sa-21830dbbb7bd53",
+    "p25a-sa-21d78d60c36a8c",
+    "p25a-sa-21e04acceb247c",
+    "p25a-sa-221f2a793f5498",
+    "p25a-sa-230476d717aba9",
+    "p25a-sa-26c5fc174e43fc",
+    "p25a-sa-26e3af252399e4",
+    "p25a-sa-2a165cbb786898",
+    "p25a-sa-2cb7da004ae039",
+    "p25a-sa-2de89ca9ffd643",
+    "p25a-sa-2e581ebf312c93",
+    "p25a-sa-312f980e2f89a3",
+    "p25a-sa-31c237bbfb576a",
+    "p25a-sa-33bc90c88b2244",
+    "p25a-sa-34d7b57b989cdb",
+    "p25a-sa-36b87bd5b4d705",
+    "p25a-sa-37e0e380d6762b",
+    "p25a-sa-3f91f4209548ce",
+    "p25a-sa-49874ea0f56eda",
+    "p25a-sa-4cff0f36ca75dc",
+    "p25a-sa-4dff5acdb9ae90",
+    "p25a-sa-4fa2794d29b84b",
+    "p25a-sa-54db5e9f3d1f4a",
+    "p25a-sa-54f9ca31098fc1",
+    "p25a-sa-5724b132e153b2",
+    "p25a-sa-60233a878afb58",
+    "p25a-sa-63c5749f0ef234",
+    "p25a-sa-6412a0d68faa66",
+    "p25a-sa-6569cff64daf7a",
+    "p25a-sa-6662db0012e94f",
+    "p25a-sa-673404bc0b2bf1",
+    "p25a-sa-6933f927887506",
+    "p25a-sa-6aaf375c60efe6",
+    "p25a-sa-771925c900f79b",
+    "p25a-sa-7892e43a504729",
+    "p25a-sa-7a29b1610f8815",
+    "p25a-sa-7f64f10de24fe7",
+    "p25a-sa-9c4d0412048f54",
+    "p25a-sa-a0f4cce7b7afbe",
+    "p25a-sa-a37e93b4ec88a6",
+    "p25a-sa-b059de1da1f29d",
+    "p25a-sa-b376d7afc7ed57",
+    "p25a-sa-c62301c2572004",
+    "p25a-sa-d5b993562d2169",
+    "p25a-sa-d619008cd41175",
+    "p25a-sa-e32e766592a573",
+    "p25a-sa-e8fc547cc47791",
+    "p25a-sa-f346193e0b2466",
+    "p25a-sa-fb13c7a8764431",
+    "p25a-sa-fde29becc42c7c",
+    "q-36-10",
+    "q-case-p7b-aneurysm",
+    "q-case-p7b-postop-bleeding",
+    "q-p12-match-01",
+    "q-p12-match-02",
+    "q-p12-match-03",
+    "q-p12-match-04",
+    "q-p12-match-05",
+    "q-p12-match-06",
+    "q-p12-match-07",
+    "q-p12-match-08",
+    "q-p12-match-09",
+    "q-p12-match-10",
+    "q-p12-match-11",
+    "q-p12-match-12"
+  ],
+  "unresolvedIds": [],
+  "adjudications": [
+    {
+      "questionId": "p25a-sa-012b80c5ff507f",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-63-1322-53-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1322-53-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-0202d351516369",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-38-722-46-merken-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-722-46-merken-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-050b77e5eb1f81",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-20-387-19-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-387-19-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-0565cb57be37ee",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-24-475-38-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-475-38-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-068663c21db3b9",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-64-1345-55-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1345-55-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-06adfa3d7a6777",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-52-874-86-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-874-86-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-0737809fff9c5c",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-66-1417-35-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1417-35-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-0918c8a81d21fd",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-27-534-11-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-534-11-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-0a03b9572521e6",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-25-519-19-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-519-19-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-0af98fe73cda11",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-15-312-8-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-312-8-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-0c150adde3ea4e",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-9-193-29-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-193-29-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-0d05d338d10554",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-58-1114-78-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1114-78-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-0d7dcb4d7032f5",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-46-813-18-merken-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-813-18-merken-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-0e26417b99bfba",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-43-770-17-merken-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-770-17-merken-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-11c5171cf14226",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-34-655-78-merken-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-655-78-merken-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-12460b3ad94ce0",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-64-1345-51-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1345-51-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-12e2a089e9b4c7",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-27-537-74-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-537-74-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-12f73bc04acdae",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-55-965-26-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-965-26-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-138cb7a359099b",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-64-1368-51-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1368-51-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-1855b0c32e34c7",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-60-1192-93-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1192-93-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-190e6706cd3a88",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-62-1283-17-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1283-17-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-1946405648d115",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-48-845-22-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-845-22-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-1b3267dcb44162",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-52-873-34-merken-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-873-34-merken-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-1bb6fcab540312",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-47-830-42-wissen-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-830-42-wissen-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-1c9610e9e78625",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-60-1155-72-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1155-72-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-1d5f4c32ac15e9",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-20-388-13-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-388-13-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-1dbfd9d60f98d7",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-51-869-2-wissen-3"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-869-2-wissen-3"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-1f98daeff910b2",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-26-521-23-merken-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-521-23-merken-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-20c1fc163a1694",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-66-1418-66-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1418-66-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-21830dbbb7bd53",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-66-1416-87-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1416-87-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-21d78d60c36a8c",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-6-128-30-wissen-2"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-128-30-wissen-2"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-21e04acceb247c",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-21-429-50-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-429-50-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-221f2a793f5498",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-56-1010-78-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1010-78-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-230476d717aba9",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-18-362-51-merken-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-362-51-merken-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-26c5fc174e43fc",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-18-356-74-merken-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-356-74-merken-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-26e3af252399e4",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-8-158-89-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-158-89-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-2a165cbb786898",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-48-4-fuersorge"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-48-4-beneficence"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-2cb7da004ae039",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-51-868-48-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-868-48-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-2de89ca9ffd643",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-66-1417-51-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1417-51-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-2e581ebf312c93",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-31-608-58-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-608-58-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-312f980e2f89a3",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-57-1045-81-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1045-81-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-31c237bbfb576a",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-59-1145-4-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-1145-4-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-33bc90c88b2244",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-5-110-62-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-110-62-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-34d7b57b989cdb",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-35-668-24-wissen-2"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-668-24-wissen-2"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-36b87bd5b4d705",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-21-428-107-achtung-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-428-107-achtung-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-37e0e380d6762b",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-33-652-7-wissen-2"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-652-7-wissen-2"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-3f91f4209548ce",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-26-522-120-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-522-120-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-49874ea0f56eda",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-11-241-110-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-241-110-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-4cff0f36ca75dc",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-3-43-70-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-43-70-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-4dff5acdb9ae90",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-49-852-26-wissen-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-852-26-wissen-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-4fa2794d29b84b",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-7-137-79-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-137-79-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-54db5e9f3d1f4a",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-5-115-79-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-115-79-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-54f9ca31098fc1",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-24-484-39-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-484-39-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-5724b132e153b2",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-27-534-56-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-534-56-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-60233a878afb58",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-33-647-49-wissen-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-647-49-wissen-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-63c5749f0ef234",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-54-938-28-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-938-28-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-6412a0d68faa66",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-33-646-6-wissen-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-646-6-wissen-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-6569cff64daf7a",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-11-233-68-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-233-68-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-6662db0012e94f",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-43-773-36-merken-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-773-36-merken-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-673404bc0b2bf1",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-11-233-42-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-233-42-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-6933f927887506",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-7-139-69-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-139-69-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-6aaf375c60efe6",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-50-861-50-wissen-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-861-50-wissen-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-771925c900f79b",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-20-395-16-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-395-16-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-7892e43a504729",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-10-211-67-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-211-67-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-7a29b1610f8815",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-4-52-10-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-52-10-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-7f64f10de24fe7",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-8-157-90-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-157-90-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-9c4d0412048f54",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-45-800-13-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-800-13-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-a0f4cce7b7afbe",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-25-510-23-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-510-23-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-a37e93b4ec88a6",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-10-227-14-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-227-14-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-b059de1da1f29d",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-4-33-51-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-33-51-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-b376d7afc7ed57",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-4-73-57-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-73-57-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-c62301c2572004",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-25-519-13-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-519-13-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-d5b993562d2169",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-25-511-72-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT",
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-511-72-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-d619008cd41175",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-42-758-9-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-758-9-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-e32e766592a573",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-29-568-74-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-568-74-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-e8fc547cc47791",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-11-236-37-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-236-37-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-f346193e0b2466",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-29-562-42-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-562-42-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-fb13c7a8764431",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-23-454-10-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-454-10-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "p25a-sa-fde29becc42c7c",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-43-771-37-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The question prompt exactly matches the anchored source-derived card front and its reference answer exactly matches that card back; prompt length alone is therefore not evidence of semantic ambiguity.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-771-37-definition-1"
+        ],
+        "resolutionMode": "exact-front-back"
+      }
+    },
+    {
+      "questionId": "q-21-5-06",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-21-5-mobilisation"
+      ],
+      "p26aIssueCodes": [
+        "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+      ],
+      "disposition": "confirmed-design-defect",
+      "category": "distractor-absolute-wording-cluster",
+      "rationale": "The distractor set is dominated by absolute or obviously off-scope wording, making the keyed answer identifiable by test-taking cues rather than the target concept.",
+      "evidence": {
+        "issueCodes": [
+          "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Unter Antikoagulation und Kompression ist zwingend strikte Bettruhe nötig."
+          },
+          {
+            "id": "b",
+            "text": "Unter Antikoagulation und Kompression ist keine strikte Bettruhe mehr nötig."
+          },
+          {
+            "id": "c",
+            "text": "Mobilisation ist grundsätzlich verboten."
+          },
+          {
+            "id": "d",
+            "text": "Kompression schließt Mobilisation aus."
+          }
+        ],
+        "correct": [
+          "b"
+        ]
+      }
+    },
+    {
+      "questionId": "q-36-03",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-36-retard-nicht-moersern"
+      ],
+      "p26aIssueCodes": [
+        "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+      ],
+      "disposition": "confirmed-design-defect",
+      "category": "distractor-absolute-wording-cluster",
+      "rationale": "The distractor set is dominated by absolute or obviously off-scope wording, making the keyed answer identifiable by test-taking cues rather than the target concept.",
+      "evidence": {
+        "issueCodes": [
+          "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Sie sollen grundsätzlich gemörsert werden."
+          },
+          {
+            "id": "b",
+            "text": "Sie dürfen nicht gemörsert werden."
+          },
+          {
+            "id": "c",
+            "text": "Sie werden immer mit Milch gegeben."
+          },
+          {
+            "id": "d",
+            "text": "Sie müssen immer geteilt werden."
+          }
+        ],
+        "correct": [
+          "b"
+        ]
+      }
+    },
+    {
+      "questionId": "q-36-10",
+      "type": "short_answer",
+      "conceptIds": [
+        "concept-36-6r"
+      ],
+      "p26aIssueCodes": [
+        "UNDER_SPECIFIED_FREE_RESPONSE_PROMPT"
+      ],
+      "disposition": "cleared",
+      "category": "source-card-contract",
+      "rationale": "The anchored source card has the same ordered reference-answer items, and both prompts request the same explicit item count for the same concept with substantial wording overlap. The only answer-text difference is enumeration punctuation/conjunction, so the question is a more specific formulation of the source-card task rather than an under-specified free-response prompt.",
+      "evidence": {
+        "resolved": true,
+        "matchingCardIds": [
+          "card-36-6r-list"
+        ],
+        "resolutionMode": "equivalent-enumeration-prompt",
+        "referenceAnswerModes": {
+          "card-36-6r-list": "equivalent-enumeration"
+        },
+        "promptTokenOverlap": {
+          "card-36-6r-list": 0.5
+        }
+      }
+    },
+    {
+      "questionId": "q-case-p7b-aneurysm",
+      "type": "clinical_case",
+      "conceptIds": [
+        "concept-54-930-71-achtung-1"
+      ],
+      "p26aIssueCodes": [
+        "CLINICAL_CASE_WITHOUT_CASE_CONTEXT"
+      ],
+      "disposition": "cleared",
+      "category": "case-context-present",
+      "rationale": "The prompt already contains a concrete situation/event before the task, so the detector flag is a false positive for missing case context.",
+      "evidence": {
+        "resolved": true,
+        "promptLength": 85,
+        "contextMarkers": [
+          "ein ",
+          "rupturiert"
+        ]
+      }
+    },
+    {
+      "questionId": "q-case-p7b-postop-bleeding",
+      "type": "clinical_case",
+      "conceptIds": [
+        "concept-41-751-74-achtung-1"
+      ],
+      "p26aIssueCodes": [
+        "CLINICAL_CASE_WITHOUT_CASE_CONTEXT"
+      ],
+      "disposition": "cleared",
+      "category": "case-context-present",
+      "rationale": "The prompt already contains a concrete situation/event before the task, so the detector flag is a false positive for missing case context.",
+      "evidence": {
+        "resolved": true,
+        "promptLength": 95,
+        "contextMarkers": [
+          "eine ",
+          "nach ",
+          "fällt "
+        ]
+      }
+    },
+    {
+      "questionId": "q-p12-0043",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-15-311-60-achtung-1"
+      ],
+      "p26aIssueCodes": [
+        "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+      ],
+      "disposition": "confirmed-design-defect",
+      "category": "distractor-absolute-wording-cluster",
+      "rationale": "The distractor set is dominated by absolute or obviously off-scope wording, making the keyed answer identifiable by test-taking cues rather than the target concept.",
+      "evidence": {
+        "issueCodes": [
+          "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Berühren Sie niemals einen Menschen, der an einer Stromquelle „klebt“, Sie könnten dann ebenfalls einen Stromschlag erleiden."
+          },
+          {
+            "id": "b",
+            "text": "Klagen die Patienten über Übelkeit, Erbrechen und Oberbauchschmerzen oder beobachten Sie eine erhöhte Harnausscheidung (Polyurie) und starken Durst (Polydipsie), müssen Sie sofort den Arzt informieren."
+          },
+          {
+            "id": "c",
+            "text": "Die Shuntpunktion erfolgt ausschließlich in die Vene, die mit arteriellem Blut versorgt wird, und nie in den Shunt (Anastomose = Verbindungsstelle von Arterie und Vene)."
+          },
+          {
+            "id": "d",
+            "text": "Fassen Sie niemals mit benutzen Handschuhen in den sauberen Wäscheschrank oder Wagen, um etwas zu entnehmen – Sie kontaminieren womöglich die Wäsche und bereiten so den Weg für eine Schmierinfektion."
+          }
+        ],
+        "correct": [
+          "d"
+        ]
+      }
+    },
+    {
+      "questionId": "q-p12-0163",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-31-605-15-achtung-1"
+      ],
+      "p26aIssueCodes": [
+        "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+      ],
+      "disposition": "confirmed-design-defect",
+      "category": "distractor-absolute-wording-cluster",
+      "rationale": "The distractor set is dominated by absolute or obviously off-scope wording, making the keyed answer identifiable by test-taking cues rather than the target concept.",
+      "evidence": {
+        "issueCodes": [
+          "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Sie sind immer ein Alarmzeichen und sollten ärztlich abgeklärt werden."
+          },
+          {
+            "id": "b",
+            "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+          },
+          {
+            "id": "c",
+            "text": "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+          },
+          {
+            "id": "d",
+            "text": "Zunächst Bettruhe, bis der Verdacht ärztlich abgeklärt ist."
+          }
+        ],
+        "correct": [
+          "a"
+        ]
+      }
+    },
+    {
+      "questionId": "q-p12-0165",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-31-607-29-merken-1"
+      ],
+      "p26aIssueCodes": [
+        "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+      ],
+      "disposition": "confirmed-design-defect",
+      "category": "distractor-absolute-wording-cluster",
+      "rationale": "The distractor set is dominated by absolute or obviously off-scope wording, making the keyed answer identifiable by test-taking cues rather than the target concept.",
+      "evidence": {
+        "issueCodes": [
+          "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Bei schweren anhaltenden Schmerzen während einer Schwangerschaft muss immer ein Arzt hinzugezogen werden. Sie können harmlos sein oder ein Warnsignal für drohende Komplikationen darstellen."
+          },
+          {
+            "id": "b",
+            "text": "Bei Knieschmerzen muss immer eine Erkrankung der Hüftgelenke ausgeschlossen werden, denn bei jedem 5. Patienten löst ein Hüftproblem die Knieschmerzen aus."
+          },
+          {
+            "id": "c",
+            "text": "Freiheitsbeschränkende Maßnahmen sind grundsätzlich immer und nach Kräften zu vermeiden. Werden sie dennoch nötig, sollte(n)."
+          },
+          {
+            "id": "d",
+            "text": "Die anatomische Lage des Wurmfortsatzes kann sehr unterschiedlich sein, wodurch der Schmerzort variieren kann. Besonders während der Schwangerschaft kann die Appendix sogar in den rechten Oberbauch verlagert sein und dort Schmerzen verursachen."
+          }
+        ],
+        "correct": [
+          "a"
+        ]
+      }
+    },
+    {
+      "questionId": "q-p12-0272",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-52-872-10-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "ANSWER_OPTION_SUBSUMPTION"
+      ],
+      "disposition": "confirmed-semantic-defect",
+      "category": "answer-option-subsumption",
+      "rationale": "A displayed distractor substantially overlaps/subsumes the keyed answer, so the item can be ambiguous even with source knowledge.",
+      "evidence": {
+        "issueCodes": [
+          "ANSWER_OPTION_SUBSUMPTION"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "bewegungstherapeutisches Behandlungskonzept zur Re."
+          },
+          {
+            "id": "b",
+            "text": "Handling ist ein Begriff innerhalb des Bobath-Konzepts."
+          },
+          {
+            "id": "c",
+            "text": "Ein Patient sollte nur dann stehen, wenn er sein Körpergewicht auf mindestens ein Bein abgeben kann. Sonst kann der Patient überfordert werden."
+          },
+          {
+            "id": "d",
+            "text": "Das Bobath-Konzept ist ein weltweit angewendetes bewegungstherapeutisches Behandlungskonzept."
+          }
+        ],
+        "correct": [
+          "d"
+        ]
+      }
+    },
+    {
+      "questionId": "q-p12-0288",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-53-903-10-merken-1"
+      ],
+      "p26aIssueCodes": [
+        "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+      ],
+      "disposition": "confirmed-design-defect",
+      "category": "distractor-absolute-wording-cluster",
+      "rationale": "The distractor set is dominated by absolute or obviously off-scope wording, making the keyed answer identifiable by test-taking cues rather than the target concept.",
+      "evidence": {
+        "issueCodes": [
+          "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Führen Sie das Darmrohr nie mit Gewalt ein. Lässt es sich nicht einschieben, brechen Sie den Vorgang sofort ab und informieren Sie den Arzt."
+          },
+          {
+            "id": "b",
+            "text": "Patienten kommen nicht immer von sich aus auf Pflegende zu, um sich beraten zu lassen. Häufig müssen Sie den Beratungsbedarf selbst erkennen und die wahrgenommenen Problemlagen anschließend einfühlsam mit den Patienten erörtern."
+          },
+          {
+            "id": "c",
+            "text": "Wenn Sie den Eindruck haben, dass der abhängige Patient versucht, Angehörige zu manipulieren und unter Druck zu setzen, um Alkohol oder Drogen auf die Station zu schmuggeln, sprechen Sie die Angehörigen ruhig offen darauf an."
+          },
+          {
+            "id": "d",
+            "text": "Um kritische Frequenzen frühzeitig zu erkennen, sollten die eingestellten Alarmgrenzen am Monitor regelmäßig kontrolliert werden. Klagt der Patient über Herzstolpern oder treten kardiale Synkopen auf, informieren Sie den Arzt."
+          }
+        ],
+        "correct": [
+          "d"
+        ]
+      }
+    },
+    {
+      "questionId": "q-p12-0295",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-54-928-69-achtung-1"
+      ],
+      "p26aIssueCodes": [
+        "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+      ],
+      "disposition": "confirmed-design-defect",
+      "category": "distractor-absolute-wording-cluster",
+      "rationale": "The distractor set is dominated by absolute or obviously off-scope wording, making the keyed answer identifiable by test-taking cues rather than the target concept.",
+      "evidence": {
+        "issueCodes": [
+          "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+          },
+          {
+            "id": "b",
+            "text": "Die Verätzung ist ein Notfall."
+          },
+          {
+            "id": "c",
+            "text": "Ein Asthma-Anfall ist immer eine lebensbedrohliche Situation."
+          },
+          {
+            "id": "d",
+            "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+          }
+        ],
+        "correct": [
+          "d"
+        ]
+      }
+    },
+    {
+      "questionId": "q-p12-0310",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-55-950-39-achtung-1"
+      ],
+      "p26aIssueCodes": [
+        "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+      ],
+      "disposition": "confirmed-design-defect",
+      "category": "distractor-absolute-wording-cluster",
+      "rationale": "The distractor set is dominated by absolute or obviously off-scope wording, making the keyed answer identifiable by test-taking cues rather than the target concept.",
+      "evidence": {
+        "issueCodes": [
+          "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+          },
+          {
+            "id": "b",
+            "text": "Im akuten Gichtanfall darf Allopurinol nicht genommen werden, da es den Anfall verstärken könnte."
+          },
+          {
+            "id": "c",
+            "text": "Sie sind immer ein Alarmzeichen und sollten ärztlich abgeklärt werden."
+          },
+          {
+            "id": "d",
+            "text": "Ein Asthma-Anfall ist immer eine lebensbedrohliche Situation."
+          }
+        ],
+        "correct": [
+          "d"
+        ]
+      }
+    },
+    {
+      "questionId": "q-p12-0337",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-55-978-46-achtung-1"
+      ],
+      "p26aIssueCodes": [
+        "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+      ],
+      "disposition": "confirmed-design-defect",
+      "category": "distractor-absolute-wording-cluster",
+      "rationale": "The distractor set is dominated by absolute or obviously off-scope wording, making the keyed answer identifiable by test-taking cues rather than the target concept.",
+      "evidence": {
+        "issueCodes": [
+          "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+          },
+          {
+            "id": "b",
+            "text": "Die Verätzung ist ein Notfall."
+          },
+          {
+            "id": "c",
+            "text": "Sie sind immer ein Alarmzeichen und sollten ärztlich abgeklärt werden."
+          },
+          {
+            "id": "d",
+            "text": "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+          }
+        ],
+        "correct": [
+          "d"
+        ]
+      }
+    },
+    {
+      "questionId": "q-p12-0344",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-56-1005-13-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "ANSWER_OPTION_SUBSUMPTION"
+      ],
+      "disposition": "confirmed-semantic-defect",
+      "category": "answer-option-subsumption",
+      "rationale": "A displayed distractor substantially overlaps/subsumes the keyed answer, so the item can be ambiguous even with source knowledge.",
+      "evidence": {
+        "issueCodes": [
+          "ANSWER_OPTION_SUBSUMPTION"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Unter einer Hernie versteht man eine Ausstülpung (= Bruchsack) des parietalen Peritoneums (Auskleidung der Innenseite der Bauchwand). Sie entsteht durch angeborene oder erworbene Lücken in der Bauchwand (= Bruchpforte)."
+          },
+          {
+            "id": "b",
+            "text": "Eine Hernie ist eine Ausstülpung (= Bruchsack) des parietalen Peritoneums. Sie entsteht durch angeborene oder erworbene Lücken in der Bauchwand (= Bruchpforte)."
+          },
+          {
+            "id": "c",
+            "text": "Der Morbus Hirschsprung (angeborenes Megakolon) ist eine angeborene Erkrankung der darmversorgenden Nerven, die zu einer spastischen Verengung eines Darmabschnitts führt."
+          },
+          {
+            "id": "d",
+            "text": "Infektiöse Gastroenteritiden (Magen-Darm-Infektionen) werden durch verschiedene Bakterien, Viren oder Parasiten hervorgerufen und gehen ggf. mit einer Schleimhautentzündung des Magen und des Darms einher."
+          }
+        ],
+        "correct": [
+          "a"
+        ]
+      }
+    },
+    {
+      "questionId": "q-p12-0348",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-56-1006-21-achtung-1"
+      ],
+      "p26aIssueCodes": [
+        "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+      ],
+      "disposition": "confirmed-design-defect",
+      "category": "distractor-absolute-wording-cluster",
+      "rationale": "The distractor set is dominated by absolute or obviously off-scope wording, making the keyed answer identifiable by test-taking cues rather than the target concept.",
+      "evidence": {
+        "issueCodes": [
+          "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Jede rektale Blutung kann ebenso ein Hinweis auf ein Kolonkarzinom sein."
+          },
+          {
+            "id": "b",
+            "text": "Eine Hypophysenvorderlappeninsuffizienz kann sehr gefährlich sein."
+          },
+          {
+            "id": "c",
+            "text": "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+          },
+          {
+            "id": "d",
+            "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+          }
+        ],
+        "correct": [
+          "a"
+        ]
+      }
+    },
+    {
+      "questionId": "q-p12-0534",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-62-1292-82-achtung-1"
+      ],
+      "p26aIssueCodes": [
+        "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+      ],
+      "disposition": "confirmed-design-defect",
+      "category": "distractor-absolute-wording-cluster",
+      "rationale": "The distractor set is dominated by absolute or obviously off-scope wording, making the keyed answer identifiable by test-taking cues rather than the target concept.",
+      "evidence": {
+        "issueCodes": [
+          "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Die Verätzung ist ein Notfall."
+          },
+          {
+            "id": "b",
+            "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+          },
+          {
+            "id": "c",
+            "text": "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+          },
+          {
+            "id": "d",
+            "text": "Eine Sinusvenenthrombose ist ein lebensbedrohliches Krank heitsbild."
+          }
+        ],
+        "correct": [
+          "a"
+        ]
+      }
+    },
+    {
+      "questionId": "q-p12-0634",
+      "type": "single_choice",
+      "conceptIds": [
+        "concept-8-162-90-achtung-1"
+      ],
+      "p26aIssueCodes": [
+        "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+      ],
+      "disposition": "confirmed-design-defect",
+      "category": "distractor-absolute-wording-cluster",
+      "rationale": "The distractor set is dominated by absolute or obviously off-scope wording, making the keyed answer identifiable by test-taking cues rather than the target concept.",
+      "evidence": {
+        "issueCodes": [
+          "DISTRACTOR_ABSOLUTE_WORDING_CLUSTER"
+        ],
+        "options": [
+          {
+            "id": "a",
+            "text": "Ein klares „Nein“ zu Gewalt durch Pflegende."
+          },
+          {
+            "id": "b",
+            "text": "Sollten die Augen extrem verklebt sein, dürfen sie keinesfalls mit Gewalt geöffnet werden."
+          },
+          {
+            "id": "c",
+            "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+          },
+          {
+            "id": "d",
+            "text": "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+          }
+        ],
+        "correct": [
+          "a"
+        ]
+      }
+    },
+    {
+      "questionId": "q-p12-match-01",
+      "type": "matching",
+      "conceptIds": [
+        "concept-61-1228-20-definition-1",
+        "concept-61-1228-54-definition-1",
+        "concept-61-1229-59-definition-1",
+        "concept-61-1230-49-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "EXACT_PROMPT_DUPLICATE"
+      ],
+      "disposition": "cleared",
+      "category": "intentional-matching-template",
+      "rationale": "Only the generic matching instruction is duplicated; each item carries a distinct concept set and distinct matching content, so this is intentional template reuse rather than duplicate learning content.",
+      "evidence": {
+        "resolved": true,
+        "relatedQuestionIds": [
+          "q-p12-match-02",
+          "q-p12-match-03",
+          "q-p12-match-04",
+          "q-p12-match-05",
+          "q-p12-match-06",
+          "q-p12-match-07",
+          "q-p12-match-08",
+          "q-p12-match-09",
+          "q-p12-match-10",
+          "q-p12-match-11",
+          "q-p12-match-12"
+        ],
+        "distinctConceptSets": true,
+        "templatePrompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu."
+      }
+    },
+    {
+      "questionId": "q-p12-match-02",
+      "type": "matching",
+      "conceptIds": [
+        "concept-64-1368-21-definition-1",
+        "concept-64-1368-51-definition-1",
+        "concept-64-1368-77-definition-1",
+        "concept-64-1369-14-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "EXACT_PROMPT_DUPLICATE"
+      ],
+      "disposition": "cleared",
+      "category": "intentional-matching-template",
+      "rationale": "Only the generic matching instruction is duplicated; each item carries a distinct concept set and distinct matching content, so this is intentional template reuse rather than duplicate learning content.",
+      "evidence": {
+        "resolved": true,
+        "relatedQuestionIds": [
+          "q-p12-match-01",
+          "q-p12-match-03",
+          "q-p12-match-04",
+          "q-p12-match-05",
+          "q-p12-match-06",
+          "q-p12-match-07",
+          "q-p12-match-08",
+          "q-p12-match-09",
+          "q-p12-match-10",
+          "q-p12-match-11",
+          "q-p12-match-12"
+        ],
+        "distinctConceptSets": true,
+        "templatePrompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu."
+      }
+    },
+    {
+      "questionId": "q-p12-match-03",
+      "type": "matching",
+      "conceptIds": [
+        "concept-9-197-48-definition-1",
+        "concept-9-197-60-definition-1",
+        "concept-9-198-76-definition-1",
+        "concept-9-199-32-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "EXACT_PROMPT_DUPLICATE"
+      ],
+      "disposition": "cleared",
+      "category": "intentional-matching-template",
+      "rationale": "Only the generic matching instruction is duplicated; each item carries a distinct concept set and distinct matching content, so this is intentional template reuse rather than duplicate learning content.",
+      "evidence": {
+        "resolved": true,
+        "relatedQuestionIds": [
+          "q-p12-match-01",
+          "q-p12-match-02",
+          "q-p12-match-04",
+          "q-p12-match-05",
+          "q-p12-match-06",
+          "q-p12-match-07",
+          "q-p12-match-08",
+          "q-p12-match-09",
+          "q-p12-match-10",
+          "q-p12-match-11",
+          "q-p12-match-12"
+        ],
+        "distinctConceptSets": true,
+        "templatePrompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu."
+      }
+    },
+    {
+      "questionId": "q-p12-match-04",
+      "type": "matching",
+      "conceptIds": [
+        "concept-62-1283-17-definition-1",
+        "concept-62-1283-30-definition-1",
+        "concept-62-1283-47-definition-1",
+        "concept-62-1283-68-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "EXACT_PROMPT_DUPLICATE"
+      ],
+      "disposition": "cleared",
+      "category": "intentional-matching-template",
+      "rationale": "Only the generic matching instruction is duplicated; each item carries a distinct concept set and distinct matching content, so this is intentional template reuse rather than duplicate learning content.",
+      "evidence": {
+        "resolved": true,
+        "relatedQuestionIds": [
+          "q-p12-match-01",
+          "q-p12-match-02",
+          "q-p12-match-03",
+          "q-p12-match-05",
+          "q-p12-match-06",
+          "q-p12-match-07",
+          "q-p12-match-08",
+          "q-p12-match-09",
+          "q-p12-match-10",
+          "q-p12-match-11",
+          "q-p12-match-12"
+        ],
+        "distinctConceptSets": true,
+        "templatePrompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu."
+      }
+    },
+    {
+      "questionId": "q-p12-match-05",
+      "type": "matching",
+      "conceptIds": [
+        "concept-64-1345-51-definition-1",
+        "concept-64-1345-55-definition-1",
+        "concept-64-1346-50-definition-1",
+        "concept-64-1346-75-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "EXACT_PROMPT_DUPLICATE"
+      ],
+      "disposition": "cleared",
+      "category": "intentional-matching-template",
+      "rationale": "Only the generic matching instruction is duplicated; each item carries a distinct concept set and distinct matching content, so this is intentional template reuse rather than duplicate learning content.",
+      "evidence": {
+        "resolved": true,
+        "relatedQuestionIds": [
+          "q-p12-match-01",
+          "q-p12-match-02",
+          "q-p12-match-03",
+          "q-p12-match-04",
+          "q-p12-match-06",
+          "q-p12-match-07",
+          "q-p12-match-08",
+          "q-p12-match-09",
+          "q-p12-match-10",
+          "q-p12-match-11",
+          "q-p12-match-12"
+        ],
+        "distinctConceptSets": true,
+        "templatePrompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu."
+      }
+    },
+    {
+      "questionId": "q-p12-match-06",
+      "type": "matching",
+      "conceptIds": [
+        "concept-64-1347-50-definition-1",
+        "concept-64-1348-61-definition-1",
+        "concept-64-1349-79-definition-1",
+        "concept-64-1351-79-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "EXACT_PROMPT_DUPLICATE"
+      ],
+      "disposition": "cleared",
+      "category": "intentional-matching-template",
+      "rationale": "Only the generic matching instruction is duplicated; each item carries a distinct concept set and distinct matching content, so this is intentional template reuse rather than duplicate learning content.",
+      "evidence": {
+        "resolved": true,
+        "relatedQuestionIds": [
+          "q-p12-match-01",
+          "q-p12-match-02",
+          "q-p12-match-03",
+          "q-p12-match-04",
+          "q-p12-match-05",
+          "q-p12-match-07",
+          "q-p12-match-08",
+          "q-p12-match-09",
+          "q-p12-match-10",
+          "q-p12-match-11",
+          "q-p12-match-12"
+        ],
+        "distinctConceptSets": true,
+        "templatePrompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu."
+      }
+    },
+    {
+      "questionId": "q-p12-match-07",
+      "type": "matching",
+      "conceptIds": [
+        "concept-64-1352-57-definition-1",
+        "concept-64-1353-76-definition-1",
+        "concept-64-1353-92-definition-1",
+        "concept-64-1354-12-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "EXACT_PROMPT_DUPLICATE"
+      ],
+      "disposition": "cleared",
+      "category": "intentional-matching-template",
+      "rationale": "Only the generic matching instruction is duplicated; each item carries a distinct concept set and distinct matching content, so this is intentional template reuse rather than duplicate learning content.",
+      "evidence": {
+        "resolved": true,
+        "relatedQuestionIds": [
+          "q-p12-match-01",
+          "q-p12-match-02",
+          "q-p12-match-03",
+          "q-p12-match-04",
+          "q-p12-match-05",
+          "q-p12-match-06",
+          "q-p12-match-08",
+          "q-p12-match-09",
+          "q-p12-match-10",
+          "q-p12-match-11",
+          "q-p12-match-12"
+        ],
+        "distinctConceptSets": true,
+        "templatePrompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu."
+      }
+    },
+    {
+      "questionId": "q-p12-match-08",
+      "type": "matching",
+      "conceptIds": [
+        "concept-5-83-74-definition-1",
+        "concept-5-84-61-definition-1",
+        "concept-5-84-79-definition-1",
+        "concept-5-85-24-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "EXACT_PROMPT_DUPLICATE"
+      ],
+      "disposition": "cleared",
+      "category": "intentional-matching-template",
+      "rationale": "Only the generic matching instruction is duplicated; each item carries a distinct concept set and distinct matching content, so this is intentional template reuse rather than duplicate learning content.",
+      "evidence": {
+        "resolved": true,
+        "relatedQuestionIds": [
+          "q-p12-match-01",
+          "q-p12-match-02",
+          "q-p12-match-03",
+          "q-p12-match-04",
+          "q-p12-match-05",
+          "q-p12-match-06",
+          "q-p12-match-07",
+          "q-p12-match-09",
+          "q-p12-match-10",
+          "q-p12-match-11",
+          "q-p12-match-12"
+        ],
+        "distinctConceptSets": true,
+        "templatePrompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu."
+      }
+    },
+    {
+      "questionId": "q-p12-match-09",
+      "type": "matching",
+      "conceptIds": [
+        "concept-64-1359-26-definition-1",
+        "concept-64-1359-88-definition-1",
+        "concept-64-1363-32-definition-1",
+        "concept-64-1364-70-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "EXACT_PROMPT_DUPLICATE"
+      ],
+      "disposition": "cleared",
+      "category": "intentional-matching-template",
+      "rationale": "Only the generic matching instruction is duplicated; each item carries a distinct concept set and distinct matching content, so this is intentional template reuse rather than duplicate learning content.",
+      "evidence": {
+        "resolved": true,
+        "relatedQuestionIds": [
+          "q-p12-match-01",
+          "q-p12-match-02",
+          "q-p12-match-03",
+          "q-p12-match-04",
+          "q-p12-match-05",
+          "q-p12-match-06",
+          "q-p12-match-07",
+          "q-p12-match-08",
+          "q-p12-match-10",
+          "q-p12-match-11",
+          "q-p12-match-12"
+        ],
+        "distinctConceptSets": true,
+        "templatePrompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu."
+      }
+    },
+    {
+      "questionId": "q-p12-match-10",
+      "type": "matching",
+      "conceptIds": [
+        "concept-5-108-24-definition-1",
+        "concept-5-110-54-definition-1",
+        "concept-5-110-62-definition-1",
+        "concept-5-111-4-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "EXACT_PROMPT_DUPLICATE"
+      ],
+      "disposition": "cleared",
+      "category": "intentional-matching-template",
+      "rationale": "Only the generic matching instruction is duplicated; each item carries a distinct concept set and distinct matching content, so this is intentional template reuse rather than duplicate learning content.",
+      "evidence": {
+        "resolved": true,
+        "relatedQuestionIds": [
+          "q-p12-match-01",
+          "q-p12-match-02",
+          "q-p12-match-03",
+          "q-p12-match-04",
+          "q-p12-match-05",
+          "q-p12-match-06",
+          "q-p12-match-07",
+          "q-p12-match-08",
+          "q-p12-match-09",
+          "q-p12-match-11",
+          "q-p12-match-12"
+        ],
+        "distinctConceptSets": true,
+        "templatePrompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu."
+      }
+    },
+    {
+      "questionId": "q-p12-match-11",
+      "type": "matching",
+      "conceptIds": [
+        "concept-63-1319-4-definition-1",
+        "concept-63-1319-68-definition-1",
+        "concept-63-1320-10-definition-1",
+        "concept-63-1320-72-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "EXACT_PROMPT_DUPLICATE"
+      ],
+      "disposition": "cleared",
+      "category": "intentional-matching-template",
+      "rationale": "Only the generic matching instruction is duplicated; each item carries a distinct concept set and distinct matching content, so this is intentional template reuse rather than duplicate learning content.",
+      "evidence": {
+        "resolved": true,
+        "relatedQuestionIds": [
+          "q-p12-match-01",
+          "q-p12-match-02",
+          "q-p12-match-03",
+          "q-p12-match-04",
+          "q-p12-match-05",
+          "q-p12-match-06",
+          "q-p12-match-07",
+          "q-p12-match-08",
+          "q-p12-match-09",
+          "q-p12-match-10",
+          "q-p12-match-12"
+        ],
+        "distinctConceptSets": true,
+        "templatePrompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu."
+      }
+    },
+    {
+      "questionId": "q-p12-match-12",
+      "type": "matching",
+      "conceptIds": [
+        "concept-61-1217-37-definition-1",
+        "concept-61-1217-61-definition-1",
+        "concept-61-1217-67-definition-1",
+        "concept-61-1218-63-definition-1"
+      ],
+      "p26aIssueCodes": [
+        "EXACT_PROMPT_DUPLICATE"
+      ],
+      "disposition": "cleared",
+      "category": "intentional-matching-template",
+      "rationale": "Only the generic matching instruction is duplicated; each item carries a distinct concept set and distinct matching content, so this is intentional template reuse rather than duplicate learning content.",
+      "evidence": {
+        "resolved": true,
+        "relatedQuestionIds": [
+          "q-p12-match-01",
+          "q-p12-match-02",
+          "q-p12-match-03",
+          "q-p12-match-04",
+          "q-p12-match-05",
+          "q-p12-match-06",
+          "q-p12-match-07",
+          "q-p12-match-08",
+          "q-p12-match-09",
+          "q-p12-match-10",
+          "q-p12-match-11"
+        ],
+        "distinctConceptSets": true,
+        "templatePrompt": "Ordne die Begriffe den passenden Beschreibungen aus dem Lehrbuch zu."
+      }
+    }
+  ],
+  "policy": {
+    "sourceCardExactContractClearsLengthHeuristic": true,
+    "genericMatchingInstructionMayRepeatAcrossDistinctContent": true,
+    "caseContextEvaluatedStructurally": true,
+    "optionSubsumptionRequiresRepair": true,
+    "absoluteDistractorClusterRequiresRepair": true,
+    "p26bSevenCorrectionsReopened": false,
+    "questionContentEdited": false,
+    "fsrsChanged": false,
+    "masteryChanged": false,
+    "remediationChanged": false,
+    "examLogicChanged": false,
+    "sourceCardEquivalentEnumerationContractClearsLengthHeuristic": true
+  }
+}
