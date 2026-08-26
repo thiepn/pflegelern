@@ -37,10 +37,15 @@ assert Counter(q['type'] for q in questions) == Counter({
     'ordering': 2,
 })
 
-assert manifest['phase'] == 'P26F'
-assert manifest['version'] == '1.1.0-dev.26f'
-assert manifest['status'] == 'p26f-source-alignment-correction'
-assert 'pflegelern-p26f-v1.1.0-dev26f' in service_worker
+if manifest['phase'] == 'P26F':
+    assert manifest['version'] == '1.1.0-dev.26f'
+    assert manifest['status'] == 'p26f-source-alignment-correction'
+    assert 'pflegelern-p26f-v1.1.0-dev26f' in service_worker
+else:
+    assert manifest['phase'] == 'P26G'
+    assert manifest['version'] == '1.1.0-dev.26g'
+    assert manifest['status'] == 'p26g-final-1299-question-certification'
+    assert 'pflegelern-p26g-v1.1.0-dev26g' in service_worker
 
 assert correction['phase'] == 'P26F'
 assert correction['status'] == 'source-alignment-corrected'
@@ -94,7 +99,6 @@ assert q_by['q-p12-0207']['source']['chapterId'] == 'chapter-3'
 assert q_by['q-p12-0630']['source']['sectionId'] == 'sec-8-1-1'
 assert q_by['q-p12-0630']['source']['chapterId'] == 'chapter-8'
 
-# All semantic learning fields are explicitly declared unchanged by the bounded correction.
 for key in [
     'questionIdsChanged', 'questionTypesChanged', 'questionPromptsChanged',
     'questionOptionsChanged', 'answerKeysChanged', 'explanationsChanged',
@@ -104,7 +108,6 @@ for key in [
 ]:
     assert correction['policy'][key] is False, key
 
-# Materialized audit and fresh recomputation both require full source closure.
 for report in [audit, refine.audit()]:
     assert report['scope']['questionCount'] == 1299
     assert report['scope']['usedConceptCount'] == 881
@@ -123,7 +126,8 @@ for report in [audit, refine.audit()]:
 assert refine.audit() == audit
 
 print(json.dumps({
-    'phase': 'P26F',
+    'currentPhase': manifest['phase'],
+    'certifiedPhase': 'P26F',
     'questions': len(questions),
     'usedConcepts': audit['scope']['usedConceptCount'],
     'recoveredSections': correction['summary']['recoveredSections'],
@@ -131,4 +135,4 @@ print(json.dumps({
     'correctedQuestionSourceSnapshots': correction['summary']['correctedQuestionSourceSnapshots'],
     'residualFindings': audit['summary']['questionsWithFindings'],
 }, ensure_ascii=False, indent=2))
-print('P26F source alignment certification passed.')
+print('P26F source alignment phase-forward certification passed.')
