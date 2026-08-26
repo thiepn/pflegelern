@@ -49,14 +49,18 @@ jobs:
           python3 -m py_compile tests/p26c-adjudication.test.py
           python3 -m py_compile tests/p26d-confirmed-defect-repair.test.py
 
-      - name: Verify P26D historical and live hashes
+      - name: Verify P26D historical, live and serialization hashes
         run: |
           python3 - <<'PY'
           import hashlib, json
           from pathlib import Path
           p26c=json.loads(Path('reports/P26C_MANUAL_REVIEW_ADJUDICATION.json').read_text(encoding='utf-8'))
           p26d=json.loads(Path('reports/P26D_CONFIRMED_DEFECT_REPAIR.json').read_text(encoding='utf-8'))
-          live=hashlib.sha256(Path('data/questions.json').read_bytes()).hexdigest()
+          raw=Path('data/questions.json').read_bytes()
+          parsed=json.loads(raw.decode('utf-8'))
+          canonical=json.dumps(parsed, ensure_ascii=False, separators=(',', ':')).encode('utf-8')
+          assert raw == canonical, 'question bank must retain canonical compact one-line serialization'
+          live=hashlib.sha256(raw).hexdigest()
           assert p26d['baseline']['questionBankBeforeSha256'] == p26c['baseline']['liveQuestionBankSha256']
           assert p26d['baseline']['questionBankAfterSha256'] == live
           assert p26d['summary']['targets'] == 14
