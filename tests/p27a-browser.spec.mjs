@@ -75,6 +75,7 @@ for (const width of [320, 375, 768, 1024, 1440]) {
 }
 
 test('PWA survives an offline navigation reload after cache installation', async ({ page, context }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
   await onboard(page);
   const errors = await collectErrors(page);
   await page.goto(`${BASE}?view=today`, { waitUntil: 'networkidle' });
@@ -87,6 +88,7 @@ test('PWA survives an offline navigation reload after cache installation', async
   try {
     await page.reload({ waitUntil: 'domcontentloaded', timeout: 15000 });
     await expect(page.locator('h1').first()).toContainText('Heute');
+    await expect.poll(() => page.evaluate(() => navigator.onLine)).toBe(false);
     await expect(page.locator('#offline-indicator')).toBeVisible();
   } finally {
     await context.setOffline(false);
