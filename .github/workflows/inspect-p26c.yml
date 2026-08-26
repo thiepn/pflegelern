@@ -6,6 +6,7 @@ on:
     paths:
       - 'tools/p26c_review_packets.py'
       - 'tools/p26c_adjudicate.py'
+      - 'tools/p26c_adjudication_refinement.py'
       - '.github/workflows/inspect-p26c.yml'
   workflow_dispatch:
 
@@ -16,7 +17,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: P26C adjudication preview
-        run: python3 tools/p26c_adjudicate.py
+        run: python3 tools/p26c_adjudication_refinement.py
       - name: Candidate summary
         run: python3 tools/p26c_review_packets.py --batch 0 --batch-size 0
       - name: Answer-option subsumption
