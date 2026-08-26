@@ -57,10 +57,15 @@ assert p26d['summary']['answerOptionSubsumption'] == 2
 assert p26d['summary']['distractorDesign'] == 12
 assert p26d['summary']['questionCount'] == 1299
 
-assert manifest['phase'] == 'P26D'
-assert manifest['version'] == '1.1.0-dev.26d'
-assert manifest['status'] == 'p26d-confirmed-defect-repair'
-assert 'pflegelern-p26d-v1.1.0-dev26d' in service_worker
+# P26D remains a historical repair certification after later semantic phases.
+if manifest['phase'] == 'P26D':
+    assert manifest['version'] == '1.1.0-dev.26d'
+    assert manifest['status'] == 'p26d-confirmed-defect-repair'
+    assert 'pflegelern-p26d-v1.1.0-dev26d' in service_worker
+else:
+    assert manifest['phase'] >= 'P26E'
+    assert manifest['version'] != '1.1.0-dev.26d'
+    assert 'pflegelern-p26d-v1.1.0-dev26d' not in service_worker
 
 q_by = {q['id']: q for q in questions}
 card_by = {c['id']: c for c in cards}
@@ -124,10 +129,11 @@ for key in [
     assert policy[key] is False, key
 
 print(json.dumps({
-    'phase': 'P26D',
+    'currentPhase': manifest['phase'],
+    'historicalPhase': 'P26D',
     'questions': len(questions),
     'repaired': 14,
     'remainingP26AReviewSignals': post['summary']['manualReviewCandidates'],
     'remainingConfirmedSemanticDefects': post['summary']['confirmedDefects'],
 }, ensure_ascii=False, indent=2))
-print('P26D confirmed-defect repair certification passed.')
+print('P26D confirmed-defect repair phase-forward certification passed.')
