@@ -1,7 +1,7 @@
 {
   "project": "PflegeLern",
-  "phase": "P26G",
-  "version": "1.1.0-dev.26g",
+  "phase": "P27A",
+  "version": "1.1.0-dev.27a",
   "schemaVersion": 1,
   "source": {
     "title": "I care – Pflege",
@@ -9,7 +9,7 @@
     "editionYear": 2015,
     "basis": "Uploaded textbook only; no external clinical facts merged."
   },
-  "status": "p26g-final-1299-question-certification",
+  "status": "p27a-release-readiness-audit",
   "notes": [
     "P6 manually calibrated content preserved.",
     "P7 source signals were re-routed by PDF section position where possible.",
@@ -33,6 +33,7 @@
     "P26D repairs exactly the 14 questions confirmed by P26C. Two overlapping answer-option defects are replaced with distinct textbook-derived alternatives, and twelve giveaway-prone distractor sets are replaced with topic-local source-card-backed distractors. Question IDs, types, target concepts, difficulty, correct option IDs, source anchors and explanations are preserved. No external clinical guidance is introduced, and FSRS, mastery, remediation, repetition control, input handling and mock-exam logic remain unchanged.",
     "P26E closes the P26 semantic-audit chain without editing the question bank. It preserves the conservative P26A detector as a raw historical regression oracle and proves that its 94 remaining live review signals are exactly the 94 P26C-cleared, non-actionable heuristics; all seven P26A confirmed defects remain closed through P26B, all 14 P26C repair targets remain closed through P26D, and actionable defects, unadjudicated signals, pending repairs and stale repair targets are all zero.",
     "P26F audits all 1,299 questions against their repository-local concept, card, section and source provenance. It recovers the missing textbook hierarchy entries 3.2.2 Kurative Pflege and 8.1.1 Was ist Stress?, corrects five concept source anchors and two P12 question source snapshots, and closes the full-bank source-alignment audit with zero actionable or review findings. Question IDs, types, prompts, options, answer keys, explanations, difficulty and all learning-system behavior remain unchanged; no external clinical guidance is added.",
-    "P26G freezes and certifies the complete 1,299-question bank after the P25/P26 quality chain. The frozen bank hash, six-type distribution, reference graph, answer-input contracts, semantic closure, source alignment, repetition control, question-quality selection, mock-exam compatibility and desktop/mobile interaction paths are validated together. P26G does not edit question learning content; any future bank change must invalidate and regenerate the final certification."
+    "P26G freezes and certifies the complete 1,299-question bank after the P25/P26 quality chain. The frozen bank hash, six-type distribution, reference graph, answer-input contracts, semantic closure, source alignment, repetition control, question-quality selection, mock-exam compatibility and desktop/mobile interaction paths are validated together. P26G does not edit question learning content; any future bank change must invalidate and regenerate the final certification.",
+    "P27A audits full-product release readiness after the P26G bank freeze. It intentionally does not modify the frozen 1,299-question bank or learning behavior. The audit checks production/PWA integrity, core route/browser behavior, release documentation, QA entrypoints and release identity, and records detected release-truth drift for P27B repair."
   ]
 }
