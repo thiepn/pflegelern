@@ -31,6 +31,10 @@ def finding(fid, severity, area, title, evidence, next_phase='P27B'):
     }
 
 
+def contains_number(text, number):
+    return str(number) in text or f'{number:,}' in text
+
+
 def audit():
     manifest = read_json('data/manifest.json')
     p26g = read_json('reports/P26G_FINAL_QUESTION_CERTIFICATION.json')
@@ -72,7 +76,7 @@ def audit():
         ('questions', 85, actual_counts['questions']),
         ('cases', 18, actual_counts['cases']),
     ]:
-        if str(old) in readme and old != current:
+        if contains_number(readme, old) and old != current:
             stale_readme_counts.append({'entity': label, 'documented': old, 'actual': current})
     if stale_readme_counts:
         findings.append(finding(
@@ -106,9 +110,22 @@ def audit():
             }
         ))
 
+    app_version_match = re.search(r"const\s+APP_VERSION\s*=\s*['\"]([^'\"]+)['\"]", app)
+    app_version = app_version_match.group(1) if app_version_match else None
+    if app_version == '1.0.0':
+        findings.append(finding(
+            'P27A-REL-001', 'high', 'release-identity',
+            'Learner-facing application version is hard-coded to the obsolete 1.0.0 identity',
+            {
+                'js/app.js APP_VERSION': app_version,
+                'manifestVersion': manifest.get('version'),
+                'manifestPhase': manifest.get('phase'),
+            }
+        ))
+
     if manifest.get('version', '').startswith('1.1.0-dev.'):
         findings.append(finding(
-            'P27A-REL-001', 'info', 'release-state',
+            'P27A-REL-002', 'info', 'release-state',
             'Repository remains on a development-phase version rather than a beta/release-candidate identity',
             {'phase': manifest.get('phase'), 'version': manifest.get('version'), 'status': manifest.get('status')},
             'P27B'
@@ -129,9 +146,9 @@ def audit():
     missing_manifest_icons = sorted(path for path in manifest_icons if path and not (ROOT / path).exists())
 
     route_checks = {
-        'today': "case 'today'" in app or "view === 'today'" in app or 'renderToday' in app,
+        'today': 'renderToday' in app,
         'learn': 'renderLearn' in app,
-        'exam': 'renderExam' in app,
+        'exam': 'renderExamHome' in app,
         'progress': 'renderProgress' in app,
         'settings': 'renderSettings' in app,
     }
@@ -179,6 +196,7 @@ def audit():
             'missingManifestIcons': missing_manifest_icons,
             'routeRenderersPresent': route_checks,
             'viewportMetadataPresent': '<meta name="viewport"' in index,
+            'appVersion': app_version,
             'staticBlockers': static_blockers,
         },
         'findings': findings,
@@ -203,7 +221,7 @@ def audit():
         'nextPhase': {
             'phase': 'P27B',
             'name': 'Release Truth & Validation Repair',
-            'purpose': 'Repair the stale release documentation and obsolete canonical validation entrypoint, then establish one current release-readiness command/report without modifying the frozen 1,299-question bank.'
+            'purpose': 'Repair stale release identity/documentation and the obsolete canonical validation entrypoint, then establish one current release-readiness command/report without modifying the frozen 1,299-question bank.'
         },
         'policy': {
             'questionBankEditedByP27A': False,
