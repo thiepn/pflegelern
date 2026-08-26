@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "phase": "P27A",
+  "title": "Full-Product Release Readiness Audit",
+  "status": "ACTION_REQUIRED",
+  "scope": {
+    "baseCertifiedPhase": "P26G",
+    "questionBankFrozen": true,
+    "learningContentMutationAllowed": false,
+    "areas": [
+      "production data integrity",
+      "P26G freeze integrity",
+      "PWA/offline static integrity",
+      "primary navigation surface",
+      "repository release documentation",
+      "QA entrypoints",
+      "browser regression readiness",
+      "release identity"
+    ]
+  },
+  "productionCounts": {
+    "chapters": 66,
+    "sections": 1363,
+    "concepts": 2089,
+    "cards": 2094,
+    "questions": 1299,
+    "cases": 120
+  },
+  "certifiedQuestionBank": {
+    "questions": 1299,
+    "sha256": "40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024",
+    "p26gSha256": "40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024",
+    "intact": true
+  },
+  "staticRuntimeChecks": {
+    "serviceWorkerPrecacheEntries": 58,
+    "missingServiceWorkerAssets": [],
+    "missingManifestIcons": [],
+    "routeRenderersPresent": {
+      "today": true,
+      "learn": true,
+      "exam": true,
+      "progress": true,
+      "settings": true
+    },
+    "viewportMetadataPresent": true,
+    "staticBlockers": []
+  },
+  "findings": [
+    {
+      "id": "P27A-DOC-001",
+      "severity": "high",
+      "area": "release-documentation",
+      "title": "README identifies the repository as the old P10/v1.0.0 release",
+      "evidence": "README.md still labels the repository “v1.0.0 Release” / “P10 final release” while the production manifest has advanced through P26G/P27A.",
+      "recommendedRepairPhase": "P27B"
+    },
+    {
+      "id": "P27A-DOC-002",
+      "severity": "high",
+      "area": "release-documentation",
+      "title": "README study-bank counts are materially stale",
+      "evidence": [
+        {
+          "entity": "questions",
+          "documented": 85,
+          "actual": 1299
+        },
+        {
+          "entity": "cases",
+          "documented": 18,
+          "actual": 120
+        }
+      ],
+      "recommendedRepairPhase": "P27B"
+    },
+    {
+      "id": "P27A-DOC-003",
+      "severity": "medium",
+      "area": "qa-documentation",
+      "title": "QA.md is still the P9 release-hardening record",
+      "evidence": "QA.md reports the pre-expansion 85-question / 1,361-section state and says automated browser E2E was not obtained, despite later real-Chromium certification phases.",
+      "recommendedRepairPhase": "P27B"
+    },
+    {
+      "id": "P27A-QA-001",
+      "severity": "critical",
+      "area": "validation-entrypoint",
+      "title": "The README-documented primary validator is obsolete and cannot validate current main",
+      "evidence": {
+        "documentedCommand": "node tests/validate.mjs",
+        "staleValidatorMarkers": [
+          "questions: 85",
+          "sections: 1361",
+          "data.manifest.phase === 'P10'",
+          "pflegelern-v1.0.0"
+        ],
+        "actualCounts": {
+          "chapters": 66,
+          "sections": 1363,
+          "concepts": 2089,
+          "cards": 2094,
+          "questions": 1299,
+          "cases": 120
+        }
+      },
+      "recommendedRepairPhase": "P27B"
+    },
+    {
+      "id": "P27A-REL-001",
+      "severity": "info",
+      "area": "release-state",
+      "title": "Repository remains on a development-phase version rather than a beta/release-candidate identity",
+      "evidence": {
+        "phase": "P27A",
+        "version": "1.1.0-dev.27a",
+        "status": "p27a-release-readiness-audit"
+      },
+      "recommendedRepairPhase": "P27B"
+    }
+  ],
+  "summary": {
+    "totalFindings": 5,
+    "actionableFindings": 4,
+    "severityCounts": {
+      "critical": 1,
+      "high": 2,
+      "medium": 1,
+      "low": 0,
+      "info": 1
+    },
+    "staticRuntimeBlockers": 0,
+    "runtimeBaselineReadyForBrowserCertification": true,
+    "releaseReady": false
+  },
+  "browserCertificationRequired": {
+    "routes": [
+      "today",
+      "learn",
+      "exam",
+      "progress",
+      "settings"
+    ],
+    "desktopAndMobile": true,
+    "studyInputRegression": true,
+    "questionQualityRegression": true,
+    "repetitionRegression": true,
+    "offlineReload": true,
+    "horizontalOverflowAudit": true,
+    "consoleAndPageErrorsMustBeZero": true
+  },
+  "nextPhase": {
+    "phase": "P27B",
+    "name": "Release Truth & Validation Repair",
+    "purpose": "Repair the stale release documentation and obsolete canonical validation entrypoint, then establish one current release-readiness command/report without modifying the frozen 1,299-question bank."
+  },
+  "policy": {
+    "questionBankEditedByP27A": false,
+    "fsrsChanged": false,
+    "masteryChanged": false,
+    "remediationChanged": false,
+    "repetitionControlChanged": false,
+    "inputHandlingChanged": false,
+    "examLogicChanged": false,
+    "externalClinicalGuidanceAdded": false
+  }
+}
