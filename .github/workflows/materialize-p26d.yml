@@ -1,0 +1,82 @@
+name: Materialize PflegeLern P26D repairs
+
+on:
+  push:
+    branches: [p26d-confirmed-defect-repair]
+    paths:
+      - 'tools/p26d_apply_repairs.py'
+      - 'tests/p26d-confirmed-defect-repair.test.py'
+      - 'data/manifest.json'
+      - 'service-worker.js'
+      - '.github/workflows/materialize-p26d.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax checks
+        run: |
+          python3 -m py_compile tools/p26d_apply_repairs.py
+          python3 -m py_compile tests/p26d-confirmed-defect-repair.test.py
+          python3 -m py_compile tools/p26a_semantic_audit.py
+          python3 -m py_compile tools/p26a_semantic_refinement.py
+
+      - name: Freeze pre-P26D question bank
+        run: sha256sum data/questions.json | tee /tmp/p26d-before.sha256
+
+      - name: Apply bounded P26D repairs
+        run: python3 tools/p26d_apply_repairs.py --write
+
+      - name: P26D semantic repair certification
+        run: python3 tests/p26d-confirmed-defect-repair.test.py
+
+      - name: P25D question-quality regression
+        run: node tests/p25d-question-quality.test.mjs && node tests/p25d-integration.test.mjs
+
+      - name: P25C input regression
+        run: node tests/p25c-input-core.test.mjs
+
+      - name: P25B repetition regression
+        run: node tests/p25b-repetition-core.test.mjs
+
+      - name: P18-P20 core regressions
+        run: |
+          node tests/p18-mastery.test.mjs
+          node tests/p19-remediation.test.mjs
+          node tests/p20-exam-core.test.mjs
+          node tests/p20-runtime.test.mjs
+
+      - name: Assert exactly 14 question objects changed
+        run: |
+          git diff -- data/questions.json > /tmp/p26d-questions.diff
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path('reports/P26D_CONFIRMED_DEFECT_REPAIR.json').read_text(encoding='utf-8'))
+          assert report['summary']['targets']==14
+          assert report['summary']['repaired']==14
+          assert report['baseline']['questionBankBeforeSha256'] != report['baseline']['questionBankAfterSha256']
+          print('P26D bounded mutation count certified:', report['summary']['repaired'])
+          PY
+
+      - name: Commit repaired bank and evidence reports
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/questions.json reports/P26D_CONFIRMED_DEFECT_REPAIR.json reports/P26D_CONFIRMED_DEFECT_REPAIR.md
+          git commit -m 'P26D: materialize 14 confirmed defect repairs [skip ci]'
+          git push origin HEAD:p26d-confirmed-defect-repair
