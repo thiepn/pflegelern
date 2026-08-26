@@ -3,8 +3,8 @@
 
 The base audit intentionally over-detects lexical misalignment. This layer
 recognizes multi-concept questions whose target concepts are represented in any
-answer option, includes clinical-case correctText, and normalizes common German
--ieren/-iert verb forms. Structural source findings are unchanged.
+answer option, includes clinical-case correctText, and normalizes conservative
+German inflection/verb endings. Structural source findings are unchanged.
 """
 
 from __future__ import annotations
@@ -32,7 +32,7 @@ def refined_tokens(text):
         if len(token) < 3 or token in base.STOP or token.isdigit():
             continue
         stem = token
-        for suffix in ('ierungen','ierung','ieren','iert','ischen','ische','ischer','isches','keiten','keit','ungen','ung','ern','en','er','es','e','n'):
+        for suffix in ('ierungen','ierung','ieren','iert','ischen','ische','ischer','isches','keiten','keit','ungen','ung','ern','en','er','es','e','n','s'):
             if len(stem) >= len(suffix) + 4 and stem.endswith(suffix):
                 stem = stem[:-len(suffix)]
                 break
@@ -61,11 +61,11 @@ base.question_learning_text = refined_question_learning_text
 def audit():
     report = base.audit()
     report['refinement'] = {
-        'version': 1,
+        'version': 2,
         'policy': [
             'include all displayed answer options for multi-concept source alignment',
             'include clinical-case correctText',
-            'normalize common German -ieren/-iert verb forms',
+            'normalize conservative German inflection and -ieren/-iert verb forms',
         ],
     }
     return report
