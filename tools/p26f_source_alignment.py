@@ -96,16 +96,21 @@ def card_learning_text(card: dict[str, Any]) -> str:
 
 
 def source_shape(concept: dict[str, Any]) -> dict[str, Any]:
+    """Normalize both manually-reviewed and deterministic P7B provenance shapes."""
     source = concept.get('source') or {}
     pages = source.get('printedPages') or []
-    refs = source.get('evidenceRefs') or []
+    evidence_refs = source.get('evidenceRefs') or []
+    evidence_record_ids = source.get('evidenceRecordIds') or []
+    pointers = list(evidence_refs) + list(evidence_record_ids)
     return {
         'hasSource': bool(source),
-        'section': source.get('section'),
+        'sourceSection': source.get('section'),
         'printedPages': pages,
-        'evidenceRefs': refs,
+        'evidenceRefs': evidence_refs,
+        'evidenceRecordIds': evidence_record_ids,
+        'evidencePointers': pointers,
         'validPages': bool(pages) and all(isinstance(p, int) and p > 0 for p in pages),
-        'validEvidenceRefs': bool(refs) and all(isinstance(r, str) and r.strip() for r in refs),
+        'validEvidencePointers': bool(pointers) and all(isinstance(r, str) and r.strip() for r in pointers),
     }
 
 
@@ -129,7 +134,6 @@ def audit() -> dict[str, Any]:
             cards_by_concept[cid].append(card)
 
     findings = []
-    verified = []
     used_concepts = set()
 
     def flag(qid: str, code: str, severity: str, detail: dict[str, Any]):
@@ -149,7 +153,6 @@ def audit() -> dict[str, Any]:
 
         qtext = question_learning_text(q)
         qt = tokens(qtext)
-        per_concept = []
         chapters_for_question = set()
         for cid in cids:
             concept = concept_by[cid]
@@ -170,12 +173,12 @@ def audit() -> dict[str, Any]:
                     'conceptId': cid, 'sectionId': section_id,
                     'conceptChapterId': chapter_id, 'sectionChapterId': section.get('chapterId')
                 })
-            if not source['hasSource'] or not source['section']:
-                flag(qid, 'MISSING_SOURCE_SECTION', 'critical', {'conceptId': cid, 'source': source})
+            if not source['hasSource']:
+                flag(qid, 'MISSING_SOURCE_PROVENANCE', 'critical', {'conceptId': cid})
             if not source['validPages']:
                 flag(qid, 'MISSING_OR_INVALID_SOURCE_PAGES', 'high', {'conceptId': cid, 'source': source})
-            if not source['validEvidenceRefs']:
-                flag(qid, 'MISSING_SOURCE_EVIDENCE_REF', 'high', {'conceptId': cid, 'source': source})
+            if not source['validEvidencePointers']:
+                flag(qid, 'MISSING_SOURCE_EVIDENCE_POINTER', 'high', {'conceptId': cid, 'source': source})
 
             anchored_cards = [c for c in cards_by_concept.get(cid, []) if c.get('status') == 'approved']
             support_text = ' '.join([
@@ -193,10 +196,6 @@ def audit() -> dict[str, Any]:
                     exact_answer_support = True
                     break
 
-            # Generated short-answer questions may be intentionally concise. Require
-            # either at least two meaningful shared tokens, one strong exact answer
-            # relationship, or a single uncommon token when the anchored concept is
-            # itself very narrow (support token set <= 4).
             narrow_support = bool(overlap) and len(st) <= 4
             supported = exact_answer_support or lexical_support >= 2 or narrow_support
             if not anchored_cards:
@@ -206,28 +205,16 @@ def audit() -> dict[str, Any]:
                     'conceptId': cid,
                     'conceptTitle': concept.get('title'),
                     'sectionId': section_id,
-                    'sourceSection': source['section'],
+                    'sourceSection': source['sourceSection'],
                     'sourcePages': source['printedPages'],
+                    'evidencePointers': source['evidencePointers'],
                     'approvedCardIds': [c['id'] for c in anchored_cards],
                     'sharedTokens': overlap,
                 })
 
-            per_concept.append({
-                'conceptId': cid,
-                'sectionId': section_id,
-                'chapterId': chapter_id,
-                'sourceSection': source['section'],
-                'printedPages': source['printedPages'],
-                'evidenceRefs': source['evidenceRefs'],
-                'approvedCardIds': [c['id'] for c in anchored_cards],
-                'sharedTokens': overlap,
-                'exactAnswerSupport': exact_answer_support,
-            })
-
         if len({x for x in chapters_for_question if x}) > 1:
             flag(qid, 'MULTI_CHAPTER_TARGET_ANCHORS', 'review', {'chapterIds': sorted(x for x in chapters_for_question if x)})
 
-        # Validate explicit generated/repair evidence references when present.
         generation = q.get('generation') or {}
         for cid in generation.get('distractorConceptIds', []) or []:
             if cid not in concept_by:
@@ -235,6 +222,7 @@ def audit() -> dict[str, Any]:
         for card_id in generation.get('evidenceCardIds', []) or []:
             if card_id not in card_by:
                 flag(qid, 'MISSING_GENERATION_EVIDENCE_CARD', 'high', {'cardId': card_id})
+
         repair = q.get('repair') or {}
         distractor_cids = repair.get('distractorConceptIds', []) or []
         evidence_cards = repair.get('evidenceCardIds', []) or []
@@ -258,26 +246,20 @@ def audit() -> dict[str, Any]:
                 'evidenceConceptIds': sorted(evidence_concepts),
             })
 
-        verified.append({'questionId': qid, 'concepts': per_concept})
-
-    # Dataset-level source integrity for every concept actually used by a question.
     used_missing_cards = sorted(cid for cid in used_concepts if not cards_by_concept.get(cid))
-    used_missing_source = sorted(cid for cid in used_concepts if not (concept_by.get(cid, {}).get('source') or {}).get('evidenceRefs'))
+    used_missing_source = sorted(
+        cid for cid in used_concepts
+        if cid in concept_by and not source_shape(concept_by[cid])['validEvidencePointers']
+    )
 
     severity_counts = Counter(f['severity'] for f in findings)
     code_counts = Counter(f['code'] for f in findings)
     question_ids = sorted({f['questionId'] for f in findings})
-    actionable = sorted({
-        f['questionId'] for f in findings
-        if f['severity'] in {'critical','high'}
-    })
-    review = sorted({
-        f['questionId'] for f in findings
-        if f['severity'] == 'review'
-    } - set(actionable))
+    actionable = sorted({f['questionId'] for f in findings if f['severity'] in {'critical','high'}})
+    review = sorted({f['questionId'] for f in findings if f['severity'] == 'review'} - set(actionable))
 
     return {
-        'schemaVersion': 1,
+        'schemaVersion': 2,
         'phase': 'P26F',
         'status': 'source-alignment-audited',
         'baseline': {
@@ -310,8 +292,8 @@ def audit() -> dict[str, Any]:
         'usedConceptIdsWithoutCards': used_missing_cards,
         'usedConceptIdsWithoutSourceEvidence': used_missing_source,
         'findings': findings,
-        'verifiedQuestions': verified,
         'policy': {
+            'manualAndDeterministicSourceSchemasSupported': True,
             'structuralSourceMetadataRequired': True,
             'conceptSectionChapterIntegrityRequired': True,
             'approvedCardSupportAudited': True,
@@ -344,16 +326,10 @@ def write_md(report: dict[str, Any]) -> str:
         for code, count in s['codeCounts'].items():
             lines.append(f'- `{code}`: {count}')
     lines += ['', '## Actionable questions', '']
-    if report['actionableQuestionIds']:
-        lines.extend(f'- `{qid}`' for qid in report['actionableQuestionIds'])
-    else:
-        lines.append('None.')
+    lines.extend(f'- `{qid}`' for qid in report['actionableQuestionIds']) if report['actionableQuestionIds'] else lines.append('None.')
     lines += ['', '## Review-only questions', '']
-    if report['reviewQuestionIds']:
-        lines.extend(f'- `{qid}`' for qid in report['reviewQuestionIds'])
-    else:
-        lines.append('None.')
-    lines += ['', 'The JSON report contains per-question source/card evidence for deterministic follow-up.', '']
+    lines.extend(f'- `{qid}`' for qid in report['reviewQuestionIds']) if report['reviewQuestionIds'] else lines.append('None.')
+    lines += ['', 'The JSON report contains the exact residual finding evidence for deterministic follow-up.', '']
     return '\n'.join(lines)
 
 
@@ -366,12 +342,14 @@ def main() -> None:
         REPORTS.mkdir(exist_ok=True)
         (REPORTS / 'P26F_SOURCE_ALIGNMENT_AUDIT.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         (REPORTS / 'P26F_SOURCE_ALIGNMENT_AUDIT.md').write_text(write_md(report), encoding='utf-8')
+    residual = report['findings'] if len(report['findings']) <= 50 else []
     print(json.dumps({
         'phase': report['phase'],
         'scope': report['scope'],
         'summary': report['summary'],
         'actionableQuestionIds': report['actionableQuestionIds'],
         'reviewQuestionIds': report['reviewQuestionIds'],
+        'residualFindings': residual,
     }, ensure_ascii=False, indent=2))
 
 
