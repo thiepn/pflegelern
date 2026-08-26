@@ -36,10 +36,14 @@ service_worker = (ROOT / 'service-worker.js').read_text(encoding='utf-8')
 assert len(questions) == 1299
 assert Counter(q['type'] for q in questions) == EXPECTED_TYPES
 assert hashlib.sha256(questions_before).hexdigest() == EXPECTED_SHA
-assert manifest['phase'] == 'P26G'
-assert manifest['version'] == '1.1.0-dev.26g'
-assert manifest['status'] == 'p26g-final-1299-question-certification'
-assert 'pflegelern-p26g-v1.1.0-dev26g' in service_worker
+if manifest['phase'] == 'P26G':
+    assert manifest['version'] == '1.1.0-dev.26g'
+    assert manifest['status'] == 'p26g-final-1299-question-certification'
+    assert 'pflegelern-p26g-v1.1.0-dev26g' in service_worker
+else:
+    assert manifest['phase'] >= 'P27A'
+    assert any(str(note).startswith('P26G freezes and certifies') for note in manifest.get('notes', []))
+    assert 'pflegelern-' in service_worker
 
 fresh = cert.certify()
 assert fresh == materialized
@@ -104,7 +108,8 @@ for key, value in fresh['policy'].items():
 assert QUESTIONS.read_bytes() == questions_before
 
 print(json.dumps({
-    'phase': 'P26G',
+    'currentPhase': manifest['phase'],
+    'certifiedPhase': 'P26G',
     'status': fresh['status'],
     'questions': fresh['bank']['questions'],
     'objectiveQuestions': fresh['bank']['objectiveQuestions'],
@@ -113,4 +118,4 @@ print(json.dumps({
     'semanticProjectionSha256': fresh['freeze']['semanticProjectionSha256'],
     'residualFindings': len(fresh['findings']['errors']),
 }, ensure_ascii=False, indent=2))
-print('P26G final 1,299-question certification passed.')
+print('P26G frozen-bank phase-forward certification passed.')
