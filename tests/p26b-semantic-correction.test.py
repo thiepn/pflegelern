@@ -64,7 +64,6 @@ assert by_id["q-16-1-01"]["options"] == [
     {"id": "d", "text": "Genau 60/min"},
 ]
 assert by_id["q-16-1-01"]["correct"] == ["b"]
-
 assert by_id["q-16-1-02"]["options"] == [
     {"id": "a", "text": "Unter 60/min"},
     {"id": "b", "text": "60 bis 100/min"},
@@ -96,9 +95,6 @@ assert nosocomial["generation"]["distractorConceptIds"] == [
     "concept-15-300-87-definition-1",
 ]
 
-# Re-run the P26A semantic detector on the corrected bank. Later adjudication
-# phases may classify its 108 review signals, but the seven repaired defects may
-# never reappear as confirmed semantic defects.
 post = refine.recompute(audit.semantic_audit(questions, concepts, cards))
 assert post["summary"]["confirmedDefects"] == 0, post["confirmedDefectIds"]
 assert post["confirmedDefectIds"] == []
@@ -112,9 +108,19 @@ post_review_ids = {
     if entry.get("disposition") == "manual-review"
 }
 assert len(baseline_review_ids) == 108
-assert post_review_ids == baseline_review_ids
-assert post["summary"]["manualReviewCandidates"] == 108
-assert post["summary"]["flaggedQuestions"] == 108
+
+if manifest["phase"] < "P26D":
+    assert post_review_ids == baseline_review_ids
+    assert post["summary"]["manualReviewCandidates"] == 108
+    assert post["summary"]["flaggedQuestions"] == 108
+else:
+    p26d = json.loads((ROOT / "reports" / "P26D_CONFIRMED_DEFECT_REPAIR.json").read_text(encoding="utf-8"))
+    repaired_ids = set(p26d["targetQuestionIds"])
+    assert len(repaired_ids) == 14
+    assert repaired_ids.issubset(baseline_review_ids)
+    assert post_review_ids == baseline_review_ids - repaired_ids
+    assert post["summary"]["manualReviewCandidates"] == 94
+    assert post["summary"]["flaggedQuestions"] == 94
 
 for qid in TARGETS:
     assert qid not in post["confirmedDefectIds"]
