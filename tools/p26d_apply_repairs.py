@@ -345,7 +345,7 @@ def apply(write: bool):
         if json.dumps(q_by_id[qid], ensure_ascii=False, sort_keys=True) != signature:
             raise AssertionError(f'Untargeted question changed: {qid}')
 
-    output_text = json.dumps(questions, ensure_ascii=False, indent=2) + '\n'
+    output_text = json.dumps(questions, ensure_ascii=False, separators=(',', ':'))
     after_sha = hashlib.sha256(output_text.encode('utf-8')).hexdigest()
     report = {
         'schemaVersion': 1,
