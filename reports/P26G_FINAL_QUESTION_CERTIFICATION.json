@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "phase": "P26G",
+  "status": "PASS",
+  "certification": "final-1299-question-bank-v1",
+  "freeze": {
+    "state": "CERTIFIED_FROZEN",
+    "questionBankSha256": "40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024",
+    "expectedQuestionBankSha256": "40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024",
+    "semanticProjectionSha256": "b6c5cff467765879ceff70b38281f2f8e9db122951c58bc8078b75adfb617d68",
+    "invalidationRule": "Any mutation of data/questions.json invalidates P26G and requires a new certification."
+  },
+  "bank": {
+    "questions": 1299,
+    "typeCounts": {
+      "single_choice": 699,
+      "multiple_choice": 24,
+      "ordering": 2,
+      "matching": 39,
+      "short_answer": 321,
+      "clinical_case": 214
+    },
+    "objectiveQuestions": 764,
+    "applicationQuestions": 535,
+    "chapters": 66,
+    "sections": 1363,
+    "concepts": 2089,
+    "cards": 2094
+  },
+  "contracts": {
+    "uniqueQuestionIds": true,
+    "validConceptReferenceGraph": true,
+    "validAnswerInputContractForAllQuestions": true,
+    "sixSupportedQuestionTypesOnly": true,
+    "objectiveOnlyExamTypeSet": [
+      "matching",
+      "multiple_choice",
+      "ordering",
+      "single_choice"
+    ],
+    "applicationTypeSet": [
+      "clinical_case",
+      "short_answer"
+    ],
+    "p25aVarietyCertificationClosed": true,
+    "p26SemanticClosure": true,
+    "p26SourceAlignmentClosure": true,
+    "externalClinicalGuidanceAddedByP26FOrP26G": false,
+    "questionLearningContentEditedByP26G": false
+  },
+  "historicalClosure": {
+    "p25a": {
+      "legacyQuestionsPreserved": 954,
+      "generatedQuestions": 345,
+      "legacyCanonicalSha256": "57ee4a87fe567ead5424faee6d9df9406628211df03fd0693a038ebe841c9448"
+    },
+    "p26aConfirmedDefects": 7,
+    "p26bRepairs": 7,
+    "p26cConfirmedForRepair": 14,
+    "p26dRepairs": 14,
+    "p26eActionableDefects": 0,
+    "p26eUnadjudicatedSignals": 0,
+    "p26fSourceFindings": 0
+  },
+  "runtimeSha256": {
+    "js/p17-study-mix.js": "66a43932b7e79b7c5f455c55e3105e50447c8ff050d784683869ce8524551273",
+    "js/p25a-variety-core.js": "0bda13e9ca04d8091b4690a45c38ae278c58702235624db0738504245ced38a6",
+    "js/p25b-repetition-core.js": "6cd43737d0a9a9abf466e23c88c23e85297487f35cedb939d5e3dda7b6042d02",
+    "js/p25b-repetition.js": "8b473bc7886e4604b6d1137e5687ca675bca12e2b53cf2bbe67dc77ba1808c23",
+    "js/p25c-input-core.js": "d14261cc5f9794fc57a07652de299e8694ac716aa92d0cd76e4c04c522a4a3ba",
+    "js/p25c-input-reliability.js": "9bf3e97fdc5bbe3704562585edb780a1884c42f2409ee0036acf8e7d8281a83c",
+    "js/p25d-question-quality-core.js": "a011b8654dcb942f00eb0c3eb890481d40874241717a23e11aae38c2e802c0b7",
+    "js/p25d-question-quality.js": "925de39da13ac7d6867f91f3d570b82bf4842fe504f46548331f1a142deb56a5",
+    "js/p20-exam-core.js": "567f45587d4b21545f3e590b36f9f4462dff6056432523138398e304d642bfce",
+    "js/p20-exam.js": "befe4850171515f3d3f6f3b34aab342b0da96a6ac4d53f2c51bc8b7e71cc15ff",
+    "js/study-engine.js": "a96cc171f095fd4b5930562660359d65ab65ac47d50fbc6dd8022d87e8450e4a",
+    "js/fsrs.js": "7a58c64ae7926fa6cfe16c1f15885cdea885830a68fe270c91a8d750298e1ee9"
+  },
+  "validationEvidenceRequired": [
+    "P25A variety planner regression",
+    "P25B repetition-control unit + browser regression",
+    "P25C exhaustive input-contract + desktop/mobile browser regression",
+    "P25D question-quality unit/integration + browser regression",
+    "P18 mastery regression",
+    "P19 remediation regression",
+    "P20 mock-exam regression",
+    "P26A-P26F semantic/source regression chain"
+  ],
+  "findings": {
+    "inputContract": {},
+    "referenceGraph": {},
+    "questionStatus": {},
+    "errors": [],
+    "warnings": []
+  },
+  "policy": {
+    "questionIdsChanged": false,
+    "questionTypesChanged": false,
+    "questionPromptsChanged": false,
+    "questionOptionsChanged": false,
+    "answerKeysChanged": false,
+    "explanationsChanged": false,
+    "difficultyChanged": false,
+    "fsrsChanged": false,
+    "masteryChanged": false,
+    "remediationChanged": false,
+    "repetitionControlChanged": false,
+    "inputHandlingChanged": false,
+    "examLogicChanged": false,
+    "externalClinicalGuidanceAdded": false
+  }
+}
