@@ -1,5 +1,5 @@
 const CACHE_PREFIX = 'pflegelern-';
-const CACHE = 'pflegelern-p26g-v1.1.0-dev26g';
+const CACHE = 'pflegelern-p27a-v1.1.0-dev27a';
 const ASSETS = [
   './',
   './index.html',
