@@ -1,0 +1,123 @@
+name: Validate PflegeLern P26F
+
+on:
+  push:
+    branches: [p26f-source-alignment-correction]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax checks
+        run: |
+          python3 -m py_compile tools/p26f_source_alignment.py
+          python3 -m py_compile tools/p26f_source_alignment_refinement.py
+          python3 -m py_compile tools/p26f_apply_source_alignment.py
+          python3 -m py_compile tests/p26f-source-alignment.test.py
+          python3 -m py_compile tests/p26e-semantic-closure.test.py
+
+      - name: Prove P26F changed only question source metadata
+        run: |
+          git fetch origin main
+          python3 - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          before=json.loads(subprocess.check_output(['git','show','origin/main:data/questions.json'], text=True))
+          after=json.loads(Path('data/questions.json').read_text(encoding='utf-8'))
+          assert len(before)==len(after)==1299
+          fields=('id','conceptIds','type','prompt','difficulty','explanation','status','options','correct','correctText','certification')
+          b=[{k:q.get(k) for k in fields} for q in before]
+          a=[{k:q.get(k) for k in fields} for q in after]
+          assert a==b
+          changed=[]
+          for old,new in zip(before,after):
+            if old!=new: changed.append(new['id'])
+          assert changed==['q-p12-0207','q-p12-0630'], changed
+          print('P26F question changes are source-metadata-only:', changed)
+          PY
+
+      - name: P26F source alignment certification
+        run: python3 tests/p26f-source-alignment.test.py
+
+      - name: Recompute deterministic P26F audit
+        run: |
+          python3 tools/p26f_source_alignment_refinement.py --write
+          git diff --exit-code -- reports/P26F_SOURCE_ALIGNMENT_AUDIT.json reports/P26F_SOURCE_ALIGNMENT_AUDIT.md
+
+      - name: P26E semantic closure regression
+        run: python3 tests/p26e-semantic-closure.test.py
+
+      - name: P26D repair regression
+        run: python3 tests/p26d-confirmed-defect-repair.test.py
+
+      - name: P26C adjudication regression
+        run: python3 tests/p26c-adjudication.test.py
+
+      - name: P26B correction regression
+        run: python3 tests/p26b-semantic-correction.test.py
+
+      - name: P26A detector regression
+        run: python3 tests/p26a-semantic-audit.test.py
+
+      - name: P25D question-quality regressions
+        run: node tests/p25d-question-quality.test.mjs && node tests/p25d-integration.test.mjs
+
+      - name: P25C input regression
+        run: node tests/p25c-input-core.test.mjs
+
+      - name: P25B repetition regression
+        run: node tests/p25b-repetition-core.test.mjs
+
+      - name: P18-P20 learning-system regressions
+        run: |
+          node tests/p18-mastery.test.mjs
+          node tests/p19-remediation.test.mjs
+          node tests/p20-exam-core.test.mjs
+          node tests/p20-runtime.test.mjs
+
+      - name: Validate P26F metadata and cache
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('data/manifest.json').read_text(encoding='utf-8'))
+          a=json.loads(Path('reports/P26F_SOURCE_ALIGNMENT_AUDIT.json').read_text(encoding='utf-8'))
+          c=json.loads(Path('reports/P26F_SOURCE_ALIGNMENT_CORRECTION.json').read_text(encoding='utf-8'))
+          sw=Path('service-worker.js').read_text(encoding='utf-8')
+          assert m['phase']=='P26F'
+          assert m['version']=='1.1.0-dev.26f'
+          assert m['status']=='p26f-source-alignment-correction'
+          assert 'pflegelern-p26f-v1.1.0-dev26f' in sw
+          assert a['summary']['questionsWithFindings']==0
+          assert a['summary']['actionableQuestionCount']==0
+          assert a['summary']['reviewQuestionCount']==0
+          assert c['summary']['questionLearningContentChanges']==0
+          print('P26F metadata/cache/source-closure contract passed.')
+          PY
+
+      - name: Assert final working tree clean
+        run: git diff --exit-code
+
+      - name: Upload P26F source alignment evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: p26f-source-alignment
+          path: |
+            reports/P26F_SOURCE_ALIGNMENT_AUDIT.json
+            reports/P26F_SOURCE_ALIGNMENT_AUDIT.md
+            reports/P26F_SOURCE_ALIGNMENT_CORRECTION.json
+            reports/P26F_SOURCE_ALIGNMENT_CORRECTION.md
