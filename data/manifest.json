@@ -1,7 +1,7 @@
 {
   "project": "PflegeLern",
-  "phase": "P26D",
-  "version": "1.1.0-dev.26d",
+  "phase": "P26E",
+  "version": "1.1.0-dev.26e",
   "schemaVersion": 1,
   "source": {
     "title": "I care – Pflege",
@@ -9,7 +9,7 @@
     "editionYear": 2015,
     "basis": "Uploaded textbook only; no external clinical facts merged."
   },
-  "status": "p26d-confirmed-defect-repair",
+  "status": "p26e-semantic-closure-certification",
   "notes": [
     "P6 manually calibrated content preserved.",
     "P7 source signals were re-routed by PDF section position where possible.",
@@ -30,6 +30,7 @@
     "P26A performs detection-only semantic auditing across all 1,299 questions and materializes a deterministic defect registry tied to the frozen question-bank SHA-256. Unit/context-aware precision refinement confirms 7 high-confidence semantic defects and records 108 additional manual-review candidates without changing any question text, answer key, explanation, difficulty, FSRS scheduling, mastery, remediation or exam scoring.",
     "P26B corrects only the seven high-confidence semantic defects certified by P26A: two overlapping numeric single-choice items, four non-discriminating all-correct multiple-choice items, and one near-equivalent distractor. Every correction is grounded in existing textbook-derived concepts/cards; the 108 P26A manual-review candidates are preserved for later adjudication. Question IDs, types, concept anchors, difficulty, FSRS scheduling, mastery, remediation and mock-exam logic remain unchanged.",
     "P26C adjudicates all 108 lower-confidence P26A manual-review candidates against repository-local question, concept and source-card evidence without editing the question bank. It clears source-card length heuristics, intentional matching-template reuse and two already-contextualized case prompts when repository evidence resolves the signal; it promotes 14 persistent single-choice issues to a bounded repair queue (12 distractor-design defects and 2 answer-option-subsumption defects). No candidates remain unresolved, the seven P26B corrections stay closed, and no external clinical guidance, FSRS, mastery, remediation, repetition-control or mock-exam behavior changes are introduced.",
-    "P26D repairs exactly the 14 questions confirmed by P26C. Two overlapping answer-option defects are replaced with distinct textbook-derived alternatives, and twelve giveaway-prone distractor sets are replaced with topic-local source-card-backed distractors. Question IDs, types, target concepts, difficulty, correct option IDs, source anchors and explanations are preserved. No external clinical guidance is introduced, and FSRS, mastery, remediation, repetition control, input handling and mock-exam logic remain unchanged."
+    "P26D repairs exactly the 14 questions confirmed by P26C. Two overlapping answer-option defects are replaced with distinct textbook-derived alternatives, and twelve giveaway-prone distractor sets are replaced with topic-local source-card-backed distractors. Question IDs, types, target concepts, difficulty, correct option IDs, source anchors and explanations are preserved. No external clinical guidance is introduced, and FSRS, mastery, remediation, repetition control, input handling and mock-exam logic remain unchanged.",
+    "P26E closes the P26 semantic-audit chain without editing the question bank. It preserves the conservative P26A detector as a raw historical regression oracle and proves that its 94 remaining live review signals are exactly the 94 P26C-cleared, non-actionable heuristics; all seven P26A confirmed defects remain closed through P26B, all 14 P26C repair targets remain closed through P26D, and actionable defects, unadjudicated signals, pending repairs and stale repair targets are all zero."
   ]
 }
