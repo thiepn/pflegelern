@@ -1,0 +1,122 @@
+name: Validate PflegeLern P26C
+
+on:
+  push:
+    branches: [p26c-manual-review-adjudication]
+    paths:
+      - 'tools/p26c_adjudicate.py'
+      - 'tools/p26c_adjudication_refinement.py'
+      - 'tests/p26c-adjudication.test.py'
+      - 'tests/p26b-semantic-correction.test.py'
+      - 'tests/p26a-semantic-audit.test.py'
+      - 'reports/P26A_SEMANTIC_DEFECT_REGISTRY.json'
+      - 'reports/P26B_SEMANTIC_CORRECTION_REPORT.json'
+      - 'reports/P26C_MANUAL_REVIEW_ADJUDICATION.json'
+      - 'reports/P26C_MANUAL_REVIEW_ADJUDICATION.md'
+      - 'data/questions.json'
+      - 'data/concepts.json'
+      - 'data/cards.json'
+      - 'data/manifest.json'
+      - 'service-worker.js'
+      - '.github/workflows/validate-p26c.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  adjudication:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax checks
+        run: |
+          python3 -m py_compile tools/p26a_semantic_audit.py
+          python3 -m py_compile tools/p26a_semantic_refinement.py
+          python3 -m py_compile tools/p26c_adjudicate.py
+          python3 -m py_compile tools/p26c_adjudication_refinement.py
+          python3 -m py_compile tests/p26a-semantic-audit.test.py
+          python3 -m py_compile tests/p26b-semantic-correction.test.py
+          python3 -m py_compile tests/p26c-adjudication.test.py
+
+      - name: Freeze production question bank
+        run: sha256sum data/questions.json | tee /tmp/p26c-questions-before.sha256
+
+      - name: Materialize P26C adjudication registry
+        run: python3 tools/p26c_adjudication_refinement.py --write
+
+      - name: P26C adjudication certification
+        run: python3 tests/p26c-adjudication.test.py
+
+      - name: P26B correction regression
+        run: python3 tests/p26b-semantic-correction.test.py
+
+      - name: P26A detector regression
+        run: python3 tests/p26a-semantic-audit.test.py
+
+      - name: P25D question-quality regression
+        run: node tests/p25d-question-quality.test.mjs && node tests/p25d-integration.test.mjs
+
+      - name: P25C input regression
+        run: node tests/p25c-input-core.test.mjs
+
+      - name: P25B repetition regression
+        run: node tests/p25b-repetition-core.test.mjs
+
+      - name: P18-P20 core regressions
+        run: |
+          node tests/p18-mastery.test.mjs
+          node tests/p19-remediation.test.mjs
+          node tests/p20-exam-core.test.mjs
+          node tests/p20-runtime.test.mjs
+
+      - name: Assert P26C does not mutate questions
+        run: sha256sum -c /tmp/p26c-questions-before.sha256
+
+      - name: Validate P26C metadata and closure
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('data/manifest.json').read_text(encoding='utf-8'))
+          r=json.loads(Path('reports/P26C_MANUAL_REVIEW_ADJUDICATION.json').read_text(encoding='utf-8'))
+          sw=Path('service-worker.js').read_text(encoding='utf-8')
+          assert m['phase']=='P26C'
+          assert m['version']=='1.1.0-dev.26c'
+          assert m['status']=='p26c-manual-review-adjudication'
+          assert 'pflegelern-p26c-v1.1.0-dev26c' in sw
+          assert r['summary']['adjudicated']==108
+          assert r['summary']['confirmedForRepair']==14
+          assert r['summary']['cleared']==94
+          assert r['summary']['unresolved']==0
+          print('P26C metadata and adjudication closure passed.')
+          PY
+
+      - name: Upload P26C adjudication artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: p26c-manual-review-adjudication
+          path: |
+            reports/P26C_MANUAL_REVIEW_ADJUDICATION.json
+            reports/P26C_MANUAL_REVIEW_ADJUDICATION.md
+
+      - name: Commit materialized P26C reports
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/P26C_MANUAL_REVIEW_ADJUDICATION.json reports/P26C_MANUAL_REVIEW_ADJUDICATION.md
+          if git diff --cached --quiet; then
+            echo 'P26C adjudication reports already materialized.'
+          else
+            git commit -m 'P26C: materialize manual-review adjudication [skip ci]'
+            git push origin HEAD:p26c-manual-review-adjudication
+          fi
