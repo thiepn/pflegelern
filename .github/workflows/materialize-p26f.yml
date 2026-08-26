@@ -1,0 +1,77 @@
+name: Materialize PflegeLern P26F source alignment
+
+on:
+  push:
+    branches: [p26f-source-alignment-correction]
+    paths:
+      - '.github/workflows/materialize-p26f.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  correct:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: p26f-source-alignment-correction
+          fetch-depth: 1
+
+      - name: Freeze learning content fields
+        run: |
+          python3 - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          qs=json.loads(Path('data/questions.json').read_text(encoding='utf-8'))
+          fields=('id','conceptIds','type','prompt','difficulty','explanation','status','options','correct','correctText','certification')
+          frozen=[{k:q.get(k) for k in fields} for q in qs]
+          Path('/tmp/p26f-learning.json').write_text(json.dumps(frozen,ensure_ascii=False,separators=(',',':')))
+          print(hashlib.sha256(Path('/tmp/p26f-learning.json').read_bytes()).hexdigest())
+          PY
+
+      - name: Apply bounded source-hierarchy corrections
+        run: python3 tools/p26f_apply_source_alignment.py --write
+
+      - name: Run refined full-bank source alignment audit
+        run: python3 tools/p26f_source_alignment_refinement.py --write
+
+      - name: Require zero residual source-alignment findings
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('reports/P26F_SOURCE_ALIGNMENT_AUDIT.json').read_text(encoding='utf-8'))
+          assert r['scope']['questionCount']==1299
+          assert r['summary']['actionableQuestionCount']==0, r['actionableQuestionIds']
+          assert r['summary']['reviewQuestionCount']==0, r['reviewQuestionIds']
+          assert r['summary']['questionsWithFindings']==0, r['findings']
+          assert r['summary']['usedConceptsWithoutCards']==0
+          assert r['summary']['usedConceptsWithoutSourceEvidence']==0
+          print('P26F source alignment closed with zero residual findings.')
+          PY
+
+      - name: Prove question learning content unchanged
+        run: |
+          python3 - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          qs=json.loads(Path('data/questions.json').read_text(encoding='utf-8'))
+          fields=('id','conceptIds','type','prompt','difficulty','explanation','status','options','correct','correctText','certification')
+          frozen=[{k:q.get(k) for k in fields} for q in qs]
+          after=json.dumps(frozen,ensure_ascii=False,separators=(',',':'))
+          before=Path('/tmp/p26f-learning.json').read_text()
+          assert after==before
+          print('Question learning content byte-canonical projection unchanged.')
+          PY
+
+      - name: Commit P26F source alignment
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/concepts.json data/sections.json data/questions.json reports/P26F_SOURCE_ALIGNMENT_AUDIT.json reports/P26F_SOURCE_ALIGNMENT_AUDIT.md reports/P26F_SOURCE_ALIGNMENT_CORRECTION.json reports/P26F_SOURCE_ALIGNMENT_CORRECTION.md
+          git diff --cached --exit-code && exit 0
+          git commit -m 'P26F: materialize source alignment corrections [skip ci]'
+          git push origin HEAD:p26f-source-alignment-correction
