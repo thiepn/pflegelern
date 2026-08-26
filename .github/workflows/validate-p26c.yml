@@ -22,7 +22,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   adjudication:
@@ -51,8 +51,11 @@ jobs:
       - name: Freeze production question bank
         run: sha256sum data/questions.json | tee /tmp/p26c-questions-before.sha256
 
-      - name: Materialize P26C adjudication registry
+      - name: Recompute P26C adjudication registry
         run: python3 tools/p26c_adjudication_refinement.py --write
+
+      - name: Assert materialized reports are current
+        run: git diff --exit-code -- reports/P26C_MANUAL_REVIEW_ADJUDICATION.json reports/P26C_MANUAL_REVIEW_ADJUDICATION.md
 
       - name: P26C adjudication certification
         run: python3 tests/p26c-adjudication.test.py
@@ -108,15 +111,3 @@ jobs:
           path: |
             reports/P26C_MANUAL_REVIEW_ADJUDICATION.json
             reports/P26C_MANUAL_REVIEW_ADJUDICATION.md
-
-      - name: Commit materialized P26C reports
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add reports/P26C_MANUAL_REVIEW_ADJUDICATION.json reports/P26C_MANUAL_REVIEW_ADJUDICATION.md
-          if git diff --cached --quiet; then
-            echo 'P26C adjudication reports already materialized.'
-          else
-            git commit -m 'P26C: materialize manual-review adjudication [skip ci]'
-            git push origin HEAD:p26c-manual-review-adjudication
-          fi
