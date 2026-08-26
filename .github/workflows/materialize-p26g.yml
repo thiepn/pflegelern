@@ -1,0 +1,47 @@
+name: Materialize PflegeLern P26G certification
+
+on:
+  push:
+    branches: [p26g-final-1299-question-certification]
+    paths:
+      - '.github/workflows/materialize-p26g.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: p26g-final-1299-question-certification
+          fetch-depth: 1
+
+      - name: Generate final certification
+        run: python3 tools/p26g_final_certification.py --write
+
+      - name: Require frozen bank hash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('reports/P26G_FINAL_QUESTION_CERTIFICATION.json').read_text(encoding='utf-8'))
+          assert r['status']=='PASS'
+          assert r['freeze']['state']=='CERTIFIED_FROZEN'
+          assert r['freeze']['questionBankSha256']=='40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024'
+          assert r['bank']['questions']==1299
+          assert not r['findings']['errors']
+          print('P26G final bank certification materialized.')
+          PY
+
+      - name: Commit certification evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add reports/P26G_FINAL_QUESTION_CERTIFICATION.json reports/P26G_FINAL_QUESTION_CERTIFICATION.md
+          git diff --cached --exit-code && exit 0
+          git commit -m 'P26G: materialize final 1299-question certification [skip ci]'
+          git push origin HEAD:p26g-final-1299-question-certification
