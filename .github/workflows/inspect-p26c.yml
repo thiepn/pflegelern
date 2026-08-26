@@ -5,6 +5,7 @@ on:
     branches: [p26c-manual-review-adjudication]
     paths:
       - 'tools/p26c_review_packets.py'
+      - 'tools/p26c_adjudicate.py'
       - '.github/workflows/inspect-p26c.yml'
   workflow_dispatch:
 
@@ -14,6 +15,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: P26C adjudication preview
+        run: python3 tools/p26c_adjudicate.py
       - name: Candidate summary
         run: python3 tools/p26c_review_packets.py --batch 0 --batch-size 0
       - name: Answer-option subsumption
@@ -24,11 +27,3 @@ jobs:
         run: python3 tools/p26c_review_packets.py --issue EXACT_PROMPT_DUPLICATE
       - name: Absolute-wording distractors
         run: python3 tools/p26c_review_packets.py --issue DISTRACTOR_ABSOLUTE_WORDING_CLUSTER
-      - name: Broad reference answers
-        run: python3 tools/p26c_review_packets.py --issue BROAD_REFERENCE_ANSWER_TO_NARROW_PROMPT
-      - name: Under-specified free responses batch 1
-        run: python3 tools/p26c_review_packets.py --issue UNDER_SPECIFIED_FREE_RESPONSE_PROMPT --batch 0 --batch-size 20
-      - name: Under-specified free responses batch 2
-        run: python3 tools/p26c_review_packets.py --issue UNDER_SPECIFIED_FREE_RESPONSE_PROMPT --batch 1 --batch-size 20
-      - name: Under-specified free responses batch 3
-        run: python3 tools/p26c_review_packets.py --issue UNDER_SPECIFIED_FREE_RESPONSE_PROMPT --batch 2 --batch-size 20
