@@ -5,6 +5,7 @@ on:
     branches: [p27a-release-readiness-audit]
     paths:
       - '.github/workflows/materialize-p27a.yml'
+      - 'tools/p27a_release_readiness_audit.py'
   workflow_dispatch:
 
 permissions:
@@ -33,7 +34,7 @@ jobs:
           assert r['status']=='ACTION_REQUIRED'
           assert r['certifiedQuestionBank']['intact'] is True
           assert r['summary']['staticRuntimeBlockers']==0
-          assert r['summary']['actionableFindings']>=4
+          assert r['summary']['actionableFindings']>=5
           assert r['nextPhase']['phase']=='P27B'
           print('P27A audit materialized with intact runtime baseline and release-truth findings.')
           PY
