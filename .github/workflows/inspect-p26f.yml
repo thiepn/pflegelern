@@ -1,0 +1,25 @@
+name: Inspect PflegeLern P26F source alignment
+
+on:
+  push:
+    branches: [p26f-source-alignment-correction]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Run source-alignment audit
+        run: python3 tools/p26f_source_alignment.py --write
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: p26f-source-alignment-audit
+          path: |
+            reports/P26F_SOURCE_ALIGNMENT_AUDIT.json
+            reports/P26F_SOURCE_ALIGNMENT_AUDIT.md
