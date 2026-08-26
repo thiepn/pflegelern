@@ -7,6 +7,7 @@ import re
 import p26c_adjudicate as base
 
 _ORIGINAL_RESOLVE_SOURCE_CONTRACT = base.resolve_source_contract
+_ORIGINAL_ADJUDICATE = base.adjudicate
 
 
 def _tokens(text):
@@ -45,7 +46,21 @@ def resolve_source_contract(q, cards_by_concept):
     }
 
 
+def adjudicate():
+    report = _ORIGINAL_ADJUDICATE()
+    for row in report['adjudications']:
+        if row.get('evidence', {}).get('resolutionMode') == 'equivalent-enumeration-prompt':
+            row['rationale'] = (
+                'The anchored enumeration card has the exact same reference answer, and both prompts '
+                'request the same explicit item count for the same concept. The question is therefore a '
+                'more specific wording of the source-card task rather than an under-specified response prompt.'
+            )
+    report['policy']['sourceCardEquivalentEnumerationContractClearsLengthHeuristic'] = True
+    return report
+
+
 base.resolve_source_contract = resolve_source_contract
+base.adjudicate = adjudicate
 
 if __name__ == '__main__':
     base.main()
