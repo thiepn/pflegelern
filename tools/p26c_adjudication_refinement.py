@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""P26C precision refinement for source-derived enumeration prompts."""
+"""P26C precision refinement for equivalent source-derived enumeration prompts."""
 
 from __future__ import annotations
 
@@ -25,8 +25,6 @@ def resolve_source_contract(q, cards_by_concept):
     matches = []
     for cid in q.get('conceptIds', []):
         for card in cards_by_concept.get(cid, []):
-            if card.get('type') != 'enumeration':
-                continue
             front = base.norm(card.get('front') or card.get('prompt') or card.get('question'))
             back = base.norm(card.get('back') or card.get('answer') or card.get('text'))
             if not front or not back or back != explanation:
@@ -51,9 +49,10 @@ def adjudicate():
     for row in report['adjudications']:
         if row.get('evidence', {}).get('resolutionMode') == 'equivalent-enumeration-prompt':
             row['rationale'] = (
-                'The anchored enumeration card has the exact same reference answer, and both prompts '
-                'request the same explicit item count for the same concept. The question is therefore a '
-                'more specific wording of the source-card task rather than an under-specified response prompt.'
+                'The anchored source card has the exact same reference answer, and both prompts request '
+                'the same explicit item count for the same concept with substantial wording overlap. '
+                'The question is therefore a more specific formulation of the source-card task rather '
+                'than an under-specified free-response prompt.'
             )
     report['policy']['sourceCardEquivalentEnumerationContractClearsLengthHeuristic'] = True
     return report
