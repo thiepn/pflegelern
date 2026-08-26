@@ -1,0 +1,138 @@
+name: Validate PflegeLern P26E
+
+on:
+  push:
+    branches: [p26e-semantic-closure-certification]
+    paths:
+      - 'data/manifest.json'
+      - 'service-worker.js'
+      - 'tools/p26e_semantic_closure.py'
+      - 'tests/p26a-semantic-audit.test.py'
+      - 'tests/p26b-semantic-correction.test.py'
+      - 'tests/p26c-adjudication.test.py'
+      - 'tests/p26d-confirmed-defect-repair.test.py'
+      - 'tests/p26e-semantic-closure.test.py'
+      - 'reports/P26A_SEMANTIC_DEFECT_REGISTRY.json'
+      - 'reports/P26B_SEMANTIC_CORRECTION_REPORT.json'
+      - 'reports/P26C_MANUAL_REVIEW_ADJUDICATION.json'
+      - 'reports/P26D_CONFIRMED_DEFECT_REPAIR.json'
+      - 'reports/P26E_SEMANTIC_CLOSURE.json'
+      - 'reports/P26E_SEMANTIC_CLOSURE.md'
+      - '.github/workflows/validate-p26e.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax checks
+        run: |
+          python3 -m py_compile tools/p26a_semantic_audit.py
+          python3 -m py_compile tools/p26a_semantic_refinement.py
+          python3 -m py_compile tools/p26e_semantic_closure.py
+          python3 -m py_compile tests/p26a-semantic-audit.test.py
+          python3 -m py_compile tests/p26b-semantic-correction.test.py
+          python3 -m py_compile tests/p26c-adjudication.test.py
+          python3 -m py_compile tests/p26d-confirmed-defect-repair.test.py
+          python3 -m py_compile tests/p26e-semantic-closure.test.py
+
+      - name: Assert P26E does not modify the P26D question bank
+        run: |
+          git fetch origin main
+          git diff --exit-code origin/main...HEAD -- data/questions.json
+
+      - name: Verify P26 semantic hash chain
+        run: |
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          p26c=json.loads(Path('reports/P26C_MANUAL_REVIEW_ADJUDICATION.json').read_text(encoding='utf-8'))
+          p26d=json.loads(Path('reports/P26D_CONFIRMED_DEFECT_REPAIR.json').read_text(encoding='utf-8'))
+          p26e=json.loads(Path('reports/P26E_SEMANTIC_CLOSURE.json').read_text(encoding='utf-8'))
+          live=hashlib.sha256(Path('data/questions.json').read_bytes()).hexdigest()
+          assert p26d['baseline']['questionBankBeforeSha256'] == p26c['baseline']['liveQuestionBankSha256']
+          assert p26d['baseline']['questionBankAfterSha256'] == live
+          assert p26e['baseline']['liveQuestionBankSha256'] == live
+          assert p26e['summary']['semanticClosure'] is True
+          print('P26 semantic bank chain certified:', p26c['baseline']['liveQuestionBankSha256'], '->', live, '-> closure')
+          PY
+
+      - name: P26E semantic closure certification
+        run: python3 tests/p26e-semantic-closure.test.py
+
+      - name: P26D repair regression
+        run: python3 tests/p26d-confirmed-defect-repair.test.py
+
+      - name: P26C historical adjudication regression
+        run: python3 tests/p26c-adjudication.test.py
+
+      - name: P26B correction regression
+        run: python3 tests/p26b-semantic-correction.test.py
+
+      - name: P26A raw detector regression
+        run: python3 tests/p26a-semantic-audit.test.py
+
+      - name: P25D question-quality regressions
+        run: node tests/p25d-question-quality.test.mjs && node tests/p25d-integration.test.mjs
+
+      - name: P25C input regression
+        run: node tests/p25c-input-core.test.mjs
+
+      - name: P25B repetition regression
+        run: node tests/p25b-repetition-core.test.mjs
+
+      - name: P18-P20 core regressions
+        run: |
+          node tests/p18-mastery.test.mjs
+          node tests/p19-remediation.test.mjs
+          node tests/p20-exam-core.test.mjs
+          node tests/p20-runtime.test.mjs
+
+      - name: Verify P26E metadata and closure report
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('data/manifest.json').read_text(encoding='utf-8'))
+          sw=Path('service-worker.js').read_text(encoding='utf-8')
+          r=json.loads(Path('reports/P26E_SEMANTIC_CLOSURE.json').read_text(encoding='utf-8'))
+          assert m['phase']=='P26E'
+          assert m['version']=='1.1.0-dev.26e'
+          assert m['status']=='p26e-semantic-closure-certification'
+          assert 'pflegelern-p26e-v1.1.0-dev26e' in sw
+          assert r['summary']['rawDetectorConfirmedDefects']==0
+          assert r['summary']['rawDetectorReviewSignals']==94
+          assert r['summary']['clearedHistoricalSignals']==94
+          assert r['summary']['actionableDefects']==0
+          assert r['summary']['unadjudicatedSignals']==0
+          assert r['summary']['pendingRepairs']==0
+          assert r['summary']['staleRepairTargets']==0
+          assert r['summary']['semanticClosure'] is True
+          print('P26E metadata and closure summary passed.')
+          PY
+
+      - name: Assert deterministic read-only certification
+        run: |
+          python3 tools/p26e_semantic_closure.py
+          git diff --exit-code
+
+      - name: Upload P26E closure evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: p26e-semantic-closure
+          path: |
+            reports/P26E_SEMANTIC_CLOSURE.json
+            reports/P26E_SEMANTIC_CLOSURE.md
