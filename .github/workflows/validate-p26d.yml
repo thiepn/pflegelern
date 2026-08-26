@@ -1,0 +1,126 @@
+name: Validate PflegeLern P26D
+
+on:
+  push:
+    branches: [p26d-confirmed-defect-repair]
+    paths:
+      - 'data/questions.json'
+      - 'data/manifest.json'
+      - 'service-worker.js'
+      - 'tools/p26d_apply_repairs.py'
+      - 'tests/p26a-semantic-audit.test.py'
+      - 'tests/p26b-semantic-correction.test.py'
+      - 'tests/p26c-adjudication.test.py'
+      - 'tests/p26d-confirmed-defect-repair.test.py'
+      - 'reports/P26A_SEMANTIC_DEFECT_REGISTRY.json'
+      - 'reports/P26B_SEMANTIC_CORRECTION_REPORT.json'
+      - 'reports/P26C_MANUAL_REVIEW_ADJUDICATION.json'
+      - 'reports/P26D_CONFIRMED_DEFECT_REPAIR.json'
+      - 'reports/P26D_CONFIRMED_DEFECT_REPAIR.md'
+      - '.github/workflows/validate-p26d.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  certify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax checks
+        run: |
+          python3 -m py_compile tools/p26a_semantic_audit.py
+          python3 -m py_compile tools/p26a_semantic_refinement.py
+          python3 -m py_compile tools/p26c_adjudicate.py
+          python3 -m py_compile tools/p26c_adjudication_refinement.py
+          python3 -m py_compile tools/p26d_apply_repairs.py
+          python3 -m py_compile tests/p26a-semantic-audit.test.py
+          python3 -m py_compile tests/p26b-semantic-correction.test.py
+          python3 -m py_compile tests/p26c-adjudication.test.py
+          python3 -m py_compile tests/p26d-confirmed-defect-repair.test.py
+
+      - name: Verify P26D historical and live hashes
+        run: |
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          p26c=json.loads(Path('reports/P26C_MANUAL_REVIEW_ADJUDICATION.json').read_text(encoding='utf-8'))
+          p26d=json.loads(Path('reports/P26D_CONFIRMED_DEFECT_REPAIR.json').read_text(encoding='utf-8'))
+          live=hashlib.sha256(Path('data/questions.json').read_bytes()).hexdigest()
+          assert p26d['baseline']['questionBankBeforeSha256'] == p26c['baseline']['liveQuestionBankSha256']
+          assert p26d['baseline']['questionBankAfterSha256'] == live
+          assert p26d['summary']['targets'] == 14
+          assert p26d['summary']['repaired'] == 14
+          print('P26D hash chain certified:', p26d['baseline']['questionBankBeforeSha256'], '->', live)
+          PY
+
+      - name: P26D confirmed-repair certification
+        run: python3 tests/p26d-confirmed-defect-repair.test.py
+
+      - name: P26C historical adjudication regression
+        run: python3 tests/p26c-adjudication.test.py
+
+      - name: P26B correction regression
+        run: python3 tests/p26b-semantic-correction.test.py
+
+      - name: P26A detector regression
+        run: python3 tests/p26a-semantic-audit.test.py
+
+      - name: P25D question-quality regressions
+        run: node tests/p25d-question-quality.test.mjs && node tests/p25d-integration.test.mjs
+
+      - name: P25C input regression
+        run: node tests/p25c-input-core.test.mjs
+
+      - name: P25B repetition regression
+        run: node tests/p25b-repetition-core.test.mjs
+
+      - name: P18-P20 core regressions
+        run: |
+          node tests/p18-mastery.test.mjs
+          node tests/p19-remediation.test.mjs
+          node tests/p20-exam-core.test.mjs
+          node tests/p20-runtime.test.mjs
+
+      - name: Verify P26D metadata
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('data/manifest.json').read_text(encoding='utf-8'))
+          sw=Path('service-worker.js').read_text(encoding='utf-8')
+          r=json.loads(Path('reports/P26D_CONFIRMED_DEFECT_REPAIR.json').read_text(encoding='utf-8'))
+          assert m['phase']=='P26D'
+          assert m['version']=='1.1.0-dev.26d'
+          assert m['status']=='p26d-confirmed-defect-repair'
+          assert 'pflegelern-p26d-v1.1.0-dev26d' in sw
+          assert r['summary']=={
+              'targets':14,
+              'repaired':14,
+              'answerOptionSubsumption':2,
+              'distractorDesign':12,
+              'questionCount':1299,
+          }
+          print('P26D metadata passed.')
+          PY
+
+      - name: Assert clean read-only certification
+        run: git diff --exit-code
+
+      - name: Upload P26D repair evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: p26d-confirmed-defect-repair
+          path: |
+            reports/P26D_CONFIRMED_DEFECT_REPAIR.json
+            reports/P26D_CONFIRMED_DEFECT_REPAIR.md
