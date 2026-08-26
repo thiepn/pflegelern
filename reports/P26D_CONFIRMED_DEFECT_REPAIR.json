@@ -1,0 +1,807 @@
+{
+  "schemaVersion": 1,
+  "phase": "P26D",
+  "status": "confirmed-defects-repaired",
+  "baseline": {
+    "p26cReportSha256": "71f9de4de3d557f24fdf7ac2d74d1e256d97365ec82222cf139ed6416ab9befb",
+    "questionBankBeforeSha256": "67b82cf4042b3e7f184804f6af7e0b1e6ac89f4b32c9b2513c6c1fed4df5e164",
+    "questionBankAfterSha256": "926f34d3c33201b5d4bd131ec18f8f1e19249a19ddca5b04711a4baf7c0ff629"
+  },
+  "summary": {
+    "targets": 14,
+    "repaired": 14,
+    "answerOptionSubsumption": 2,
+    "distractorDesign": 12,
+    "questionCount": 1299
+  },
+  "targetQuestionIds": [
+    "q-21-5-06",
+    "q-36-03",
+    "q-p12-0043",
+    "q-p12-0163",
+    "q-p12-0165",
+    "q-p12-0272",
+    "q-p12-0288",
+    "q-p12-0295",
+    "q-p12-0310",
+    "q-p12-0337",
+    "q-p12-0344",
+    "q-p12-0348",
+    "q-p12-0534",
+    "q-p12-0634"
+  ],
+  "repairs": [
+    {
+      "questionId": "q-21-5-06",
+      "issue": "distractor-absolute-wording-cluster",
+      "correctOptionId": "b",
+      "targetConceptIds": [
+        "concept-21-5-mobilisation"
+      ],
+      "distractorConceptIds": [
+        "concept-21-5-verdacht-bettruhe",
+        "concept-21-5-bestaetigt-antikoag-kompression",
+        "concept-21-5-lungenembolie-komplikation"
+      ],
+      "evidenceCardIds": [
+        "card-21-5-bedrest-suspect",
+        "card-21-5-confirmed",
+        "card-21-5-pe"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "Unter Antikoagulation und Kompression ist zwingend strikte Bettruhe nötig."
+        },
+        {
+          "id": "b",
+          "text": "Unter Antikoagulation und Kompression ist keine strikte Bettruhe mehr nötig."
+        },
+        {
+          "id": "c",
+          "text": "Mobilisation ist grundsätzlich verboten."
+        },
+        {
+          "id": "d",
+          "text": "Kompression schließt Mobilisation aus."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Zunächst Bettruhe, bis der Verdacht ärztlich abgeklärt ist."
+        },
+        {
+          "id": "b",
+          "text": "Unter Antikoagulation und Kompression ist keine strikte Bettruhe mehr nötig."
+        },
+        {
+          "id": "c",
+          "text": "Bei bestätigter TVT nennt das Lehrbuch Antikoagulation, z. B. mit Heparin, und Kompression als zentrale Maßnahmen."
+        },
+        {
+          "id": "d",
+          "text": "Eine Lungenembolie kann als lebensbedrohliche Komplikation aus einer unerkannten Venenthrombose entstehen."
+        }
+      ]
+    },
+    {
+      "questionId": "q-36-03",
+      "issue": "distractor-absolute-wording-cluster",
+      "correctOptionId": "b",
+      "targetConceptIds": [
+        "concept-36-retard-nicht-moersern"
+      ],
+      "distractorConceptIds": [
+        "concept-36-679-84-wissen-1",
+        "concept-36-682-22-wissen-1",
+        "concept-36-681-41-wissen-1"
+      ],
+      "evidenceCardIds": [
+        "card-679-84-wissen-1",
+        "card-682-22-wissen-1",
+        "card-681-41-wissen-1"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "Sie sollen grundsätzlich gemörsert werden."
+        },
+        {
+          "id": "b",
+          "text": "Sie dürfen nicht gemörsert werden."
+        },
+        {
+          "id": "c",
+          "text": "Sie werden immer mit Milch gegeben."
+        },
+        {
+          "id": "d",
+          "text": "Sie müssen immer geteilt werden."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Tabletten oder andere nicht flüssige orale Medikamente werden in der Regel in einem Dispenser für die nächsten 24 Stunden gerichtet."
+        },
+        {
+          "id": "b",
+          "text": "Sie dürfen nicht gemörsert werden."
+        },
+        {
+          "id": "c",
+          "text": "Transdermale therapeutische Systeme werden auf die intakte Haut appliziert."
+        },
+        {
+          "id": "d",
+          "text": "Zäpfchen werden handwarm verabreicht und können mit etwas warmem Wasser angefeuchtet werden."
+        }
+      ]
+    },
+    {
+      "questionId": "q-p12-0043",
+      "issue": "distractor-absolute-wording-cluster",
+      "correctOptionId": "d",
+      "targetConceptIds": [
+        "concept-15-311-60-achtung-1"
+      ],
+      "distractorConceptIds": [
+        "concept-15-306-62-merken-1",
+        "concept-15-310-81-merken-1",
+        "concept-15-305-42-merken-1"
+      ],
+      "evidenceCardIds": [
+        "card-306-62-merken-1",
+        "card-310-81-merken-1",
+        "card-305-42-merken-1"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "Berühren Sie niemals einen Menschen, der an einer Stromquelle „klebt“, Sie könnten dann ebenfalls einen Stromschlag erleiden."
+        },
+        {
+          "id": "b",
+          "text": "Klagen die Patienten über Übelkeit, Erbrechen und Oberbauchschmerzen oder beobachten Sie eine erhöhte Harnausscheidung (Polyurie) und starken Durst (Polydipsie), müssen Sie sofort den Arzt informieren."
+        },
+        {
+          "id": "c",
+          "text": "Die Shuntpunktion erfolgt ausschließlich in die Vene, die mit arteriellem Blut versorgt wird, und nie in den Shunt (Anastomose = Verbindungsstelle von Arterie und Vene)."
+        },
+        {
+          "id": "d",
+          "text": "Fassen Sie niemals mit benutzen Handschuhen in den sauberen Wäscheschrank oder Wagen, um etwas zu entnehmen – Sie kontaminieren womöglich die Wäsche und bereiten so den Weg für eine Schmierinfektion."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Das Tragen von Handschuhen ersetzt nicht die hygienische Händedesinfektion und bietet keinen 100 %igen Schutz vor Keimen auf den Händen."
+        },
+        {
+          "id": "b",
+          "text": "Einmalprodukte dürfen nicht wiederaufbereitet und müssen nach Gebrauch entsorgt werden."
+        },
+        {
+          "id": "c",
+          "text": "Bei feuchter Haut wird das Händedesinfektionsmittel verdünnt und es kommt nicht mehr genug Wirkstoff auf die Hände."
+        },
+        {
+          "id": "d",
+          "text": "Fassen Sie niemals mit benutzen Handschuhen in den sauberen Wäscheschrank oder Wagen, um etwas zu entnehmen – Sie kontaminieren womöglich die Wäsche und bereiten so den Weg für eine Schmierinfektion."
+        }
+      ]
+    },
+    {
+      "questionId": "q-p12-0163",
+      "issue": "distractor-absolute-wording-cluster",
+      "correctOptionId": "a",
+      "targetConceptIds": [
+        "concept-31-605-15-achtung-1"
+      ],
+      "distractorConceptIds": [
+        "concept-31-603-86-achtung-1",
+        "concept-31-604-53-wissen-3",
+        "concept-31-604-53-wissen-4"
+      ],
+      "evidenceCardIds": [
+        "card-603-86-achtung-1",
+        "card-604-53-wissen-3",
+        "card-604-53-wissen-4"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "Sie sind immer ein Alarmzeichen und sollten ärztlich abgeklärt werden."
+        },
+        {
+          "id": "b",
+          "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+        },
+        {
+          "id": "c",
+          "text": "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+        },
+        {
+          "id": "d",
+          "text": "Zunächst Bettruhe, bis der Verdacht ärztlich abgeklärt ist."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Sie sind immer ein Alarmzeichen und sollten ärztlich abgeklärt werden."
+        },
+        {
+          "id": "b",
+          "text": "Schwangere sollten zum Schutz vor Infektionen wie Listeriose und Toxoplasmose keine rohen tierischen Lebensmittel essen."
+        },
+        {
+          "id": "c",
+          "text": "Alle Medikamente bedürfen einer ärztlichen Anordnung. Auch nicht verschreibungspflichtige Medikamente sollten Schwangere nur in Absprache mit ihrem Arzt einnehmen."
+        },
+        {
+          "id": "d",
+          "text": "Regelmäßige Bewegung trägt zu einem unkomplizierten Schwangerschaftsverlauf bei. Auf Sportarten mit erhöhter Verletzungsgefahr sollten Schwangere aber verzichten."
+        }
+      ]
+    },
+    {
+      "questionId": "q-p12-0165",
+      "issue": "distractor-absolute-wording-cluster",
+      "correctOptionId": "a",
+      "targetConceptIds": [
+        "concept-31-607-29-merken-1"
+      ],
+      "distractorConceptIds": [
+        "concept-31-603-86-achtung-1",
+        "concept-31-604-53-wissen-4",
+        "concept-31-604-53-wissen-3"
+      ],
+      "evidenceCardIds": [
+        "card-603-86-achtung-1",
+        "card-604-53-wissen-4",
+        "card-604-53-wissen-3"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "Bei schweren anhaltenden Schmerzen während einer Schwangerschaft muss immer ein Arzt hinzugezogen werden. Sie können harmlos sein oder ein Warnsignal für drohende Komplikationen darstellen."
+        },
+        {
+          "id": "b",
+          "text": "Bei Knieschmerzen muss immer eine Erkrankung der Hüftgelenke ausgeschlossen werden, denn bei jedem 5. Patienten löst ein Hüftproblem die Knieschmerzen aus."
+        },
+        {
+          "id": "c",
+          "text": "Freiheitsbeschränkende Maßnahmen sind grundsätzlich immer und nach Kräften zu vermeiden. Werden sie dennoch nötig, sollte(n)."
+        },
+        {
+          "id": "d",
+          "text": "Die anatomische Lage des Wurmfortsatzes kann sehr unterschiedlich sein, wodurch der Schmerzort variieren kann. Besonders während der Schwangerschaft kann die Appendix sogar in den rechten Oberbauch verlagert sein und dort Schmerzen verursachen."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Bei schweren anhaltenden Schmerzen während einer Schwangerschaft muss immer ein Arzt hinzugezogen werden. Sie können harmlos sein oder ein Warnsignal für drohende Komplikationen darstellen."
+        },
+        {
+          "id": "b",
+          "text": "Schwangere sollten zum Schutz vor Infektionen wie Listeriose und Toxoplasmose keine rohen tierischen Lebensmittel essen."
+        },
+        {
+          "id": "c",
+          "text": "Regelmäßige Bewegung trägt zu einem unkomplizierten Schwangerschaftsverlauf bei. Auf Sportarten mit erhöhter Verletzungsgefahr sollten Schwangere aber verzichten."
+        },
+        {
+          "id": "d",
+          "text": "Alle Medikamente bedürfen einer ärztlichen Anordnung. Auch nicht verschreibungspflichtige Medikamente sollten Schwangere nur in Absprache mit ihrem Arzt einnehmen."
+        }
+      ]
+    },
+    {
+      "questionId": "q-p12-0272",
+      "issue": "answer-option-subsumption",
+      "correctOptionId": "d",
+      "targetConceptIds": [
+        "concept-52-872-10-definition-1"
+      ],
+      "distractorConceptIds": [
+        "concept-52-881-2-merken-1",
+        "concept-52-874-86-definition-1",
+        "concept-52-879-70-merken-1"
+      ],
+      "evidenceCardIds": [
+        "card-881-2-merken-1",
+        "card-874-86-definition-1",
+        "card-879-70-merken-1"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "bewegungstherapeutisches Behandlungskonzept zur Re."
+        },
+        {
+          "id": "b",
+          "text": "Handling ist ein Begriff innerhalb des Bobath-Konzepts."
+        },
+        {
+          "id": "c",
+          "text": "Ein Patient sollte nur dann stehen, wenn er sein Körpergewicht auf mindestens ein Bein abgeben kann. Sonst kann der Patient überfordert werden."
+        },
+        {
+          "id": "d",
+          "text": "Das Bobath-Konzept ist ein weltweit angewendetes bewegungstherapeutisches Behandlungskonzept."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Der Transfer wird immer in mehreren Schritten durchgeführt. Die Pflegekraft muss die Fußstellung des Patienten kontrollieren und ggf. korrigieren."
+        },
+        {
+          "id": "b",
+          "text": "Handling ist ein Begriff innerhalb des Bobath-Konzepts."
+        },
+        {
+          "id": "c",
+          "text": "Ein Patient sollte nur dann stehen, wenn er sein Körpergewicht auf mindestens ein Bein abgeben kann. Sonst kann der Patient überfordert werden."
+        },
+        {
+          "id": "d",
+          "text": "Das Bobath-Konzept ist ein weltweit angewendetes bewegungstherapeutisches Behandlungskonzept."
+        }
+      ]
+    },
+    {
+      "questionId": "q-p12-0288",
+      "issue": "distractor-absolute-wording-cluster",
+      "correctOptionId": "d",
+      "targetConceptIds": [
+        "concept-53-903-10-merken-1"
+      ],
+      "distractorConceptIds": [
+        "concept-53-902-22-definition-1",
+        "concept-53-902-74-wissen-3",
+        "concept-53-903-73-wissen-1"
+      ],
+      "evidenceCardIds": [
+        "card-902-22-definition-1",
+        "card-902-74-wissen-3",
+        "card-903-73-wissen-1"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "Führen Sie das Darmrohr nie mit Gewalt ein. Lässt es sich nicht einschieben, brechen Sie den Vorgang sofort ab und informieren Sie den Arzt."
+        },
+        {
+          "id": "b",
+          "text": "Patienten kommen nicht immer von sich aus auf Pflegende zu, um sich beraten zu lassen. Häufig müssen Sie den Beratungsbedarf selbst erkennen und die wahrgenommenen Problemlagen anschließend einfühlsam mit den Patienten erörtern."
+        },
+        {
+          "id": "c",
+          "text": "Wenn Sie den Eindruck haben, dass der abhängige Patient versucht, Angehörige zu manipulieren und unter Druck zu setzen, um Alkohol oder Drogen auf die Station zu schmuggeln, sprechen Sie die Angehörigen ruhig offen darauf an."
+        },
+        {
+          "id": "d",
+          "text": "Um kritische Frequenzen frühzeitig zu erkennen, sollten die eingestellten Alarmgrenzen am Monitor regelmäßig kontrolliert werden. Klagt der Patient über Herzstolpern oder treten kardiale Synkopen auf, informieren Sie den Arzt."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Herzrhythmusstörungen zeigen sich in einer gestörten Herzfrequenz und/oder Unregelmäßigkeit des Herzschlags. Die Ursache liegt in einer Störung des Reizbildungs-/Reizleitungssystems des Herzens."
+        },
+        {
+          "id": "b",
+          "text": "Zur Diagnostik nennt das Lehrbuch EKGs, Echokardiografie, Blutuntersuchungen, Herzkatheteruntersuchung und Event-Recorder-Untersuchung."
+        },
+        {
+          "id": "c",
+          "text": "Bei bradykarden Herzrhythmusstörungen nennt das Lehrbuch Parasympatholytika, z. B. Atropin, und Sympathomimetika, z. B. Alupent."
+        },
+        {
+          "id": "d",
+          "text": "Um kritische Frequenzen frühzeitig zu erkennen, sollten die eingestellten Alarmgrenzen am Monitor regelmäßig kontrolliert werden. Klagt der Patient über Herzstolpern oder treten kardiale Synkopen auf, informieren Sie den Arzt."
+        }
+      ]
+    },
+    {
+      "questionId": "q-p12-0295",
+      "issue": "distractor-absolute-wording-cluster",
+      "correctOptionId": "d",
+      "targetConceptIds": [
+        "concept-54-928-69-achtung-1"
+      ],
+      "distractorConceptIds": [
+        "concept-54-928-7-wissen-2",
+        "concept-54-927-20-merken-1",
+        "concept-54-930-25-definition-1"
+      ],
+      "evidenceCardIds": [
+        "card-928-7-wissen-2",
+        "card-927-20-merken-1",
+        "card-930-25-definition-1"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+        },
+        {
+          "id": "b",
+          "text": "Die Verätzung ist ein Notfall."
+        },
+        {
+          "id": "c",
+          "text": "Ein Asthma-Anfall ist immer eine lebensbedrohliche Situation."
+        },
+        {
+          "id": "d",
+          "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Gehtraining zur Bildung von Kollateralen, Normalisierung von Gewicht und Blutzucker sowie Nikotinkarenz nennt das Lehrbuch als gesundheitsfördernde Maßnahmen bei pAVK."
+        },
+        {
+          "id": "b",
+          "text": "Patienten mit pAVK dürfen keine medizinischen Thromboseprophylaxestrümpfe zur routinemäßigen Thromboseprophylaxe angezogen bekommen."
+        },
+        {
+          "id": "c",
+          "text": "Von einem Aneurysma wird gesprochen, wenn die Gefäßwand einer Arterie lokal erweitert ist."
+        },
+        {
+          "id": "d",
+          "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+        }
+      ]
+    },
+    {
+      "questionId": "q-p12-0310",
+      "issue": "distractor-absolute-wording-cluster",
+      "correctOptionId": "d",
+      "targetConceptIds": [
+        "concept-55-950-39-achtung-1"
+      ],
+      "distractorConceptIds": [
+        "concept-55-949-41-definition-1",
+        "concept-55-949-84-merken-1",
+        "concept-55-953-68-wissen-2"
+      ],
+      "evidenceCardIds": [
+        "card-949-41-definition-1",
+        "card-949-84-merken-1",
+        "card-953-68-wissen-2"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+        },
+        {
+          "id": "b",
+          "text": "Im akuten Gichtanfall darf Allopurinol nicht genommen werden, da es den Anfall verstärken könnte."
+        },
+        {
+          "id": "c",
+          "text": "Sie sind immer ein Alarmzeichen und sollten ärztlich abgeklärt werden."
+        },
+        {
+          "id": "d",
+          "text": "Ein Asthma-Anfall ist immer eine lebensbedrohliche Situation."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Asthma bronchiale ist eine chronisch-entzündliche Erkrankung der Atemwege, die durch eine Überempfindlichkeit des Bronchialsystems und Atemwegsobstruktion gekennzeichnet ist."
+        },
+        {
+          "id": "b",
+          "text": "Im Säuglings- und Erwachsenenalter ist das Infektasthma am häufigsten. Bei Kindern und Jugendlichen überwiegt das allergische Asthma."
+        },
+        {
+          "id": "c",
+          "text": "Während eines Anfalls treten exspiratorisch pfeifende Geräusche und eine erhöhte Atemfrequenz auf. Der Patient setzt seine Atemmuskulatur ein und sitzt aufrecht."
+        },
+        {
+          "id": "d",
+          "text": "Ein Asthma-Anfall ist immer eine lebensbedrohliche Situation."
+        }
+      ]
+    },
+    {
+      "questionId": "q-p12-0337",
+      "issue": "distractor-absolute-wording-cluster",
+      "correctOptionId": "d",
+      "targetConceptIds": [
+        "concept-55-978-46-achtung-1"
+      ],
+      "distractorConceptIds": [
+        "concept-55-977-78-definition-1",
+        "concept-55-948-22-achtung-1",
+        "concept-55-953-32-achtung-1"
+      ],
+      "evidenceCardIds": [
+        "card-977-78-definition-1",
+        "card-948-22-achtung-1",
+        "card-953-32-achtung-1"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+        },
+        {
+          "id": "b",
+          "text": "Die Verätzung ist ein Notfall."
+        },
+        {
+          "id": "c",
+          "text": "Sie sind immer ein Alarmzeichen und sollten ärztlich abgeklärt werden."
+        },
+        {
+          "id": "d",
+          "text": "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Als Pneumothorax bezeichnet man eine Ansammlung von Luft im Pleuraspalt."
+        },
+        {
+          "id": "b",
+          "text": "Einen Arzt informieren, wenn nach der Bronchoskopie Warnsymptome auftreten, und die Vitalwerte des Patienten kontrollieren."
+        },
+        {
+          "id": "c",
+          "text": "Wenn ein Asthma-Patient unter Luftnot leidet, müssen Sie umgehend einen Arzt benachrichtigen."
+        },
+        {
+          "id": "d",
+          "text": "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+        }
+      ]
+    },
+    {
+      "questionId": "q-p12-0344",
+      "issue": "answer-option-subsumption",
+      "correctOptionId": "a",
+      "targetConceptIds": [
+        "concept-56-1005-13-definition-1"
+      ],
+      "distractorConceptIds": [
+        "concept-56-1005-90-definition-1",
+        "concept-56-1007-23-definition-1",
+        "concept-56-1009-15-definition-1"
+      ],
+      "evidenceCardIds": [
+        "card-1005-90-definition-1",
+        "card-1007-23-definition-1",
+        "card-1009-15-definition-1"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "Unter einer Hernie versteht man eine Ausstülpung (= Bruchsack) des parietalen Peritoneums (Auskleidung der Innenseite der Bauchwand). Sie entsteht durch angeborene oder erworbene Lücken in der Bauchwand (= Bruchpforte)."
+        },
+        {
+          "id": "b",
+          "text": "Eine Hernie ist eine Ausstülpung (= Bruchsack) des parietalen Peritoneums. Sie entsteht durch angeborene oder erworbene Lücken in der Bauchwand (= Bruchpforte)."
+        },
+        {
+          "id": "c",
+          "text": "Der Morbus Hirschsprung (angeborenes Megakolon) ist eine angeborene Erkrankung der darmversorgenden Nerven, die zu einer spastischen Verengung eines Darmabschnitts führt."
+        },
+        {
+          "id": "d",
+          "text": "Infektiöse Gastroenteritiden (Magen-Darm-Infektionen) werden durch verschiedene Bakterien, Viren oder Parasiten hervorgerufen und gehen ggf. mit einer Schleimhautentzündung des Magen und des Darms einher."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Unter einer Hernie versteht man eine Ausstülpung (= Bruchsack) des parietalen Peritoneums (Auskleidung der Innenseite der Bauchwand). Sie entsteht durch angeborene oder erworbene Lücken in der Bauchwand (= Bruchpforte)."
+        },
+        {
+          "id": "b",
+          "text": "Hämorrhoiden sind knotige Erweiterungen des arteriovenösen Gefäßgeflechts (Plexus hämorrhoidalis) im Analkanal."
+        },
+        {
+          "id": "c",
+          "text": "Der Morbus Hirschsprung (angeborenes Megakolon) ist eine angeborene Erkrankung der darmversorgenden Nerven, die zu einer spastischen Verengung eines Darmabschnitts führt."
+        },
+        {
+          "id": "d",
+          "text": "Infektiöse Gastroenteritiden (Magen-Darm-Infektionen) werden durch verschiedene Bakterien, Viren oder Parasiten hervorgerufen und gehen ggf. mit einer Schleimhautentzündung des Magen und des Darms einher."
+        }
+      ]
+    },
+    {
+      "questionId": "q-p12-0348",
+      "issue": "distractor-absolute-wording-cluster",
+      "correctOptionId": "a",
+      "targetConceptIds": [
+        "concept-56-1006-21-achtung-1"
+      ],
+      "distractorConceptIds": [
+        "concept-56-1005-90-definition-1",
+        "concept-56-1006-71-wissen-1",
+        "concept-56-1005-24-achtung-1"
+      ],
+      "evidenceCardIds": [
+        "card-1005-90-definition-1",
+        "card-1006-71-wissen-1",
+        "card-1005-24-achtung-1"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "Jede rektale Blutung kann ebenso ein Hinweis auf ein Kolonkarzinom sein."
+        },
+        {
+          "id": "b",
+          "text": "Eine Hypophysenvorderlappeninsuffizienz kann sehr gefährlich sein."
+        },
+        {
+          "id": "c",
+          "text": "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+        },
+        {
+          "id": "d",
+          "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Jede rektale Blutung kann ebenso ein Hinweis auf ein Kolonkarzinom sein."
+        },
+        {
+          "id": "b",
+          "text": "Hämorrhoiden sind knotige Erweiterungen des arteriovenösen Gefäßgeflechts (Plexus hämorrhoidalis) im Analkanal."
+        },
+        {
+          "id": "c",
+          "text": "Gewichtsreduktion, Stuhlregulierung, viel Flüssigkeit und Einnahme von Quellmitteln nennt das Lehrbuch als Allgemeinmaßnahmen bei Hämorrhoiden."
+        },
+        {
+          "id": "d",
+          "text": "Eine gefährliche Komplikation der Hernie ist die Inkarzeration, bei der Baucheingeweide in der Bruchpforte eingeklemmt werden."
+        }
+      ]
+    },
+    {
+      "questionId": "q-p12-0534",
+      "issue": "distractor-absolute-wording-cluster",
+      "correctOptionId": "a",
+      "targetConceptIds": [
+        "concept-62-1292-82-achtung-1"
+      ],
+      "distractorConceptIds": [
+        "concept-62-1279-40-achtung-1",
+        "concept-62-1284-34-achtung-1",
+        "concept-62-1278-51-merken-1"
+      ],
+      "evidenceCardIds": [
+        "card-1279-40-achtung-1",
+        "card-1284-34-achtung-1",
+        "card-1278-51-merken-1"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "Die Verätzung ist ein Notfall."
+        },
+        {
+          "id": "b",
+          "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+        },
+        {
+          "id": "c",
+          "text": "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+        },
+        {
+          "id": "d",
+          "text": "Eine Sinusvenenthrombose ist ein lebensbedrohliches Krank heitsbild."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Die Verätzung ist ein Notfall."
+        },
+        {
+          "id": "b",
+          "text": "Sollten die Augen extrem verklebt sein, dürfen sie keinesfalls mit Gewalt geöffnet werden."
+        },
+        {
+          "id": "c",
+          "text": "Eine infektiöse Konjunktivitis ist hoch ansteckend."
+        },
+        {
+          "id": "d",
+          "text": "Nach dem Öffnen des Fläschchens sollte der Ring, mit dem der Deckel befestigt ist, entfernt werden, weil er beim Verabreichen ins Auge fallen und Verletzungen hervorrufen könnte."
+        }
+      ]
+    },
+    {
+      "questionId": "q-p12-0634",
+      "issue": "distractor-absolute-wording-cluster",
+      "correctOptionId": "a",
+      "targetConceptIds": [
+        "concept-8-162-90-achtung-1"
+      ],
+      "distractorConceptIds": [
+        "concept-8-162-80-wissen-1",
+        "concept-8-162-40-definition-1",
+        "concept-8-161-84-wissen-1"
+      ],
+      "evidenceCardIds": [
+        "card-162-80-wissen-1",
+        "card-162-40-definition-1",
+        "card-161-84-wissen-1"
+      ],
+      "beforeOptions": [
+        {
+          "id": "a",
+          "text": "Ein klares „Nein“ zu Gewalt durch Pflegende."
+        },
+        {
+          "id": "b",
+          "text": "Sollten die Augen extrem verklebt sein, dürfen sie keinesfalls mit Gewalt geöffnet werden."
+        },
+        {
+          "id": "c",
+          "text": "Ein akuter Arterienverschluss ist immer ein Notfall."
+        },
+        {
+          "id": "d",
+          "text": "Ein Spannungspneumothorax ist immer ein absoluter Notfall."
+        }
+      ],
+      "afterOptions": [
+        {
+          "id": "a",
+          "text": "Ein klares „Nein“ zu Gewalt durch Pflegende."
+        },
+        {
+          "id": "b",
+          "text": "Gewalt ist der Einsatz physischer oder psychischer Mittel, um einer anderen Person gegen ihren Willen zu schaden, sie zu beherrschen oder ausgeübter Gewalt durch Gegengewalt zu begegnen."
+        },
+        {
+          "id": "c",
+          "text": "Werden menschliche Grundbedürfnisse durch eine Person beeinträchtigt, spricht man von personeller Gewalt."
+        },
+        {
+          "id": "d",
+          "text": "Aggression kann als Angriffsverhalten darauf zielen, Menschen zu schädigen, und zugleich Ausdruck von Selbstbehauptung sein."
+        }
+      ]
+    }
+  ],
+  "policy": {
+    "externalClinicalGuidanceAdded": false,
+    "questionIdsChanged": false,
+    "questionTypesChanged": false,
+    "targetConceptsChanged": false,
+    "difficultyChanged": false,
+    "correctOptionIdsChanged": false,
+    "sourceAnchorsChanged": false,
+    "explanationsChanged": false,
+    "fsrsChanged": false,
+    "masteryChanged": false,
+    "remediationChanged": false,
+    "repetitionControlChanged": false,
+    "inputHandlingChanged": false,
+    "mockExamLogicChanged": false
+  }
+}
