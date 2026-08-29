@@ -1,0 +1,80 @@
+name: Validate PflegeLern P28A
+
+on:
+  push:
+    branches: [p28a-clinical-context-validity-audit]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pflegelern-p28a-audit
+  cancel-in-progress: true
+
+jobs:
+  clinical-context-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout P28A branch
+        uses: actions/checkout@v4
+        with:
+          ref: p28a-clinical-context-validity-audit
+          fetch-depth: 0
+
+      - name: Prove frozen P26G bank before audit
+        run: |
+          git fetch origin main
+          python3 - <<'PY'
+          import hashlib
+          from pathlib import Path
+          expected='40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024'
+          actual=hashlib.sha256(Path('data/questions.json').read_bytes()).hexdigest()
+          assert actual == expected, (actual, expected)
+          PY
+          git show origin/main:data/questions.json > /tmp/main-questions.json
+          cmp --silent /tmp/main-questions.json data/questions.json
+
+      - name: Run calibrated 1,299-question adversarial audit
+        run: |
+          python3 -m py_compile tools/p28a_clinical_context_audit.py tools/p28a_calibrated_audit.py
+          python3 tools/p28a_calibrated_audit.py --write
+          python3 tests/p28a-clinical-context-audit.test.py
+          python3 tools/p28a_calibrated_audit.py --check-report
+
+      - name: Enforce detection-only scope
+        run: |
+          git diff --exit-code origin/main -- data/questions.json
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          expected='40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024'
+          assert hashlib.sha256(Path('data/questions.json').read_bytes()).hexdigest() == expected
+          r=json.loads(Path('reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.json').read_text(encoding='utf-8'))
+          assert r['scope']['questionBankMutated'] is False
+          assert r['summary']['allQuestionsCovered'] is True
+          assert len(r['questions']) == 1299
+          assert r['calibration']['version'] == 3
+          print('P28A is detection-only; all 1,299 questions covered; P26G bank unchanged.')
+          PY
+
+      - name: Commit deterministic P28A reports
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.json reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.md reports/P28A_PRIORITY_REVIEW.md
+          if git diff --cached --quiet; then
+            echo "P28A reports already current."
+            exit 0
+          fi
+          git commit -m "P28A: materialize calibrated clinical validity audit"
+          git push origin HEAD:p28a-clinical-context-validity-audit
+
+      - name: Upload audit reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: p28a-clinical-context-validity-audit
+          path: |
+            reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.json
+            reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.md
+            reports/P28A_PRIORITY_REVIEW.md
