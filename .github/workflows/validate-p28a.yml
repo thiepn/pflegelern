@@ -54,7 +54,7 @@ jobs:
           assert r['scope']['questionBankMutated'] is False
           assert r['summary']['allQuestionsCovered'] is True
           assert len(r['questions']) == 1299
-          assert r['calibration']['version'] == 2
+          assert r['calibration']['version'] == 3
           print('P28A is detection-only; all 1,299 questions covered; P26G bank unchanged.')
           PY
 
