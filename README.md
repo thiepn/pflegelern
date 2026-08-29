@@ -1,8 +1,8 @@
-# PflegeLern — 1.1.0-rc.1
+# PflegeLern — 1.1.0
 
 **PflegeLern** is a mobile-first, offline-capable nursing study app built from a source-faithful learning bank based on the uploaded 2015 edition of *I care – Pflege*.
 
-The repository is currently the **P27B release candidate (`1.1.0-rc.1`)**. The frozen question bank completed P26G certification; P27B repairs release identity, documentation and the canonical validation entrypoint without changing learning content.
+This repository is the **P27C final release (`1.1.0`)**. The complete question bank is frozen under the P26G certification, and the P27 release chain closes product readiness, release truth, exact-head browser certification, deployment verification and final release promotion without changing the certified learning bank.
 
 ## Product
 
@@ -40,25 +40,25 @@ The learning content follows the **2015 textbook edition**. PflegeLern does not 
 
 ## Canonical validation
 
-Serve locally when browser interaction is needed:
-
-```bash
-python3 -m http.server 4173
-```
-
-The single current non-browser release-readiness command is:
+The stable non-browser release-certification command is:
 
 ```bash
 python3 tools/release_readiness.py --full
 ```
 
-This validates P27B release truth, current production counts, PWA/static integrity, the frozen P26G question-bank hash and the semantic/question/adaptive/exam regression chain. Real-Chromium desktop/mobile interaction is rerun in the P27B CI workflow.
+It validates final release identity, production counts, PWA/static integrity, the frozen P26G bank hash and the semantic/question/adaptive/exam regression chain. Real-Chromium desktop/mobile interaction is enforced by the P27C CI workflow.
 
-`node tests/validate.mjs` is retained only as a compatibility alias to the canonical command above.
+`node tests/validate.mjs` remains only as a compatibility alias to the canonical command above.
 
-## Release state
+## Release certification
 
 - P26G question-bank certification: **PASS**
-- P27A full-product readiness audit: **completed; release-truth drift identified**
-- P27B release truth & validation repair: **release candidate gate**
-- next phase after P27B: **P27C — Final Release Certification & Promotion**
+- P27A full-product release-readiness audit: **completed**
+- P27B release truth & validation repair: **PASS**
+- P27C final release certification & promotion: **FINAL — v1.1.0**
+
+The final tag/release `v1.1.0` is created from the exact merged `main` commit only after the live GitHub Pages deployment exposes the final P27C / 1.1.0 identity.
+
+## Maintenance policy
+
+PflegeLern 1.1.0 is the certified release baseline. Maintenance may fix release infrastructure or non-learning defects, but any future mutation of `data/questions.json` invalidates P26G and requires a new question-bank certification before another release.

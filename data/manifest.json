@@ -1,7 +1,7 @@
 {
   "project": "PflegeLern",
-  "phase": "P27B",
-  "version": "1.1.0-rc.1",
+  "phase": "P27C",
+  "version": "1.1.0",
   "schemaVersion": 1,
   "source": {
     "title": "I care – Pflege",
@@ -9,7 +9,7 @@
     "editionYear": 2015,
     "basis": "Uploaded textbook only; no external clinical facts merged."
   },
-  "status": "release-candidate",
+  "status": "released",
   "notes": [
     "P6 manually calibrated content preserved.",
     "P7 source signals were re-routed by PDF section position where possible.",
@@ -35,6 +35,7 @@
     "P26F audits all 1,299 questions against their repository-local concept, card, section and source provenance. It recovers the missing textbook hierarchy entries 3.2.2 Kurative Pflege and 8.1.1 Was ist Stress?, corrects five concept source anchors and two P12 question source snapshots, and closes the full-bank source-alignment audit with zero actionable or review findings. Question IDs, types, prompts, options, answer keys, explanations, difficulty and all learning-system behavior remain unchanged; no external clinical guidance is added.",
     "P26G freezes and certifies the complete 1,299-question bank after the P25/P26 quality chain. The frozen bank hash, six-type distribution, reference graph, answer-input contracts, semantic closure, source alignment, repetition control, question-quality selection, mock-exam compatibility and desktop/mobile interaction paths are validated together. P26G does not edit question learning content; any future bank change must invalidate and regenerate the final certification.",
     "P27A audits full-product release readiness after the P26G bank freeze. It intentionally does not modify the frozen 1,299-question bank or learning behavior. The audit checks production/PWA integrity, core route/browser behavior, release documentation, QA entrypoints and release identity, and records detected release-truth drift for P27B repair.",
-    "P27B repairs release truth after the P27A audit: README/QA counts and identity are current, the learner-facing version and service-worker cache are aligned to 1.1.0-rc.1, and tools/release_readiness.py is the canonical validation entrypoint. The frozen P26G 1,299-question bank and all learning behavior remain unchanged."
+    "P27B repairs release truth after the P27A audit: README/QA counts and identity are current, the learner-facing version and service-worker cache are aligned to 1.1.0-rc.1, and tools/release_readiness.py is the canonical validation entrypoint. The frozen P26G 1,299-question bank and all learning behavior remain unchanged.",
+    "P27C certifies and promotes the P27B release candidate to final PflegeLern v1.1.0. The final gate preserves the frozen P26G 1,299-question bank, reruns deterministic and real-Chromium regression coverage, requires the exact merged main payload to deploy successfully to GitHub Pages, and publishes tag/release v1.1.0 only after the live final identity is observable."
   ]
 }

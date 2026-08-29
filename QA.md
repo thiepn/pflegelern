@@ -1,13 +1,12 @@
-# PflegeLern — Current QA & Release Readiness
+# P27C — Final Release Certification & Promotion
 
-## Status
+## Release status
 
-**P27B — Release Truth & Validation Repair**  
-Release candidate: **`1.1.0-rc.1`**
+**FINAL — PflegeLern 1.1.0**
 
-P27B replaces the obsolete P9/P10 QA summary as the current release-readiness record. Learning content remains frozen at the P26G-certified question bank.
+P27C promotes the P27B release candidate only after the exact-head deterministic and browser gates pass. After merge, the final publication workflow waits until the corresponding GitHub Pages payload exposes the P27C / 1.1.0 identity before creating tag and GitHub release `v1.1.0`.
 
-## Production counts
+## Frozen production bank
 
 | Entity | Count |
 |---|---:|
@@ -18,76 +17,56 @@ P27B replaces the obsolete P9/P10 QA summary as the current release-readiness re
 | Questions | 1,299 |
 | Cases | 120 |
 
-## Certified learning-bank baseline
-
-P26G is **PASS** and freezes `data/questions.json` at:
+Frozen P26G question-bank SHA-256:
 
 `40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024`
 
-Certified P26 closure:
+P27C does **not** modify `data/questions.json`, FSRS, mastery, remediation, repetition control, answer-input handling, question grading, exam selection/scoring or textbook-derived learning content.
 
-- P26A/P26B: 7 confirmed semantic defects → 7 repaired
-- P26C/P26D: 14 additional confirmed repair targets → 14 repaired
-- P26E: 0 actionable semantic defects and 0 unadjudicated signals
-- P26F: 0 residual source-alignment findings
-- P26G: full 1,299-question certification **PASS**
+## Deterministic release gate
 
-P27B does **not** edit question prompts, options, answer keys, explanations, difficulty, FSRS scheduling, mastery, remediation, repetition control, input handling or exam logic.
-
-## Learning-system regression surface
-
-The current canonical release gate covers:
-
-- P26G frozen-bank integrity
-- P26F/P26E source/semantic closure
-- P25A question variety
-- P25B bounded repetition control
-- P25C answer-input reliability
-- P25D question-quality selection
-- P17 adaptive study mix
-- P18 mastery model
-- P19 weakness remediation
-- P20 mock-exam core/runtime
-- current JavaScript/service-worker syntax
-- production counts, release identity and PWA/static asset integrity
-
-Run:
+Canonical command:
 
 ```bash
 python3 tools/release_readiness.py --full
 ```
 
-The historical `tests/validate.mjs` command is now only a compatibility alias to this current gate.
+The final validator requires:
 
-## Browser and responsive QA
+- exact production counts
+- P26G hash/certification integrity
+- final manifest identity `P27C / 1.1.0 / released`
+- learner-facing version `1.1.0`
+- service-worker cache `pflegelern-v1.1.0`
+- no remaining RC identity on release surfaces
+- complete PWA precache and manifest icons
+- primary route and viewport contracts
+- current README/QA release truth
+- P26 semantic/source closure regressions
+- P25 question variety/repetition/input/quality regressions
+- P17–P20 adaptive learning, mastery, remediation and exam regressions
 
-P27A established a real Chromium full-product readiness workflow instead of the old P9 “browser boundary” limitation. The workflow covers:
+## Real Chromium certification
 
-- primary routes: Heute, Lernen, Prüfung, Fortschritt, Einstellungen
-- desktop and mobile study-input interaction
-- question-quality and repetition-control regressions
-- offline reload and visible offline state
-- responsive horizontal-overflow checks
-- zero unhandled console/page errors
+P27C reruns the full browser surface against the final payload:
 
-P27B reruns the same real Chromium coverage after changing only release/documentation/cache identity surfaces.
+- Heute, Lernen, Prüfung, Fortschritt and Einstellungen
+- desktop/mobile runtime and console/page-error checks
+- 320, 375, 768, 1024 and 1440 px horizontal-overflow gates
+- offline navigation reload after service-worker installation
+- all six question types present in the 1,299-question runtime
+- P25C desktop/mobile answer-input reliability
+- P25D question-quality selection behavior
+- P25B repetition-control behavior
 
-## PWA / offline integrity
+## Promotion contract
 
-The service-worker cache identity is advanced with the P27B release candidate. All precached paths and manifest icons are checked by the canonical validator. Navigation continues to use offline fallback after initial cache population.
+The final publication workflow runs from the merged `main` commit and:
 
-## Release-truth repair
+1. reruns the canonical final validator;
+2. proves the frozen P26G bank hash;
+3. waits for GitHub Pages to expose `P27C / 1.1.0 / released`;
+4. creates tag `v1.1.0` at that exact `main` commit;
+5. publishes the GitHub release only after the live deployment check passes.
 
-P27B closes the five actionable P27A findings by:
-
-1. replacing the stale P10/v1.0.0 README identity;
-2. correcting documented production counts;
-3. replacing this obsolete P9 QA record;
-4. replacing the obsolete primary validator with `tools/release_readiness.py`;
-5. aligning learner-facing, manifest and service-worker version identity to `1.1.0-rc.1`.
-
-## Next phase
-
-**P27C — Final Release Certification & Promotion**
-
-P27C should run the final exact-head CI/browser/deployment gate and promote the release candidate only if every required check remains green.
+No post-tag source mutation is required for P27C closeout.
