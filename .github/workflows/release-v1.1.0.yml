@@ -8,7 +8,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: pflegelern-v1.1.0-release
+  group: pflegelern-v1.1.0-final-publication-v2
   cancel-in-progress: true
 
 jobs:
