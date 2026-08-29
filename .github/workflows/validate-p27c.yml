@@ -1,0 +1,162 @@
+name: Validate PflegeLern P27C
+
+on:
+  push:
+    branches: [p27c-final-release]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote-and-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout P27C branch
+        uses: actions/checkout@v4
+        with:
+          ref: p27c-final-release
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax-check P27C tooling
+        run: |
+          python3 -m py_compile tools/p27c_promote_release.py
+          python3 -m py_compile tools/release_readiness.py
+          node --check tests/p27c-browser.spec.mjs
+          node --check tests/validate.mjs
+
+      - name: Prove P26G bank intact before promotion
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          from pathlib import Path
+          expected='40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024'
+          actual=hashlib.sha256(Path('data/questions.json').read_bytes()).hexdigest()
+          assert actual == expected, (actual, expected)
+          print('Frozen P26G bank intact before P27C:', actual)
+          PY
+
+      - name: Materialize deterministic P27C final promotion
+        run: python3 tools/p27c_promote_release.py
+
+      - name: Canonical final release certification
+        run: |
+          python3 tools/release_readiness.py --full --write-report
+          python3 tools/release_readiness.py --check-report
+
+      - name: Prove P27C did not mutate certified bank
+        run: |
+          git fetch origin main
+          git show origin/main:data/questions.json > /tmp/main-questions.json
+          cmp --silent /tmp/main-questions.json data/questions.json
+          python3 - <<'PY'
+          import hashlib
+          from pathlib import Path
+          expected='40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024'
+          assert hashlib.sha256(Path('data/questions.json').read_bytes()).hexdigest() == expected
+          print('Frozen P26G question bank preserved byte-for-byte.')
+          PY
+
+      - name: Enforce release-only promotion surface
+        run: |
+          python3 - <<'PY'
+          import subprocess
+          allowed={
+            'README.md',
+            'QA.md',
+            'P27C_RELEASE.md',
+            'data/manifest.json',
+            'js/app.js',
+            'service-worker.js',
+            'tools/release_readiness.py',
+            'reports/P27C_FINAL_RELEASE_CERTIFICATION.json',
+            'reports/P27C_FINAL_RELEASE_CERTIFICATION.md',
+          }
+          changed=set(filter(None, subprocess.check_output(['git','diff','--name-only'], text=True).splitlines()))
+          untracked=set()
+          for line in subprocess.check_output(['git','status','--porcelain'], text=True).splitlines():
+            if line.startswith('?? '): untracked.add(line[3:])
+          changed |= untracked
+          unexpected=sorted(changed-allowed)
+          assert not unexpected, f'Unexpected P27C promotion paths: {unexpected}'
+          assert 'data/questions.json' not in changed
+          print('P27C release-only promotion paths:', sorted(changed))
+          PY
+
+      - name: Commit deterministic P27C promotion
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "P27C final promotion already materialized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md QA.md P27C_RELEASE.md data/manifest.json js/app.js service-worker.js tools/release_readiness.py reports/P27C_FINAL_RELEASE_CERTIFICATION.json reports/P27C_FINAL_RELEASE_CERTIFICATION.md
+          git commit -m "P27C: promote certified release candidate to v1.1.0"
+          git push origin HEAD:p27c-final-release
+
+      - name: Upload P27C deterministic certification
+        uses: actions/upload-artifact@v4
+        with:
+          name: p27c-final-release-certification
+          path: |
+            reports/P27C_FINAL_RELEASE_CERTIFICATION.json
+            reports/P27C_FINAL_RELEASE_CERTIFICATION.md
+            P27C_RELEASE.md
+
+  browser-certification:
+    needs: promote-and-audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout promoted P27C branch head
+        uses: actions/checkout@v4
+        with:
+          ref: p27c-final-release
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Reconfirm final deterministic report
+        run: python3 tools/release_readiness.py --check-report
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start local app server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/pflegelern-http.log 2>&1 &
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/pflegelern-http.log
+          exit 1
+
+      - name: P27C final desktop/mobile browser gate
+        run: npx playwright test tests/p27c-browser.spec.mjs --reporter=line --workers=1
+
+      - name: P25C desktop/mobile input regression
+        run: npx playwright test tests/p25c-browser.spec.mjs --reporter=line --workers=1
+
+      - name: P25D question-quality browser regression
+        run: npx playwright test tests/p25d-browser.spec.mjs --reporter=line --workers=1
+
+      - name: P25B repetition browser regression
+        run: npx playwright test tests/p25b-browser.spec.mjs --grep-invert "manifest and offline cache" --reporter=line --workers=1
+
+      - name: Upload browser artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p27c-browser-certification-artifacts
+          path: test-results
+          if-no-files-found: ignore
