@@ -32,7 +32,7 @@ assert report["summary"]["singleChoiceTotal"] == 699
 assert report["policy"]["evaluateOptionsIndependentlyOfExistingKey"] is True
 assert report["policy"]["sourceCorrectnessSeparatedFromCurrentGuidance"] is True
 assert report["nextPhase"]["phase"] == "P28B"
-assert report["calibration"]["version"] == 2
+assert report["calibration"]["version"] == 3
 
 question_ids = {q["id"] for q in questions}
 for queue in report["priorityQueues"].values():
@@ -49,8 +49,6 @@ for row in report["questions"]:
         assert issue["code"]
         assert issue["rationale"]
 
-# Calibration guardrails: the final audit must not simply reproduce the
-# deliberately over-sensitive first pass.
 raw_first = report["calibration"]["rawFirstPass"]
 assert report["summary"]["highOrCriticalObjectiveQuestions"] < raw_first["highOrCriticalObjectiveQuestions"]
 assert report["summary"]["singleChoiceManualAdjudication"] < raw_first["singleChoiceManualAdjudication"]
