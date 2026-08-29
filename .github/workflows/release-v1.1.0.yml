@@ -9,14 +9,14 @@ permissions:
 
 concurrency:
   group: pflegelern-v1.1.0-release
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
-      LIVE_BASE: https://thiepn.github.io/pflegelern
+      LIVE_BASE: https://thiepn.dev/pflegelern
       TAG: v1.1.0
     steps:
       - name: Checkout exact main commit
@@ -60,7 +60,7 @@ jobs:
         run: |
           for i in $(seq 1 90); do
             url="$LIVE_BASE/data/manifest.json?release_sha=$GITHUB_SHA&attempt=$i"
-            if curl --fail --silent --show-error "$url" -o /tmp/live-manifest.json; then
+            if curl --location --fail --silent --show-error "$url" -o /tmp/live-manifest.json; then
               if python3 - <<'PY'
           import json
           from pathlib import Path
@@ -83,7 +83,7 @@ jobs:
       - name: Real-Chromium certification against live Pages
         if: steps.existing.outputs.already != 'true'
         env:
-          PFLEGELERN_BASE_URL: https://thiepn.github.io/pflegelern
+          PFLEGELERN_BASE_URL: https://thiepn.dev/pflegelern
         run: |
           npm install --no-save @playwright/test@1.55.0
           npx playwright install --with-deps chromium
@@ -92,7 +92,7 @@ jobs:
       - name: Verify live final certification report
         if: steps.existing.outputs.already != 'true'
         run: |
-          curl --fail --silent --show-error "$LIVE_BASE/reports/P27C_FINAL_RELEASE_CERTIFICATION.json?release_sha=$GITHUB_SHA" -o /tmp/live-report.json
+          curl --location --fail --silent --show-error "$LIVE_BASE/reports/P27C_FINAL_RELEASE_CERTIFICATION.json?release_sha=$GITHUB_SHA" -o /tmp/live-report.json
           python3 - <<'PY'
           import json
           from pathlib import Path
