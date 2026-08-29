@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "phase": "P27C",
+  "title": "Final Release Certification & Promotion",
+  "status": "PASS",
+  "releaseIdentity": {
+    "version": "1.1.0",
+    "status": "released",
+    "cacheId": "pflegelern-v1.1.0"
+  },
+  "productionCounts": {
+    "chapters": 66,
+    "sections": 1363,
+    "concepts": 2089,
+    "cards": 2094,
+    "questions": 1299,
+    "cases": 120
+  },
+  "certifiedQuestionBank": {
+    "questions": 1299,
+    "sha256": "40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024",
+    "expectedSha256": "40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024",
+    "intact": true
+  },
+  "checks": [
+    {
+      "name": "production-counts",
+      "status": "PASS",
+      "detail": "actual={'chapters': 66, 'sections': 1363, 'concepts': 2089, 'cards': 2094, 'questions': 1299, 'cases': 120}"
+    },
+    {
+      "name": "p26g-question-bank-freeze",
+      "status": "PASS",
+      "detail": "40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024"
+    },
+    {
+      "name": "p26g-certification",
+      "status": "PASS",
+      "detail": "status=PASS questions=1299"
+    },
+    {
+      "name": "manifest-release-identity",
+      "status": "PASS",
+      "detail": "P27C / 1.1.0 / released"
+    },
+    {
+      "name": "learner-facing-version",
+      "status": "PASS",
+      "detail": "1.1.0"
+    },
+    {
+      "name": "service-worker-cache-identity",
+      "status": "PASS",
+      "detail": "pflegelern-v1.1.0"
+    },
+    {
+      "name": "service-worker-precache-assets",
+      "status": "PASS",
+      "detail": "missing=[]"
+    },
+    {
+      "name": "manifest-icons",
+      "status": "PASS",
+      "detail": "missing=[]"
+    },
+    {
+      "name": "primary-navigation-surface",
+      "status": "PASS",
+      "detail": "today, learn, exam, progress, settings"
+    },
+    {
+      "name": "viewport-metadata",
+      "status": "PASS",
+      "detail": "viewport-fit=cover"
+    },
+    {
+      "name": "readme-release-truth",
+      "status": "PASS",
+      "detail": "current version/counts/canonical command"
+    },
+    {
+      "name": "readme-no-obsolete-primary-release",
+      "status": "PASS",
+      "detail": "no stale P10/85-question identity"
+    },
+    {
+      "name": "final-release-no-rc-identity",
+      "status": "PASS",
+      "detail": "no RC identity on current release surfaces; historical manifest notes are allowed"
+    },
+    {
+      "name": "qa-release-truth",
+      "status": "PASS",
+      "detail": "current final-release QA record"
+    },
+    {
+      "name": "qa-no-obsolete-boundary",
+      "status": "PASS",
+      "detail": "no stale P9 browser limitation"
+    }
+  ],
+  "summary": {
+    "checks": 15,
+    "passed": 15,
+    "failed": 0,
+    "actionableFindings": 0,
+    "finalReleaseReady": true,
+    "browserCertification": "CI_REQUIRED"
+  },
+  "canonicalValidationCommand": "python3 tools/release_readiness.py --full",
+  "releaseState": {
+    "state": "FINAL",
+    "version": "1.1.0",
+    "maintenancePolicy": "Any future mutation of data/questions.json invalidates P26G and requires re-certification."
+  },
+  "policy": {
+    "questionBankEditedByP27C": false,
+    "fsrsChanged": false,
+    "masteryChanged": false,
+    "remediationChanged": false,
+    "repetitionControlChanged": false,
+    "inputHandlingChanged": false,
+    "examLogicChanged": false,
+    "externalClinicalGuidanceAdded": false
+  }
+}

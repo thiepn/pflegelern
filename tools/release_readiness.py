@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Canonical PflegeLern release-readiness validator.
 
-P27B establishes this script as the single current non-browser validation entrypoint.
+P27C establishes this script as the single current non-browser validation entrypoint.
 It verifies release truth, the frozen P26G question bank, PWA/static integrity and,
 with --full, the current semantic/question/adaptive/exam regression chain.
 Browser interaction remains a dedicated CI job because it requires Playwright.
@@ -26,12 +26,12 @@ EXPECTED_COUNTS = {
     "questions": 1299,
     "cases": 120,
 }
-PHASE = "P27B"
-VERSION = "1.1.0-rc.1"
-STATUS = "release-candidate"
-CACHE_ID = "pflegelern-p27b-v1.1.0-rc1"
-REPORT_JSON = ROOT / "reports" / "P27B_RELEASE_TRUTH_VALIDATION.json"
-REPORT_MD = ROOT / "reports" / "P27B_RELEASE_TRUTH_VALIDATION.md"
+PHASE = "P27C"
+VERSION = "1.1.0"
+STATUS = "released"
+CACHE_ID = "pflegelern-v1.1.0"
+REPORT_JSON = ROOT / "reports" / "P27C_FINAL_RELEASE_CERTIFICATION.json"
+REPORT_MD = ROOT / "reports" / "P27C_FINAL_RELEASE_CERTIFICATION.md"
 
 REGRESSION_COMMANDS = [
     [sys.executable, "tests/p26g-final-certification.test.py"],
@@ -114,26 +114,29 @@ def collect_checks() -> tuple[list[dict], dict]:
     check("viewport-metadata", 'name="viewport"' in index and "viewport-fit=cover" in index, "viewport-fit=cover")
 
     readme_tokens = [
-        "1.1.0-rc.1",
+        "1.1.0",
         "1,299",
         "1,363",
         "120",
         "python3 tools/release_readiness.py --full",
         "P26G",
-        "P27B",
+        "P27C",
     ]
     check("readme-release-truth", all(token in readme for token in readme_tokens), "current version/counts/canonical command")
     check("readme-no-obsolete-primary-release", "P10 final release" not in readme and "85 practice/exam questions" not in readme, "no stale P10/85-question identity")
+    current_manifest_identity = json.dumps({key: manifest.get(key) for key in ("phase", "version", "status")}, ensure_ascii=False)
+    final_surfaces = "\n".join([readme, qa, app_js, sw, current_manifest_identity])
+    check("final-release-no-rc-identity", "1.1.0-rc.1" not in final_surfaces and "p27b-v1.1.0-rc1" not in final_surfaces, "no RC identity on current release surfaces; historical manifest notes are allowed")
 
-    qa_tokens = ["P27B", "1.1.0-rc.1", "1,299", "1,363", "120", "P26G", "real Chromium"]
-    check("qa-release-truth", all(token in qa for token in qa_tokens), "current release-candidate QA record")
+    qa_tokens = ["P27C", "1.1.0", "1,299", "1,363", "120", "P26G", "Chromium"]
+    check("qa-release-truth", all(token in qa for token in qa_tokens), "current final-release QA record")
     check("qa-no-obsolete-boundary", "browser process again failed" not in qa.lower(), "no stale P9 browser limitation")
 
     failed = [item for item in checks if item["status"] == "FAIL"]
     report = {
         "schemaVersion": 1,
         "phase": PHASE,
-        "title": "Release Truth & Validation Repair",
+        "title": "Final Release Certification & Promotion",
         "status": "PASS" if not failed else "FAIL",
         "releaseIdentity": {"version": VERSION, "status": STATUS, "cacheId": CACHE_ID},
         "productionCounts": counts,
@@ -149,17 +152,17 @@ def collect_checks() -> tuple[list[dict], dict]:
             "passed": len(checks) - len(failed),
             "failed": len(failed),
             "actionableFindings": len(failed),
-            "releaseTruthReady": not failed,
+            "finalReleaseReady": not failed,
             "browserCertification": "CI_REQUIRED",
         },
         "canonicalValidationCommand": "python3 tools/release_readiness.py --full",
-        "nextPhase": {
-            "phase": "P27C",
-            "name": "Final Release Certification & Promotion",
-            "purpose": "Run the final exact-head CI/browser/deployment gate and promote the release candidate only if all checks pass.",
+        "releaseState": {
+            "state": "FINAL",
+            "version": VERSION,
+            "maintenancePolicy": "Any future mutation of data/questions.json invalidates P26G and requires re-certification.",
         },
         "policy": {
-            "questionBankEditedByP27B": False,
+            "questionBankEditedByP27C": False,
             "fsrsChanged": False,
             "masteryChanged": False,
             "remediationChanged": False,
@@ -174,7 +177,7 @@ def collect_checks() -> tuple[list[dict], dict]:
 
 def render_markdown(report: dict) -> str:
     lines = [
-        "# P27B — Release Truth & Validation Repair",
+        "# P27C — Final Release Certification & Promotion",
         "",
         f"**Status: {report['status']}**",
         "",
@@ -193,7 +196,7 @@ def render_markdown(report: dict) -> str:
         f"- Flashcards: **{report['productionCounts']['cards']}**",
         f"- Cases: **{report['productionCounts']['cases']}**",
         f"- P26G SHA-256: `{report['certifiedQuestionBank']['sha256']}`",
-        "- Question-bank mutation by P27B: **none**",
+        "- Question-bank mutation by P27C: **none**",
         "",
         "## Validation",
         "",
@@ -204,13 +207,13 @@ def render_markdown(report: dict) -> str:
         lines.append(f"- **{item['status']} — {item['name']}**: {item['detail']}")
     lines += [
         "",
-        "Browser interaction is rerun by the P27B GitHub Actions workflow using real Chromium on desktop/mobile surfaces.",
+        "Browser interaction is rerun by the P27C GitHub Actions workflow using real Chromium on desktop/mobile surfaces.",
         "",
-        "## Next phase",
+        "## Release state",
         "",
-        "**P27C — Final Release Certification & Promotion**",
+        "**FINAL — PflegeLern v1.1.0**",
         "",
-        "Run the final exact-head CI/browser/deployment gate and promote the release candidate only if all checks pass.",
+        "The exact merged main payload is deployed to GitHub Pages and tag/release `v1.1.0` is published only after live final-identity verification.",
         "",
     ]
     return "\n".join(lines)
@@ -240,7 +243,7 @@ def run_regressions() -> int:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--full", action="store_true", help="run the current non-browser regression chain after release-truth checks")
-    parser.add_argument("--write-report", action="store_true", help="materialize deterministic P27B JSON/Markdown reports")
+    parser.add_argument("--write-report", action="store_true", help="materialize deterministic P27C JSON/Markdown reports")
     parser.add_argument("--check-report", action="store_true", help="require materialized reports to match current deterministic output")
     args = parser.parse_args()
 
@@ -251,10 +254,10 @@ def main() -> int:
         expected_json = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
         expected_md = render_markdown(report)
         if not REPORT_JSON.exists() or REPORT_JSON.read_text(encoding="utf-8") != expected_json:
-            print("P27B JSON report drift detected.", file=sys.stderr)
+            print("P27C JSON report drift detected.", file=sys.stderr)
             return 1
         if not REPORT_MD.exists() or REPORT_MD.read_text(encoding="utf-8") != expected_md:
-            print("P27B Markdown report drift detected.", file=sys.stderr)
+            print("P27C Markdown report drift detected.", file=sys.stderr)
             return 1
 
     print(json.dumps(report, ensure_ascii=False, indent=2))
