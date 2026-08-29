@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-const BASE = 'http://127.0.0.1:4173/';
+const BASE = `${(process.env.PFLEGELERN_BASE_URL || 'http://127.0.0.1:4173').replace(/\/+$/, '')}/`;
 
 async function onboard(page) {
   await page.addInitScript(() => {
