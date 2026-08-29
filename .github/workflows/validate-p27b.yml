@@ -27,6 +27,7 @@ jobs:
         run: |
           python3 -m py_compile tools/p27b_apply_release_truth.py
           python3 -m py_compile tools/release_readiness.py
+          node --check tests/p27b-browser.spec.mjs
 
       - name: Prove P26G bank intact before repair
         run: |
@@ -134,8 +135,8 @@ jobs:
           cat /tmp/pflegelern-http.log
           exit 1
 
-      - name: P27 full-product desktop/mobile browser gate
-        run: npx playwright test tests/p27a-browser.spec.mjs --reporter=line --workers=1
+      - name: P27B full-product desktop/mobile browser gate
+        run: npx playwright test tests/p27b-browser.spec.mjs --reporter=line --workers=1
 
       - name: P25C desktop/mobile input regression
         run: npx playwright test tests/p25c-browser.spec.mjs --reporter=line --workers=1
