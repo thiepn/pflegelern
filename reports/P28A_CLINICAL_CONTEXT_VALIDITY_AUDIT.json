@@ -14,9 +14,9 @@
     "riskCounts": {
       "clear": 943,
       "critical": 17,
-      "high": 167,
-      "medium": 80,
-      "review": 92
+      "high": 53,
+      "medium": 66,
+      "review": 220
     },
     "typeCounts": {
       "clinical_case": 214,
@@ -39,13 +39,14 @@
     },
     "recommendationCounts": {
       "manual-adjudication-before-single-choice-retention": 44,
-      "manual-adjudication-required": 140,
+      "manual-adjudication-required": 26,
       "retain": 943,
-      "review": 172
+      "review": 286
     },
     "issueCounts": {
-      "INSUFFICIENT_CLINICAL_CASE_CONTEXT": 214,
+      "PSEUDO_CLINICAL_CASE_SOURCE_RECALL": 148,
       "CURRENT_GUIDANCE_SENSITIVE_TOPIC": 75,
+      "INSUFFICIENT_CLINICAL_CASE_CONTEXT": 66,
       "UNDER_SPECIFIED_PROMPT_BROAD_REFERENCE": 39,
       "CONTEXT_DEPENDENT_SINGLE_CHOICE": 24,
       "CASE_ACTION_NEEDS_MORE_CONTEXT": 23,
@@ -4081,8 +4082,8 @@
       "questionId": "q-case-p7b-sc-injection",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-23-461-24-achtung-1"
       ],
@@ -4091,12 +4092,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 123,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -4118,9 +4120,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The case contains some concrete context but only one detected contextual dimension; P28B should verify whether the case constrains the expected answer sufficiently.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 95,
             "contextDimensions": [
@@ -4158,9 +4160,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The case contains some concrete context but only one detected contextual dimension; P28B should verify whether the case constrains the expected answer sufficiently.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 125,
             "contextDimensions": [
@@ -4186,7 +4188,7 @@
       "questionId": "q-case-p7b-retina",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-62-1289-7-achtung-1"
@@ -4196,9 +4198,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 105,
             "contextDimensions": [],
@@ -4212,7 +4214,7 @@
       "questionId": "q-case-p7b-pulmonary-edema",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-53-900-23-achtung-1"
@@ -4224,9 +4226,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The case contains some concrete context but only one detected contextual dimension; P28B should verify whether the case constrains the expected answer sufficiently.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 100,
             "contextDimensions": [
@@ -4242,8 +4244,8 @@
       "questionId": "q-case-p7b-skin-test",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-63-1312-60-achtung-1"
       ],
@@ -4252,12 +4254,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 106,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -4281,7 +4284,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The case contains some concrete context but only one detected contextual dimension; P28B should verify whether the case constrains the expected answer sufficiently.",
+          "rationale": "The case contains concrete context but only one detected contextual dimension; P28B should verify whether that is sufficient for the expected answer.",
           "evidence": {
             "promptLength": 106,
             "contextDimensions": [
@@ -4297,7 +4300,7 @@
       "questionId": "q-case-p7b-pregnancy-food",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-31-603-86-achtung-1"
@@ -4309,9 +4312,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The case contains some concrete context but only one detected contextual dimension; P28B should verify whether the case constrains the expected answer sufficiently.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 129,
             "contextDimensions": [
@@ -35568,7 +35571,7 @@
       "questionId": "q-p13-case-001-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-2-1-praxisanleiter"
@@ -35578,9 +35581,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 227,
             "contextDimensions": [],
@@ -35594,7 +35597,7 @@
       "questionId": "q-p13-case-001-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-2-1-lernorte"
@@ -35604,9 +35607,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 221,
             "contextDimensions": [],
@@ -35632,7 +35635,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 193,
             "contextDimensions": [],
@@ -35658,7 +35661,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 203,
             "contextDimensions": [],
@@ -35684,7 +35687,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 197,
             "contextDimensions": [],
@@ -35710,7 +35713,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 194,
             "contextDimensions": [],
@@ -35736,7 +35739,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 187,
             "contextDimensions": [],
@@ -35762,7 +35765,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 191,
             "contextDimensions": [],
@@ -35776,8 +35779,8 @@
       "questionId": "q-p13-case-005-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-7-139-62-achtung-1"
       ],
@@ -35786,12 +35789,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 249,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -35842,8 +35846,8 @@
       "questionId": "q-p13-case-006-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-8-162-90-achtung-1"
       ],
@@ -35852,12 +35856,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 215,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -35920,7 +35925,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 201,
             "contextDimensions": [],
@@ -35946,7 +35951,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 202,
             "contextDimensions": [],
@@ -35960,7 +35965,7 @@
       "questionId": "q-p13-case-008-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-10-217-48-merken-1"
@@ -35970,9 +35975,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 211,
             "contextDimensions": [],
@@ -35998,7 +36003,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 197,
             "contextDimensions": [],
@@ -36012,7 +36017,7 @@
       "questionId": "q-p13-case-009-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-11-234-52-merken-1"
@@ -36022,9 +36027,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 233,
             "contextDimensions": [],
@@ -36050,7 +36055,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 212,
             "contextDimensions": [],
@@ -36064,7 +36069,7 @@
       "questionId": "q-p13-case-010-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-12-253-40-merken-1"
@@ -36074,9 +36079,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 201,
             "contextDimensions": [],
@@ -36090,7 +36095,7 @@
       "questionId": "q-p13-case-010-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-12-254-20-merken-1"
@@ -36100,9 +36105,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 214,
             "contextDimensions": [],
@@ -36116,7 +36121,7 @@
       "questionId": "q-p13-case-011-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-13-267-67-merken-1"
@@ -36126,9 +36131,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 204,
             "contextDimensions": [],
@@ -36154,7 +36159,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 196,
             "contextDimensions": [],
@@ -36168,8 +36173,8 @@
       "questionId": "q-p13-case-012-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-14-279-80-achtung-1"
       ],
@@ -36178,12 +36183,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 192,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36193,7 +36199,7 @@
       "questionId": "q-p13-case-012-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-14-280-73-merken-1"
@@ -36205,9 +36211,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The case contains some concrete context but only one detected contextual dimension; P28B should verify whether the case constrains the expected answer sufficiently.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 187,
             "contextDimensions": [
@@ -36223,7 +36229,7 @@
       "questionId": "q-p13-case-013-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-15-305-42-merken-1"
@@ -36233,9 +36239,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 204,
             "contextDimensions": [],
@@ -36261,7 +36267,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 191,
             "contextDimensions": [],
@@ -36275,8 +36281,8 @@
       "questionId": "q-p13-case-014-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-16-1-arrhythmie-neu"
       ],
@@ -36285,12 +36291,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 238,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -36308,8 +36315,8 @@
       "questionId": "q-p13-case-014-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-16-1-puls-normal-erwachsene"
       ],
@@ -36318,12 +36325,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 248,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -36341,8 +36349,8 @@
       "questionId": "q-p13-case-015-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-17-341-18-achtung-1"
       ],
@@ -36351,12 +36359,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 230,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36366,8 +36375,8 @@
       "questionId": "q-p13-case-015-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-17-340-92-merken-1"
       ],
@@ -36376,12 +36385,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 211,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36391,8 +36401,8 @@
       "questionId": "q-p13-case-016-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-19-374-35-achtung-1"
       ],
@@ -36401,12 +36411,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 210,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36416,8 +36427,8 @@
       "questionId": "q-p13-case-016-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-19-373-70-merken-1"
       ],
@@ -36426,12 +36437,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 206,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36441,8 +36453,8 @@
       "questionId": "q-p13-case-017-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-20-387-23-achtung-1"
       ],
@@ -36451,12 +36463,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 230,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36466,8 +36479,8 @@
       "questionId": "q-p13-case-017-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-20-387-57-merken-1"
       ],
@@ -36476,12 +36489,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 213,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36491,8 +36505,8 @@
       "questionId": "q-p13-case-018-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-21-5-pflege-verdacht"
       ],
@@ -36501,12 +36515,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 266,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -36524,8 +36539,8 @@
       "questionId": "q-p13-case-018-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-21-5-tvt-symptome"
       ],
@@ -36534,12 +36549,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 250,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -36557,8 +36573,8 @@
       "questionId": "q-p13-case-019-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-23-468-88-achtung-1"
       ],
@@ -36567,12 +36583,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 218,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36582,8 +36599,8 @@
       "questionId": "q-p13-case-019-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-23-467-62-merken-1"
       ],
@@ -36592,12 +36609,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 203,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36607,8 +36625,8 @@
       "questionId": "q-p13-case-020-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-24-478-6-achtung-1"
       ],
@@ -36617,12 +36635,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 218,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -36638,8 +36657,8 @@
       "questionId": "q-p13-case-020-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-24-481-72-merken-1"
       ],
@@ -36648,12 +36667,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 200,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36663,8 +36683,8 @@
       "questionId": "q-p13-case-021-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-25-506-113-achtung-1"
       ],
@@ -36673,12 +36693,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 200,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -36694,8 +36715,8 @@
       "questionId": "q-p13-case-021-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-25-505-91-merken-1"
       ],
@@ -36704,12 +36725,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 199,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36719,7 +36741,7 @@
       "questionId": "q-p13-case-022-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-27-535-15-merken-1"
@@ -36729,9 +36751,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 234,
             "contextDimensions": [],
@@ -36757,7 +36779,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 200,
             "contextDimensions": [],
@@ -36771,8 +36793,8 @@
       "questionId": "q-p13-case-023-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-28-545-44-achtung-1"
       ],
@@ -36781,12 +36803,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 230,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -36804,8 +36827,8 @@
       "questionId": "q-p13-case-023-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-28-544-71-merken-1"
       ],
@@ -36814,12 +36837,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 213,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -36837,8 +36861,8 @@
       "questionId": "q-p13-case-024-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-29-569-32-achtung-1"
       ],
@@ -36847,12 +36871,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 206,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36862,8 +36887,8 @@
       "questionId": "q-p13-case-024-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-29-570-49-merken-1"
       ],
@@ -36872,12 +36897,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 206,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36887,8 +36913,8 @@
       "questionId": "q-p13-case-025-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-30-593-128-achtung-1"
       ],
@@ -36897,12 +36923,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 220,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -36937,7 +36964,7 @@
       "questionId": "q-p13-case-026-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-31-608-65-merken-1"
@@ -36947,9 +36974,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 206,
             "contextDimensions": [],
@@ -36975,7 +37002,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 189,
             "contextDimensions": [],
@@ -36989,7 +37016,7 @@
       "questionId": "q-p13-case-027-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-35-666-4-merken-1"
@@ -36999,9 +37026,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 196,
             "contextDimensions": [],
@@ -37015,7 +37042,7 @@
       "questionId": "q-p13-case-027-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-35-665-32-merken-1"
@@ -37025,9 +37052,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 195,
             "contextDimensions": [],
@@ -37041,8 +37068,8 @@
       "questionId": "q-p13-case-028-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-36-680-62-achtung-1"
       ],
@@ -37051,12 +37078,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 230,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37066,8 +37094,8 @@
       "questionId": "q-p13-case-028-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-36-dysphagie-abbruch"
       ],
@@ -37076,12 +37104,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 233,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -37099,7 +37128,7 @@
       "questionId": "q-p13-case-029-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-37-701-10-achtung-1"
@@ -37111,9 +37140,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The case contains some concrete context but only one detected contextual dimension; P28B should verify whether the case constrains the expected answer sufficiently.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 222,
             "contextDimensions": [
@@ -37129,7 +37158,7 @@
       "questionId": "q-p13-case-029-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-37-699-35-merken-1"
@@ -37141,9 +37170,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The case contains some concrete context but only one detected contextual dimension; P28B should verify whether the case constrains the expected answer sufficiently.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 205,
             "contextDimensions": [
@@ -37159,8 +37188,8 @@
       "questionId": "q-p13-case-030-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-38-727-76-achtung-1"
       ],
@@ -37169,12 +37198,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 222,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -37190,8 +37220,8 @@
       "questionId": "q-p13-case-030-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-38-728-13-merken-1"
       ],
@@ -37200,12 +37230,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 203,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -37221,8 +37252,8 @@
       "questionId": "q-p13-case-031-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-41-751-74-achtung-1"
       ],
@@ -37231,12 +37262,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 230,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37246,8 +37278,8 @@
       "questionId": "q-p13-case-031-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-41-751-88-merken-1"
       ],
@@ -37256,12 +37288,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 207,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37271,8 +37304,8 @@
       "questionId": "q-p13-case-032-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-42-762-15-achtung-1"
       ],
@@ -37281,12 +37314,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 204,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37321,7 +37355,7 @@
       "questionId": "q-p13-case-033-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-43-775-2-merken-1"
@@ -37331,9 +37365,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 200,
             "contextDimensions": [],
@@ -37347,7 +37381,7 @@
       "questionId": "q-p13-case-033-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-43-773-36-merken-1"
@@ -37359,9 +37393,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The case contains some concrete context but only one detected contextual dimension; P28B should verify whether the case constrains the expected answer sufficiently.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 210,
             "contextDimensions": [
@@ -37377,8 +37411,8 @@
       "questionId": "q-p13-case-034-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-44-787-30-achtung-1"
       ],
@@ -37387,12 +37421,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 208,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37427,7 +37462,7 @@
       "questionId": "q-p13-case-035-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-45-808-24-achtung-1"
@@ -37439,9 +37474,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The case contains some concrete context but only one detected contextual dimension; P28B should verify whether the case constrains the expected answer sufficiently.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 230,
             "contextDimensions": [
@@ -37457,7 +37492,7 @@
       "questionId": "q-p13-case-035-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-45-809-33-merken-1"
@@ -37469,9 +37504,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The case contains some concrete context but only one detected contextual dimension; P28B should verify whether the case constrains the expected answer sufficiently.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 213,
             "contextDimensions": [
@@ -37487,8 +37522,8 @@
       "questionId": "q-p13-case-036-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-46-824-23-achtung-1"
       ],
@@ -37497,12 +37532,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 216,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37512,8 +37548,8 @@
       "questionId": "q-p13-case-036-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-46-824-40-merken-1"
       ],
@@ -37522,12 +37558,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 201,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -37543,8 +37580,8 @@
       "questionId": "q-p13-case-037-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-48-4-schritt3"
       ],
@@ -37553,12 +37590,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 258,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -37576,8 +37614,8 @@
       "questionId": "q-p13-case-037-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-48-4-sechs-schritte"
       ],
@@ -37586,12 +37624,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 265,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -37609,8 +37648,8 @@
       "questionId": "q-p13-case-038-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-52-879-52-achtung-1"
       ],
@@ -37619,12 +37658,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 228,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37634,8 +37674,8 @@
       "questionId": "q-p13-case-038-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-52-881-2-merken-1"
       ],
@@ -37644,12 +37684,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 204,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37659,8 +37700,8 @@
       "questionId": "q-p13-case-039-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-53-900-23-achtung-1"
       ],
@@ -37669,12 +37710,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 212,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37684,8 +37726,8 @@
       "questionId": "q-p13-case-039-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-53-900-12-merken-1"
       ],
@@ -37694,12 +37736,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 193,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37709,8 +37752,8 @@
       "questionId": "q-p13-case-040-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-54-931-104-achtung-1"
       ],
@@ -37719,12 +37762,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 220,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37734,8 +37778,8 @@
       "questionId": "q-p13-case-040-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-54-932-38-merken-1"
       ],
@@ -37744,12 +37788,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 217,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -37765,8 +37810,8 @@
       "questionId": "q-p13-case-041-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-55-950-39-achtung-1"
       ],
@@ -37775,12 +37820,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 214,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37790,8 +37836,8 @@
       "questionId": "q-p13-case-041-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-55-949-84-merken-1"
       ],
@@ -37800,12 +37846,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 201,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37815,8 +37862,8 @@
       "questionId": "q-p13-case-042-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-56-999-15-achtung-1"
       ],
@@ -37825,12 +37872,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 230,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37865,8 +37913,8 @@
       "questionId": "q-p13-case-043-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-57-1045-74-achtung-1"
       ],
@@ -37875,12 +37923,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 220,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37915,8 +37964,8 @@
       "questionId": "q-p13-case-044-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-58-1095-12-achtung-1"
       ],
@@ -37925,12 +37974,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 226,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37965,8 +38015,8 @@
       "questionId": "q-p13-case-045-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-59-1135-58-achtung-1"
       ],
@@ -37975,12 +38025,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 234,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -37990,8 +38041,8 @@
       "questionId": "q-p13-case-045-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-59-1136-4-merken-1"
       ],
@@ -38000,12 +38051,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 213,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38015,8 +38067,8 @@
       "questionId": "q-p13-case-046-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-60-1157-63-achtung-1"
       ],
@@ -38025,12 +38077,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 194,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38040,8 +38093,8 @@
       "questionId": "q-p13-case-046-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-60-1158-51-merken-1"
       ],
@@ -38050,12 +38103,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 185,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -38071,8 +38125,8 @@
       "questionId": "q-p13-case-047-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-61-1218-85-achtung-1"
       ],
@@ -38081,12 +38135,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 206,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38121,8 +38176,8 @@
       "questionId": "q-p13-case-048-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-62-1284-34-achtung-1"
       ],
@@ -38131,12 +38186,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 232,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38171,8 +38227,8 @@
       "questionId": "q-p13-case-049-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-63-1320-29-achtung-1"
       ],
@@ -38181,12 +38237,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 212,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38221,8 +38278,8 @@
       "questionId": "q-p13-case-050-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-64-1362-51-achtung-1"
       ],
@@ -38231,12 +38288,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 230,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38271,8 +38329,8 @@
       "questionId": "q-p13-case-051-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-65-1381-48-achtung-1"
       ],
@@ -38281,12 +38339,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 234,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38296,8 +38355,8 @@
       "questionId": "q-p13-case-051-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-65-1380-21-merken-1"
       ],
@@ -38306,12 +38365,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 219,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38333,7 +38393,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 174,
             "contextDimensions": [],
@@ -38347,7 +38407,7 @@
       "questionId": "q-p13-case-052-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-66-1418-92-merken-1"
@@ -38357,9 +38417,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 186,
             "contextDimensions": [],
@@ -38373,8 +38433,8 @@
       "questionId": "q-p13-case-053-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-36-dispenser-identifikation"
       ],
@@ -38383,12 +38443,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 234,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -38406,8 +38467,8 @@
       "questionId": "q-p13-case-053-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-36-6r"
       ],
@@ -38416,12 +38477,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 217,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -38445,8 +38507,8 @@
       "questionId": "q-p13-case-054-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-60-1178-59-achtung-1"
       ],
@@ -38455,12 +38517,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 204,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38470,8 +38533,8 @@
       "questionId": "q-p13-case-054-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-60-1178-69-merken-1"
       ],
@@ -38480,12 +38543,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 206,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38495,8 +38559,8 @@
       "questionId": "q-p13-case-055-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-65-1376-13-achtung-1"
       ],
@@ -38505,12 +38569,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 228,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38520,8 +38585,8 @@
       "questionId": "q-p13-case-055-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-65-1376-30-merken-1"
       ],
@@ -38530,12 +38595,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 221,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38545,8 +38611,8 @@
       "questionId": "q-p13-case-056-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-54-916-55-achtung-1"
       ],
@@ -38555,12 +38621,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 216,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38570,8 +38637,8 @@
       "questionId": "q-p13-case-056-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-54-917-69-merken-1"
       ],
@@ -38580,12 +38647,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 213,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38628,8 +38696,8 @@
       "questionId": "q-p13-case-057-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-61-4-aphasie-verstehen"
       ],
@@ -38638,12 +38706,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 255,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -38661,8 +38730,8 @@
       "questionId": "q-p13-case-058-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-64-1354-22-achtung-1"
       ],
@@ -38671,12 +38740,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 226,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38711,8 +38781,8 @@
       "questionId": "q-p13-case-059-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-62-1289-7-achtung-1"
       ],
@@ -38721,12 +38791,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 230,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38761,8 +38832,8 @@
       "questionId": "q-p13-case-060-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-64-1371-2-achtung-1"
       ],
@@ -38771,12 +38842,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 224,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38811,8 +38883,8 @@
       "questionId": "q-p13-case-061-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-63-1322-88-achtung-1"
       ],
@@ -38821,12 +38893,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 202,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38861,8 +38934,8 @@
       "questionId": "q-p13-case-062-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-36-retard-nicht-moersern"
       ],
@@ -38871,12 +38944,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 258,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -38894,8 +38968,8 @@
       "questionId": "q-p13-case-062-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-36-selbststaendige-einnahme"
       ],
@@ -38904,12 +38978,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 287,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -38927,8 +39002,8 @@
       "questionId": "q-p13-case-063-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-61-1226-57-achtung-1"
       ],
@@ -38937,12 +39012,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 230,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38952,8 +39028,8 @@
       "questionId": "q-p13-case-063-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-61-1231-9-merken-1"
       ],
@@ -38962,12 +39038,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 208,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -38977,8 +39054,8 @@
       "questionId": "q-p13-case-064-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-56-984-82-achtung-1"
       ],
@@ -38987,12 +39064,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 224,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39027,8 +39105,8 @@
       "questionId": "q-p13-case-065-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-60-1182-77-achtung-1"
       ],
@@ -39037,12 +39115,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 202,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39052,8 +39131,8 @@
       "questionId": "q-p13-case-065-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-60-1181-56-merken-1"
       ],
@@ -39062,12 +39141,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 193,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39077,8 +39157,8 @@
       "questionId": "q-p13-case-066-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-65-1386-48-achtung-1"
       ],
@@ -39087,12 +39167,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 200,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39102,8 +39183,8 @@
       "questionId": "q-p13-case-066-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-65-1388-43-merken-1"
       ],
@@ -39112,12 +39193,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 197,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -39133,8 +39215,8 @@
       "questionId": "q-p13-case-067-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-56-1000-93-achtung-1"
       ],
@@ -39143,12 +39225,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 204,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39158,8 +39241,8 @@
       "questionId": "q-p13-case-067-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-56-1000-85-merken-1"
       ],
@@ -39168,12 +39251,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 206,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39183,8 +39267,8 @@
       "questionId": "q-p13-case-068-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-55-967-40-achtung-1"
       ],
@@ -39193,12 +39277,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 216,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39208,8 +39293,8 @@
       "questionId": "q-p13-case-068-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-55-966-44-merken-1"
       ],
@@ -39218,12 +39303,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 201,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39233,8 +39319,8 @@
       "questionId": "q-p13-case-069-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-59-1130-29-achtung-1"
       ],
@@ -39243,12 +39329,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 198,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39258,8 +39345,8 @@
       "questionId": "q-p13-case-069-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-59-1128-59-merken-1"
       ],
@@ -39268,12 +39355,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 196,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39283,8 +39371,8 @@
       "questionId": "q-p13-case-070-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-58-1113-27-achtung-1"
       ],
@@ -39293,12 +39381,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 214,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39333,8 +39422,8 @@
       "questionId": "q-p13-case-071-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-57-1058-11-achtung-1"
       ],
@@ -39343,12 +39432,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 206,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39383,8 +39473,8 @@
       "questionId": "q-p13-case-072-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-44-785-71-achtung-1"
       ],
@@ -39393,12 +39483,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 222,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39433,8 +39524,8 @@
       "questionId": "q-p13-case-073-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-55-967-90-achtung-1"
       ],
@@ -39443,12 +39534,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 216,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39483,8 +39575,8 @@
       "questionId": "q-p13-case-074-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-16-328-33-achtung-1"
       ],
@@ -39493,12 +39585,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 230,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39533,8 +39626,8 @@
       "questionId": "q-p13-case-075-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-20-395-2-achtung-1"
       ],
@@ -39543,12 +39636,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 232,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39583,8 +39677,8 @@
       "questionId": "q-p13-case-076-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-54-928-69-achtung-1"
       ],
@@ -39593,12 +39687,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 230,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39608,8 +39703,8 @@
       "questionId": "q-p13-case-076-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-54-929-83-merken-1"
       ],
@@ -39618,12 +39713,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 208,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39633,8 +39729,8 @@
       "questionId": "q-p13-case-077-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-28-549-75-achtung-1"
       ],
@@ -39643,12 +39739,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 296,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39658,8 +39755,8 @@
       "questionId": "q-p13-case-077-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-28-549-41-merken-1"
       ],
@@ -39668,12 +39765,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 248,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39683,8 +39781,8 @@
       "questionId": "q-p13-case-078-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-21-420-54-achtung-1"
       ],
@@ -39693,12 +39791,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 208,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39708,8 +39807,8 @@
       "questionId": "q-p13-case-078-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-21-420-23-merken-1"
       ],
@@ -39718,12 +39817,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 203,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39733,8 +39833,8 @@
       "questionId": "q-p13-case-079-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-45-805-2-achtung-1"
       ],
@@ -39743,12 +39843,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 222,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -39764,8 +39865,8 @@
       "questionId": "q-p13-case-079-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-45-804-6-merken-1"
       ],
@@ -39774,12 +39875,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 211,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39789,8 +39891,8 @@
       "questionId": "q-p13-case-080-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-63-1325-42-achtung-1"
       ],
@@ -39799,12 +39901,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 268,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39814,8 +39917,8 @@
       "questionId": "q-p13-case-080-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-63-1328-113-merken-1"
       ],
@@ -39824,12 +39927,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 228,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39839,8 +39943,8 @@
       "questionId": "q-p13-case-081-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-62-1279-40-achtung-1"
       ],
@@ -39849,12 +39953,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 230,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39864,8 +39969,8 @@
       "questionId": "q-p13-case-081-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-62-1281-66-merken-1"
       ],
@@ -39874,12 +39979,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 202,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39889,8 +39995,8 @@
       "questionId": "q-p13-case-082-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-58-1081-12-achtung-1"
       ],
@@ -39899,12 +40005,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 232,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39914,8 +40021,8 @@
       "questionId": "q-p13-case-082-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-58-1077-101-merken-1"
       ],
@@ -39924,12 +40031,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 214,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -39945,8 +40053,8 @@
       "questionId": "q-p13-case-083-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-46-821-2-achtung-1"
       ],
@@ -39955,12 +40063,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 212,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39970,8 +40079,8 @@
       "questionId": "q-p13-case-083-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-46-820-108-merken-1"
       ],
@@ -39980,12 +40089,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 198,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -39995,8 +40105,8 @@
       "questionId": "q-p13-case-084-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-42-763-8-achtung-1"
       ],
@@ -40005,12 +40115,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 228,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -40028,8 +40139,8 @@
       "questionId": "q-p13-case-084-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "medium",
+      "recommendation": "review",
       "conceptIds": [
         "concept-42-763-82-merken-1"
       ],
@@ -40038,12 +40149,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 210,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         },
         {
@@ -40061,8 +40173,8 @@
       "questionId": "q-p13-case-085-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-53-889-30-achtung-1"
       ],
@@ -40071,12 +40183,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 216,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -40086,8 +40199,8 @@
       "questionId": "q-p13-case-085-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-53-886-89-merken-1"
       ],
@@ -40096,12 +40209,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 201,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -40111,7 +40225,7 @@
       "questionId": "q-p13-case-086-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-53-898-32-merken-1"
@@ -40121,9 +40235,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 228,
             "contextDimensions": [],
@@ -40155,7 +40269,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 195,
             "contextDimensions": [],
@@ -40169,8 +40283,8 @@
       "questionId": "q-p13-case-087-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "high",
-      "recommendation": "manual-adjudication-required",
+      "riskBand": "review",
+      "recommendation": "review",
       "conceptIds": [
         "concept-37-695-80-achtung-1"
       ],
@@ -40179,12 +40293,13 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "high",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 214,
-            "contextDimensions": []
+            "contextDimensions": [],
+            "calibrated": true
           }
         }
       ],
@@ -40194,7 +40309,7 @@
       "questionId": "q-p13-case-087-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-37-693-30-merken-1"
@@ -40206,9 +40321,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The case contains some concrete context but only one detected contextual dimension; P28B should verify whether the case constrains the expected answer sufficiently.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 196,
             "contextDimensions": [
@@ -40236,7 +40351,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 180,
             "contextDimensions": [],
@@ -40262,7 +40377,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 180,
             "contextDimensions": [],
@@ -40288,7 +40403,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 172,
             "contextDimensions": [],
@@ -40302,7 +40417,7 @@
       "questionId": "q-p13-case-089-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-25-516-59-merken-1"
@@ -40312,9 +40427,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 182,
             "contextDimensions": [],
@@ -40340,7 +40455,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 170,
             "contextDimensions": [],
@@ -40354,7 +40469,7 @@
       "questionId": "q-p13-case-090-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-25-505-49-merken-1"
@@ -40364,9 +40479,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 183,
             "contextDimensions": [],
@@ -40386,7 +40501,7 @@
       "questionId": "q-p13-case-091-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-24-499-18-merken-1"
@@ -40396,9 +40511,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 216,
             "contextDimensions": [],
@@ -40418,7 +40533,7 @@
       "questionId": "q-p13-case-091-2",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-24-499-43-merken-1"
@@ -40428,9 +40543,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 206,
             "contextDimensions": [],
@@ -40462,7 +40577,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 184,
             "contextDimensions": [],
@@ -40488,7 +40603,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 180,
             "contextDimensions": [],
@@ -40502,7 +40617,7 @@
       "questionId": "q-p13-case-093-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-31-625-29-merken-1"
@@ -40512,9 +40627,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 198,
             "contextDimensions": [],
@@ -40540,7 +40655,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 197,
             "contextDimensions": [],
@@ -40566,7 +40681,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 241,
             "contextDimensions": [],
@@ -40592,7 +40707,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 217,
             "contextDimensions": [],
@@ -40618,7 +40733,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 201,
             "contextDimensions": [],
@@ -40644,7 +40759,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 197,
             "contextDimensions": [],
@@ -40670,7 +40785,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 213,
             "contextDimensions": [],
@@ -40696,7 +40811,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 199,
             "contextDimensions": [],
@@ -40722,7 +40837,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 191,
             "contextDimensions": [],
@@ -40748,7 +40863,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 195,
             "contextDimensions": [],
@@ -40762,7 +40877,7 @@
       "questionId": "q-p13-case-098-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-8-159-73-merken-1"
@@ -40772,9 +40887,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 209,
             "contextDimensions": [],
@@ -40800,7 +40915,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 190,
             "contextDimensions": [],
@@ -40826,7 +40941,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 231,
             "contextDimensions": [],
@@ -40852,7 +40967,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 212,
             "contextDimensions": [],
@@ -40878,7 +40993,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 184,
             "contextDimensions": [],
@@ -40904,7 +41019,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 196,
             "contextDimensions": [],
@@ -40930,7 +41045,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 199,
             "contextDimensions": [],
@@ -40956,7 +41071,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 198,
             "contextDimensions": [],
@@ -40970,7 +41085,7 @@
       "questionId": "q-p13-case-102-1",
       "type": "clinical_case",
       "epistemicClass": "clinical-judgment",
-      "riskBand": "medium",
+      "riskBand": "review",
       "recommendation": "review",
       "conceptIds": [
         "concept-59-1124-26-merken-1"
@@ -40980,9 +41095,9 @@
       "correct": [],
       "issues": [
         {
-          "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
-          "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+          "risk": "review",
+          "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
           "evidence": {
             "promptLength": 194,
             "contextDimensions": [],
@@ -41008,7 +41123,7 @@
         {
           "code": "INSUFFICIENT_CLINICAL_CASE_CONTEXT",
           "risk": "medium",
-          "rationale": "The clinical-case prompt may not contain enough concrete patient/situation information to constrain a clinically meaningful answer.",
+          "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
           "evidence": {
             "promptLength": 177,
             "contextDimensions": [],
@@ -46983,8 +47098,8 @@
     "purpose": "Manually/semantically adjudicate P28A priority queues against source context, then rewrite, retype, accept multiple answers, add context, or remove unsafe items before re-certification."
   },
   "calibration": {
-    "version": 2,
-    "purpose": "Remove broad wording-only false positives while retaining clinically meaningful ambiguity signals.",
+    "version": 3,
+    "purpose": "Remove broad wording/type-shape false positives while retaining clinically meaningful ambiguity signals.",
     "rawFirstPass": {
       "riskCounts": {
         "clear": 464,
@@ -47000,6 +47115,7 @@
     "rules": [
       "Priority wording alone is not a defect; it must also ask for an action/decision.",
       "Ordinary conjunctions are not hidden multi-answer items unless explicit combination wording or component distractors prove compound encoding.",
+      "Source-recall questions wrapped as clinical cases are classified as type-fit review rather than high-risk answer ambiguity.",
       "Clinical cases with substantive narrative/context are not high-risk merely for missing detector keywords.",
       "Strong source-supported alternative, missing-correct-option, option-overlap, subsumption, numeric-overlap and context-sensitive single-choice signals are preserved."
     ]

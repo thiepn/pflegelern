@@ -17,15 +17,16 @@ P28A is detection-only. It does not edit the frozen P26G question bank, answer k
 ## Calibrated risk distribution
 
 - critical: **17**
-- high: **167**
-- medium: **80**
-- review: **92**
+- high: **53**
+- medium: **66**
+- review: **220**
 - clear: **943**
 
 ## Most common calibrated signals
 
-- `INSUFFICIENT_CLINICAL_CASE_CONTEXT`: **214**
+- `PSEUDO_CLINICAL_CASE_SOURCE_RECALL`: **148**
 - `CURRENT_GUIDANCE_SENSITIVE_TOPIC`: **75**
+- `INSUFFICIENT_CLINICAL_CASE_CONTEXT`: **66**
 - `UNDER_SPECIFIED_PROMPT_BROAD_REFERENCE`: **39**
 - `CONTEXT_DEPENDENT_SINGLE_CHOICE`: **24**
 - `CASE_ACTION_NEEDS_MORE_CONTEXT`: **23**
@@ -42,7 +43,7 @@ A flag is not automatically a claim that the textbook fact is wrong. It means th
 
 Single-choice is treated strictly: it may remain single-choice only if exactly one answer is defensible under the information explicitly supplied in the prompt.
 
-The first-pass detector was intentionally over-sensitive. Calibration removes wording-only signals such as generic ‘am ehesten’ stems and ordinary conjunctions unless additional evidence makes them genuinely relevant.
+The first-pass detector was intentionally over-sensitive. Calibration removes wording-only signals such as generic ‘am ehesten’ stems and ordinary conjunctions, and separates pseudo-clinical textbook recall from true answer-ambiguity risk.
 
 ## Next phase
 

@@ -38,13 +38,13 @@ These are detector examples for P28B adjudication, not final judgments that the 
 - `q-p12-0085` · `single_choice` · **high** — Welche Aussage ist laut Lehrbuch bei „Maßnahmen zur Parotitisund Soorprophylaxe“ im Abschnitt „Maßnahmen zur Parotitis- und Soorprophylaxe“ besonders zu beachten?
 - `q-p12-0090` · `single_choice` · **high** — Welche Aussage beschreibt laut Lehrbuch das Vorgehen bei „Therapie bei bestätigter TVT laut Lehrbuch“ im Abschnitt „Thromboseprophylaxe“?
 
-## INSUFFICIENT_CLINICAL_CASE_CONTEXT — 214
+## INSUFFICIENT_CLINICAL_CASE_CONTEXT — 66
 
-- `q-case-p7b-sc-injection` · `clinical_case` · **high** — Bei einer subkutanen Injektion wird nicht hygienisch gearbeitet. Welche Komplikation nennt das Lehrbuch als mögliche Folge?
-- `q-case-p7b-postop-bleeding` · `clinical_case` · **medium** — Nach einer Operation fällt eine übermäßige Nachblutung auf. Welche Maßnahme nennt das Lehrbuch?
-- `q-case-p7b-fever-rise` · `clinical_case` · **medium** — Ein Patient befindet sich in der Phase des Fieberanstiegs. Welche Maßnahme ist laut Lehrbuch in dieser Phase kontraindiziert?
-- `q-case-p7b-retina` · `clinical_case` · **medium** — Bei einem Patienten wird eine Netzhautablösung festgestellt. Wie ordnet das Lehrbuch diese Situation ein?
-- `q-case-p7b-pulmonary-edema` · `clinical_case` · **medium** — Ein Patient mit Herzinsuffizienz entwickelt ein Lungenödem. Welche Dringlichkeit nennt das Lehrbuch?
-- `q-case-p7b-skin-test` · `clinical_case` · **high** — Bei einem Patienten wird ein Hauttest durchgeführt. Welche schwerwiegende Komplikation nennt das Lehrbuch?
 - `q-case-p7b-eating-position` · `clinical_case` · **medium** — Ein Patient soll im Bett Nahrung zu sich nehmen. Welche Lage schließt das Lehrbuch dafür ausdrücklich aus?
-- `q-case-p7b-pregnancy-food` · `clinical_case` · **medium** — Eine Schwangere wird zum Schutz vor Listeriose und Toxoplasmose beraten. Welche Lebensmittelgruppe soll sie laut Lehrbuch meiden?
+- `q-case-p7b-aneurysm` · `clinical_case` · **high** — Ein bislang unerkanntes Aneurysma rupturiert. Welche Gefahr hebt das Lehrbuch hervor?
+- `q-case-p7b-infusion-additive` · `clinical_case` · **high** — Während eine Infusion läuft, soll ein Medikament zugesetzt werden. Welchen Sicherheitshinweis gibt das Lehrbuch?
+- `q-p13-case-002-1` · `clinical_case` · **medium** — In Ausbildung und Berufsalltag wird „Prävention“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden. Aufgabe 1: Wie wird „Prävention“ im Lehrbuch definiert?
+- `q-p13-case-002-2` · `clinical_case` · **medium** — In Ausbildung und Berufsalltag wird „Prävention“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden. Aufgabe 2: Wie wird „Gesundheitsförderung“ im Lehrbuch definiert?
+- `q-p13-case-003-1` · `clinical_case` · **medium** — In Ausbildung und Berufsalltag wird „Wissenschaft“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden. Aufgabe 1: Wie wird „Wissenschaft“ im Lehrbuch definiert?
+- `q-p13-case-003-2` · `clinical_case` · **medium** — In Ausbildung und Berufsalltag wird „Wissenschaft“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden. Aufgabe 2: Wie wird „Forschung“ im Lehrbuch definiert?
+- `q-p13-case-004-1` · `clinical_case` · **medium** — In Ausbildung und Berufsalltag wird „Medizin“ praktisch relevant. Die Situation soll anhand der Lehrbuchgrundlagen eingeordnet werden. Aufgabe 1: Wie wird „Medizin“ im Lehrbuch definiert?
