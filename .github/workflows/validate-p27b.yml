@@ -1,0 +1,158 @@
+name: Validate PflegeLern P27B
+
+on:
+  push:
+    branches: [p27b-release-truth-validation]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repair-and-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout P27B branch
+        uses: actions/checkout@v4
+        with:
+          ref: p27b-release-truth-validation
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax-check P27B tooling
+        run: |
+          python3 -m py_compile tools/p27b_apply_release_truth.py
+          python3 -m py_compile tools/release_readiness.py
+          node --check tests/p27b-browser.spec.mjs
+
+      - name: Prove P26G bank intact before repair
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          from pathlib import Path
+          expected='40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024'
+          actual=hashlib.sha256(Path('data/questions.json').read_bytes()).hexdigest()
+          assert actual == expected, (actual, expected)
+          print('Frozen P26G bank intact before P27B:', actual)
+          PY
+
+      - name: Apply bounded P27B release-truth repair
+        run: python3 tools/p27b_apply_release_truth.py
+
+      - name: Canonical current release-readiness gate
+        run: python3 tools/release_readiness.py --full --check-report
+
+      - name: Compatibility validator syntax
+        run: node --check tests/validate.mjs
+
+      - name: Prove P27B did not mutate the certified bank
+        run: |
+          git fetch origin main
+          git show origin/main:data/questions.json > /tmp/main-questions.json
+          cmp --silent /tmp/main-questions.json data/questions.json
+          python3 - <<'PY'
+          import hashlib
+          from pathlib import Path
+          expected='40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024'
+          assert hashlib.sha256(Path('data/questions.json').read_bytes()).hexdigest() == expected
+          print('Frozen P26G question bank preserved byte-for-byte.')
+          PY
+
+      - name: Enforce bounded repair surface
+        run: |
+          python3 - <<'PY'
+          import subprocess
+          allowed={
+            'README.md',
+            'QA.md',
+            'data/manifest.json',
+            'js/app.js',
+            'service-worker.js',
+            'tests/validate.mjs',
+            'reports/P27B_RELEASE_TRUTH_VALIDATION.json',
+            'reports/P27B_RELEASE_TRUTH_VALIDATION.md',
+          }
+          changed=set(filter(None, subprocess.check_output(['git','diff','--name-only'], text=True).splitlines()))
+          unexpected=sorted(changed-allowed)
+          assert not unexpected, f'Unexpected P27B repair paths: {unexpected}'
+          assert 'data/questions.json' not in changed
+          print('Bounded P27B repair paths:', sorted(changed))
+          PY
+
+      - name: Commit deterministic P27B repair
+        run: |
+          git clean -fd -- tools/__pycache__ tests/__pycache__ __pycache__ || true
+          if git diff --quiet; then
+            echo "P27B repair already materialized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md QA.md data/manifest.json js/app.js service-worker.js tests/validate.mjs reports/P27B_RELEASE_TRUTH_VALIDATION.json reports/P27B_RELEASE_TRUTH_VALIDATION.md
+          git diff --cached --quiet && { echo "No tracked P27B repair changes to commit."; exit 0; }
+          git commit -m "P27B: repair release truth and canonical validation"
+          git push origin HEAD:p27b-release-truth-validation
+
+      - name: Upload P27B release-truth evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: p27b-release-truth-validation
+          path: |
+            reports/P27B_RELEASE_TRUTH_VALIDATION.json
+            reports/P27B_RELEASE_TRUTH_VALIDATION.md
+
+  browser-qa:
+    needs: repair-and-audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repaired P27B branch head
+        uses: actions/checkout@v4
+        with:
+          ref: p27b-release-truth-validation
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Reconfirm deterministic P27B report
+        run: python3 tools/release_readiness.py --check-report
+
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Start local app server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/pflegelern-http.log 2>&1 &
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/pflegelern-http.log
+          exit 1
+
+      - name: P27B full-product desktop/mobile browser gate
+        run: npx playwright test tests/p27b-browser.spec.mjs --reporter=line --workers=1
+
+      - name: P25C desktop/mobile input regression
+        run: npx playwright test tests/p25c-browser.spec.mjs --reporter=line --workers=1
+
+      - name: P25D question-quality browser regression
+        run: npx playwright test tests/p25d-browser.spec.mjs --reporter=line --workers=1
+
+      - name: P25B repetition browser regression
+        run: npx playwright test tests/p25b-browser.spec.mjs --grep-invert "manifest and offline cache" --reporter=line --workers=1
+
+      - name: Upload browser artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p27b-browser-qa-artifacts
+          path: test-results
+          if-no-files-found: ignore
