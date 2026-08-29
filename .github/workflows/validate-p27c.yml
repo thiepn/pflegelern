@@ -26,6 +26,7 @@ jobs:
       - name: Syntax-check P27C tooling
         run: |
           python3 -m py_compile tools/p27c_promote_release.py
+          python3 -m py_compile tools/p27c_validator_refinement.py
           python3 -m py_compile tools/release_readiness.py
           node --check tests/p27c-browser.spec.mjs
           node --check tests/validate.mjs
@@ -42,7 +43,9 @@ jobs:
           PY
 
       - name: Materialize deterministic P27C final promotion
-        run: python3 tools/p27c_promote_release.py
+        run: |
+          python3 tools/p27c_promote_release.py
+          python3 tools/p27c_validator_refinement.py
 
       - name: Canonical final release certification
         run: |
