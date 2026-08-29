@@ -1,4 +1,5 @@
 name: Validate PflegeLern P28B
+# Exact-head gate: generated P28B content is already materialized before this run.
 
 on:
   push:
