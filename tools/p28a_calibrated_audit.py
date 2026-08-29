@@ -2,10 +2,8 @@
 """Calibrated P28A clinical/contextual validity audit.
 
 The base detector intentionally over-surfaces possible ambiguity. This layer
-removes known broad heuristics that are not independently sufficient for a
-question-level finding, while preserving the strong adversarial signals that
-matter for P28B adjudication.
-
+removes broad heuristics that are not independently sufficient for a
+question-level finding, while preserving strong adversarial signals for P28B.
 Detection only: no learning content or answer key is changed.
 """
 from __future__ import annotations
@@ -26,6 +24,11 @@ PRIORITY_MD = ROOT / "reports" / "P28A_PRIORITY_REVIEW.md"
 
 EXPLICIT_COMBINATION = re.compile(
     r"\b(beide|alle\s+(?:genannten|antworten|aussagen|maßnahmen|faktoren)|(?:a|b|c|d)\s+und\s+(?:a|b|c|d))\b",
+    re.I,
+)
+SOURCE_RECALL_CASE = re.compile(
+    r"\b(laut\s+lehrbuch|nennt\s+das\s+lehrbuch|bezeichnet\s+das\s+lehrbuch|ordnet\s+das\s+lehrbuch|"
+    r"welche\s+(?:komplikation|dringlichkeit|lebensmittelgruppe|lage|phase|ursache|folge)\s+nennt\s+das\s+lehrbuch)\b",
     re.I,
 )
 
@@ -57,9 +60,7 @@ PRIORITY_CODES = [
 def _token_containment(inner: str, outer: str) -> float:
     a = raw.tokens(inner)
     b = raw.tokens(outer)
-    if not a:
-        return 0.0
-    return len(a & b) / len(a)
+    return (len(a & b) / len(a)) if a else 0.0
 
 
 def _compound_key_is_real(question: dict[str, Any]) -> tuple[bool, dict[str, Any]]:
@@ -71,10 +72,6 @@ def _compound_key_is_real(question: dict[str, Any]) -> tuple[bool, dict[str, Any
     keyed = options[keyed_id]
     if EXPLICIT_COMBINATION.search(keyed):
         return True, {"mode": "explicit-combination", "correctText": keyed}
-
-    # A normal German sentence can contain "und" without being a disguised
-    # multi-answer. Preserve this signal only when two displayed distractors
-    # are themselves substantially contained in the keyed compound answer.
     if not re.search(r"\b(und|sowie)\b", keyed, re.I):
         return False, {"correctText": keyed}
     components = []
@@ -96,9 +93,8 @@ def _calibrate_row(row: dict[str, Any], question: dict[str, Any]) -> dict[str, A
         code = issue["code"]
 
         if code == "PRIORITY_QUESTION_WITHOUT_DECISION_CONTEXT":
-            # "am ehesten" is common in ordinary factual MC wording. It is a
-            # clinical ambiguity signal only when the stem actually asks for
-            # an action/intervention/decision.
+            # Generic "am ehesten" stems are common in factual MC questions.
+            # Retain this only when the stem genuinely asks for an action.
             if not raw.ACTION_CUES.search(prompt):
                 continue
             if len(dimensions) == 1:
@@ -116,29 +112,43 @@ def _calibrate_row(row: dict[str, Any], question: dict[str, Any]) -> dict[str, A
             issue = {**issue, "evidence": evidence}
 
         elif code == "INSUFFICIENT_CLINICAL_CASE_CONTEXT":
-            # A narrative case should not be high-risk just because it misses
-            # our small keyword taxonomy. High risk is reserved for genuinely
-            # thin/non-case-like prompts. One explicit dimension becomes a
-            # review-level contextual sufficiency question instead.
             has_case_cue = bool(raw.CASE_CUES.search(prompt))
-            if len(dimensions) >= 2:
+            # Many legacy 'clinical_case' items are actually textbook-recall
+            # questions wrapped in one sentence of scenario. That is a
+            # pedagogical/type-fit weakness, but not by itself evidence that a
+            # reference answer is clinically wrong. Separate it from genuine
+            # answer-ambiguity risk.
+            if SOURCE_RECALL_CASE.search(prompt):
+                issue = {
+                    **issue,
+                    "code": "PSEUDO_CLINICAL_CASE_SOURCE_RECALL",
+                    "risk": "review",
+                    "rationale": "This item is typed as a clinical case but primarily asks for a source-specific textbook fact. P28B may retype or enrich it, but this alone does not establish answer ambiguity.",
+                    "evidence": {**issue.get("evidence", {}), "calibrated": True},
+                }
+            elif len(dimensions) >= 2:
                 continue
-            if len(dimensions) == 1 and (len(prompt) >= 60 or has_case_cue):
+            elif len(dimensions) == 1 and (len(prompt) >= 60 or has_case_cue):
                 issue = {
                     **issue,
                     "risk": "medium",
-                    "rationale": "The case contains some concrete context but only one detected contextual dimension; P28B should verify whether the case constrains the expected answer sufficiently.",
+                    "rationale": "The case contains concrete context but only one detected contextual dimension; P28B should verify whether that is sufficient for the expected answer.",
                     "evidence": {**issue.get("evidence", {}), "calibrated": True},
                 }
-            elif len(prompt) >= 95 and has_case_cue:
-                issue = {**issue, "risk": "medium", "evidence": {**issue.get("evidence", {}), "calibrated": True}}
+            elif has_case_cue and len(prompt) >= 50:
+                issue = {
+                    **issue,
+                    "risk": "medium",
+                    "rationale": "The prompt is case-like, but the detector cannot establish enough independent contextual dimensions; semantic review is warranted without presuming the answer is wrong.",
+                    "evidence": {**issue.get("evidence", {}), "calibrated": True},
+                }
+            # Only genuinely thin/non-case-like prompts remain high risk.
 
         calibrated.append(issue)
 
     highest = max((raw.RISK_RANK[i["risk"]] for i in calibrated), default=0)
     risk_band = "clear" if highest == 0 else next(name for name, rank in raw.RISK_RANK.items() if rank == highest)
     codes = {i["code"] for i in calibrated}
-
     recommendation = "retain"
     if row["type"] == "single_choice" and codes & STRONG_SINGLE_CODES:
         recommendation = "manual-adjudication-before-single-choice-retention"
@@ -147,12 +157,7 @@ def _calibrate_row(row: dict[str, Any], question: dict[str, Any]) -> dict[str, A
     elif calibrated:
         recommendation = "review"
 
-    return {
-        **row,
-        "riskBand": risk_band,
-        "recommendation": recommendation,
-        "issues": calibrated,
-    }
+    return {**row, "riskBand": risk_band, "recommendation": recommendation, "issues": calibrated}
 
 
 def calibrated_audit() -> dict[str, Any]:
@@ -166,7 +171,6 @@ def calibrated_audit() -> dict[str, Any]:
     epistemic_counts = Counter(r["epistemicClass"] for r in rows)
     issue_counts = Counter(i["code"] for r in rows for i in r["issues"])
     recommendation_counts = Counter(r["recommendation"] for r in rows)
-
     single_rows = [r for r in rows if r["type"] == "single_choice"]
     single_manual = [r for r in single_rows if r["recommendation"] == "manual-adjudication-before-single-choice-retention"]
     objective_high = [r for r in rows if r["type"] in raw.OBJECTIVE_TYPES and raw.RISK_RANK[r["riskBand"]] >= raw.RISK_RANK["high"]]
@@ -201,8 +205,8 @@ def calibrated_audit() -> dict[str, Any]:
         "priorityQueues": queues,
         "questions": rows,
         "calibration": {
-            "version": 2,
-            "purpose": "Remove broad wording-only false positives while retaining clinically meaningful ambiguity signals.",
+            "version": 3,
+            "purpose": "Remove broad wording/type-shape false positives while retaining clinically meaningful ambiguity signals.",
             "rawFirstPass": {
                 "riskCounts": base["summary"]["riskCounts"],
                 "singleChoiceManualAdjudication": base["summary"]["singleChoiceManualAdjudication"],
@@ -212,6 +216,7 @@ def calibrated_audit() -> dict[str, Any]:
             "rules": [
                 "Priority wording alone is not a defect; it must also ask for an action/decision.",
                 "Ordinary conjunctions are not hidden multi-answer items unless explicit combination wording or component distractors prove compound encoding.",
+                "Source-recall questions wrapped as clinical cases are classified as type-fit review rather than high-risk answer ambiguity.",
                 "Clinical cases with substantive narrative/context are not high-risk merely for missing detector keywords.",
                 "Strong source-supported alternative, missing-correct-option, option-overlap, subsumption, numeric-overlap and context-sensitive single-choice signals are preserved.",
             ],
@@ -222,24 +227,18 @@ def calibrated_audit() -> dict[str, Any]:
 def render_summary(report: dict[str, Any]) -> str:
     s = report["summary"]
     lines = [
-        "# P28A — Clinical & Contextual Question Validity Audit",
-        "",
-        f"**Status: {report['status']}**",
-        "",
-        "P28A is detection-only. It does not edit the frozen P26G question bank, answer keys, learning logic, grading, FSRS, or release behavior.",
-        "",
-        "## Full-bank coverage",
-        "",
+        "# P28A — Clinical & Contextual Question Validity Audit", "",
+        f"**Status: {report['status']}**", "",
+        "P28A is detection-only. It does not edit the frozen P26G question bank, answer keys, learning logic, grading, FSRS, or release behavior.", "",
+        "## Full-bank coverage", "",
         f"- Questions audited: **{report['scope']['questions']} / 1,299**",
         f"- Frozen SHA-256 preserved: `{report['scope']['questionBankSha256']}`",
         f"- Single-choice questions: **{s['singleChoiceTotal']}**",
         f"- Single-choice items requiring adversarial adjudication before retention: **{s['singleChoiceManualAdjudication']}**",
         f"- Critical-risk questions: **{s['criticalQuestions']}**",
         f"- High/critical objective questions: **{s['highOrCriticalObjectiveQuestions']}**",
-        f"- Current-guidance-sensitive review queue: **{s['currentGuidanceSensitiveReview']}**",
-        "",
-        "## Calibrated risk distribution",
-        "",
+        f"- Current-guidance-sensitive review queue: **{s['currentGuidanceSensitiveReview']}**", "",
+        "## Calibrated risk distribution", "",
     ]
     for key in ("critical", "high", "medium", "review", "clear"):
         lines.append(f"- {key}: **{s['riskCounts'].get(key, 0)}**")
@@ -247,21 +246,12 @@ def render_summary(report: dict[str, Any]) -> str:
     for code, count in list(s["issueCounts"].items())[:20]:
         lines.append(f"- `{code}`: **{count}**")
     lines += [
-        "",
-        "## Interpretation",
-        "",
-        "A flag is not automatically a claim that the textbook fact is wrong. It means the question/answer contract may be unsafe for learning without semantic adjudication. P28A deliberately separates source-faithful 2015 correctness from current-guidance validity.",
-        "",
-        "Single-choice is treated strictly: it may remain single-choice only if exactly one answer is defensible under the information explicitly supplied in the prompt.",
-        "",
-        "The first-pass detector was intentionally over-sensitive. Calibration removes wording-only signals such as generic ‘am ehesten’ stems and ordinary conjunctions unless additional evidence makes them genuinely relevant.",
-        "",
-        "## Next phase",
-        "",
-        "**P28B — Adversarial Question-by-Question Adjudication & Repair**",
-        "",
-        "P28B must inspect the priority queues semantically and repair each unsafe item by adding context, converting to multiple choice/free response/clinical case, accepting additional answers, rewriting distractors, or removing the item. Any question-bank edit invalidates the P26G freeze and requires re-certification.",
-        "",
+        "", "## Interpretation", "",
+        "A flag is not automatically a claim that the textbook fact is wrong. It means the question/answer contract may be unsafe for learning without semantic adjudication. P28A deliberately separates source-faithful 2015 correctness from current-guidance validity.", "",
+        "Single-choice is treated strictly: it may remain single-choice only if exactly one answer is defensible under the information explicitly supplied in the prompt.", "",
+        "The first-pass detector was intentionally over-sensitive. Calibration removes wording-only signals such as generic ‘am ehesten’ stems and ordinary conjunctions, and separates pseudo-clinical textbook recall from true answer-ambiguity risk.", "",
+        "## Next phase", "", "**P28B — Adversarial Question-by-Question Adjudication & Repair**", "",
+        "P28B must inspect the priority queues semantically and repair each unsafe item by adding context, converting to multiple choice/free response/clinical case, accepting additional answers, rewriting distractors, or removing the item. Any question-bank edit invalidates the P26G freeze and requires re-certification.", "",
     ]
     return "\n".join(lines)
 
@@ -272,13 +262,7 @@ def render_priority(report: dict[str, Any], limit: int = 8) -> str:
         for issue in row["issues"]:
             if issue["code"] in by_code and len(by_code[issue["code"]]) < limit:
                 by_code[issue["code"]].append((row, issue))
-
-    lines = [
-        "# P28A — Priority Review Samples",
-        "",
-        "These are detector examples for P28B adjudication, not final judgments that the keyed answer is wrong.",
-        "",
-    ]
+    lines = ["# P28A — Priority Review Samples", "", "These are detector examples for P28B adjudication, not final judgments that the keyed answer is wrong.", ""]
     for code in PRIORITY_CODES:
         matches = by_code[code]
         total = report["summary"]["issueCounts"].get(code, 0)
@@ -306,7 +290,6 @@ def main() -> int:
     parser.add_argument("--write", action="store_true")
     parser.add_argument("--check-report", action="store_true")
     args = parser.parse_args()
-
     report = calibrated_audit()
     expected_json = json.dumps(report, ensure_ascii=False, indent=2) + "\n"
     expected_md = render_summary(report)
@@ -314,12 +297,10 @@ def main() -> int:
     if args.write:
         write_reports(report)
     if args.check_report:
-        pairs = [(REPORT_JSON, expected_json), (REPORT_MD, expected_md), (PRIORITY_MD, expected_priority)]
-        for path, expected in pairs:
+        for path, expected in [(REPORT_JSON, expected_json), (REPORT_MD, expected_md), (PRIORITY_MD, expected_priority)]:
             if not path.exists() or path.read_text(encoding="utf-8") != expected:
                 print(f"P28A report drift detected: {path.name}")
                 return 1
-
     print(json.dumps({"phase": report["phase"], "status": report["status"], **report["summary"]}, ensure_ascii=False, indent=2))
     return 0
 
