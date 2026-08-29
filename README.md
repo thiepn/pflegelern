@@ -1,64 +1,60 @@
-# PflegeLern — 1.1.0
+# PflegeLern — 1.1.1-dev.28b
 
 **PflegeLern** is a mobile-first, offline-capable nursing study app built from a source-faithful learning bank based on the uploaded 2015 edition of *I care – Pflege*.
 
-This repository is the **P27C final release (`1.1.0`)**. The complete question bank is frozen under the P26G certification, and the P27 release chain closes product readiness, release truth, exact-head browser certification, deployment verification and final release promotion without changing the certified learning bank.
+Current `main` is the **P28B development line (`1.1.1-dev.28b`)**. The latest immutable published release remains **v1.1.0 / P27C**. P28B is a bounded post-release content-quality repair phase and does not rewrite the historical v1.1.0 tag or P26G certification.
 
 ## Product
 
-- **Heute** — adaptive recommended study and short study rounds
-- **Lernen** — unrestricted learning, hierarchical textbook navigation, search and bookmarks
-- **Flashcards** — calibrated recall with `Nicht gewusst · Unsicher · Gewusst`
-- **Free recall and self-assessment** — active retrieval beyond recognition-only study
-- **Adaptive study mix** — bounded selection across cards and question types
-- **Weakness remediation** — mastery-aware targeted recovery
-- **Prüfung** — quick, full, weakness, chapter/section and mock-exam workflows with recovery
-- **Fortschritt** — mastery, weak topics, recent mistakes and study history
-- **FSRS-6** scheduling with a 90% target retention
-- **IndexedDB v2** local persistence, backup/restore and session/exam recovery
-- **Offline PWA** after the first successful load
-- responsive phone-first and desktop layouts with real-Chromium regression coverage
+- Heute adaptive recommended study and short rounds
+- Lernen unrestricted hierarchical learning, search and bookmarks
+- flashcards, free recall and calibrated self-assessment
+- adaptive study mix and weakness remediation
+- Prüfung quick/full/weakness/chapter/section/mock-exam workflows
+- Fortschritt mastery, weak topics, recent mistakes and history
+- FSRS-6 at 90% target retention
+- IndexedDB v2 persistence, backup/restore and recovery
+- offline PWA after first successful load
+- responsive phone-first and desktop layouts
 
-Recommended study is never a gate. `Lernen` remains unrestricted and has no artificial daily cap.
-
-## Certified study bank
+## Current study bank
 
 - **66 chapters**
-- **1,363 textbook section/subsection records**
+- **1,363 sections/subsections**
 - **2,089 concepts**
 - **2,094 flashcards**
-- **1,299 practice/exam questions**
-- **120 clinical/application cases**
+- **1,299 questions**
+- **120 cases**
 
-P26G freezes the complete 1,299-question bank at SHA-256:
+P28B question-bank SHA-256:
 
-`40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024`
+`97d27b764223443ac72708524774d3003ff07a44394bdea175ebbd37fb11f708`
 
-Any mutation of `data/questions.json` invalidates that certification and requires re-certification.
+The former P26G SHA `40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024` remains the immutable **v1.1.0 release baseline**. It is intentionally no longer the current-main bank hash after P28B's bounded repairs.
 
-The learning content follows the **2015 textbook edition**. PflegeLern does not silently replace the source with current clinical guidance.
+## P28B adjudication
 
-## Canonical validation
+P28A surfaced 44 high/critical objective questions for semantic adjudication. P28B reviews all 44 independently of the existing answer key:
 
-The stable non-browser release-certification command is:
+- **12 confirmed defects repaired**
+- **32 detector flags retained after semantic review**
+- **0 unresolved high/critical objective questions**
+
+Repairs include source-contract narrowing, explicit 2015 historical scoping, prompt precision, one misleading distractor replacement, and four single-choice symptom stems rewritten to ask for a symptom combination.
+
+The learning bank remains source-faithful to the **2015 textbook edition**. Historical source statements are not silently modernized into current clinical guidance.
+
+## Canonical current-main validation
 
 ```bash
-python3 tools/release_readiness.py --full
+python3 tools/p28b_validate.py --full
 ```
 
-It validates final release identity, production counts, PWA/static integrity, the frozen P26G bank hash and the semantic/question/adaptive/exam regression chain. Real-Chromium desktop/mobile interaction is enforced by the P27C CI workflow.
+`node tests/validate.mjs` is the compatibility alias for current main. Historical `tools/release_readiness.py` remains the v1.1.0/P27C release validator.
 
-`node tests/validate.mjs` remains only as a compatibility alias to the canonical command above.
+## Release state
 
-## Release certification
-
-- P26G question-bank certification: **PASS**
-- P27A full-product release-readiness audit: **completed**
-- P27B release truth & validation repair: **PASS**
-- P27C final release certification & promotion: **FINAL — v1.1.0**
-
-The final tag/release `v1.1.0` is created from the exact merged `main` commit only after the live GitHub Pages deployment exposes the final P27C / 1.1.0 identity.
-
-## Maintenance policy
-
-PflegeLern 1.1.0 is the certified release baseline. Maintenance may fix release infrastructure or non-learning defects, but any future mutation of `data/questions.json` invalidates P26G and requires a new question-bank certification before another release.
+- Latest immutable release: **v1.1.0 / P27C**
+- Current main development identity: **1.1.1-dev.28b / P28B**
+- Current bank certification: **P28B bounded adjudication hash above**
+- Next phase: **P28C — Current-Guidance Sensitivity Adjudication & Historical-Source Safety Pass**

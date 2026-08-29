@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 1,
+  "phase": "P28B",
+  "title": "Adversarial Question-by-Question Adjudication & Repair",
+  "status": "PASS",
+  "scope": {
+    "baseline": "P28A high/critical objective single-choice adjudication queue",
+    "questionsAdjudicated": 44,
+    "questionsRepaired": 12,
+    "questionsRetained": 32,
+    "unresolved": 0
+  },
+  "questionBank": {
+    "questions": 1299,
+    "previousReleaseBaselineSha256": "40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024",
+    "preApplySha256": "40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024",
+    "p28bSha256": "97d27b764223443ac72708524774d3003ff07a44394bdea175ebbd37fb11f708",
+    "p26gHistoricalReleaseFreezeInvalidatedForCurrentMain": true,
+    "countsOrQuestionIdsChanged": false
+  },
+  "policy": {
+    "sourceEdition": "I care – Pflege, 2015 edition",
+    "evaluateEveryFlaggedOptionSemantically": true,
+    "detectorFlagDoesNotEqualDefect": true,
+    "currentGuidanceNotSilentlySubstituted": true,
+    "historicalGuidanceSensitiveStatementsExplicitlyScopedWhenRepaired": true,
+    "fsrsChanged": false,
+    "masteryChanged": false,
+    "remediationChanged": false,
+    "examScoringChanged": false
+  },
+  "currentGuidanceWithinP28BQueue": {
+    "count": 5,
+    "questionIds": [
+      "q-36-02",
+      "q-48-4-02",
+      "q-p12-0090",
+      "q-p12-0091",
+      "q-p12-0104"
+    ],
+    "note": "P28B resolves the high/critical-objective subset; the broader P28A current-guidance-sensitive queue remains P28C scope."
+  },
+  "items": [
+    {
+      "questionId": "q-16-1-01",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "OVERLAPPING_NUMERIC_OPTIONS",
+        "MULTIPLE_SOURCE_SUPPORTED_OPTIONS"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The overlap is between distractors; the source-backed Bradykardie threshold remains uniquely under 60/min. Alternative-support is a number-token false positive."
+    },
+    {
+      "questionId": "q-16-1-02",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "OVERLAPPING_NUMERIC_OPTIONS",
+        "MULTIPLE_SOURCE_SUPPORTED_OPTIONS"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The overlap is between distractors; the source-backed Tachykardie threshold remains uniquely over 100/min. Alternative-support is a number-token false positive."
+    },
+    {
+      "questionId": "q-16-1-05",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "KEYED_ANSWER_WEAK_SOURCE_RELATION"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The anchored card explicitly frames documentation as sufficient under the stated normal-frequency, asymptomatic, known-arrhythmia conditions; low lexical overlap is not a semantic defect."
+    },
+    {
+      "questionId": "q-36-02",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "MULTIPLE_SOURCE_SUPPORTED_OPTIONS",
+        "CURRENT_GUIDANCE_SENSITIVE_TOPIC"
+      ],
+      "action": "repair",
+      "decisionClass": "historical-source-scope",
+      "rationale": "The one-hour limit is source-supported but guidance-sensitive; make the 2015 source boundary explicit."
+    },
+    {
+      "questionId": "q-61-4-03",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "This is a textbook communication recommendation rather than an unconstrained bedside decision; only slow, clear, normal-volume speech matches the source."
+    },
+    {
+      "questionId": "q-61-4-05",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "MULTIPLE_SOURCE_SUPPORTED_OPTIONS"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The alternative-support detector ignored negation: the source says not to feign understanding; the keyed positive strategy remains unique."
+    },
+    {
+      "questionId": "q-48-4-02",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE",
+        "CURRENT_GUIDANCE_SENSITIVE_TOPIC"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "This is conceptual ethical-principle classification, not a context-dependent clinical intervention; autonomy is uniquely correct and the currentness flag is non-actionable."
+    },
+    {
+      "questionId": "q-48-4-07",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The stem explicitly describes the textbook autonomy-versus-care conflict; other pairs do not match."
+    },
+    {
+      "questionId": "q-case-pulse-01",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "KEYED_ANSWER_WEAK_SOURCE_RELATION"
+      ],
+      "action": "repair",
+      "decisionClass": "answer-contract-narrowing",
+      "rationale": "P28A directly proves physician notification but not every bundled action in the keyed option; narrow the key to the directly anchored action."
+    },
+    {
+      "questionId": "q-p7b-chapter-16-definition-01",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "OVERLAPPING_NUMERIC_OPTIONS"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Numeric overlap was detected across definitions of different concepts; only the Bradykardie definition answers the named term."
+    },
+    {
+      "questionId": "q-p12-0046",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The stem names the exact textbook threshold scenario and only the keyed physician-notification option is tied to it."
+    },
+    {
+      "questionId": "q-p12-0047",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "OVERLAPPING_NUMERIC_OPTIONS"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The detector compared similar ranges with different units/domains; beats/min and mg/dl are not interchangeable."
+    },
+    {
+      "questionId": "q-p12-0049",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "OVERLAPPING_NUMERIC_OPTIONS"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Only the option explicitly defining Tachykardie answers the named term; overlapping numbers in other definitions are irrelevant."
+    },
+    {
+      "questionId": "q-p12-0052",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "OVERLAPPING_NUMERIC_OPTIONS"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Only the force-on-vessel-walls statement defines blood pressure; numerical fragments in other definitions are irrelevant."
+    },
+    {
+      "questionId": "q-p12-0053",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "OVERLAPPING_NUMERIC_OPTIONS"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Only the systolic-under-100 mmHg statement answers the named Hypotonie concept in the source."
+    },
+    {
+      "questionId": "q-p12-0072",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "This is a source-identification item; one option is the complete Steckbecken guidance and all distractors concern other topics."
+    },
+    {
+      "questionId": "q-p12-0084",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "repair",
+      "decisionClass": "prompt-precision",
+      "rationale": "The key is uniquely source-supported, but the old prompt was truncated and framed too broadly; ask the exact source fact."
+    },
+    {
+      "questionId": "q-p12-0085",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "repair",
+      "decisionClass": "prompt-precision",
+      "rationale": "The key is uniquely source-supported, but the old prompt contained a broken section label and broad action wording; ask the exact source fact."
+    },
+    {
+      "questionId": "q-p12-0090",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE",
+        "CURRENT_GUIDANCE_SENSITIVE_TOPIC"
+      ],
+      "action": "repair",
+      "decisionClass": "historical-source-scope",
+      "rationale": "The keyed pair is source-supported, but DVT therapy is guidance-sensitive and another option is partly plausible; constrain the question to the two measures explicitly named in the 2015 source."
+    },
+    {
+      "questionId": "q-p12-0091",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE",
+        "CURRENT_GUIDANCE_SENSITIVE_TOPIC"
+      ],
+      "action": "repair",
+      "decisionClass": "historical-source-scope",
+      "rationale": "The keyed statement is source-supported but guidance-sensitive; explicitly scope it to the 2015 textbook and the interval before medical clarification."
+    },
+    {
+      "questionId": "q-p12-0104",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "OVERLAPPING_NUMERIC_OPTIONS",
+        "CURRENT_GUIDANCE_SENSITIVE_TOPIC"
+      ],
+      "action": "repair",
+      "decisionClass": "historical-source-scope",
+      "rationale": "The original ZVK stem was too broad for a specific historical ZVD zero-point technique; name the procedure and 2015 boundary."
+    },
+    {
+      "questionId": "q-p12-0130",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The exact source statement uniquely says to stop when the rectal tube cannot be advanced and notify the physician."
+    },
+    {
+      "questionId": "q-p12-0131",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Only the fluid-bag height warning belongs to the named practical-procedure source fragment."
+    },
+    {
+      "questionId": "q-p12-0136",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The source warning about increased pressure under cushions is uniquely keyed; distractors concern unrelated conditions."
+    },
+    {
+      "questionId": "q-p12-0137",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Only the keyed option states the specific contraindication set for head-down drainage positioning."
+    },
+    {
+      "questionId": "q-p12-0138",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "repair",
+      "decisionClass": "distractor-repair",
+      "rationale": "Two displayed answers were defensible as fresh-air precautions; preserve the exact source-backed key and replace the second plausible statement with a contradictory distractor."
+    },
+    {
+      "questionId": "q-p12-0141",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Changing nostrils every few hours is uniquely tied to the named oxygen-therapy source concept."
+    },
+    {
+      "questionId": "q-p12-0166",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "OVERLAPPING_NUMERIC_OPTIONS"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Although generic and gestational hypertension share a threshold, only the keyed option explicitly defines pregnancy-induced/gestational hypertension."
+    },
+    {
+      "questionId": "q-p12-0188",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The medication-preparation scope makes concealing errors uniquely relevant; other 'never' statements concern unrelated contexts."
+    },
+    {
+      "questionId": "q-p12-0198",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Only the keyed option states the First-in-First-out principle; ethical-decision distractors are unrelated."
+    },
+    {
+      "questionId": "q-p12-0199",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The oral-medication stem makes upright sitting uniquely correct; other options are from different contexts."
+    },
+    {
+      "questionId": "q-p12-0218",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "OVERLAPPING_NUMERIC_OPTIONS"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The detector compared unrelated numerical values; only the Hypothalamus/set-point statement answers fever fundamentals."
+    },
+    {
+      "questionId": "q-p12-0243",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Named-step source recall: only the keyed statement describes step 1 of the ethical model."
+    },
+    {
+      "questionId": "q-p12-0244",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Named-step source recall: only the keyed statement describes principles/rights analysis in step 3."
+    },
+    {
+      "questionId": "q-p12-0245",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Named-step source recall: only the keyed statement describes developing/comparing/evaluating actions in step 4."
+    },
+    {
+      "questionId": "q-p12-0246",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Named-step source recall: only the keyed statement describes selecting and justifying an action in step 5."
+    },
+    {
+      "questionId": "q-p12-0247",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Named-step source recall: only the keyed statement describes critical review/reflection in step 6."
+    },
+    {
+      "questionId": "q-p12-0317",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "HIDDEN_MULTI_ANSWER_AS_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "Influenzaviren A und B is one definitional proposition, not a hidden multiple-answer contract; only the influenza definition answers the stem."
+    },
+    {
+      "questionId": "q-p12-0444",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "SINGLE_CHOICE_FOR_PLURAL_KNOWLEDGE"
+      ],
+      "action": "repair",
+      "decisionClass": "single-choice-contract",
+      "rationale": "The keyed option is an intentionally bundled symptom set; ask for the symptom combination so one radio answer is semantically appropriate."
+    },
+    {
+      "questionId": "q-p12-0446",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "SINGLE_CHOICE_FOR_PLURAL_KNOWLEDGE"
+      ],
+      "action": "repair",
+      "decisionClass": "single-choice-contract",
+      "rationale": "The keyed option is an intentionally bundled symptom set; ask for the symptom combination so one radio answer is semantically appropriate."
+    },
+    {
+      "questionId": "q-p12-0447",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "OVERLAPPING_NUMERIC_OPTIONS"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The detector matched a 4–6 week range across unrelated topics; only the keyed option describes distal-radius-fracture therapy."
+    },
+    {
+      "questionId": "q-p12-0448",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "SINGLE_CHOICE_FOR_PLURAL_KNOWLEDGE"
+      ],
+      "action": "repair",
+      "decisionClass": "single-choice-contract",
+      "rationale": "The keyed option is an intentionally bundled symptom set; ask for the symptom combination so one radio answer is semantically appropriate."
+    },
+    {
+      "questionId": "q-p12-0512",
+      "baselineRisk": "high",
+      "baselineIssues": [
+        "CONTEXT_DEPENDENT_SINGLE_CHOICE"
+      ],
+      "action": "retain",
+      "decisionClass": "adjudicated-detector-false-positive",
+      "rationale": "The stem names the exact source principle Sprachtherapie früh beginnen; so früh wie möglich is uniquely anchored."
+    },
+    {
+      "questionId": "q-p12-0525",
+      "baselineRisk": "critical",
+      "baselineIssues": [
+        "SINGLE_CHOICE_FOR_PLURAL_KNOWLEDGE"
+      ],
+      "action": "repair",
+      "decisionClass": "single-choice-contract",
+      "rationale": "The keyed option is an intentionally bundled symptom set; ask for the symptom combination so one radio answer is semantically appropriate."
+    }
+  ],
+  "nextPhase": {
+    "phase": "P28C",
+    "title": "Current-Guidance Sensitivity Adjudication & Historical-Source Safety Pass",
+    "scope": "Adjudicate the broader 75-item P28A current-guidance-sensitive review queue, crediting P28B items already resolved and adding historical-source labeling or source-only framing where needed."
+  }
+}
