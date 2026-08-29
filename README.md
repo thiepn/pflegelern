@@ -1,46 +1,64 @@
-# PflegeLern — v1.0.0 Release
+# PflegeLern — 1.1.0-rc.1
 
-**PflegeLern** is a mobile-first, offline-capable nursing study app built from the source-faithful study bank for the uploaded 2015 edition of *I care – Pflege*.
+**PflegeLern** is a mobile-first, offline-capable nursing study app built from a source-faithful learning bank based on the uploaded 2015 edition of *I care – Pflege*.
 
-This repository is the **P10 final release (`1.0.0`)**. The application is build-free and intended for GitHub Pages.
+The repository is currently the **P27B release candidate (`1.1.0-rc.1`)**. The frozen question bank completed P26G certification; P27B repairs release identity, documentation and the canonical validation entrypoint without changing learning content.
 
-## What is included
+## Product
 
-- **Heute** — one-click adaptive study and a 5-minute round
-- **Lernen** — unrestricted learning, weak/new/all modes, hierarchical textbook navigation, search and bookmarks
-- **Flashcards** — `Nicht gewusst · Unsicher · Gewusst`
-- **Prüfung** — quick, full, weakness, chapter and section tests with recovery
+- **Heute** — adaptive recommended study and short study rounds
+- **Lernen** — unrestricted learning, hierarchical textbook navigation, search and bookmarks
+- **Flashcards** — calibrated recall with `Nicht gewusst · Unsicher · Gewusst`
+- **Free recall and self-assessment** — active retrieval beyond recognition-only study
+- **Adaptive study mix** — bounded selection across cards and question types
+- **Weakness remediation** — mastery-aware targeted recovery
+- **Prüfung** — quick, full, weakness, chapter/section and mock-exam workflows with recovery
 - **Fortschritt** — mastery, weak topics, recent mistakes and study history
 - **FSRS-6** scheduling with a 90% target retention
 - **IndexedDB v2** local persistence, backup/restore and session/exam recovery
 - **Offline PWA** after the first successful load
-- responsive phone-first and desktop layouts
+- responsive phone-first and desktop layouts with real-Chromium regression coverage
 
-Recommended study is never a gate. `Lernen` allows unrestricted study without an artificial daily cap.
+Recommended study is never a gate. `Lernen` remains unrestricted and has no artificial daily cap.
 
-## Study bank
+## Certified study bank
 
 - **66 chapters**
-- **1,361 textbook section/subsection records**
+- **1,363 textbook section/subsection records**
 - **2,089 concepts**
 - **2,094 flashcards**
-- **85 practice/exam questions**
-- **18 clinical/application cases**
+- **1,299 practice/exam questions**
+- **120 clinical/application cases**
 
-The learning content follows the **2015 textbook edition** and is not a silent update to current clinical guidance.
+P26G freezes the complete 1,299-question bank at SHA-256:
 
-## Validation
+`40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024`
 
-Run locally with:
+Any mutation of `data/questions.json` invalidates that certification and requires re-certification.
+
+The learning content follows the **2015 textbook edition**. PflegeLern does not silently replace the source with current clinical guidance.
+
+## Canonical validation
+
+Serve locally when browser interaction is needed:
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 4173
 ```
 
-Then validate with:
+The single current non-browser release-readiness command is:
 
 ```bash
-node tests/validate.mjs
+python3 tools/release_readiness.py --full
 ```
 
-P9 static/content QA passed with zero validator errors. P10 adds live GitHub Pages smoke testing before final `v1.0.0` promotion.
+This validates P27B release truth, current production counts, PWA/static integrity, the frozen P26G question-bank hash and the semantic/question/adaptive/exam regression chain. Real-Chromium desktop/mobile interaction is rerun in the P27B CI workflow.
+
+`node tests/validate.mjs` is retained only as a compatibility alias to the canonical command above.
+
+## Release state
+
+- P26G question-bank certification: **PASS**
+- P27A full-product readiness audit: **completed; release-truth drift identified**
+- P27B release truth & validation repair: **release candidate gate**
+- next phase after P27B: **P27C — Final Release Certification & Promotion**
