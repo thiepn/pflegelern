@@ -85,13 +85,15 @@ jobs:
 
       - name: Commit deterministic P27B repair
         run: |
-          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+          git clean -fd -- tools/__pycache__ tests/__pycache__ __pycache__ || true
+          if git diff --quiet; then
             echo "P27B repair already materialized."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md QA.md data/manifest.json js/app.js service-worker.js tests/validate.mjs reports/P27B_RELEASE_TRUTH_VALIDATION.json reports/P27B_RELEASE_TRUTH_VALIDATION.md
+          git diff --cached --quiet && { echo "No tracked P27B repair changes to commit."; exit 0; }
           git commit -m "P27B: repair release truth and canonical validation"
           git push origin HEAD:p27b-release-truth-validation
 
