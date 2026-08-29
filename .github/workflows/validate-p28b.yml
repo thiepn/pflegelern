@@ -1,0 +1,157 @@
+name: Validate PflegeLern P28B
+
+on:
+  push:
+    branches: [p28b-adversarial-question-adjudication]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pflegelern-p28b-adjudication
+  cancel-in-progress: true
+
+jobs:
+  adjudicate-and-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout P28B branch
+        uses: actions/checkout@v4
+        with:
+          ref: p28b-adversarial-question-adjudication
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Syntax-check P28B tooling
+        run: |
+          python3 -m py_compile tools/p28b_adjudicate.py tools/p28b_validate.py tests/p28b-adjudication.test.py
+          node --check tests/p28b-browser.spec.mjs
+          node --check tests/validate.mjs
+
+      - name: Prove bounded input state
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          from pathlib import Path
+          allowed={
+            '40233f783c322c5da5e2c24adbe1ec12651ae2b2011d35a7d4adb61b172ce024',
+            '97d27b764223443ac72708524774d3003ff07a44394bdea175ebbd37fb11f708',
+          }
+          actual=hashlib.sha256(Path('data/questions.json').read_bytes()).hexdigest()
+          assert actual in allowed, actual
+          print('P28B bounded input bank:', actual)
+          PY
+
+      - name: Materialize P28B adjudication and repairs
+        run: python3 tools/p28b_adjudicate.py
+
+      - name: Canonical P28B full validation
+        run: |
+          python3 tools/p28b_validate.py --full
+          python3 tools/p28b_adjudicate.py --check
+
+      - name: Enforce bounded P28B surface
+        run: |
+          git fetch origin main
+          python3 - <<'PY'
+          import subprocess
+          allowed={
+            '.github/workflows/validate-p28b.yml',
+            'tools/p28b_adjudicate.py',
+            'tools/p28b_validate.py',
+            'tests/p28b-adjudication.test.py',
+            'tests/p28b-browser.spec.mjs',
+            'tests/validate.mjs',
+            'data/questions.json',
+            'data/manifest.json',
+            'js/app.js',
+            'service-worker.js',
+            'README.md',
+            'QA.md',
+            'P28B_ADJUDICATION.md',
+            'reports/P28B_ADJUDICATION.json',
+            'reports/P28B_ADJUDICATION.md',
+          }
+          changed=set(filter(None, subprocess.check_output(['git','diff','--name-only','origin/main...HEAD'], text=True).splitlines()))
+          changed |= set(filter(None, subprocess.check_output(['git','diff','--name-only'], text=True).splitlines()))
+          for line in subprocess.check_output(['git','status','--porcelain'], text=True).splitlines():
+            if line.startswith('?? '): changed.add(line[3:])
+          unexpected=sorted(changed-allowed)
+          assert not unexpected, f'Unexpected P28B paths: {unexpected}'
+          protected={'js/fsrs.js','js/p18-mastery-core.js','js/p19-remediation-core.js','js/p20-exam-core.js'}
+          assert not (changed & protected), sorted(changed & protected)
+          print('P28B bounded paths:', sorted(changed))
+          PY
+
+      - name: Commit deterministic P28B materialization
+        run: |
+          if git diff --quiet && [ -z "$(git status --porcelain)" ]; then
+            echo "P28B already materialized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/questions.json data/manifest.json js/app.js service-worker.js README.md QA.md P28B_ADJUDICATION.md reports/P28B_ADJUDICATION.json reports/P28B_ADJUDICATION.md
+          if git diff --cached --quiet; then
+            echo "No generated P28B changes to commit."
+            exit 0
+          fi
+          git commit -m "P28B: materialize adjudicated question repairs"
+          git push origin HEAD:p28b-adversarial-question-adjudication
+
+      - name: Upload P28B adjudication evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: p28b-adjudication-certification
+          path: |
+            reports/P28B_ADJUDICATION.json
+            reports/P28B_ADJUDICATION.md
+            P28B_ADJUDICATION.md
+
+  browser-certification:
+    needs: adjudicate-and-audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest P28B branch head
+        uses: actions/checkout@v4
+        with:
+          ref: p28b-adversarial-question-adjudication
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reconfirm deterministic P28B state
+        run: python3 tools/p28b_validate.py
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Start local app server
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/pflegelern-http.log 2>&1 &
+          for i in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/pflegelern-http.log
+          exit 1
+      - name: P28B desktop/mobile browser gate
+        run: npx playwright test tests/p28b-browser.spec.mjs --reporter=line --workers=1
+      - name: P25C desktop/mobile input regression
+        run: npx playwright test tests/p25c-browser.spec.mjs --reporter=line --workers=1
+      - name: P25D question-quality browser regression
+        run: npx playwright test tests/p25d-browser.spec.mjs --reporter=line --workers=1
+      - name: P25B repetition-control browser regression
+        run: npx playwright test tests/p25b-browser.spec.mjs --grep-invert "manifest and offline cache" --reporter=line --workers=1
+      - name: Upload browser artifacts on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p28b-browser-artifacts
+          path: test-results
+          if-no-files-found: ignore
