@@ -35,12 +35,12 @@ jobs:
           git show origin/main:data/questions.json > /tmp/main-questions.json
           cmp --silent /tmp/main-questions.json data/questions.json
 
-      - name: Run full 1,299-question adversarial audit
+      - name: Run calibrated 1,299-question adversarial audit
         run: |
-          python3 -m py_compile tools/p28a_clinical_context_audit.py
-          python3 tools/p28a_clinical_context_audit.py --write
+          python3 -m py_compile tools/p28a_clinical_context_audit.py tools/p28a_calibrated_audit.py
+          python3 tools/p28a_calibrated_audit.py --write
           python3 tests/p28a-clinical-context-audit.test.py
-          python3 tools/p28a_clinical_context_audit.py --check-report
+          python3 tools/p28a_calibrated_audit.py --check-report
 
       - name: Enforce detection-only scope
         run: |
@@ -54,24 +54,20 @@ jobs:
           assert r['scope']['questionBankMutated'] is False
           assert r['summary']['allQuestionsCovered'] is True
           assert len(r['questions']) == 1299
+          assert r['calibration']['version'] == 2
           print('P28A is detection-only; all 1,299 questions covered; P26G bank unchanged.')
           PY
 
       - name: Commit deterministic P28A reports
         run: |
-          if git diff --quiet -- reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.json reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.md && \
-             git ls-files --error-unmatch reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.json >/dev/null 2>&1; then
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.json reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.md reports/P28A_PRIORITY_REVIEW.md
+          if git diff --cached --quiet; then
             echo "P28A reports already current."
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.json reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.md
-          if git diff --cached --quiet; then
-            echo "No report changes to commit."
-            exit 0
-          fi
-          git commit -m "P28A: materialize clinical context validity audit"
+          git commit -m "P28A: materialize calibrated clinical validity audit"
           git push origin HEAD:p28a-clinical-context-validity-audit
 
       - name: Upload audit reports
@@ -81,3 +77,4 @@ jobs:
           path: |
             reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.json
             reports/P28A_CLINICAL_CONTEXT_VALIDITY_AUDIT.md
+            reports/P28A_PRIORITY_REVIEW.md
